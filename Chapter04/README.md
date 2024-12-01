@@ -1,4 +1,4 @@
-# Software-Architecture-with-CPP-2E
+# Software Architecture with C++, Second Edition
 
 Software Architecture with C++, Second Edition, Published by Packt
 

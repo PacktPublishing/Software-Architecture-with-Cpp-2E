@@ -1,0 +1,8 @@
+.idea/
+.vscode/
+CMakeLists.txt.user
+conan_provider.cmake
+venv
+.env
+.python-version
+*build*/

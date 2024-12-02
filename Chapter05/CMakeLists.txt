@@ -51,19 +51,20 @@ target_link_libraries(concepts PRIVATE Microsoft.GSL::GSL)
 target_compile_features(concepts PRIVATE cxx_std_20)
 target_compile_options(concepts PRIVATE ${BASE_COMPILE_FLAGS})
 
-option(ENABLE_MODULES "Compile the modules example" ON)
+add_library(libmodules)
+target_sources(
+  libmodules PUBLIC FILE_SET CXX_MODULES FILES src/6_modules/customer.cppm
+                    src/6_modules/merchant.cppm src/6_modules/store.cppm)
+target_compile_features(libmodules PUBLIC cxx_std_20)
+target_compile_options(libmodules PUBLIC ${BASE_COMPILE_FLAGS})
 
-if(ENABLE_MODULES)
-  add_library(libmodules)
-  target_sources(libmodules
-    PUBLIC
-      FILE_SET CXX_MODULES FILES
-        src/6_modules/customer.cppm
-        src/6_modules/merchant.cppm
-        src/6_modules/store.cppm)
-  target_compile_features(libmodules PUBLIC cxx_std_20)
-  target_compile_options(libmodules PUBLIC ${BASE_COMPILE_FLAGS})
+add_executable(modules src/6_modules/main.cpp)
+target_link_libraries(modules PRIVATE libmodules)
 
-  add_executable(modules src/6_modules/main.cpp)
-  target_link_libraries(modules PRIVATE libmodules)
-endif()
+add_executable(monadic_optional src/7_monadic_optional.cpp)
+target_compile_features(monadic_optional PRIVATE cxx_std_23)
+target_compile_options(monadic_optional PRIVATE ${BASE_COMPILE_FLAGS})
+
+add_executable(monadic_expected src/7_monadic_expected.cpp)
+target_compile_features(monadic_expected PRIVATE cxx_std_23)
+target_compile_options(monadic_expected PRIVATE ${BASE_COMPILE_FLAGS})

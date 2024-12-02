@@ -4,12 +4,15 @@ Software Architecture with C++, Second Edition, Published by Packt
 
 ## Table of Contents
 
-Chapter 1: [Importance of Software Architecture and Principles of Great
-Design](Chapter01)
+Part 1: Concepts and Components of Software Architecture
+
+Chapter 1: [Importance of Software Architecture and Principles of Great Design](Chapter01)
 
 Chapter 2: [Architectural Styles](Chapter02)
 
 Chapter 3: [Functional and Nonfunctional Requirements](Chapter03)
+
+Part 2: The Design and Development of C++ Software
 
 Chapter 4: [Architectural and System Design Patterns](Chapter04)
 
@@ -19,27 +22,41 @@ Chapter 6: [Design Patterns and C++](Chapter06)
 
 Chapter 7: [Building and Packaging](Chapter07)
 
-Chapter 8: [Continuous Integration and Continuous Deployment](Chapter08)
+Chapter 8: [Package Management](Chapter08)
 
-Chapter 9: [Writing Testable Code](Chapter09)
+Chapter 9: [The Future of C++ Code Reuse: Using Modules](Chapter09)
 
-Chapter 10: [Security in Code and Deployment](Chapter10)
+Part 3: Developing Quality Software
 
-Chapter 11: [Performance](Chapter11)
+Chapter 10: [Writing Testable Code](Chapter10)
 
-Chapter 12: [Service Oriented Architecture](Chapter12)
+Chapter 11: [Observability](Chapter11)
 
-Chapter 13: [Microservices](Chapter13)
+Chapter 12: [Continuous Integration and Continuous Deployment](Chapter12)
 
-Chapter 14: [Containers](Chapter14)
+Chapter 13: [Security in Code and Deployment](Chapter13)
 
-Chapter 15: [Cloud Native Design](Chapter15)
+Chapter 14: [Performance](Chapter14)
+
+Part 4: Cloud Native design and distributed systems
+
+Chapter 15: [Architecture of Distributed Systems](Chapter15)
+
+Chapter 16: [Inter-Process Communication](Chapter16)
+
+Chapter 17: [Service Oriented Architecture](Chapter17)
+
+Chapter 18: [Designing Microservices](Chapter18)
+
+Chapter 19: [Containers](Chapter19)
+
+Chapter 20: [Cloud Native Design](Chapter20)
 
 <a href="https://www.packtpub.com/product/software-architecture-with-c/9781838554590?utm_source=github&utm_medium=repository&utm_campaign=9781786461629"><img src="" alt="" height="256px" align="right"></a>
 
 This is the code repository for [Software Architecture with C++](https://www.packtpub.com/product/software-architecture-with-c/9781838554590?utm_source=github&utm_medium=repository&utm_campaign=9781786461629), published by Packt.
 
-**Design modern systems using effective architecture concepts, design patterns, and techniques with C++20**
+**Design modern systems using effective architecture concepts, design patterns, and techniques with C++23**
 
 ## What is this book about?
 Software architecture refers to the high-level design of complex applications. It is evolving just like the languages we use. Modern C++ allows developers to write high-performance apps in a high-level language without sacrificing readability and maintainability. If you're working with modern C++, this practical guide will help you put your knowledge to work and design distributed, large-scale apps. You'll start by getting up to speed with architectural concepts, including established patterns and rising trends. The book will then explain what software architecture is and help you explore its components. Next, you'll discover the design concepts involved in application architecture and the patterns in software development, before going on to learn how to build, package, integrate, and deploy your components. In the concluding chapters, you'll explore different architectural qualities, such as maintainability, reusability, testability, performance, scalability, and security. Finally, you will get an overview of distributed systems, such as service-oriented architecture, microservices, and cloud-native, and understand how to apply them in application development.
@@ -80,9 +97,9 @@ You need at least one of the following compilers:
 
 | No. | Software required | OS required |
 | --- | ----------------- | ----------- |
-|  1  | Microsoft Visual C++ 17.10 | Windows |
+|  1  | GCC 14 | Windows, Mac OS X, and Linux (Any) |
 |  2  | Clang 19 | Windows, Mac OS X, and Linux (Any) |
-|  3  | GCC 14 | Windows, Mac OS X, and Linux (Any) |
+|  3  | Microsoft Visual C++ 14.42 | Windows |
 
 ### Related products
 * C++ High Performance - Second Edition [[Packt]](https://www.packtpub.com/product/c-high-performance-second-edition/9781839216541?utm_source=github&utm_medium=repository&utm_campaign=9781839216541) [[Amazon]](https://www.amazon.com/dp/1839216549)

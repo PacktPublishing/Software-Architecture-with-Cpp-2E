@@ -55,12 +55,9 @@ option(ENABLE_MODULES "Compile the modules example" ON)
 
 if(ENABLE_MODULES)
   add_library(libmodules)
-  target_sources(libmodules
-    PUBLIC
-      FILE_SET CXX_MODULES FILES
-        src/6_modules/customer.cppm
-        src/6_modules/merchant.cppm
-        src/6_modules/store.cppm)
+  target_sources(
+    libmodules PUBLIC FILE_SET CXX_MODULES FILES src/6_modules/customer.cppm
+                      src/6_modules/merchant.cppm src/6_modules/store.cppm)
   target_compile_features(libmodules PUBLIC cxx_std_20)
   target_compile_options(libmodules PUBLIC ${BASE_COMPILE_FLAGS})
 

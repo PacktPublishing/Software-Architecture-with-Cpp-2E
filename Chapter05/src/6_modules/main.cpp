@@ -4,8 +4,8 @@
 #include <optional>
 #include <ostream>
 #include <ranges>
-#include <vector>
 #include <unordered_map>
+#include <vector>
 
 // import merchant; // not necessary -- exported by store
 import customer;

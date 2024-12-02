@@ -1,6 +1,7 @@
 module;
 
 #include <chrono>
+#include <format>
 #include <iomanip>
 #include <optional>
 #include <string>

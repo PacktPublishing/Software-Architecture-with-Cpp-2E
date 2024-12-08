@@ -17,8 +17,8 @@ set(DOXYGEN_STRIP_FROM_PATH ${PROJECT_SOURCE_DIR}/include)
 # Note: use doxygen_add_docs(doxygen-doc ALL ...) if you want your documentation
 # to be created by default each time you build. Without the keyword you need to
 # explicitly invoke building of the 'doc' target.
-doxygen_add_docs(doxygen-doc ${PROJECT_SOURCE_DIR}/include COMMENT
-                 "Generating API documentation with Doxygen")
+doxygen_add_docs(doxygen-doc ${PROJECT_SOURCE_DIR}/include
+                 COMMENT "Generating API documentation with Doxygen")
 
 find_package(Sphinx REQUIRED)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/conf.py.in

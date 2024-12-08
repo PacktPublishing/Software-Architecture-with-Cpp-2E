@@ -2,7 +2,7 @@
 
 Software Architecture with C++, Second Edition, Published by Packt
 
-## Chapter 2: Architectural Styles
+## Chapter 6: Design Patterns and C++
 
 ### Prerequisites
 

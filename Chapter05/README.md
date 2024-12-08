@@ -9,9 +9,9 @@ Software Architecture with C++, Second Edition, Published by Packt
 Install the following software:
 
 - CMake 3.28
-- Conan 2.9.3
+- Conan 2.10.1
 - GCC 14
-- Ninja 1.11
+- Ninja 1.12
 
 [CMake 3.28: Generator Support](https://cmake.org/cmake/help/v3.28/manual/cmake-cxxmodules.7.html#limitations)
 

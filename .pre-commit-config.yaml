@@ -28,7 +28,7 @@ repos:
         args: [--style=Google, -i]
         exclude: 3rd-parties/
   - repo: https://github.com/iconmaster5326/cmake-format-pre-commit-hook
-    rev: v0.6.9
+    rev: v0.6.13
     hooks:
       - id: cmake-format
         exclude: 3rd-parties/

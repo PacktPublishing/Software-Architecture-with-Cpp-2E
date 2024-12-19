@@ -9,7 +9,7 @@ Software Architecture with C++, Second Edition, Published by Packt
 Install the following software:
 
 - CMake 3.16
-- Conan 2.10.1
+- Conan 2.11.0
 - GCC 14
 
 Assuming you're on Linux or using WSL, configure a Conan profile and remotes by running:

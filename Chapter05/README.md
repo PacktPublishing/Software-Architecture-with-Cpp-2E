@@ -9,7 +9,7 @@ Software Architecture with C++, Second Edition, Published by Packt
 Install the following software:
 
 - CMake 3.28
-- Conan 2.10.1
+- Conan 2.11.0
 - GCC 14
 - Ninja 1.12
 
@@ -20,7 +20,7 @@ The list of generators which support scanning sources for C++ modules include:
 - Ninja Multi-Config
 - Visual Studio 17 2022
 
-Assuming you're on Linux or using WSL, configure a Conan profile and remotes by running:
+Assuming you're on Linux or using WSL, configure a local Conan profile and remotes by running:
 
 ```bash
 rm -rf ./build/
@@ -54,5 +54,14 @@ If GCC 14 is not your default compiler, you can tell CMake to use it with the `C
 cd build
 conan install .. --build=missing -s build_type=Release -pr:a=./conan_profile -of .
 cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=`which g++-14` # build type must match Conan's
+cmake --build .
+```
+
+To pass the settings directly without a Conan profile, use the command line option `--settings` or `-s`, and the keys `os`, `arch`, `compiler`, `build_type`, `cppstd`:
+
+```bash
+rm -rf ./build/ && mkdir build && cd build
+conan install .. --build=missing -s build_type=Release -s compiler="gcc" -of .
+cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
 cmake --build .
 ```

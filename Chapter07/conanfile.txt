@@ -1,0 +1,6 @@
+[requires]
+boost/1.83.0
+cpprestsdk/2.10.19
+
+[generators]
+CMakeDeps

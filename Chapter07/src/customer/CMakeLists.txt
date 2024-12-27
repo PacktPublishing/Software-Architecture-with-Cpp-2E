@@ -97,16 +97,24 @@ if(LINUX)
   endif()
 endif()
 
-# Qt installers are created for supported platforms: Linux, macOS and Windows
-find_program(IFW_PROGRAM binarycreator)
-if(IFW_PROGRAM)
-  list(APPEND CPACK_GENERATOR IFW)
-  set(CPACK_IFW_PACKAGE_NAME "${CMAKE_PROJECT_NAME}")
-  set(CPACK_IFW_PACKAGE_TITLE "${CMAKE_PROJECT_NAME}")
-  set(CPACK_IFW_PACKAGE_WIZARD_STYLE Modern)
+# linuxdeploy detects an executable file in this directory
+set(CPACK_PACKAGING_INSTALL_PREFIX "/usr")
+
+find_program(LINUXDEPLOY_PROGRAM NAMES linuxdeploy linuxdeploy-x86_64.AppImage)
+if(LINUXDEPLOY_PROGRAM)
+  list(APPEND CPACK_GENERATOR External)
+  configure_file(../../cmake/CPackExternal.cmake.in
+                 "${CMAKE_BINARY_DIR}/CPackExternal.cmake" COPYONLY)
+  set(CPACK_EXTERNAL_PACKAGE_SCRIPT "${CMAKE_BINARY_DIR}/CPackExternal.cmake")
+  set(CPACK_EXTERNAL_ENABLE_STAGING YES)
+  configure_file(../../resources/customer.desktop
+                 "${CMAKE_BINARY_DIR}/customer.desktop" COPYONLY)
+  configure_file(../../resources/customer.svg
+                 "${CMAKE_BINARY_DIR}/customer.svg" COPYONLY)
 else()
   message(
-    STATUS "binarycreator not found - won't be able to create a Qt installer")
+    STATUS
+      "linuxdeploy not found - won't be able to create AppImage executables")
 endif()
 
 set(CPACK_SOURCE_IGNORE_FILES /.git /dist /.*build.* /\\\\.DS_Store)

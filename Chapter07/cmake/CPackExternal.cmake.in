@@ -1,0 +1,12 @@
+find_program(LINUXDEPLOY_PROGRAM NAMES linuxdeploy linuxdeploy-x86_64.AppImage)
+if(LINUXDEPLOY_PROGRAM)
+  execute_process(
+    COMMAND
+      ${CMAKE_COMMAND} -E env LDAI_OUTPUT=${CPACK_PACKAGE_FILE_NAME}.appimage
+      LINUXDEPLOY_OUTPUT_VERSION=$<IF:$<BOOL:${CPACK_PACKAGE_VERSION}>,${CPACK_PACKAGE_VERSION},0.0.1>
+      ${LINUXDEPLOY_PROGRAM} --output=appimage
+      --appdir=${CPACK_TEMPORARY_DIRECTORY}
+      --desktop-file=${CMAKE_CURRENT_LIST_DIR}/customer.desktop
+      --icon-file=${CMAKE_CURRENT_LIST_DIR}/customer.svg --verbosity=2
+    WORKING_DIRECTORY ${CPACK_PACKAGE_DIRECTORY})
+endif()

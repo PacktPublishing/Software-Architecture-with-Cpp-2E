@@ -1,0 +1,10 @@
+[requires]
+boost/1.83.0
+cpprestsdk/2.10.19
+catch2/3.7.1
+doctest/2.4.11
+boost-ext-ut/2.1.0
+cpputest/4.0
+
+[generators]
+CMakeDeps

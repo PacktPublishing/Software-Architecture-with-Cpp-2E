@@ -8,3 +8,9 @@ target_link_libraries(
   merchanttests_trompeloeil PRIVATE merchants trompeloeil::trompeloeil
                                     Catch2::Catch2WithMain)
 catch_discover_tests(merchanttests_trompeloeil)
+
+add_executable(merchanttests_cpputest reviewtests_cpputest.cpp)
+target_link_libraries(merchanttests_cpputest PRIVATE merchants
+                                                     cpputest::cpputest)
+target_compile_options(merchanttests_cpputest PRIVATE ${BASE_COMPILE_FLAGS})
+add_test(NAME merchanttests_cpputest COMMAND merchanttests_cpputest)

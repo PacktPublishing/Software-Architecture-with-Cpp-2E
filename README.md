@@ -52,13 +52,14 @@ Chapter 19: [Containers](Chapter19)
 
 Chapter 20: [Cloud Native Design](Chapter20)
 
-<a href="https://www.packtpub.com/product/software-architecture-with-c/9781838554590?utm_source=github&utm_medium=repository&utm_campaign=9781786461629"><img src="" alt="" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/product/software-architecture-with-c/9781838554590"><img src="https://content.packt.com/_/image/original/B13870/cover_image.jpg" alt="" height="256px" align="right"></a>
 
-This is the code repository for [Software Architecture with C++](https://www.packtpub.com/product/software-architecture-with-c/9781838554590?utm_source=github&utm_medium=repository&utm_campaign=9781786461629), published by Packt.
+This is the code repository for [Software Architecture with C++](https://www.packtpub.com/product/software-architecture-with-c/9781838554590), Second Edition, published by Packt.
 
 **Design modern systems using effective architecture concepts, design patterns, and techniques with C++23**
 
 ## What is this book about?
+
 Software architecture refers to the high-level design of complex applications. It is evolving just like the languages we use. Modern C++ allows developers to write high-performance apps in a high-level language without sacrificing readability and maintainability. If you're working with modern C++, this practical guide will help you put your knowledge to work and design distributed, large-scale apps. You'll start by getting up to speed with architectural concepts, including established patterns and rising trends. The book will then explain what software architecture is and help you explore its components. Next, you'll discover the design concepts involved in application architecture and the patterns in software development, before going on to learn how to build, package, integrate, and deploy your components. In the concluding chapters, you'll explore different architectural qualities, such as maintainability, reusability, testability, performance, scalability, and security. Finally, you will get an overview of distributed systems, such as service-oriented architecture, microservices, and cloud-native, and understand how to apply them in application development.
 
 This book covers the following exciting features:
@@ -72,11 +73,11 @@ This book covers the following exciting features:
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1838554599) today!
 
-<a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png"
-alt="https://www.packtpub.com/" border="5" /></a>
+<a href="https://www.packtpub.com/"><img src="https://avatars.githubusercontent.com/u/10974906?s=200&v=4" alt="https://www.packtpub.com/" border="5"/></a>
 
 ## Instructions and Navigations
-All of the code is organized into folders. For example, Chapter02.
+
+All the code is organized into folders. For example, Chapter02.
 
 The code will look like the following:
 ```
@@ -87,9 +88,18 @@ The code will look like the following:
 ```
 
 **Following is what you need for this book:**
+
 This software architecture C++ programming book is for experienced C++ developers who are looking to become software architects or are interested in developing enterprise-grade applications.
 
-With the following software and hardware list you can run all code files present in the book (Chapter 1-15).
+With the following software and hardware list you can run all code files present in the book (Chapter 1-20).
+
+Execute this optional command to configure your Linux-like environment if you use [Nix](https://nixos.org/download.html) and [direnv](https://direnv.net/)
+```bash
+cat << 'EOF' > .envrc
+dotenv
+use_nix
+EOF
+```
 
 ### Software and Hardware List
 
@@ -102,11 +112,13 @@ You need at least one of the following compilers:
 |  3  | Microsoft Visual C++ 14.42 | Windows |
 
 ### Related products
-* C++ High Performance - Second Edition [[Packt]](https://www.packtpub.com/product/c-high-performance-second-edition/9781839216541?utm_source=github&utm_medium=repository&utm_campaign=9781839216541) [[Amazon]](https://www.amazon.com/dp/1839216549)
 
-* Modern C++ Programming Cookbook - Second Edition [[Packt]](https://www.packtpub.com/product/modern-c-programming-cookbook-second-edition/9781800208988?utm_source=github&utm_medium=repository&utm_campaign=9781800208988) [[Amazon]](https://www.amazon.com/dp/B08GM9KKMR)
+* C++ High Performance - Second Edition [[Packt]](https://www.packtpub.com/product/c-high-performance-second-edition/9781839216541) [[Amazon]](https://www.amazon.com/dp/1839216549)
+
+* Modern C++ Programming Cookbook - Second Edition [[Packt]](https://www.packtpub.com/product/modern-c-programming-cookbook-second-edition/9781800208988) [[Amazon]](https://www.amazon.com/dp/B08GM9KKMR)
 
 ## Get to Know the Authors
+
 **Adrian Ostrowski**
 is a modern C++ enthusiast interested in the development of both the C++ language itself and the high-quality code written in it. A lifelong learner with over a decade of experience in the IT industry and more than 8 years of experience with C++ specifically, he's always eager to share his knowledge. His past projects range from parallel computing, through fiber networking, to working on a commodity exchange's trading system. Currently, he's one of the architects of Intel and Habana's integration with machine learning frameworks.
 In his spare time, Adrian used to promote music bands together with Piotr and has learned how to fly a glider. Currently, he likes riding his bicycle, going to music events, and browsing memes.

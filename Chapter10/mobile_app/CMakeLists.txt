@@ -19,6 +19,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
 find_package(Catch2 CONFIG REQUIRED)
 find_package(trompeloeil CONFIG REQUIRED)
+find_package(CppUTest REQUIRED)
 find_package(Microsoft.GSL CONFIG REQUIRED)
 
 include(CommonCompileFlags)

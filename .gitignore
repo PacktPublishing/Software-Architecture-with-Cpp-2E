@@ -4,5 +4,6 @@ CMakeLists.txt.user
 conan_provider.cmake
 venv
 .env
+.envrc
 .python-version
 *build*/

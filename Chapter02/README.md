@@ -49,11 +49,11 @@ cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=`which g++-14` # build 
 cmake --build .
 ```
 
-To pass the settings directly without a Conan profile, use the command line option `--settings` or `-s`, and the keys `os`, `arch`, `compiler`, `build_type`, `cppstd`:
+To pass the settings directly without a Conan profile, use the command line option `--settings` or `-s`, and the keys `arch`, `build_type`, `compiler`, `compiler.cppstd`, `compiler.libcxx`, `compiler.version`, `os`:
 
 ```bash
 rm -rf ./build/ && mkdir build && cd build
-conan install .. --build=missing -s build_type=Release -s compiler="gcc" -of .
+conan install .. --build=missing -s build_type=Release -s compiler=gcc -of .
 cmake .. -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
 cmake --build .
 ```

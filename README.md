@@ -93,16 +93,6 @@ This software architecture C++ programming book is for experienced C++ developer
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-20).
 
-### Development environment
-
-Execute this optional command to configure your Linux-like environment if you use [Nix](https://nixos.org/download.html) and [direnv](https://direnv.net/)
-```bash
-cat << 'EOF' > .envrc
-dotenv
-use_nix
-EOF
-```
-
 ### Software and Hardware List
 
 You need at least one of the following compilers:

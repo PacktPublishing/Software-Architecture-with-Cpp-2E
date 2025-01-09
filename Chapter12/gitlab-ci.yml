@@ -21,14 +21,13 @@ stages:
   - package
 
 before_script:
-  - apt update && DEBIAN_FRONTEND=noninteractive apt install -y python3-venv python3-pip ninja-build file rpm
-  - python3 -m venv venv && source ./venv/bin/activate
-  - pip install cmake
+  - apt update && DEBIAN_FRONTEND=noninteractive apt install -y cmake ninja-build rpm file
 
 build:
   stage: build
   script:
-    - DEBIAN_FRONTEND=noninteractive apt install -y build-essential git
+    - DEBIAN_FRONTEND=noninteractive apt install -y build-essential git python3-venv python3-pip
+    - python3 -m venv venv && source ./venv/bin/activate
     - pip install conan
     - conan profile detect -f
     - mkdir -p build && cd build
@@ -50,3 +49,4 @@ package:
   artifacts:
     paths:
       - build/Customer*.deb
+      - build/Customer*.rpm

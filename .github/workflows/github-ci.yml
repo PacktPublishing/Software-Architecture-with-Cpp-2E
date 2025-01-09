@@ -1,0 +1,91 @@
+name: customer application
+run-name: pipeline for branch ${{ github.ref_name }}
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+      - run: pip install conan
+
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.conan2
+          key: ${{ runner.os }}-${{ hashFiles('./Chapter10/customer/conanfile.txt') }}
+
+      - name: create default profile
+        run: conan profile detect -f
+
+      - name: prepare environment
+        uses: ./.github/actions/prepare-environment
+
+      - name: install dependencies
+        working-directory: ${{github.workspace}}/build
+        run: "conan install ${{github.workspace}}/Chapter10/customer --build=missing -s:a build_type=${{env.BUILD_TYPE}}
+        -s:a compiler=gcc -s:a compiler.version=14 -s:a compiler.cppstd=gnu20 -of ."
+
+      - name: configure
+        run: "cmake -GNinja -B ${{github.workspace}}/build -DCMAKE_CXX_COMPILER=`which g++-14` -DBUILD_TESTING=ON
+        -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} ${{github.workspace}}/Chapter10/customer"
+
+      - name: build
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+      - name: upload build directory
+        uses: ./.github/actions/upload-build-dir
+
+  test:
+    runs-on: ubuntu-24.04
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: prepare environment
+        uses: ./.github/actions/prepare-environment
+
+      - name: download build directory
+        uses: ./.github/actions/download-build-dir
+
+      - name: test
+        working-directory: ${{github.workspace}}/build
+        run: ctest -C ${{env.BUILD_TYPE}}
+
+  pack:
+    runs-on: ubuntu-24.04
+    needs: test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: prepare environment
+        uses: ./.github/actions/prepare-environment
+
+      - name: download build directory
+        uses: ./.github/actions/download-build-dir
+
+      - name: pack
+        working-directory: ${{github.workspace}}/build
+        run: cpack .
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: customer packages
+          path: |
+            build/Customer*.deb
+            build/Customer*.rpm

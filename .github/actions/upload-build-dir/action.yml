@@ -1,0 +1,14 @@
+name: upload-build-dir
+description: packs build directory with the tar command to preserve file permissions and uploads the archive
+runs:
+  using: "composite"
+  steps:
+    - name: tar build directory
+      run: tar -C ${{github.workspace}}/build -cvf build-dir.tar .
+      shell: bash
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: build-dir
+        path: build-dir.tar
+        retention-days: 1

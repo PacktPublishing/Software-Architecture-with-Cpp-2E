@@ -1,0 +1,10 @@
+name: prepare environment
+description:
+runs:
+  using: "composite"
+  steps:
+    - name: prepare environment
+      run: |
+        mkdir -p ${{github.workspace}}/build
+        sudo apt-get install -y ninja-build
+      shell: bash

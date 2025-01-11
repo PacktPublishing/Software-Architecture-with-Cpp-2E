@@ -78,7 +78,7 @@ terraform apply -var packer_ami=ami-0265dc4673f9d6a35 -var region=eu-central-1
 resources created by Terraform. Also: log in to the AWS Web console and remove
 all the AMIs and snapshots:
 https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Images:sort=name
-. Otherwise you will be billed by AWS based on your resource usage.
+Otherwise you will be billed by AWS based on your resource usage.
 
 ```
 terraform destroy -var packer_ami=ami-0265dc4673f9d6a35 -var region=eu-central-1

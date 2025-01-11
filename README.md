@@ -103,6 +103,16 @@ You need at least one of the following compilers:
 |  2  | Clang 19 | Windows, Mac OS X, and Linux (Any) |
 |  3  | Microsoft Visual C++ 14.42 | Windows |
 
+-### Development environment
+
+Execute this optional command to configure your Linux-like environment if you use [Nix](https://nixos.org/download.html) and [direnv](https://direnv.net/)
+```bash
+cat << 'EOF' > .envrc
+dotenv
+use_nix
+EOF
+```
+
 ### Related products
 
 * C++ High Performance - Second Edition [[Packt]](https://www.packtpub.com/product/c-high-performance-second-edition/9781839216541) [[Amazon]](https://www.amazon.com/dp/1839216549)

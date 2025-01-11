@@ -1,0 +1,7 @@
+[requires]
+catch2/3.7.1
+trompeloeil/49
+ms-gsl/4.1.0
+
+[generators]
+CMakeDeps

@@ -5,9 +5,7 @@ target_compile_features(libcustomer PUBLIC cxx_std_17)
 target_include_directories(
   libcustomer PUBLIC $<INSTALL_INTERFACE:include>
                      $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>)
-target_compile_definitions(libcustomer
-                           PUBLIC _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS)
-target_link_libraries(libcustomer PUBLIC cpprestsdk::cpprest)
+target_link_libraries(libcustomer PUBLIC Drogon::Drogon)
 set_target_properties(libcustomer PROPERTIES CXX_EXTENSIONS OFF)
 target_compile_options(libcustomer PRIVATE ${BASE_COMPILE_FLAGS})
 
@@ -81,7 +79,7 @@ if(LINUX)
   if(DPKG_PROGRAM)
     list(APPEND CPACK_GENERATOR DEB)
     set(CPACK_DEBIAN_PACKAGE_DEPENDS
-        "${CPACK_DEBIAN_PACKAGE_DEPENDS} libcpprest2.10 (>= 2.10.2-6)")
+        "${CPACK_DEBIAN_PACKAGE_DEPENDS} libdrogon1t64 (>= 1.8.7)")
     set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
   else()
     message(STATUS "dpkg not found - won't be able to create DEB packages")
@@ -90,8 +88,7 @@ if(LINUX)
   find_program(RPMBUILD_PROGRAM rpmbuild)
   if(RPMBUILD_PROGRAM)
     list(APPEND CPACK_GENERATOR RPM)
-    set(CPACK_RPM_PACKAGE_REQUIRES
-        "${CPACK_RPM_PACKAGE_REQUIRES} cpprest >= 2.10.2-6")
+    # set(CPACK_RPM_PACKAGE_REQUIRES "${CPACK_RPM_PACKAGE_REQUIRES}")
   else()
     message(STATUS "rpmbuild not found - won't be able to create RPM packages")
   endif()
@@ -100,7 +97,8 @@ endif()
 # linuxdeploy detects an executable file in this directory
 set(CPACK_PACKAGING_INSTALL_PREFIX "/usr")
 
-find_program(LINUXDEPLOY_PROGRAM NAMES linuxdeploy linuxdeploy-x86_64.AppImage)
+find_program(LINUXDEPLOY_PROGRAM NAMES linuxdeploy linuxdeploy-x86_64.AppImage
+                                       linuxdeploy-aarch64.AppImage)
 if(LINUXDEPLOY_PROGRAM)
   list(APPEND CPACK_GENERATOR External)
   configure_file(../../cmake/CPackExternal.cmake.in

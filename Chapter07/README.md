@@ -12,6 +12,12 @@ Install the following software:
 - Conan 2.11.0
 - GCC 14
 
+For optional packaging with CPack:
+
+- dpkg build tools: [dh_make](https://manpages.ubuntu.com/manpages/trusty/man8/dh_make.8.html) and [dpkg-buildpackage](https://manpages.ubuntu.com/manpages/trusty/man1/dpkg-buildpackage.1.html) to assemble DEB packages
+- rpm build tools: [rpmbuild](https://manpages.ubuntu.com/manpages/trusty/man8/rpmbuild.8.html) to assemble RPM packages
+- [linuxdeploy](https://github.com/linuxdeploy/linuxdeploy) to assemble AppImages
+
 Assuming you're on Linux or using WSL, configure a local Conan profile and remotes by running:
 
 ```bash
@@ -56,6 +62,18 @@ rm -rf ./build/ && mkdir build && cd build
 conan install .. --build=missing -s:a build_type=Release -s:a compiler=gcc -of .
 cmake .. -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
 cmake --build .
+```
+
+To apply Conan dependency as a CMake Dependency Provider, clone this Git repository and then run the next command:
+
+```bash
+rm -rf ./build/cmake-conan
+git clone https://github.com/conan-io/cmake-conan.git build/cmake-conan
+```
+
+```bash
+cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan_provider.cmake -DCMAKE_BUILD_TYPE=Release
+cmake --build build
 ```
 
 ### Testing

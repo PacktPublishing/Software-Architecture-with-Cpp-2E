@@ -1,19 +1,29 @@
-#include <generator>
 #include <iostream>
 #include <optional>
 #include <print>
 #include <string>
 
+#if !defined(_MSC_VER)
+#include <generator>
+#else
+#include <experimental/generator>
+#endif
+
 std::optional<int> parse_int(const std::string &s) {
   try {
     return std::stoi(s);
-  } catch (std::exception &e) {
+  } catch (const std::exception &) {
     std::println(std::cerr, "{}", "Invalid number");
     return std::nullopt;
   }
 }
 
+#if !defined(_MSC_VER)
 std::generator<std::optional<std::string>> read_input_generator() {
+#else
+std::experimental::generator<std::optional<std::string>>
+read_input_generator() {
+#endif
   std::string s;
   while (true) {
     std::getline(std::cin, s);

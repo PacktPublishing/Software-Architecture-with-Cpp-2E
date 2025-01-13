@@ -14,6 +14,7 @@ This README file should be included in the docs as the main page.
 ### Prerequisites
 
 Install the following software:
+
 - CMake
 - A C++ compiler
 - Sphinx

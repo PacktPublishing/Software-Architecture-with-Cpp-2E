@@ -1,18 +1,28 @@
 #include <expected>
-#include <generator>
 #include <iostream>
 #include <print>
 #include <string>
 
+#if !defined(_MSC_VER)
+#include <generator>
+#else
+#include <experimental/generator>
+#endif
+
 std::expected<int, std::string> parse_int(const std::string &s) {
   try {
     return std::stoi(s);
-  } catch (std::exception &e) {
+  } catch (const std::exception &) {
     return std::unexpected{"Invalid number"};
   }
 }
 
+#if !defined(_MSC_VER)
 std::generator<std::expected<std::string, std::string>> read_input_generator() {
+#else
+std::experimental::generator<std::expected<std::string, std::string>>
+read_input_generator() {
+#endif
   std::string s;
   while (true) {
     std::getline(std::cin, s);

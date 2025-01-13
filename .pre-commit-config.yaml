@@ -24,3 +24,10 @@ repos:
     rev: v0.6.13
     hooks:
       - id: cmake-format
+  - repo: https://github.com/hukkin/mdformat
+    rev: 0.7.21
+    hooks:
+      - id: mdformat
+        additional_dependencies:
+          - mdformat-gfm
+          - mdformat-black

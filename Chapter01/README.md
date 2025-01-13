@@ -7,6 +7,7 @@ Software Architecture with C++, Second Edition, Published by Packt
 ### Prerequisites
 
 Install the following software:
+
 - CMake 3.16
 - GCC 14
 

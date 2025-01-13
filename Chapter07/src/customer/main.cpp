@@ -1,26 +1,24 @@
-#include <cpprest/http_listener.h>
-#include <cpprest/uri.h>
-
-#include <thread>
+#include <drogon/drogon.h>
 
 #include "customer/customer.h"
 
-using namespace ::web;
-using namespace ::web::http;
-using namespace std::literals;
-using ::utility::string_t;
+using namespace drogon;
 
 int main() {
-  using ::web::http::experimental::listener::http_listener;
-  auto listener = http_listener{U("http://localhost:8080/customer")};
-
   auto get_responder = responder{};
-  listener.support(
-      methods::GET,  // other verbs coming soon!
-      [&](const auto &request) { handle_get(request, get_responder); });
 
-  listener.open().wait();
+  app()
+      .addListener("127.0.0.1", 8080)
+      .setThreadNum(8)
+      .enableServerHeader(false)
+      .registerHandler(
+          "/customer",
+          [&](const HttpRequestPtr &request,
+              std::function<void(const HttpResponsePtr &)> &&callback) {
+            handle_get(request, get_responder, std::move(callback));
+          },
+          {Get})
+      .run();
 
-  std::this_thread::sleep_for(60s);
-  listener.close().wait();
+  return EXIT_SUCCESS;
 }

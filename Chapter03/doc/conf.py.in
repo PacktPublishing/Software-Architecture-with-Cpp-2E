@@ -4,7 +4,7 @@ breathe_default_project = "BreatheDemo"
 
 project = "Breathe Demo"
 author = "Breathe Demo Authors"
-copyright = "2024, Breathe Demo Authors"
+copyright = "2025, Breathe Demo Authors"
 version = "@PROJECT_VERSION@"
 release = "@PROJECT_VERSION@"
 

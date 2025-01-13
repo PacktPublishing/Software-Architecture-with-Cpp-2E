@@ -63,13 +63,14 @@ This is the code repository for [Software Architecture with C++](https://www.pac
 Software architecture refers to the high-level design of complex applications. It is evolving just like the languages we use. Modern C++ allows developers to write high-performance apps in a high-level language without sacrificing readability and maintainability. If you're working with modern C++, this practical guide will help you put your knowledge to work and design distributed, large-scale apps. You'll start by getting up to speed with architectural concepts, including established patterns and rising trends. The book will then explain what software architecture is and help you explore its components. Next, you'll discover the design concepts involved in application architecture and the patterns in software development, before going on to learn how to build, package, integrate, and deploy your components. In the concluding chapters, you'll explore different architectural qualities, such as maintainability, reusability, testability, performance, scalability, and security. Finally, you will get an overview of distributed systems, such as service-oriented architecture, microservices, and cloud-native, and understand how to apply them in application development.
 
 This book covers the following exciting features:
-* Understand how to apply the principles of software architecture
-* Apply design patterns and best practices to meet your architectural goals
-* Write elegant, safe, and performant code using the latest C++ features
-* Build applications that are easy to maintain and deploy
-* Explore the different architectural approaches and learn to apply them as per your requirement
-* Simplify development and operations using application containers
-* Discover various techniques to solve common problems in software design and development
+
+- Understand how to apply the principles of software architecture
+- Apply design patterns and best practices to meet your architectural goals
+- Write elegant, safe, and performant code using the latest C++ features
+- Build applications that are easy to maintain and deploy
+- Explore the different architectural approaches and learn to apply them as per your requirement
+- Simplify development and operations using application containers
+- Discover various techniques to solve common problems in software design and development
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1838554599) today!
 
@@ -80,6 +81,7 @@ If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1838
 All the code is organized into folders. For example, Chapter02.
 
 The code will look like the following:
+
 ```
   int count = 0;
   for (std::size_t i = 0; i < len; ++i) {
@@ -97,15 +99,16 @@ With the following software and hardware list you can run all code files present
 
 You need at least one of the following compilers:
 
-| No. | Software required | OS required |
-| --- | ----------------- | ----------- |
-|  1  | GCC 14 | Windows, Mac OS X, and Linux (Any) |
-|  2  | Clang 19 | Windows, Mac OS X, and Linux (Any) |
-|  3  | Microsoft Visual C++ 14.42 | Windows |
+| No. | Software required          | OS required                        |
+| --- | -------------------------- | ---------------------------------- |
+| 1   | GCC 14                     | Windows, Mac OS X, and Linux (Any) |
+| 2   | Clang 19                   | Windows, Mac OS X, and Linux (Any) |
+| 3   | Microsoft Visual C++ 19.40 | Windows                            |
 
--### Development environment
+### Development environment
 
 Execute this optional command to configure your Linux-like environment if you use [Nix](https://nixos.org/download.html) and [direnv](https://direnv.net/)
+
 ```bash
 cat << 'EOF' > .envrc
 dotenv
@@ -113,11 +116,17 @@ use_nix
 EOF
 ```
 
+Alternatively, you can follow these guides:
+
+- [Linux configuration](./docs/devenv_linux)
+- [macOS configuration](./docs/devenv_macos)
+- [Windows configuration](./docs/devenv_windows)
+
 ### Related products
 
-* C++ High Performance - Second Edition [[Packt]](https://www.packtpub.com/product/c-high-performance-second-edition/9781839216541) [[Amazon]](https://www.amazon.com/dp/1839216549)
+- C++ High Performance - Second Edition [[Packt]](https://www.packtpub.com/product/c-high-performance-second-edition/9781839216541) [[Amazon]](https://www.amazon.com/dp/1839216549)
 
-* Modern C++ Programming Cookbook - Second Edition [[Packt]](https://www.packtpub.com/product/modern-c-programming-cookbook-second-edition/9781800208988) [[Amazon]](https://www.amazon.com/dp/B08GM9KKMR)
+- Modern C++ Programming Cookbook - Second Edition [[Packt]](https://www.packtpub.com/product/modern-c-programming-cookbook-second-edition/9781800208988) [[Amazon]](https://www.amazon.com/dp/B08GM9KKMR)
 
 ## Get to Know the Authors
 
@@ -134,4 +143,5 @@ He has worked in the IT industry both in full-time positions and as a freelancer
 ### Download a free PDF
 
 <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
-<p align="center"> <a href="https://packt.link/free-ebook/9781838554590">https://packt.link/free-ebook/9781838554590 </a> </p>
+
+<p> <a href="https://packt.link/free-ebook/9781838554590">https://packt.link/free-ebook/9781838554590 </a> </p>

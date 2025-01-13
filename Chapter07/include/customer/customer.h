@@ -1,39 +1,33 @@
 #pragma once
 
-#include <cpprest/http_msg.h>
-#include <cpprest/json.h>
+#include <drogon/drogon.h>
 
 #include <string>
 #include <utility>
 
-using ::utility::string_t;
-
 class responder {
  public:
-  auto prepare_response(const string_t &name)
-      -> std::pair<::web::http::status_code, ::web::json::value>;
+  static auto prepare_response(const std::string &name)
+      -> std::pair<drogon::HttpStatusCode, Json::Value>;
 
-  auto respond(const ::web::http::http_request &request,
-               ::web::http::status_code status,
-               const ::web::json::value &response) -> void;
+  static auto respond(
+      drogon::HttpStatusCode status, const Json::Value &response,
+      std::function<void(const drogon::HttpResponsePtr &)> &&callback) -> void;
 };
 
 template <typename Responder>
-void handle_get(const ::web::http::http_request &req, Responder &responder) {
-  using namespace ::web;
-  using namespace ::web::http;
-  using namespace ::utility;
+void handle_get(
+    const drogon::HttpRequestPtr &request, Responder &responder,
+    std::function<void(const drogon::HttpResponsePtr &)> &&callback) {
+  auto name = request->getOptionalParameter<std::string>("name");
 
-  auto parameters = uri::split_query(req.request_uri().query());
-  auto key_value_it = parameters.find(U("name"));
-
-  if (key_value_it == end(parameters)) {
-    auto err = U("Missing value for 'name'");
-    responder.respond(req, status_codes::BadRequest, json::value::string(err));
+  if (!name) {
+    const auto err = "Missing value for 'name'";
+    responder.respond(drogon::k400BadRequest, Json::Value(err),
+                      std::move(callback));
     return;
   }
 
-  const auto &name = key_value_it->second;
-  const auto [code, response] = responder.prepare_response(name);
-  responder.respond(req, code, response);
+  const auto [code, response] = responder.prepare_response(name.value());
+  responder.respond(code, response, std::move(callback));
 }

@@ -1,22 +1,23 @@
-#include <cpprest/details/basic_types.h>
-#include <cpprest/http_listener.h>
-#include <cpprest/uri.h>
+#include <drogon/drogon.h>
 
 #include "customer/customer.h"
 
-using namespace ::web;
-using namespace ::web::http;
-using ::utility::string_t;
+using namespace drogon;
 
-auto responder::respond(const http_request &request, status_code status,
-                        const json::value &response) -> void {
-  json::value resp;
-  resp[U("status")] = json::value::number(status);
-  resp[U("response")] = response;
-  request.reply(status, resp);
+auto responder::prepare_response(const std::string &name)
+    -> std::pair<drogon::HttpStatusCode, Json::Value> {
+  return {k200OK, "Hello, " + name + "!"};
 }
 
-auto responder::prepare_response(const string_t &name)
-    -> std::pair<status_code, json::value> {
-  return {status_codes::OK, json::value::string(U("Hello, ") + name + U("!"))};
+auto responder::respond(const HttpStatusCode status,
+                        const Json::Value &response,
+                        std::function<void(const HttpResponsePtr &)> &&callback)
+    -> void {
+  Json::Value jsonBody;
+  jsonBody["status"] = status;
+  jsonBody["response"] = response;
+
+  const auto jsonResponse =
+      HttpResponse::newHttpJsonResponse(std::move(jsonBody));
+  callback(jsonResponse);
 }

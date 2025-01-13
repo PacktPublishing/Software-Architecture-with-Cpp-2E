@@ -1,10 +1,22 @@
+# CLion
 .idea/
-.vscode/
-CMakeLists.txt.user
 conan_provider.cmake
+# Qt Creator
+CMakeLists.txt.user
+# Visual Studio
+.vs
+out
+CMakeSettings.json
+# Visual Studio Code
+.vscode/
+.vsconan/
+# Python
 venv
 .env
+# direnv
 .envrc
+# pyenv
 .python-version
+
 *build*/
 !.github/**

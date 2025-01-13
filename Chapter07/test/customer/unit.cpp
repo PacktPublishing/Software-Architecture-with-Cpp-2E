@@ -3,8 +3,8 @@
 #include "customer/customer.h"
 
 TEST(basic_responses, given_name_when_prepare_responses_then_greets_friendly) {
-  auto name = U("Bob");
-  auto code_and_string = responder{}.prepare_response(name);
-  ASSERT_EQ(code_and_string.first, web::http::status_codes::OK);
-  ASSERT_EQ(code_and_string.second, web::json::value(U("Hello, Bob!")));
+  const auto name = "Bob";
+  const auto [status, value] = responder::prepare_response(name);
+  ASSERT_EQ(status, drogon::k200OK);
+  ASSERT_EQ(value, "Hello, Bob!");
 }

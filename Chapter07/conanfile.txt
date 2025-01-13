@@ -1,7 +1,5 @@
 [requires]
-openssl/3.3.2
-boost/1.83.0
-cpprestsdk/2.10.19
+drogon/1.9.8
 
 [generators]
 CMakeDeps

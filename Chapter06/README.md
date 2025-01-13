@@ -57,3 +57,15 @@ conan install .. --build=missing -s:a build_type=Release -s:a compiler=gcc -of .
 cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
 cmake --build .
 ```
+
+To apply Conan dependency as a CMake Dependency Provider, clone this Git repository and then run the next command:
+
+```bash
+rm -rf ./build/cmake-conan
+git clone https://github.com/conan-io/cmake-conan.git build/cmake-conan
+```
+
+```bash
+cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan_provider.cmake -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+```

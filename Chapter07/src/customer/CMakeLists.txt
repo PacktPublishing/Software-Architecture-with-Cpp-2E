@@ -1,4 +1,4 @@
-add_library(libcustomer lib.cpp)
+add_library(libcustomer responder.cpp controller.cpp)
 add_library(tradefair::libcustomer ALIAS libcustomer)
 set_target_properties(libcustomer PROPERTIES OUTPUT_NAME customer)
 target_compile_features(libcustomer PUBLIC cxx_std_17)

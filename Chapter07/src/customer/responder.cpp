@@ -1,11 +1,11 @@
-#include <drogon/drogon.h>
+#include "customer/responder.h"
 
-#include "customer/customer.h"
+#include <drogon/drogon.h>
 
 using namespace drogon;
 
 auto responder::prepare_response(const std::string &name)
-    -> std::pair<drogon::HttpStatusCode, Json::Value> {
+    -> std::pair<HttpStatusCode, Json::Value> {
   return {k200OK, "Hello, " + name + "!"};
 }
 

@@ -1,6 +1,7 @@
 #include <drogon/drogon.h>
 
-#include "customer/customer.h"
+#include "customer/controller.h"
+#include "customer/responder.h"
 
 using namespace drogon;
 
@@ -12,12 +13,13 @@ int main() {
       .setThreadNum(8)
       .enableServerHeader(false)
       .registerHandler(
-          "/customer",
+          "/customer/v1",
           [&](const HttpRequestPtr &request,
               std::function<void(const HttpResponsePtr &)> &&callback) {
             handle_get(request, get_responder, std::move(callback));
           },
           {Get})
+      .registerController(std::make_shared<Controller>())
       .run();
 
   return EXIT_SUCCESS;

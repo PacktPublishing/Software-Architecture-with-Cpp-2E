@@ -17,17 +17,13 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
-find_package(cpprestsdk CONFIG REQUIRED)
-find_package(Catch2 CONFIG REQUIRED)
-find_package(doctest CONFIG REQUIRED)
+find_package(Drogon REQUIRED)
 
-find_package(
-  Boost
-  COMPONENTS unit_test_framework
-  REQUIRED)
-find_package(ut REQUIRED) # C++20 library
-
+find_package(Catch2 REQUIRED)
+find_package(doctest REQUIRED)
 find_package(CppUTest REQUIRED)
+find_package(ut REQUIRED) # C++20 library
+find_package(GTest REQUIRED)
 
 include(CommonCompileFlags)
 

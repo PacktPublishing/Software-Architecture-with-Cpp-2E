@@ -1,17 +1,15 @@
 #include <tuple>
 
-#include "customer/customer.h"
+#include "customer/responder.h"
+
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-using namespace ::web;
-using namespace ::web::http;
-
 TEST_CASE("Basic responses") {
-  auto name = U("Bob");
-  status_code status;
-  json::value value;
+  auto name = "Bob";
+  drogon::HttpStatusCode status;
+  Json::Value value;
   std::tie(status, value) = responder{}.prepare_response(name);
-  REQUIRE(status == web::http::status_codes::OK);
-  REQUIRE(value == web::json::value(U("Hello, Bob!")));
+  REQUIRE(status == drogon::k200OK);
+  REQUIRE(value == "Hello, Bob!");
 }

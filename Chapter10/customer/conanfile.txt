@@ -1,11 +1,14 @@
 [requires]
-openssl/3.3.2
-boost/1.83.0
-cpprestsdk/2.10.19
+drogon/1.9.8
 catch2/3.7.1
 doctest/2.4.11
-boost-ext-ut/2.1.0
 cpputest/4.0
+boost-ext-ut/2.1.0
+gtest/1.15.0
 
 [generators]
 CMakeDeps
+
+[options]
+drogon/*:with_boost=False
+drogon/*:with_orm=False

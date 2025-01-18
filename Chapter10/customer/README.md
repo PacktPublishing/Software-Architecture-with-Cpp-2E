@@ -74,3 +74,11 @@ cmake --build build
 ### Testing
 
 To run tests from each of the projects, cd into their respective build directory, and then simply run `ctest`.
+
+### Troubleshooting
+
+If you see this, edit `~/.conan2/profiles/default` and set `compiler.cppstd=gnu20` (or higher):
+
+```
+boost-ext-ut/2.1.0: Invalid: Current cppstd (gnu17) is lower than the required C++ standard (20).
+```

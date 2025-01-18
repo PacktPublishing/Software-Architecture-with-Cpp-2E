@@ -1,13 +1,11 @@
-add_library(libcustomer lib.cpp)
+add_library(libcustomer responder.cpp controller.cpp)
 add_library(tradefair::libcustomer ALIAS libcustomer)
 set_target_properties(libcustomer PROPERTIES OUTPUT_NAME customer)
 target_compile_features(libcustomer PUBLIC cxx_std_17)
 target_include_directories(
   libcustomer PUBLIC $<INSTALL_INTERFACE:include>
                      $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>)
-target_compile_definitions(libcustomer
-                           PUBLIC _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS)
-target_link_libraries(libcustomer PUBLIC cpprestsdk::cpprest)
+target_link_libraries(libcustomer PUBLIC Drogon::Drogon)
 set_target_properties(libcustomer PROPERTIES CXX_EXTENSIONS OFF)
 target_compile_options(libcustomer PRIVATE ${BASE_COMPILE_FLAGS})
 
@@ -82,8 +80,6 @@ if(LINUX)
   find_program(DPKG_PROGRAM dpkg)
   if(DPKG_PROGRAM)
     list(APPEND CPACK_GENERATOR DEB)
-    set(CPACK_DEBIAN_PACKAGE_DEPENDS
-        "${CPACK_DEBIAN_PACKAGE_DEPENDS} libcpprest2.10 (>= 2.10.2-6)")
     set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
   else()
     message(STATUS "dpkg not found - won't be able to create DEB packages")
@@ -92,8 +88,6 @@ if(LINUX)
   find_program(RPMBUILD_PROGRAM rpmbuild)
   if(RPMBUILD_PROGRAM)
     list(APPEND CPACK_GENERATOR RPM)
-    set(CPACK_RPM_PACKAGE_REQUIRES
-        "${CPACK_RPM_PACKAGE_REQUIRES} cpprest >= 2.10.2-6")
   else()
     message(STATUS "rpmbuild not found - won't be able to create RPM packages")
   endif()

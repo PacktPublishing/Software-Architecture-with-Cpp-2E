@@ -54,7 +54,8 @@ TEST_GROUP(history_with_one_rated_merchant) {
   std::size_t merchant_index_{};
 };
 
-TEST(history_with_one_rated_merchant, history_with_one_rated_merchant) {
+TEST(history_with_one_rated_merchant,
+     when_user_changes_rating_then_the_review_is_updated_in_store) {
   const auto &mocked_merchant = history_.get_merchant(merchant_index_);
   mock()
       .expectOneCall("post_rating")
@@ -66,7 +67,7 @@ TEST(history_with_one_rated_merchant, history_with_one_rated_merchant) {
 }
 
 TEST(history_with_one_rated_merchant,
-     when_user_changes_rating_then_the_review_is_updated_in_store) {
+     when_user_selects_same_rating_then_the_review_is_not_updated_in_store) {
   const auto &mocked_merchant = history_.get_merchant(merchant_index_);
   mock()
       .expectNCalls(0, "post_rating")

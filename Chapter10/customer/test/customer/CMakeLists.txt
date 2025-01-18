@@ -1,26 +1,24 @@
 add_executable(catch2tests catch.cpp)
-target_link_libraries(catch2tests PRIVATE tradefair::libcustomer
-                                          Catch2::Catch2WithMain)
+target_link_libraries(catch2tests PRIVATE tradefair::libcustomer Catch2::Catch2)
 target_compile_options(catch2tests PRIVATE ${BASE_COMPILE_FLAGS})
 catch_discover_tests(catch2tests)
 
 add_executable(gtests gtest.cpp)
-target_link_libraries(gtests PRIVATE tradefair::libcustomer gtest_main)
+target_link_libraries(gtests PRIVATE tradefair::libcustomer GTest::gtest_main)
 target_compile_options(gtests PRIVATE ${BASE_COMPILE_FLAGS})
 gtest_discover_tests(gtests)
 
 add_executable(gmocks gmock.cpp)
-target_link_libraries(gmocks PRIVATE tradefair::libcustomer gmock_main)
+target_link_libraries(gmocks PRIVATE tradefair::libcustomer GTest::gmock_main)
 target_compile_options(gmocks PRIVATE ${BASE_COMPILE_FLAGS})
 target_compile_features(gmocks PRIVATE cxx_std_17)
 gtest_discover_tests(gmocks)
 
-add_executable(boosttests boosttest.cpp)
-target_link_libraries(boosttests PRIVATE tradefair::libcustomer
-                                         ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
-target_compile_options(boosttests PRIVATE ${BASE_COMPILE_FLAGS})
-target_compile_features(boosttests PRIVATE cxx_std_17)
-add_test(NAME boosttests COMMAND boosttests)
+add_executable(drogontests drogontest.cpp)
+target_link_libraries(drogontests PRIVATE tradefair::libcustomer)
+target_compile_options(drogontests PRIVATE ${BASE_COMPILE_FLAGS})
+target_compile_features(drogontests PRIVATE cxx_std_17)
+add_test(NAME drogontests COMMAND drogontests)
 
 add_executable(boostuttests boostuttest.cpp)
 target_link_libraries(boostuttests PRIVATE tradefair::libcustomer Boost::ut)
@@ -34,8 +32,6 @@ target_link_libraries(cpputests PRIVATE tradefair::libcustomer
                                         cpputest::cpputest)
 target_compile_options(cpputests PRIVATE ${BASE_COMPILE_FLAGS})
 add_test(NAME cpputests COMMAND cpputests)
-
-include(doctest)
 
 add_executable(doctests doctest.cpp)
 target_link_libraries(doctests PRIVATE tradefair::libcustomer doctest::doctest)

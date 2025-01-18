@@ -1,39 +1,39 @@
 #include <gmock/gmock.h>
 
-#include "customer/customer.h"
+#include "customer/responder.h"
 
 using namespace ::testing;
-using namespace ::web;
-using namespace ::web::http;
 
 namespace {
 
 class responder_mock {
  public:
-  MOCK_METHOD((std::pair<::web::http::status_code,
-                         ::web::json::value>),  // note the parentheses
-              prepare_response, (const string_t &name), ());
+  MOCK_METHOD(
+      (std::pair<drogon::HttpStatusCode, Json::Value>),  // note the parentheses
+      prepare_response, (const std::string &name), ());
   MOCK_METHOD(void, respond,
-              (const ::web::http::http_request &request,
-               ::web::http::status_code status,
-               const ::web::json::value &response),
+              (drogon::HttpStatusCode status, const Json::Value &response,
+               std::function<void(const drogon::HttpResponsePtr &)> &&callback),
               ());
 };
 
-MATCHER_P(contains_string, string, "") { return arg.as_string() == string; }
+MATCHER_P(contains_value, value, "") { return arg == value; }
 
 }  // namespace
 
 TEST(basic_responses,
      given_name_when_handle_get_then_response_is_prepared_and_sent) {
-  http_request request{U("GET")};
-  request.set_request_uri(U("/customer?name=Bob"));
+  drogon::HttpRequestPtr request = drogon::HttpRequest::newHttpRequest();
+  request->setMethod(drogon::HttpMethod::Get);
+  request->setPath("/customer");
+  request->setParameter("name", "Bob");
 
   auto responder = StrictMock<responder_mock>{};
-  auto response = json::value{U("my response")};
-  EXPECT_CALL(responder, prepare_response(string_t{U("Bob")}))
-      .WillOnce(Return(std::pair{status_codes::OK, response}));
-  EXPECT_CALL(responder, respond(Ref(request), status_codes::OK,
-                                 contains_string(U("my response"))));
-  handle_get(request, responder);
+  const auto response = Json::Value("my response");
+
+  EXPECT_CALL(responder, prepare_response("Bob"))
+      .WillOnce(Return(std::pair{drogon::k200OK, response}));
+  EXPECT_CALL(responder, respond(drogon::k200OK, contains_value(response), _));
+
+  handle_get(request, responder, [](const drogon::HttpResponsePtr &) {});
 }

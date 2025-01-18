@@ -1,6 +1,5 @@
 include(Catch)
-
-include(FetchGTest)
+include(doctest)
 include(GoogleTest)
 
 add_subdirectory(customer)

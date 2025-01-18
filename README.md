@@ -116,7 +116,7 @@ use_nix
 EOF
 ```
 
-Alternatively, you can follow these guides:
+Or follow these guides if you do not use Nix:
 
 - [Linux configuration](./docs/devenv_linux)
 - [macOS configuration](./docs/devenv_macos)

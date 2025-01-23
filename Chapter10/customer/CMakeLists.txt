@@ -24,6 +24,7 @@ find_package(doctest REQUIRED)
 find_package(CppUTest REQUIRED)
 find_package(ut REQUIRED) # C++20 library
 find_package(GTest REQUIRED)
+find_package(Boost REQUIRED)
 
 include(CommonCompileFlags)
 

@@ -20,6 +20,12 @@ target_compile_options(drogontests PRIVATE ${BASE_COMPILE_FLAGS})
 target_compile_features(drogontests PRIVATE cxx_std_17)
 add_test(NAME drogontests COMMAND drogontests)
 
+add_executable(boosttests boosttest.cpp)
+target_link_libraries(boosttests PRIVATE tradefair::libcustomer boost::boost)
+target_compile_options(boosttests PRIVATE ${BASE_COMPILE_FLAGS})
+target_compile_features(boosttests PRIVATE cxx_std_17)
+add_test(NAME boosttests COMMAND boosttests)
+
 add_executable(boostuttests boostuttest.cpp)
 target_link_libraries(boostuttests PRIVATE tradefair::libcustomer Boost::ut)
 target_compile_options(boostuttests PRIVATE ${BASE_COMPILE_FLAGS})

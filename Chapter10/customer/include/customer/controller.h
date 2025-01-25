@@ -13,7 +13,7 @@ class Controller final : public HttpController<Controller, false> {
   METHOD_LIST_END
 
  protected:
-  void respond(const HttpRequestPtr &,
+  void respond(const HttpRequestPtr &request,
                std::function<void(const HttpResponsePtr &)> &&callback);
 
   static inline responder get_responder;

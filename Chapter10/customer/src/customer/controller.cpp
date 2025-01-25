@@ -1,7 +1,5 @@
 #include "customer/controller.h"
 
-#include "customer/responder.h"
-
 void Controller::respond(
     const HttpRequestPtr &request,
     std::function<void(const HttpResponsePtr &)> &&callback) {

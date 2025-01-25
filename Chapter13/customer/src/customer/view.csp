@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<%c++
+    auto name=@@.get<std::string>("name");
+	bool nameIsEmpty = name == "";
+	auto message = !nameIsEmpty ? "Hello, " + name + "!" : "Missing value for 'name'";
+%>
+<head>
+    <meta charset="UTF-8">
+    <title>[[ name ]]</title>
+</head>
+<body>
+    <%c++ $$<<message; %>
+	<%c++
+	if (nameIsEmpty)
+	{
+		$$ << "<br>"
+			<< "You can revisit the this page, but append ?name=<i>your_name</i> to see the greeting";
+	}
+	%>
+</body>
+</html>

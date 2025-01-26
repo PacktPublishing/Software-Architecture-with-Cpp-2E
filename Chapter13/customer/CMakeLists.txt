@@ -22,6 +22,8 @@ find_package(Drogon REQUIRED)
 # TODO: provide Drogon_BIN_DIR
 find_program(DROGON_EXECUTABLE drogon_ctl ${Drogon_INCLUDE_DIR}/../bin/)
 
+find_package(inja REQUIRED)
+
 include(CommonCompileFlags)
 
 add_subdirectory(src/customer)

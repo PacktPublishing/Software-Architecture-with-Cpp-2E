@@ -2,6 +2,8 @@
 
 #include <drogon/drogon.h>
 
+#include <sstream>
+
 using namespace drogon;
 
 auto responder::prepare_response(const std::string &name)
@@ -20,4 +22,35 @@ auto responder::respond(const HttpStatusCode status,
   const auto jsonResponse =
       HttpResponse::newHttpJsonResponse(std::move(jsonBody));
   callback(jsonResponse);
+}
+
+std::string html_escape(const std::string &str) {
+  std::ostringstream ss(str);
+  for (const char ch : str) {
+    switch (ch) {
+      case '<':
+        ss << "&lt;";
+        break;
+      case '>':
+        ss << "&gt;";
+        break;
+      case ' ':
+        ss << "&nbsp;";
+        break;
+      case '&':
+        ss << "&amp;";
+        break;
+      case '\"':
+        ss << "&quot;";
+        break;
+      case '\'':
+        ss << "&apos;";
+        break;
+      default:
+        ss << ch;
+        break;
+    }
+  }
+
+  return ss.str();
 }

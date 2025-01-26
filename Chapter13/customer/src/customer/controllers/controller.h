@@ -6,7 +6,7 @@
 
 using namespace drogon;
 
-class Controller final : public HttpController<Controller, false> {
+class Controller final : public HttpController<Controller> {
  public:
   METHOD_LIST_BEGIN
   ADD_METHOD_TO(Controller::respond, "/customer/v2", Get);

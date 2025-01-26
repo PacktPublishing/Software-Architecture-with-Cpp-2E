@@ -1,4 +1,6 @@
-#include "customer/view_controller.h"
+#include "view_controller.h"
+
+#include "customer/responder.h"
 
 void ViewController::asyncHandleHttpRequest(
     const HttpRequestPtr &request,
@@ -6,7 +8,7 @@ void ViewController::asyncHandleHttpRequest(
   auto name = request->getOptionalParameter<std::string>("name");
   HttpViewData data;
   if (name) {
-    data["name"] = name.value();
+    data["name"] = html_escape(name.value());
   }
   const auto viewResponse = HttpResponse::newHttpViewResponse("view", data);
   callback(viewResponse);

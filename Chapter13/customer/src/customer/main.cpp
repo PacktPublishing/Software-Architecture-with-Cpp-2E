@@ -1,8 +1,6 @@
 #include <drogon/drogon.h>
 
-#include "customer/controller.h"
 #include "customer/responder.h"
-#include "customer/view_controller.h"
 
 using namespace drogon;
 
@@ -20,8 +18,6 @@ int main() {
             handle_get(request, get_responder, std::move(callback));
           },
           {Get})
-      .registerController(std::make_shared<Controller>())
-      .registerController(std::make_shared<ViewController>())
       .run();
 
   return EXIT_SUCCESS;

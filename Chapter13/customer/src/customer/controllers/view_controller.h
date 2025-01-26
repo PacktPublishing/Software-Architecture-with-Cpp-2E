@@ -5,8 +5,7 @@
 
 using namespace drogon;
 
-class ViewController final
-    : public HttpSimpleController<ViewController, false> {
+class ViewController final : public HttpSimpleController<ViewController> {
  public:
   PATH_LIST_BEGIN
   PATH_ADD("/customer/v3", Get);

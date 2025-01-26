@@ -1,19 +1,29 @@
-add_library(libcustomer responder.cpp controller.cpp view_controller.cpp)
+add_library(libcustomer responder.cpp)
 add_library(tradefair::libcustomer ALIAS libcustomer)
 set_target_properties(libcustomer PROPERTIES OUTPUT_NAME customer)
 target_compile_features(libcustomer PUBLIC cxx_std_17)
 target_include_directories(
   libcustomer PUBLIC $<INSTALL_INTERFACE:include>
                      $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>)
-target_link_libraries(libcustomer PUBLIC Drogon::Drogon)
+target_link_libraries(libcustomer PUBLIC Drogon::Drogon pantor::inja)
 set_target_properties(libcustomer PROPERTIES CXX_EXTENSIONS OFF)
 target_compile_options(libcustomer PRIVATE ${BASE_COMPILE_FLAGS})
 
-file(GLOB SCP_LIST ${CMAKE_CURRENT_SOURCE_DIR}/*.csp)
+# The sources are attached to the app to apply the Drogon reflection mechanism
+set(CONTROLLERS_SRC controllers/controller.cpp controllers/view_controller.cpp
+                    controllers/inja_controller.cpp)
+
+add_executable(customer main.cpp ${CONTROLLERS_SRC})
+target_compile_features(customer PRIVATE cxx_std_17)
+target_link_libraries(customer PRIVATE libcustomer)
+set_target_properties(customer PROPERTIES CXX_EXTENSIONS OFF)
+target_compile_options(customer PRIVATE ${BASE_COMPILE_FLAGS})
+
+file(GLOB SCP_LIST ${CMAKE_CURRENT_SOURCE_DIR}/views/*.csp)
 foreach(cspFile ${SCP_LIST})
-  message(STATUS "cspFile:" ${cspFile})
+  message(STATUS "CSP file:" ${cspFile})
   get_filename_component(classname ${cspFile} NAME_WE)
-  message(STATUS "view classname:" ${classname})
+  message(STATUS "View classname:" ${classname})
 
   add_custom_command(
     OUTPUT ${classname}.h ${classname}.cc
@@ -25,11 +35,7 @@ foreach(cspFile ${SCP_LIST})
   set(VIEW_SRC ${VIEWSRC} ${classname}.cc)
 endforeach()
 
-add_executable(customer main.cpp ${VIEW_SRC})
-target_compile_features(customer PRIVATE cxx_std_17)
-target_link_libraries(customer PRIVATE libcustomer)
-set_target_properties(customer PROPERTIES CXX_EXTENSIONS OFF)
-target_compile_options(customer PRIVATE ${BASE_COMPILE_FLAGS})
+target_sources(customer PRIVATE ${VIEW_SRC})
 
 # Installing
 

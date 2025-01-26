@@ -31,3 +31,5 @@ void handle_get(
   const auto [code, response] = responder.prepare_response(name.value());
   responder.respond(code, response, std::move(callback));
 }
+
+std::string html_escape(const std::string &str);

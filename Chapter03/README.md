@@ -15,8 +15,8 @@ This README file should be included in the docs as the main page.
 
 Install the following software:
 
-- CMake
-- A C++ compiler
+- CMake 3.28
+- GCC 14
 - Sphinx
 - ReadTheDocs Sphinx theme
 - Breathe

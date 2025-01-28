@@ -1,5 +1,5 @@
 // TODO: fix transitive dependencies in
-// https://conan.io/center/recipes/drogon?version=1.9.8 when with_boost=False
+// https://conan.io/center/recipes/drogon when with_boost=False
 #define BOOST_TEST_UNIT_TEST_SUITE_IPP_012205GER
 #define BOOST_TEST_UNIT_TEST_PARAMETERS_IPP_012205GER
 

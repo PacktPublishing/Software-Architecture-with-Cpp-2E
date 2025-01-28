@@ -9,7 +9,7 @@ Software Architecture with C++, Second Edition, Published by Packt
 Install the following software:
 
 - CMake 3.28
-- Conan 2.11.0
+- Conan 2.12.1
 - GCC 14
 
 Assuming you're on Linux or using WSL, configure a local Conan profile and remotes by running:
@@ -77,8 +77,8 @@ To run tests from each of the projects, cd into their respective build directory
 
 ### Troubleshooting
 
-If you see this, edit `~/.conan2/profiles/default` and set `compiler.cppstd=gnu20` (or higher):
+If you see this error, edit `~/.conan2/profiles/default` and set `compiler.cppstd=gnu20` (or higher):
 
 ```
-boost-ext-ut/2.1.0: Invalid: Current cppstd (gnu17) is lower than the required C++ standard (20).
+boost-ext-ut/*: Invalid: Current cppstd (gnu17) is lower than the required C++ standard (20).
 ```

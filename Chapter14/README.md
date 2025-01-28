@@ -2,7 +2,7 @@
 
 Software Architecture with C++, Second Edition, Published by Packt
 
-## Chapter 13: Security in Code and Deployment
+## Chapter 14: Performance
 
 ### Prerequisites
 
@@ -24,6 +24,7 @@ Make sure that the profile section `[settings]` contains:
 ```text
 arch=x86_64
 compiler=gcc
+compiler.cppstd=gnu20
 compiler.libcxx=libstdc++11
 compiler.version=14
 os=Linux
@@ -68,4 +69,12 @@ git clone https://github.com/conan-io/cmake-conan.git build/cmake-conan
 ```bash
 cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan_provider.cmake -DCMAKE_BUILD_TYPE=Release
 cmake --build build
+```
+
+### Troubleshooting
+
+If you see this error, edit `~/.conan2/profiles/default` and set `compiler.cppstd=gnu20` (or higher):
+
+```
+libcoro/*: Invalid: Current cppstd (gnu17) is lower than the required C++ standard (20).
 ```

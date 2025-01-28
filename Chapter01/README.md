@@ -8,7 +8,7 @@ Software Architecture with C++, Second Edition, Published by Packt
 
 Install the following software:
 
-- CMake 3.16
+- CMake 3.28
 - GCC 14
 
 ### Building

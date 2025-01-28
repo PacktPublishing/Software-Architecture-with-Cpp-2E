@@ -1,0 +1,10 @@
+function(add_benchmark NAME SOURCE)
+  add_executable(${NAME} ${SOURCE})
+  target_compile_features(${NAME} PRIVATE cxx_std_20)
+  target_link_libraries(${NAME} PRIVATE benchmark::benchmark)
+endfunction()
+
+add_benchmark(benchmark_1 main_1.cpp)
+add_benchmark(benchmark_2 main_2.cpp)
+add_benchmark(benchmark_3 main_3.cpp)
+add_benchmark(benchmark_4 main_4.cpp)

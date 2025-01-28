@@ -1,5 +1,5 @@
 [requires]
-drogon/1.9.8
+drogon/1.9.9
 
 [generators]
 CMakeDeps

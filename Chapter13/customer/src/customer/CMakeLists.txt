@@ -18,6 +18,8 @@ target_compile_features(customer PRIVATE cxx_std_17)
 target_link_libraries(customer PRIVATE libcustomer)
 set_target_properties(customer PROPERTIES CXX_EXTENSIONS OFF)
 target_compile_options(customer PRIVATE ${BASE_COMPILE_FLAGS})
+# to disable min() and max() macros in windows.h
+target_compile_definitions(customer PRIVATE NOMINMAX)
 
 file(GLOB SCP_LIST ${CMAKE_CURRENT_SOURCE_DIR}/views/*.csp)
 foreach(cspFile ${SCP_LIST})

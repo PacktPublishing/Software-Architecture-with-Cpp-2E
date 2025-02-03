@@ -12,7 +12,7 @@ or an IDE with bundled tools.
 
 Install the package manager [Homebrew](https://brew.sh/)
 
-- [installation](https://docs.brew.sh/Installation)
+- [installation](https://docs.brew.sh/Homebrew-on-Linux)
 - [common issues](https://docs.brew.sh/Common-Issues)
 - [FAQ](https://docs.brew.sh/FAQ)
 

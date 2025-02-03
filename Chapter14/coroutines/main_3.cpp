@@ -14,8 +14,6 @@ std::uniform_int_distribution<> distrib(0, 800);
 
 co::mutex g_m;
 
-// int main(const int argc, char *argv[]) {
-//     flag::parse(argc, argv);
 DEF_main(argc, argv) {
   std::println("Thread {} co_thread {} co_sched {}: preparing work",
                std::this_thread::get_id(), co::thread_id(), co::sched_id());

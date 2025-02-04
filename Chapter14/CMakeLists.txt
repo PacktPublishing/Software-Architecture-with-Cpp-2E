@@ -22,7 +22,10 @@ if(NOT MSVC)
   find_package(coost REQUIRED)
 endif()
 
+find_package(Tracy REQUIRED)
+
 add_subdirectory(coroutines)
 add_subdirectory(microbenchmarking/benchmark)
 add_subdirectory(microbenchmarking/nanobench_doctest)
 add_subdirectory(microbenchmarking/catch2)
+add_subdirectory(profiling)

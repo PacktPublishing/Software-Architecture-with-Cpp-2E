@@ -1,0 +1,53 @@
+asyncapi: 3.0.0
+id: 'item-api:unique-id'
+info:
+  title: Items API overview
+  version: 2.0.0
+  description: REST API to manage items
+  contact:
+    name: API Support
+    url: 'https://www.example.com/support'
+    email: support@example.com
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
+  tags:
+    - name: item-api
+defaultContentType: application/json
+servers:
+  production:
+    host: api.example.com
+    protocol: https
+    protocolVersion: '1.1'
+    tags:
+      - name: 'env:test'
+        description: Test environment
+      - name: 'kind:remote'
+        description: This server is remote
+      - name: 'visibility:private'
+        description: This resource is private
+channels:
+  '/item/{itemId}':
+    address: '/item/{itemId}'
+    messages:
+      getItem:
+        payload:
+          type: object
+          properties:
+            itemId:
+              type: integer
+            name:
+              type: string
+            locationId:
+              type: integer
+    parameters:
+      itemId:
+        description: Item ID
+operations:
+  getItem:
+    action: receive
+    channel:
+      $ref: '#/channels/~1item~1{itemId}'
+    summary: Get item details
+    messages:
+      - $ref: '#/channels/~1item~1{itemId}/messages/getItem'

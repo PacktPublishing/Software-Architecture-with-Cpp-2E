@@ -1,0 +1,7 @@
+[requires]
+minio-cpp/0.3.0
+sole/1.0.4
+spdlog/1.15.0
+
+[generators]
+CMakeDeps

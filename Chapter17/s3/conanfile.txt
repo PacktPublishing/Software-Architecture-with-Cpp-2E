@@ -1,0 +1,6 @@
+[requires]
+aws-sdk-cpp/1.11.352
+spdlog/1.15.0
+
+[generators]
+CMakeDeps

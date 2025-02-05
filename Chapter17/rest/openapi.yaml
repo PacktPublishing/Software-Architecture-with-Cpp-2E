@@ -1,0 +1,34 @@
+openapi: 3.0.3
+info:
+  title: Items API overview
+  version: 2.0.0
+paths:
+  /item/{itemId}:
+    get:
+      operationId: getItem
+      summary: Get item details
+      parameters:
+        - name: itemId
+          in: path
+          description: Item ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  itemId:
+                    type: integer
+                  name:
+                    type: string
+                  locationId:
+                    type: integer
+                example:
+                  itemId: 8
+                  name: Sękacz
+                  locationId: 5

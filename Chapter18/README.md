@@ -2,7 +2,7 @@
 
 Software Architecture with C++, Second Edition, Published by Packt
 
-## Chapter 17: Service Oriented Architecture
+## Chapter 18: Microservices
 
 ### Prerequisites
 
@@ -30,8 +30,6 @@ os=Linux
 ```
 
 ### Building
-
-**Important**: MinIO's dependency requires Python 3
 
 To build the project, configure the Conan profile as described above, cd to its directory, and then run:
 
@@ -71,3 +69,22 @@ git clone https://github.com/conan-io/cmake-conan.git build/cmake-conan
 cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan_provider.cmake -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
+
+### Docker, Redis, Valkey and Dragonfly
+
+You need to install Docker tools to run the example:
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Rancher Desktop](https://rancherdesktop.io/) or [Docker](https://docs.docker.com/engine/install/)
+- [Docker Compose](https://docs.docker.com/compose/)
+
+And Redis Insight or Redis CLI to see the results:
+
+- [Redis Insight](https://redis.io/insight/)
+- [Redis CLI](https://redis.io/docs/latest/develop/tools/cli/)
+- Or on Docker with `./redis/compose-redis-insight.yaml` in this directory
+
+In the last case, open [http://localhost:5540](http://localhost:5540) (Redis Insight UI) in a browser and add these databases:
+
+- redis://default@redis:6379
+- redis://default@valkey:6379
+- redis://default@dragonfly:6379

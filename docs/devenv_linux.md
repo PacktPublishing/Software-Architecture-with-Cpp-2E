@@ -46,3 +46,13 @@ Conan is [integrated](https://docs.conan.io/2/integrations.html) with different 
 [Qt Creator](https://doc.qt.io/qtcreator/creator-project-conan.html) ([plugin](https://doc.qt.io/qtcreator/creator-project-conan.html)) and
 [Visual Studio Code](https://code.visualstudio.com/docs/cpp/cmake-quickstart) ([plugin](https://marketplace.visualstudio.com/items?itemName=afri-bit.vsconan))
 that support CMake-based projects.
+
+Install Docker:
+
+- [Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+- [Debian](https://docs.docker.com/engine/install/debian/)
+- [Fedora](https://docs.docker.com/engine/install/fedora/)
+- [CentOS](https://docs.docker.com/engine/install/centos/)
+- [RHEL](https://docs.docker.com/engine/install/rhel/)
+- [Rancher Desktop](https://rancherdesktop.io/)
+- [Docker Desktop](https://docs.docker.com/desktop/)

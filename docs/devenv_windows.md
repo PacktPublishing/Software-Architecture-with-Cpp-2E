@@ -62,3 +62,8 @@ Open the CMake settings editor to [customize build settings](https://learn.micro
 Specify the path to [conan_provider.cmake](https://github.com/conan-io/cmake-conan/blob/develop2/conan_provider.cmake) in the variable `CMAKE_PROJECT_TOP_LEVEL_INCLUDES`.
 Enter this parameter as the CMake argument `-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES="psth_to/conan_provider.cmake"`in the field `CMake command arguments:`.
 Your configuration will be saved in [CMakeSettings.json](https://learn.microsoft.com/en-us/cpp/build/cmake-presets-vs?view=msvc-170).
+
+Install Docker:
+
+- [Rancher Desktop](https://rancherdesktop.io/)
+- [Docker Desktop](https://docs.docker.com/desktop/)

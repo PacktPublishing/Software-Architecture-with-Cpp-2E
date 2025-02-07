@@ -44,3 +44,11 @@ Conan is [integrated](https://docs.conan.io/2/integrations.html) with different 
 [Qt Creator](https://doc.qt.io/qtcreator/creator-project-conan.html) ([plugin](https://doc.qt.io/qtcreator/creator-project-conan.html)) and
 [Visual Studio Code](https://code.visualstudio.com/docs/cpp/cmake-quickstart) ([plugin](https://marketplace.visualstudio.com/items?itemName=afri-bit.vsconan))
 that support CMake-based projects.
+
+Install Docker:
+
+- [Colima](https://github.com/abiosoft/colima)
+- [OrbStack](https://orbstack.dev/)
+- [Lima](https://github.com/lima-vm/lima)
+- [Rancher Desktop](https://rancherdesktop.io/)
+- [Docker Desktop](https://docs.docker.com/desktop/)

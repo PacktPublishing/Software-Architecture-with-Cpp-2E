@@ -1,0 +1,9 @@
+services:
+  redis-insight:
+    image: redis/redisinsight:latest
+    ports:
+      - "5540:5540"
+    volumes:
+      - redis-insight:/data
+volumes:
+  redis-insight:

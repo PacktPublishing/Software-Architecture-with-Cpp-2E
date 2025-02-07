@@ -31,6 +31,8 @@ os=Linux
 
 ### Building
 
+**Important**: AWS SDK for C++ requires development libraries out of Conan packages
+
 To build the project, configure the Conan profile as described above, cd to its directory, and then run:
 
 ```bash

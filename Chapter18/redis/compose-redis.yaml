@@ -1,0 +1,8 @@
+services:
+  redis:
+    image: bitnami/redis:latest
+    hostname: redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "6379:6379"

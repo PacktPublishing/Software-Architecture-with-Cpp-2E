@@ -1,0 +1,14 @@
+opentelemetry-collector:
+  enabled: true
+otlp:
+  auth:
+    authMode: Unsecured
+  clusterip:
+    enabled: true
+  ingress:
+    enabled: true
+    host: opentelemetry.local
+ui:
+  ingress:
+    enabled: true
+    host: dashboard.local

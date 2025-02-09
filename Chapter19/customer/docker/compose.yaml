@@ -1,0 +1,5 @@
+services:
+  customer:
+    image: tradefair/customer:latest
+    ports:
+      - "8080:8080"

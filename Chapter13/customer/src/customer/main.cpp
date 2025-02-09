@@ -8,7 +8,7 @@ int main() {
   auto get_responder = responder{};
 
   app()
-      .addListener("127.0.0.1", 8080)
+      .addListener("0.0.0.0", 8080)
       .setThreadNum(8)
       .enableServerHeader(false)
       .registerHandler(

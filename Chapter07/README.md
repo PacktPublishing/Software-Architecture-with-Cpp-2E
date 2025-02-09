@@ -90,3 +90,8 @@ invocation.
 
 In the build directory, run `cpack`. Simple as that. Assuming you're running on a system supporting DEB packages,
 you'll get a .tar.gz file, a .zip file, and a .deb package.
+
+### Troubleshooting
+
+Windows Firewall can block connections to the IP address 0.0.0.0 therefore set 127.0.0.1 in customer/src/customer/main.cpp
+as a workaround or allow connections to that address

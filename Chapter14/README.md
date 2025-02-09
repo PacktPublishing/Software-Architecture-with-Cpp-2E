@@ -37,7 +37,7 @@ To build the project, configure the Conan profile as described above, cd to its 
 ```bash
 cd build
 conan install .. --build=missing -s build_type=Release -pr:a=./conan_profile -of .
-cmake .. -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
+cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
 cmake --build .
 ```
 
@@ -46,7 +46,7 @@ If GCC 14 is not your default compiler, you can tell CMake to use it with the `C
 ```bash
 cd build
 conan install .. --build=missing -s build_type=Release -pr:a=./conan_profile -of .
-cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=`which g++-14` # build type must match Conan's
+cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=`which g++-14` # build type must match Conan's
 cmake --build .
 ```
 
@@ -55,7 +55,7 @@ To pass the settings directly without a Conan profile, use the command line opti
 ```bash
 rm -rf ./build/ && mkdir build && cd build
 conan install .. --build=missing -s:a build_type=Release -s:a compiler=gcc -of .
-cmake .. -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
+cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
 cmake --build .
 ```
 
@@ -67,7 +67,7 @@ git clone https://github.com/conan-io/cmake-conan.git build/cmake-conan
 ```
 
 ```bash
-cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan_provider.cmake -DCMAKE_BUILD_TYPE=Release
+cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan_provider.cmake -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
 

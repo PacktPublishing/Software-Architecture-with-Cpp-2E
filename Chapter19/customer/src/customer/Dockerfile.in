@@ -1,0 +1,10 @@
+FROM ubuntu:plucky
+ADD Customer-@PROJECT_VERSION@-Linux.deb .
+
+RUN apt update && \
+    apt -y --no-install-recommends install ./Customer-@PROJECT_VERSION@-Linux.deb && \
+    apt autoremove -y && apt clean && \
+    rm -r /var/lib/apt/lists/* Customer-@PROJECT_VERSION@-Linux.deb
+
+ENTRYPOINT ["/usr/bin/customer"]
+EXPOSE 8080

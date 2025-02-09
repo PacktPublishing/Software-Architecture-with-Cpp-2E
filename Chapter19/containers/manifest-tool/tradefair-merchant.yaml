@@ -1,0 +1,14 @@
+image: tradefair/merchant:v2.0.3
+manifests:
+  - image: tradefair/merchant:v2.0.3-amd64
+    platform:
+      architecture: amd64
+      os: linux
+  - image: tradefair/merchant:v2.0.3-arm64
+    platform:
+      architecture: arm64
+      os: linux
+  - image: tradefair/merchant:v2.0.3-riscv64
+    platform:
+      architecture: riscv64
+      os: linux

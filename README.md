@@ -107,26 +107,11 @@ You need at least one of the following compilers:
 
 ### Development environment
 
-Execute this optional command to configure your Linux-like environment if you use [Nix](https://nixos.org/download.html) and [direnv](https://direnv.net/)
-
-```bash
-cat << 'EOF' > .envrc
-dotenv
-use_nix
-EOF
-```
-
-Or follow these guides if you do not use Nix:
+Follow these guides to configure the development environment:
 
 - [Linux configuration](./docs/devenv_linux)
 - [macOS configuration](./docs/devenv_macos)
 - [Windows configuration](./docs/devenv_windows)
-
-### Related products
-
-- C++ High Performance - Second Edition [[Packt]](https://www.packtpub.com/product/c-high-performance-second-edition/9781839216541) [[Amazon]](https://www.amazon.com/dp/1839216549)
-
-- Modern C++ Programming Cookbook - Second Edition [[Packt]](https://www.packtpub.com/product/modern-c-programming-cookbook-second-edition/9781800208988) [[Amazon]](https://www.amazon.com/dp/B08GM9KKMR)
 
 ## Get to Know the Authors
 

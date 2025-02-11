@@ -39,7 +39,7 @@ brew install conan
 ```
 
 Be careful that `/usr/bin/gcc` and `/usr/bin/g++` are the system compilers, but not from Homebrew.
-The tools are installed in `/home/linuxbrew/.linuxbrew/bin/`
+The compilers are installed in `/home/linuxbrew/.linuxbrew/bin/`
 
 Conan is [integrated](https://docs.conan.io/2/integrations.html) with different IDEs including
 [CLion](https://docs.conan.io/2/integrations/clion.html) ([plugin](https://www.jetbrains.com/help/clion/conan-plugin.html)),

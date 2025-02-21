@@ -9,6 +9,8 @@ either [Clang](https://clang.llvm.org/) or [MSVC compiler](https://visualstudio.
 Of course for this purpose, you can use the package managers such as [Chocolatey](https://chocolatey.org/),
 [winget.run](https://winget.run/), and an IDE with bundled tools.
 
+## Development tools
+
 The first option is to download the tools and install them:
 
 - [CMake](https://cmake.org/download/)
@@ -63,7 +65,20 @@ Specify the path to [conan_provider.cmake](https://github.com/conan-io/cmake-con
 Enter this parameter as the CMake argument `-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES="psth_to/conan_provider.cmake"`in the field `CMake command arguments:`.
 Your configuration will be saved in [CMakeSettings.json](https://learn.microsoft.com/en-us/cpp/build/cmake-presets-vs?view=msvc-170).
 
-Install Docker:
+## Docker installation
 
-- [Rancher Desktop](https://rancherdesktop.io/)
-- [Docker Desktop](https://docs.docker.com/desktop/)
+- [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation/)
+- [Docker Desktop](https://docs.docker.com/desktop/setup/install/windows-install/)
+
+## Local Kubernetes installation
+
+- [microk8s](https://microk8s.io/docs/install-windows) or [WSL2](https://microk8s.io/docs/install-wsl2) (tested)
+- [minikube](https://minikube.sigs.k8s.io/docs/)
+- [kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
+- [Rancher Desktop](https://docs.rancherdesktop.io/ui/preferences/kubernetes/)
+- [Docker Desktop](https://docs.docker.com/desktop/features/kubernetes/)
+
+Tools to manage Kubernetes clusters and deploy applications
+
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
+- [Helm](https://helm.sh/docs/intro/install/)

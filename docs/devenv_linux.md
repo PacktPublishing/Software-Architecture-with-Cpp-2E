@@ -10,7 +10,7 @@ Of course for this purpose, you can use package repositories of your Linux distr
 [Snapcraft](https://snapcraft.io/), [Flathub](https://flathub.org/), [AppImageHub](https://www.appimagehub.com/browse)
 or an IDE with bundled tools.
 
-Install the package manager [Homebrew](https://brew.sh/)
+## The package manager [Homebrew](https://brew.sh/) installation
 
 - [installation](https://docs.brew.sh/Homebrew-on-Linux)
 - [common issues](https://docs.brew.sh/Common-Issues)
@@ -25,6 +25,8 @@ Add these settings to your shell configuration files (`.zshrc`, `.bashrc`) to ru
 ```
 [ -d /home/linuxbrew/.linuxbrew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 ```
+
+## Development tools
 
 Then install these tools with Homebrew
 
@@ -47,12 +49,26 @@ Conan is [integrated](https://docs.conan.io/2/integrations.html) with different 
 [Visual Studio Code](https://code.visualstudio.com/docs/cpp/cmake-quickstart) ([plugin](https://marketplace.visualstudio.com/items?itemName=afri-bit.vsconan))
 that support CMake-based projects.
 
-Install Docker:
+## Docker installation
 
-- [Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
-- [Debian](https://docs.docker.com/engine/install/debian/)
-- [Fedora](https://docs.docker.com/engine/install/fedora/)
-- [CentOS](https://docs.docker.com/engine/install/centos/)
-- [RHEL](https://docs.docker.com/engine/install/rhel/)
-- [Rancher Desktop](https://rancherdesktop.io/)
-- [Docker Desktop](https://docs.docker.com/desktop/)
+- [Ubuntu](https://docs.docker.com/desktop/setup/install/linux/ubuntu/)
+- [Debian](https://docs.docker.com/desktop/setup/install/linux/debian/)
+- [Fedora](https://docs.docker.com/desktop/setup/install/linux/fedora/)
+- [Arch](https://docs.docker.com/desktop/setup/install/linux/archlinux/)
+- [RHEL](https://docs.docker.com/desktop/setup/install/linux/rhel/)
+- [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation/)
+- [Docker Desktop](https://docs.docker.com/desktop/setup/install/linux/)
+
+## Local Kubernetes installation
+
+- [microk8s](https://microk8s.io/docs/getting-started) (tested)
+- [minikube](https://minikube.sigs.k8s.io/docs/)
+- [kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
+- [K3s](https://docs.k3s.io/installation)
+- [Rancher Desktop](https://docs.rancherdesktop.io/ui/preferences/kubernetes/)
+- [Docker Desktop](https://docs.docker.com/desktop/features/kubernetes/)
+
+Tools to manage Kubernetes clusters and deploy applications
+
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
+- [Helm](https://helm.sh/docs/intro/install/)

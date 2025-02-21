@@ -9,7 +9,7 @@ Software Architecture with C++, Second Edition, Published by Packt
 Install the following software:
 
 - CMake 3.28
-- Conan 2.12.1
+- Conan 2.12
 - GCC 14
 
 For optional packaging with CPack:

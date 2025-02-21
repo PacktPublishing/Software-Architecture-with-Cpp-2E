@@ -46,6 +46,7 @@ int main() {
           },
           {Get})
       .registerHandler(
+          // combines liveness and readiness health checks due to the simplicity
           "/health",
           [&](const HttpRequestPtr &,
               std::function<void(const HttpResponsePtr &)> &&callback) {

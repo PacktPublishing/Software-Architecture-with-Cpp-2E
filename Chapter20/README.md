@@ -2,14 +2,14 @@
 
 Software Architecture with C++, Second Edition, Published by Packt
 
-## Chapter 19: Containers
+## Chapter 20: Cloud Native Design
 
 ### Prerequisites
 
 Install the following software:
 
 - CMake 3.28
-- Conan 2.12.1
+- Conan 2.12
 - GCC 14
 
 Assuming you're on Linux or using WSL, configure a local Conan profile and remotes by running:
@@ -72,8 +72,11 @@ cmake --build build
 
 # Docker
 
-In the build directory, run `cmake --build . --target docker` to build the Docker image and run the app
-from `docker/compose.yaml` with Compose.
+In the build directory, run `cmake --build . --target docker` to build the Docker image. Run the app
+from `docker/compose.yaml` with Compose and `kubernetes/manifest.yaml` with Kubernetes.
+
+Read instructions regarding Development Containers in the file `containers/docker/README.md` in Chapter 19
+to build an executable file for Linux on macOS and Windows.
 
 ### Troubleshooting
 

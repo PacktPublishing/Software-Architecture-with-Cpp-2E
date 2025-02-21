@@ -7,7 +7,7 @@ Software Architecture with C++, Second Edition, Published by Packt
 To compile the examples, you need the recent versions of [CMake](https://cmake.org/), [Ninja](https://ninja-build.org/),
 [Clang](https://clang.llvm.org/) and [Conan 2.0](https://conan.io/).
 
-Install the package manager [Homebrew](https://brew.sh/)
+# The package manager [Homebrew](https://brew.sh/) installation
 
 - [installation](https://docs.brew.sh/Installation)
 - [common issues](https://docs.brew.sh/Common-Issues)
@@ -16,6 +16,8 @@ Install the package manager [Homebrew](https://brew.sh/)
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+## Development tools
 
 Then install these tools with Homebrew
 
@@ -45,10 +47,23 @@ Conan is [integrated](https://docs.conan.io/2/integrations.html) with different 
 [Visual Studio Code](https://code.visualstudio.com/docs/cpp/cmake-quickstart) ([plugin](https://marketplace.visualstudio.com/items?itemName=afri-bit.vsconan))
 that support CMake-based projects.
 
-Install Docker:
+## Docker installation
 
 - [Colima](https://github.com/abiosoft/colima)
 - [OrbStack](https://orbstack.dev/)
 - [Lima](https://github.com/lima-vm/lima)
-- [Rancher Desktop](https://rancherdesktop.io/)
-- [Docker Desktop](https://docs.docker.com/desktop/)
+- [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation/)
+- [Docker Desktop](https://docs.docker.com/desktop/setup/install/mac-install/)
+
+## Local Kubernetes installation
+
+- [microk8s](https://microk8s.io/docs/install-macos) (tested)
+- [minikube](https://minikube.sigs.k8s.io/docs/)
+- [kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
+- [Rancher Desktop](https://docs.rancherdesktop.io/ui/preferences/kubernetes/)
+- [Docker Desktop](https://docs.docker.com/desktop/features/kubernetes/)
+
+Tools to manage Kubernetes clusters and deploy applications
+
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
+- [Helm](https://helm.sh/docs/intro/install/)

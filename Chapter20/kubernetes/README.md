@@ -72,7 +72,8 @@ The alternative is to provide the address as the [IP address pool](https://micro
 microk8s enable metallb ODE_IP-NODE_IP
 ```
 
-Or use a Fixed IP (NODE_IP = `10.0.1.1` by default) instead of retrieving NODE_IP:
+Or enable the addon [host-access](https://microk8s.io/docs/addon-host-access)
+(NODE_IP is the Fixed IP `10.0.1.1` address by default) instead of retrieving NODE_IP:
 
 ```bash
 microk8s enable host-access
@@ -177,7 +178,7 @@ To delete the app:
 microk8s kubectl delete -f manifest.yaml
 ```
 
-### Opening the app and Aspire Dashboard in a browser
+#### Accessing the customer app and Aspire Dashboard
 
 Get the IP address (NODE_IP) of your Kubernetes node by using the command above. Or use this command:
 
@@ -306,8 +307,6 @@ minikube dashboard
 
 #### Building the customer image in minikube
 
-##### Docker
-
 Run this command before building Docker images to push the images to the minikube Docker registry directly:
 
 ```bash
@@ -321,61 +320,6 @@ export DOCKER_TLS_VERIFY="1"
 export DOCKER_HOST="tcp://127.0.0.1:36195"
 export DOCKER_CERT_PATH="/home/user/.minikube/certs"
 export MINIKUBE_ACTIVE_DOCKERD="minikube"
-```
-
-##### Podman
-
-minikube also supports [Podman](https://minikube.sigs.k8s.io/docs/drivers/podman/), but the container runtime
-has to be "[cri-o](https://minikube.sigs.k8s.io/docs/runtimes/cri-o/)",
-but neither "[containerd](https://minikube.sigs.k8s.io/docs/runtimes/containerd/)"
-nor "[docker](https://minikube.sigs.k8s.io/docs/runtimes/docker/)":
-
-Set the runtime and other [configuration values](https://minikube.sigs.k8s.io/docs/commands/config/) before starting minikube:
-
-```bash
-minikube config set container-runtime crio
-```
-
-Or pass parameters when minikube starts:
-
-```bash
-minikube start --driver podman --container-runtime crio
-```
-
-```bash
-eval $(minikube -p minikube podman-env)
-```
-
-This command sets the environment variables:
-
-```
-export CONTAINER_HOST="ssh://docker@127.0.0.1:46163/run/podman/podman.sock"
-export CONTAINER_SSHKEY="/home/user/.minikube/machines/minikube/id_rsa"
-export MINIKUBE_ACTIVE_PODMAN="minikube"
-```
-
-##### Containerd (an experimental feature)
-
-```bash
-minikube config set container-runtime containerd
-```
-
-```bash
-eval $(minikube -p minikube docker-env --ssh-host)
-```
-
-```
-export DOCKER_HOST="ssh://docker@127.0.0.1:42097"
-export MINIKUBE_ACTIVE_DOCKERD="minikube"
-export SSH_AUTH_SOCK="/tmp/ssh-LNSf18jNnepf/agent.3770671"
-export SSH_AGENT_PID="3770672"
-```
-
-By default, minikube uses the runtime and [driver](https://minikube.sigs.k8s.io/docs/drivers/docker/) `docker`.
-To restore the container runtime:
-
-```bash
-minikube config set container-runtime docker
 ```
 
 #### Deploying Aspire Dashboard and the customer application
@@ -451,16 +395,15 @@ You will see something like when the tunnel works (tested with KVM2):
 
 ```
 Status:
-	machine: minikube
-	pid: 3510325
-	route: 10.96.0.0/12 -> 192.168.39.166
-	minikube: Running
-	services: []
+    machine: minikube
+    pid: 3510325
+    route: 10.96.0.0/12 -> 192.168.39.166
+    minikube: Running
+    services: []
     errors:
-		minikube: no errors
-		router: no errors
-		loadbalancer emulator: no errors
-
+        minikube: no errors
+        router: no errors
+        loadbalancer emulator: no errors
 ```
 
 Open `customer.local/customer/v1?name=anonymous` and `dashboard.local` in a browser.

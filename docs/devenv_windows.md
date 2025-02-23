@@ -5,7 +5,7 @@ Software Architecture with C++, Second Edition, Published by Packt
 [return to README](../README.md#development-environment)
 
 To compile the examples, you need the recent versions of [CMake](https://cmake.org/), [Ninja](https://ninja-build.org/),
-either [Clang](https://clang.llvm.org/) or [MSVC compiler](https://visualstudio.microsoft.com/downloads/), and [Conan 2.0](https://conan.io/).
+either [MSVC compiler](https://visualstudio.microsoft.com/downloads/) or [Clang](https://clang.llvm.org/), and [Conan 2.0](https://conan.io/).
 Of course for this purpose, you can use the package managers such as [Chocolatey](https://chocolatey.org/),
 [winget.run](https://winget.run/), and an IDE with bundled tools.
 
@@ -16,9 +16,10 @@ The first option is to download the tools and install them:
 - [CMake](https://cmake.org/download/)
 - [Ninja](https://ninja-build.org/)
 - [Conan](https://conan.io/downloads)
+- [MSVC compiler](https://visualstudio.microsoft.com/downloads/)
 - [Clang](https://releases.llvm.org/)
 
-The second option is the package manager [Chocolatey](https://chocolatey.org/install);
+The second option is the package manager [Chocolatey](https://chocolatey.org/install) ([packages](https://community.chocolatey.org/packages)):
 
 ```
 choco install cmake

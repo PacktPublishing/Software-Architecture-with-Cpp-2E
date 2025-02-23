@@ -109,9 +109,9 @@ You need at least one of the following compilers:
 
 Follow these guides to configure the development environment:
 
-- [Linux configuration](./docs/devenv_linux)
-- [macOS configuration](./docs/devenv_macos)
-- [Windows configuration](./docs/devenv_windows)
+- [Linux configuration](./docs/devenv_linux.md)
+- [macOS configuration](./docs/devenv_macos.md)
+- [Windows configuration](./docs/devenv_windows.md)
 
 ## Get to Know the Authors
 

@@ -26,8 +26,8 @@ install(
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 
-install(DIRECTORY ../../include/ # the last slash is important here
-        DESTINATION include)
+# the last slash is important here
+install(DIRECTORY ../../include/ DESTINATION include)
 
 install(
   EXPORT CustomerTargets

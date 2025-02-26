@@ -72,9 +72,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/CustomerConfig.cmake
               ${CMAKE_CURRENT_BINARY_DIR}/CustomerConfigVersion.cmake
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/Customer)
 
-install(
-  FILES ${PROJECT_SOURCE_DIR}/LICENSE
-  DESTINATION $<IF:$<BOOL:${CONAN_EXPORTED}>,licenses,${CMAKE_INSTALL_DOCDIR}>)
+install(FILES ../../LICENSE DESTINATION ${CMAKE_INSTALL_DOCDIR})
 
 # Exporting
 

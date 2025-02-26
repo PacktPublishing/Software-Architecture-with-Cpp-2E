@@ -1,4 +1,4 @@
-add_library(libcustomer responder.cpp controller.cpp)
+add_library(libcustomer responder.cpp)
 add_library(tradefair::libcustomer ALIAS libcustomer)
 set_target_properties(libcustomer PROPERTIES OUTPUT_NAME customer)
 target_compile_features(libcustomer PUBLIC cxx_std_17)
@@ -26,8 +26,8 @@ install(
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ # last slash is important here
-        DESTINATION include)
+# the last slash is important here
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
 
 install(
   EXPORT CustomerTargets
@@ -48,7 +48,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/CustomerConfig.cmake
               ${CMAKE_CURRENT_BINARY_DIR}/CustomerConfigVersion.cmake
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/Customer)
 
-install(FILES ../../LICENSE DESTINATION ${CMAKE_INSTALL_DOCDIR})
+install(FILES ${PROJECT_SOURCE_DIR}/LICENSE DESTINATION ${CMAKE_INSTALL_DOCDIR})
 
 # Exporting
 
@@ -66,6 +66,7 @@ set(CPACK_PACKAGE_VENDOR "Authors")
 set(CPACK_PACKAGE_CONTACT "author@example.com")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY
     "Library and app for the Customer microservice")
+set(CPACK_PACKAGE_DIRECTORY packages)
 set(CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
 set(CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
 set(CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})

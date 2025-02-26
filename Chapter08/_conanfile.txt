@@ -1,0 +1,12 @@
+[requires]
+drogon/1.9.9
+
+[test_requires]
+gtest/1.15.0
+
+[generators]
+CMakeDeps
+
+[options]
+drogon/*:with_boost=False
+drogon/*:with_orm=False

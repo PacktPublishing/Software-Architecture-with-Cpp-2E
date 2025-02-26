@@ -17,6 +17,8 @@ venv
 .envrc
 # pyenv
 .python-version
+# Conan
+CMakeUserPresets.json
 
 *build*/
 !.github/**

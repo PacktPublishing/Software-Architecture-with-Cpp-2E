@@ -1,5 +1,5 @@
 [requires]
-drogon/1.9.9
+drogon/1.9.10
 opentelemetry-cpp/1.17.0
 grpc/1.67.1
 openssl/3.4.1

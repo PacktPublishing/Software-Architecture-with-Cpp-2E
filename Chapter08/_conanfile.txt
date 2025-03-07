@@ -1,5 +1,5 @@
 [requires]
-drogon/1.9.9
+drogon/1.9.10
 
 [test_requires]
 gtest/1.15.0

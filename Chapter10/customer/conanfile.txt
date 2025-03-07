@@ -1,5 +1,5 @@
 [requires]
-drogon/1.9.9
+drogon/1.9.10
 boost/1.86.0
 catch2/3.7.1
 doctest/2.4.11

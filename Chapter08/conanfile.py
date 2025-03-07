@@ -17,7 +17,7 @@ class CustomerConan(ConanFile):
     exports_sources = "CMakeLists.txt", "LICENSE", "README.md", "cmake/*", "include/*", "src/*", "test/*"
 
     def requirements(self):
-        self.requires("drogon/1.9.9")
+        self.requires("drogon/1.9.10")
 
     def build_requirements(self):
         self.test_requires("gtest/1.15.0")

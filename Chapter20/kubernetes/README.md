@@ -236,7 +236,7 @@ Network redirection is configuration sensitive. Using `127.0.0.1` also works loc
 127.0.0.1 dashboard.local
 ```
 
-Open `customer.local/customer/v1?name=anonymous` and `dashboard.local` in a browser.
+Open [customer app](http://customer.local/customer/v1?name=anonymous) and [dashboard](http://dashboard.local) in a browser.
 
 [Tutorials](https://microk8s.io/tutorials) and [guides](https://microk8s.io/docs/how-to) for MicroK8S.
 
@@ -406,7 +406,7 @@ Status:
         loadbalancer emulator: no errors
 ```
 
-Open `customer.local/customer/v1?name=anonymous` and `dashboard.local` in a browser.
+Open [customer app](http://customer.local/customer/v1?name=anonymous) and [dashboard](http://dashboard.local) in a browser.
 
 Functionality of minikube depends on the driver and operating system therefore please check the instructions
 in its [tutorials](https://minikube.sigs.k8s.io/docs/tutorials/) and [handbook](https://minikube.sigs.k8s.io/docs/handbook/).
@@ -451,7 +451,7 @@ Using FQDN entities in `/etc/hosts` also works:
 127.0.0.1 dashboard.local
 ```
 
-Open `customer.local/customer/v1?name=anonymous` and `dashboard.local` in a browser.
+Open [customer app](http://customer.local/customer/v1?name=anonymous) and [dashboard](http://dashboard.local) in a browser.
 
 Rancher Desktop supports [Kubernetes](https://docs.rancherdesktop.io/ui/preferences/kubernetes/) in a similar way:
 

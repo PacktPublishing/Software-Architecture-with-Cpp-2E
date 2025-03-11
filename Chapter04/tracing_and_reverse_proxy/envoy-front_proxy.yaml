@@ -1,7 +1,3 @@
-node:
-  # The cluster name is used by Zipkin to identify the proxy
-  cluster: front_proxy
-
 static_resources:
   listeners:
     - address:
@@ -18,13 +14,14 @@ static_resources:
                 generate_request_id: true
                 tracing:
                   provider:
-                    name: envoy.tracers.zipkin
+                    name: envoy.tracers.opentelemetry
                     typed_config:
-                      "@type": type.googleapis.com/envoy.config.trace.v3.ZipkinConfig
-                      collector_cluster: jaeger
-                      collector_endpoint: "/api/v2/spans"
-                      shared_span_context: false
-                      collector_endpoint_version: HTTP_JSON
+                      "@type": type.googleapis.com/envoy.config.trace.v3.OpenTelemetryConfig
+                      grpc_service:
+                        envoy_grpc:
+                          cluster_name: opentelemetry_collector
+                        timeout: 0.250s
+                      service_name: front_proxy
                 codec_type: auto
                 stat_prefix: ingress_http
                 route_config:
@@ -60,18 +57,23 @@ static_resources:
                     socket_address:
                       address: example_service
                       port_value: 5678
-    - name: jaeger
+    - name: opentelemetry_collector
       type: STRICT_DNS
       lb_policy: ROUND_ROBIN
+      typed_extension_protocol_options:
+        envoy.extensions.upstreams.http.v3.HttpProtocolOptions:
+          "@type": type.googleapis.com/envoy.extensions.upstreams.http.v3.HttpProtocolOptions
+          explicit_http_config:
+            http2_protocol_options: {}
       load_assignment:
-        cluster_name: jaeger
+        cluster_name: opentelemetry_collector
         endpoints:
           - lb_endpoints:
               - endpoint:
                   address:
                     socket_address:
-                      address: jaeger
-                      port_value: 9411
+                      address: opentelemetry
+                      port_value: 4317
 admin:
   access_log_path: /tmp/admin_access.log
   address:

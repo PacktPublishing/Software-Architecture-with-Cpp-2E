@@ -6,8 +6,8 @@ services:
     networks:
       - example_network
     ports:
-      - 12345:12345
-      - 9901:9901
+      - "12345:12345"
+      - "9901:9901"
 
   old_version:
     image: hashicorp/http-echo

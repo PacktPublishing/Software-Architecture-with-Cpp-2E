@@ -126,7 +126,7 @@ cd docker
 docker compose up -d
 ```
 
-Open the URL `http://localhost:8081` in a browser. The default user and password are `admin:password`.
+Open the URL http://localhost:8081 in a browser. The default user and password are `admin:password`.
 Navigate to `Administration -> Repositories`, then click on the `Create a Repository` button, select `Local` and the Package Type `Conan`.
 For example, type `conan-local` in the `Repository key` and click on `Create Local Repository`.
 

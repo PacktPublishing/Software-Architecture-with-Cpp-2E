@@ -6,8 +6,8 @@ services:
     networks:
       - example_network
     ports:
-      - 12345:12345
-      - 9901:9901
+      - "12345:12345"
+      - "9901:9901"
 
   example_service:
     image: hashicorp/http-echo
@@ -15,14 +15,15 @@ services:
       - example_network
     command: -text "It works!"
 
-  jaeger:
-    image: jaegertracing/all-in-one
-    environment:
-      - COLLECTOR_ZIPKIN_HOST_PORT=9411
+  opentelemetry-collector:
+    image: otel/opentelemetry-collector-contrib
     networks:
       - example_network
     ports:
-      - 16686:16686
-
+      - "4317:4317"
+      - "4318:4318"
+      - "55679:55679"
+    volumes:
+      - ./collector-config.yaml:/etc/otelcol/config.yaml
 networks:
   example_network: {}

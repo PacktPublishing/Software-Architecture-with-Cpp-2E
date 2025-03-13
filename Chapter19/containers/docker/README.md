@@ -60,10 +60,20 @@ Go to the directory containing this Dockerfile and run:
 docker build -t devcontainer .
 ```
 
-Or choose a platform explicitly (for example `linux/arm64`):
+Or choose platforms explicitly (for example `linux/amd64` and `linux/arm64`):
 
 ```bash
-docker build -t devcontainer --platform linux/arm64 .
+docker build -t devcontainer --platform linux/amd64,linux/arm64 .
+```
+
+```bash
+docker buildx build --platform linux/amd64,linux/arm64 --tag devcontainer .
+```
+
+This is an experimental feature. List the images:
+
+```bash
+docker image ls --tree devcontainer
 ```
 
 You can compile a C++ application in a container or just execute programs from the image.

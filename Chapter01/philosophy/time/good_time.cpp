@@ -1,12 +1,12 @@
 #include <chrono>
 
-using namespace std::literals::chrono_literals;
-
 struct Duration {
   std::chrono::milliseconds millis_;
 };
 
 void example() {
+  using namespace std::literals::chrono_literals;
+
   auto d = Duration{};
   // d.millis_ = 100; // compilation error, as 100 could mean anything
   d.millis_ = 100ms;  // okay

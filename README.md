@@ -76,6 +76,24 @@ If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1838
 
 <a href="https://www.packtpub.com/"><img src="https://avatars.githubusercontent.com/u/10974906?s=200&v=4" alt="https://www.packtpub.com/" border="5"/></a>
 
+### Development environment
+
+Follow these guides to configure the development environment:
+
+- [Linux environment](devenv_readme/devenv_linux.md)
+- [macOS environment](devenv_readme/devenv_macos.md)
+- [Windows environment](devenv_readme/devenv_windows.md)
+
+### C++ compilers
+
+You need at least one of the following compilers:
+
+| No. | Software required          | OS required                        |
+| --- | -------------------------- | ---------------------------------- |
+| 1   | GCC 14                     | Windows, Mac OS X, and Linux (Any) |
+| 2   | Clang 19                   | Windows, Mac OS X, and Linux (Any) |
+| 3   | Microsoft Visual C++ 19.40 | Windows                            |
+
 ## Instructions and Navigations
 
 All the code is organized into folders. For example, Chapter02.
@@ -94,24 +112,6 @@ The code will look like the following:
 This software architecture C++ programming book is for experienced C++ developers who are looking to become software architects or are interested in developing enterprise-grade applications.
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-20).
-
-### Software and Hardware List
-
-You need at least one of the following compilers:
-
-| No. | Software required          | OS required                        |
-| --- | -------------------------- | ---------------------------------- |
-| 1   | GCC 14                     | Windows, Mac OS X, and Linux (Any) |
-| 2   | Clang 19                   | Windows, Mac OS X, and Linux (Any) |
-| 3   | Microsoft Visual C++ 19.40 | Windows                            |
-
-### Development environment
-
-Follow these guides to configure the development environment:
-
-- [Linux configuration](./docs/devenv_linux.md)
-- [macOS configuration](./docs/devenv_macos.md)
-- [Windows configuration](./docs/devenv_windows.md)
 
 ## Get to Know the Authors
 

@@ -54,7 +54,7 @@ To pass the settings directly without a Conan profile, use the command line opti
 ```bash
 rm -rf ./build/ && mkdir build && cd build
 conan install .. --build=missing -s:a build_type=Release -s:a compiler=gcc -of .
-cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
+cmake .. -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
 cmake --build .
 ```
 

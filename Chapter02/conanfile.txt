@@ -1,5 +1,0 @@
-[requires]
-ms-gsl/4.1.0
-
-[generators]
-CMakeDeps

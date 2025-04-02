@@ -22,8 +22,8 @@ To build a static binary, you may use:
 
 ```bash
 rm -rf ./build/ && mkdir build && cd build
-conan install .. --build=missing -s:a build_type=Release -s:a compiler=gcc -s:a compiler.cppstd=gnu20 -of .
-cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-static" -DBUILD_SHARED_LIBS=OFF -DCMAKE_FIND_LIBRARY_SUFFIXES=".a"
+conan install .. --build=missing -s:a build_type=Release -s:a compiler=gcc -of .
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-static" -DBUILD_SHARED_LIBS=OFF -DCMAKE_FIND_LIBRARY_SUFFIXES=".a"
 cmake --build .
 ```
 

@@ -11,8 +11,5 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
 list(APPEND CMAKE_PREFIX_PATH "${CMAKE_BINARY_DIR}")
 
-find_package(Microsoft.GSL CONFIG REQUIRED)
-
 add_library(state INTERFACE)
 target_include_directories(state INTERFACE state/)
-target_link_libraries(state INTERFACE Microsoft.GSL::GSL)

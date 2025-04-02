@@ -2,7 +2,7 @@
 
 class Consultant;
 
-class PaymentCalculator {
+class PaymentCalculator final {
  public:
   static double calculate(const Consultant &c, double taxPercentage) {
     return {};

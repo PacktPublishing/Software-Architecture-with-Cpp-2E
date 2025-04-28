@@ -4,9 +4,7 @@ project(PackageTest CXX)
 
 list(APPEND CMAKE_PREFIX_PATH "${CMAKE_BINARY_DIR}")
 
-find_package(customer CONFIG REQUIRED)
+find_package(stores CONFIG REQUIRED)
 
 add_executable(example example.cpp)
-target_link_libraries(example customer::customer)
-
-# CTest tests can be added here
+target_link_libraries(example stores::stores)

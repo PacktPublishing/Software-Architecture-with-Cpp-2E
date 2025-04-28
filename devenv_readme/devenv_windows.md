@@ -63,7 +63,7 @@ git clone https://github.com/conan-io/cmake-conan.git
 
 Open the CMake settings editor to [customize build settings](https://learn.microsoft.com/en-us/cpp/build/customize-cmake-settings?view=msvc-170), select the Configuration drop-down and choose `Manage configurations...`.
 Specify the path to [conan_provider.cmake](https://github.com/conan-io/cmake-conan/blob/develop2/conan_provider.cmake) in the variable `CMAKE_PROJECT_TOP_LEVEL_INCLUDES`.
-Enter this parameter as the CMake argument `-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES="psth_to/conan_provider.cmake"`in the field `CMake command arguments:`.
+Enter this parameter as the CMake argument `-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES="path_to/conan_provider.cmake"`in the field `CMake command arguments:`.
 Your configuration will be saved in [CMakeSettings.json](https://learn.microsoft.com/en-us/cpp/build/cmake-presets-vs?view=msvc-170).
 
 ## Docker installation

@@ -21,4 +21,4 @@ struct Payload {
    @brief Performs really important work
    @param payload  the descriptor of work to be performed
  */
-void perform_work(struct Payload payload);
+void perform_work(Payload payload);

@@ -1,26 +1,33 @@
-class FrontEndDeveloper {
+#include <iostream>
+#include <string>
+
+class SMSNotifier {
  public:
-  void developFrontEnd() {}
+  void sendSMS(const std::string &message) {
+    std::cout << "SMS channel: " << message << std::endl;
+  }
 };
 
-class BackEndDeveloper {
+class EMailNotifier {
  public:
-  void developBackEnd() {}
+  void sendEmail(const std::string &message) {
+    std::cout << "Email channel: " << message << std::endl;
+  }
 };
 
-class Project {
+class NotificationSystem {
  public:
-  void deliver() {
-    fed_.developFrontEnd();
-    bed_.developBackEnd();
+  void notify(const std::string &message) {
+    sms_.sendSMS(message);
+    email_.sendEmail(message);
   }
 
  private:
-  FrontEndDeveloper fed_;
-  BackEndDeveloper bed_;
+  SMSNotifier sms_;
+  EMailNotifier email_;
 };
 
 int main() {
-  auto project = Project{};
-  project.deliver();
+  auto ns = NotificationSystem{};
+  ns.notify("Quinn, Wade, Arturo, Rembrandt");
 }

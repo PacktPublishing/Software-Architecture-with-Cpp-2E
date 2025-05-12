@@ -1,37 +1,42 @@
-class FrontEndDeveloper {
+#include <iostream>
+#include <string>
+
+class SMSNotifier {
  public:
-  void developFrontEnd() {}
+  void sendSMS(const std::string &message) {
+    std::cout << "SMS channel: " << message << std::endl;
+  }
 };
 
-class BackEndDeveloper {
+class EMailNotifier {
  public:
-  void developBackEnd() {}
+  void sendEmail(const std::string &message) {
+    std::cout << "Email channel: " << message << std::endl;
+  }
 };
 
-class MiddlewareDeveloper {
+class ChatNotifier {
  public:
-  void developMiddleware() {}
+  void sendMessage(const std::string &message) {
+    std::cout << "Chat channel: " << message << std::endl;
+  }
 };
 
-class Project {
+class NotificationSystem {
  public:
-  void deliver() {
-    fed_.developFrontEnd();
-    med_.developMiddleware();
-    bed_.developBackEnd();
+  void notify(const std::string &message) {
+    sms_.sendSMS(message);
+    email_.sendEmail(message);
+    chat_.sendMessage(message);
   }
 
  private:
-  FrontEndDeveloper fed_;
-  MiddlewareDeveloper med_;
-  BackEndDeveloper bed_;
+  SMSNotifier sms_;
+  EMailNotifier email_;
+  ChatNotifier chat_;
 };
 
 int main() {
-  Project p{};
-  p.deliver();
+  auto ns = NotificationSystem{};
+  ns.notify("Azabeth Burns");
 }
-
-// TEST(Project, UsesAllDevelopers) {
-// // impossible to implement
-// }

@@ -1,47 +1,52 @@
-#include <memory>
+#include <iostream>
+#include <string>
 #include <utility>
 #include <variant>
 #include <vector>
 
-class FrontEndDeveloper {
+class SMSNotifier {
  public:
-  void develop() { developFrontEnd(); }
+  void notify(const std::string &message) { sendSMS(message); }
 
  private:
-  void developFrontEnd() {}
+  void sendSMS(const std::string &message) {
+    std::cout << "SMS channel: " << message << std::endl;
+  }
 };
 
-class BackEndDeveloper {
+class EMailNotifier {
  public:
-  void develop() { developBackEnd(); }
+  void notify(const std::string &message) { sendEmail(message); }
 
  private:
-  void developBackEnd() {}
+  void sendEmail(const std::string &message) {
+    std::cout << "Email channel: " << message << std::endl;
+  }
 };
 
-template <typename... Devs>
-class Project {
+template <typename... T>
+class NotificationSystem {
  public:
-  using Developers = std::vector<std::variant<Devs...>>;
+  using Notifiers = std::vector<std::variant<T...>>;
 
-  explicit Project(Developers developers)
-      : developers_{std::move(developers)} {}
+  explicit NotificationSystem(Notifiers notifiers)
+      : notifiers_{std::move(notifiers)} {}
 
-  void deliver() {
-    for (auto &developer : developers_) {
-      std::visit([](auto &dev) { dev.develop(); }, developer);
+  void notify(const std::string &message) {
+    for (auto &notifier : notifiers_) {
+      std::visit([&](auto &n) { n.notify(message); }, notifier);
     }
   }
 
  private:
-  Developers developers_;
+  Notifiers notifiers_;
 };
 
-using MyProject = Project<FrontEndDeveloper, BackEndDeveloper>;
+using MyNotificationSystem = NotificationSystem<SMSNotifier, EMailNotifier>;
 
 int main() {
-  auto alice = FrontEndDeveloper{};
-  auto bob = BackEndDeveloper{};
-  auto new_project = MyProject{{alice, bob}};
-  new_project.deliver();
+  auto sn = SMSNotifier{};
+  auto en = EMailNotifier{};
+  auto ns = MyNotificationSystem{{sn, en}};
+  ns.notify("Quinn, Wade, Arturo, Rembrandt");
 }

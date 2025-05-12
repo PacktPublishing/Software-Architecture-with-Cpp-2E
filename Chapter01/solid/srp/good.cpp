@@ -10,5 +10,5 @@ class FileManager {
 
 class Parser {
  public:
-  virtual std::vector<int> parse(const std::string& s) = 0;
+  std::vector<int> parse(const std::string& s);
 };

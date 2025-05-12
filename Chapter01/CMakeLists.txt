@@ -31,7 +31,7 @@ add_library(solid_srp_good solid/srp/good.cpp)
 add_executable(solid_dip_bad solid/dip/bad.cpp)
 target_compile_features(solid_dip_bad PRIVATE cxx_std_17)
 
-add_executable(solid_dip_dynamic_di solid/dip/dynamic_di.cpp)
+add_executable(solid_dip_dynamic_di solid/dip/dynamic_dip.cpp)
 target_compile_features(solid_dip_dynamic_di PRIVATE cxx_std_17)
 
 add_executable(solid_dip_static_dip solid/dip/static_dip.cpp)

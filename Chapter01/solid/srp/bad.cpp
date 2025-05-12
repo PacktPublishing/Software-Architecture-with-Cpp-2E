@@ -7,5 +7,5 @@ class FileManagerAndParser {
 
   void write(const char* s, std::streamsize n) {}
 
-  virtual std::vector<int> parse(const std::string& s) = 0;
+  std::vector<int> parse(const std::string& s);
 };

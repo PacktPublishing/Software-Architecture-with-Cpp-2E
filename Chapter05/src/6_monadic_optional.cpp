@@ -35,8 +35,8 @@ int main() {
   std::println("input numbers (press ^C to quit)");
   for (const auto &input : read_input_generator()) {
     auto res = input.and_then(parse_int)
-                   .transform([](const int n) { return n * n; })
-                   .transform([](const int n) { return std::to_string(n); })
+                   .transform([](int n) { return n * n; })
+                   .transform([](int n) { return std::to_string(n); })
                    .or_else([]() {
                      std::println(std::cerr, "Handled Error");
                      // return std::optional<std::string>();

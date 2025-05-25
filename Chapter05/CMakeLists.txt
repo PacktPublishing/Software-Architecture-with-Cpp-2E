@@ -24,7 +24,7 @@ include(CommonCompileFlags)
 add_library(apis INTERFACE)
 target_include_directories(apis INTERFACE src/apis)
 
-add_library(declarative src/apis/declarative.cpp)
+add_executable(declarative src/apis/declarative.cpp)
 target_compile_features(declarative PUBLIC cxx_std_20)
 
 add_executable(base src/1_base.cpp)

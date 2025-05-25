@@ -18,7 +18,7 @@ using CustomerId = int;
 CustomerId get_current_customer_id() { return 42; }
 
 struct Merchant {
-  int id;
+  int id{};
 };
 
 struct Item {
@@ -133,7 +133,7 @@ void order_items_by_date_added(Items &items) {
   sort(items, greater{}, &Item::date_added);
 }
 
-void render_item_gallery([[maybe_unused]] const Items &items) {
+void render_item_gallery(const Items &items) {
   copy(items,
        std::ostream_iterator<gsl::not_null<const Item *>>(std::cout, "\n"));
 }

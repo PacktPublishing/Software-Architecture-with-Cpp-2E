@@ -18,7 +18,7 @@ using CustomerId = int;
 CustomerId get_current_customer_id() { return 42; }
 
 struct Merchant {
-  int id;
+  int id{};
 };
 
 struct Item {

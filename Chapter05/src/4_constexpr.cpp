@@ -2,7 +2,7 @@
 #include <array>
 
 struct Merchant {
-  int id;
+  int id{};
 };
 
 constexpr bool has_merchant(const Merchant &selected) {

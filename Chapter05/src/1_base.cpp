@@ -15,7 +15,7 @@ using CustomerId = int;
 CustomerId get_current_customer_id() { return 42; }
 
 struct Merchant {
-  int id;
+  int id{};
 };
 
 using namespace std::chrono;
@@ -135,7 +135,7 @@ void order_items_by_date_added(Items &items) {
   std::sort(std::begin(items), std::end(items), date_comparator);
 }
 
-void render_item_gallery([[maybe_unused]] const Items &items) {
+void render_item_gallery(const Items &items) {
   std::copy(
       std::begin(items), std::end(items),
       std::ostream_iterator<gsl::not_null<const Item *>>(std::cout, "\n"));

@@ -30,7 +30,7 @@ struct Item {
   bool featured{};
 };
 
-std::ostream &operator<<(std::ostream &os, const Item *item) {
+std::ostream &operator<<(std::ostream &os, const Item &item) {
   auto stringify_optional = [](const auto &optional) {
     using optional_value_type =
         typename std::remove_cvref_t<decltype(optional)>::value_type;
@@ -41,12 +41,12 @@ std::ostream &operator<<(std::ostream &os, const Item *item) {
     }
   };
 
-  os << "name: " << item->name
-     << ", photo_url: " << stringify_optional(item->photo_url)
-     << ", description: " << item->description
-     << ", price: " << std::setprecision(2) << stringify_optional(item->price)
-     << ", date_added: " << std::format("{:%c %Z}", item->date_added)
-     << ", featured: " << item->featured;
+  os << "name: " << item.name
+     << ", photo_url: " << stringify_optional(item.photo_url)
+     << ", description: " << item.description
+     << ", price: " << std::setprecision(2) << stringify_optional(item.price)
+     << ", date_added: " << std::format("{:%c %Z}", item.date_added)
+     << ", featured: " << item.featured;
   return os;
 }
 
@@ -61,17 +61,17 @@ enum class Category {
 };
 
 struct Store {
-  gsl::not_null<const Merchant *> owner;
+  std::reference_wrapper<const Merchant> owner;
   std::vector<Item> items;
   std::vector<Category> categories;
 };
 
-using Stores = std::vector<gsl::not_null<const Store *>>;
+using Stores = std::vector<std::reference_wrapper<const Store>>;
 
 Stores get_favorite_stores_for(const CustomerId &customer_id) {
   static const auto merchants = std::vector<Merchant>{{17}, {29}};
   static const auto stores = std::vector<Store>{
-      {.owner = &merchants[0],
+      {.owner = merchants[0],
        .items =
            {
                {.name = "Honey",
@@ -88,7 +88,7 @@ Stores get_favorite_stores_for(const CustomerId &customer_id) {
                 .featured = true},
            },
        .categories = {Category::Food}},
-      {.owner = &merchants[1],
+      {.owner = merchants[1],
        .items = {{
            .name = "Handmade painted ceramic bowls",
            .photo_url = "http://example.com/beautiful_bowl.png",
@@ -104,17 +104,17 @@ Stores get_favorite_stores_for(const CustomerId &customer_id) {
   return favorite_stores_by_customer[customer_id];
 }
 
-using Items = std::vector<gsl::not_null<const Item *>>;
+using Items = std::vector<std::reference_wrapper<const Item>>;
 
 auto get_featured_items_for_store(const Store &store) {
   return store.items | views::filter(&Item::featured) |
          views::transform(
-             [](const auto &item) { return gsl::not_null(&item); });
+             [](const auto &item) { return std::reference_wrapper(item); });
 }
 
 range auto get_all_featured_items(const Stores &stores) {
   auto all_featured = stores | views::transform([](auto elem) {
-                        return get_featured_items_for_store(*elem);
+                        return get_featured_items_for_store(elem);
                       }) |
                       views::join;
   auto as_items = Items{};
@@ -134,7 +134,7 @@ void order_items_by_date_added(
 
 template <input_range Container>
   requires std::is_same_v<typename Container::value_type,
-                          gsl::not_null<const Item *>>
+                          std::reference_wrapper<const Item>>
 void render_item_gallery(const Container &items) {
   copy(items,
        std::ostream_iterator<typename Container::value_type>(std::cout, "\n"));

@@ -1,38 +1,29 @@
 #include <expected>
 #include <iostream>
 #include <print>
+#include <stdexcept>
 #include <string>
-
-#if !defined(_MSC_VER)
-#include <generator>
-#else
-#include <experimental/generator>
-#endif
 
 std::expected<int, std::string> parse_int(const std::string &s) {
   try {
     return std::stoi(s);
-  } catch (const std::exception &) {
-    return std::unexpected{"Invalid number"};
-  }
-}
-
-#if !defined(_MSC_VER)
-std::generator<std::expected<std::string, std::string>> read_input_generator() {
-#else
-std::experimental::generator<std::expected<std::string, std::string>>
-read_input_generator() {
-#endif
-  std::string s;
-  while (true) {
-    std::getline(std::cin, s);
-    co_yield s;
+  } catch (const std::invalid_argument &ex) {
+    std::println(std::cerr, "std::invalid_argument::what(): {}", ex.what());
+    return std::unexpected{"invalid argument"};
+  } catch (std::out_of_range const &ex) {
+    std::println(std::cerr, "std::out_of_range::what(): {}", ex.what());
+    return std::unexpected{"out of range"};
   }
 }
 
 int main() {
   std::println("input numbers (press ^C to quit)");
-  for (const auto &input : read_input_generator()) {
+
+  while (true) {
+    std::string s;
+    std::getline(std::cin, s);
+    auto input = std::expected<std::string, std::string>(s);
+
     auto res =
         input.and_then(parse_int)
             .transform([](int n) { return n * n; })
@@ -42,9 +33,8 @@ int main() {
             })
             .or_else([](const std::string &error) {
               std::println(std::cerr, "Handled Error ({})", error);
-              // return
-              // std::expected<std::string,std::string>(std::unexpected(error));
-              return std::expected<std::string, std::string>{"*missing*"};
+              return std::expected<std::string, std::string>(
+                  std::unexpected(error));
             });
 
     if (res.has_value()) {

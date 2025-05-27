@@ -1,45 +1,34 @@
 #include <iostream>
 #include <optional>
 #include <print>
+#include <stdexcept>
 #include <string>
 
-#if !defined(_MSC_VER)
-#include <generator>
-#else
-#include <experimental/generator>
-#endif
-
-std::optional<int> parse_int(const std::string &s) {
+std::optional<int> parse_int(const std::string& s) {
   try {
     return std::stoi(s);
-  } catch (const std::exception &) {
-    std::println(std::cerr, "{}", "Invalid number");
+  } catch (const std::invalid_argument& ex) {
+    std::println(std::cerr, "std::invalid_argument::what(): {}", ex.what());
     return std::nullopt;
-  }
-}
-
-#if !defined(_MSC_VER)
-std::generator<std::optional<std::string>> read_input_generator() {
-#else
-std::experimental::generator<std::optional<std::string>>
-read_input_generator() {
-#endif
-  std::string s;
-  while (true) {
-    std::getline(std::cin, s);
-    co_yield std::make_optional(s);
+  } catch (const std::out_of_range& ex) {
+    std::println(std::cerr, "std::out_of_range::what(): {}", ex.what());
+    return std::nullopt;
   }
 }
 
 int main() {
   std::println("input numbers (press ^C to quit)");
-  for (const auto &input : read_input_generator()) {
+
+  while (true) {
+    std::string s;
+    std::getline(std::cin, s);
+    auto input = std::make_optional(s);
+
     auto res = input.and_then(parse_int)
                    .transform([](int n) { return n * n; })
                    .transform([](int n) { return std::to_string(n); })
                    .or_else([]() {
                      std::println(std::cerr, "Handled Error");
-                     // return std::optional<std::string>();
                      return std::optional<std::string>{"*missing*"};
                    });
 
@@ -49,6 +38,4 @@ int main() {
       std::println(std::cerr, "no value");
     }
   }
-
-  return 0;
 }

@@ -11,3 +11,6 @@ if(NOT MSVC)
   target_link_libraries(coroutines_3 PRIVATE coost::co)
   target_compile_features(coroutines_3 PRIVATE cxx_std_23)
 endif()
+
+add_executable(coroutines_4 main_4.cpp)
+target_compile_features(coroutines_4 PRIVATE cxx_std_23)

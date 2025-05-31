@@ -6,6 +6,7 @@
 
 std::optional<int> parse_int(const std::string& s) {
   try {
+    std::println("Parsing {} to integer", s);
     return std::stoi(s);
   } catch (const std::invalid_argument& ex) {
     std::println(std::cerr, "std::invalid_argument::what(): {}", ex.what());
@@ -17,7 +18,7 @@ std::optional<int> parse_int(const std::string& s) {
 }
 
 int main() {
-  std::println("input numbers (press ^C to quit)");
+  std::println("Input integers (press ^C to quit)");
 
   while (true) {
     std::string s;
@@ -25,10 +26,16 @@ int main() {
     auto input = std::make_optional(s);
 
     auto res = input.and_then(parse_int)
-                   .transform([](int n) { return n * n; })
-                   .transform([](int n) { return std::to_string(n); })
+                   .transform([](int n) {
+                     std::println("Squaring {}", n);
+                     return n * n;
+                   })
+                   .transform([](int n) {
+                     std::println("Converting {} to a string", n);
+                     return std::to_string(n);
+                   })
                    .or_else([]() {
-                     std::println(std::cerr, "Handled Error");
+                     std::println(std::cerr, "Handled error");
                      return std::optional<std::string>{"*missing*"};
                    });
 

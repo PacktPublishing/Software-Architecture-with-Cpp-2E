@@ -72,3 +72,17 @@ Tools to manage Kubernetes clusters and deploy applications
 
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
 - [Helm](https://helm.sh/docs/intro/install/)
+
+### Troubleshooting
+
+If you use Conan and dependencies are not compiled in your environment, try configuring the [profiles](https://docs.conan.io/2/reference/config_files/profiles.html).
+You can [replace requirements](https://docs.conan.io/2/reference/config_files/profiles.html).
+For instance, the settings in `~/.conan2/profiles/default`:
+
+```text
+[replace_requires]
+libiconv/*: libiconv/1.18
+libpq/*: libpq/15.12
+```
+
+The development libraries can be installed with Homebrew.

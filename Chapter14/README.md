@@ -71,6 +71,11 @@ cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan
 cmake --build build
 ```
 
+### Tracy
+
+`tracy-profiler` is a GUI application. You can download this app from [GitHub](https://github.com/wolfpld/tracy/releases) compiled for Windows
+or install with [Homebrew](https://formulae.brew.sh/formula/tracy) on Linux and macOS.
+
 ### Troubleshooting
 
 If you see this error, edit `~/.conan2/profiles/default` and set `compiler.cppstd=gnu20` (or higher):

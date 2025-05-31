@@ -6,6 +6,7 @@
 
 std::expected<int, std::string> parse_int(const std::string &s) {
   try {
+    std::println("Parsing {} to integer", s);
     return std::stoi(s);
   } catch (const std::invalid_argument &ex) {
     std::println(std::cerr, "std::invalid_argument::what(): {}", ex.what());
@@ -17,7 +18,7 @@ std::expected<int, std::string> parse_int(const std::string &s) {
 }
 
 int main() {
-  std::println("input numbers (press ^C to quit)");
+  std::println("Input integers (press ^C to quit)");
 
   while (true) {
     std::string s;
@@ -26,13 +27,19 @@ int main() {
 
     auto res =
         input.and_then(parse_int)
-            .transform([](int n) { return n * n; })
-            .transform([](int n) { return std::to_string(n); })
+            .transform([](int n) {
+              std::println("Squaring {}", n);
+              return n * n;
+            })
+            .transform([](int n) {
+              std::println("Converting {} to a string", n);
+              return std::to_string(n);
+            })
             .transform_error([](const std::string &error) -> std::string {
               return "Error encountered: " + error;
             })
             .or_else([](const std::string &error) {
-              std::println(std::cerr, "Handled Error ({})", error);
+              std::println(std::cerr, "Handled error ({})", error);
               return std::expected<std::string, std::string>(
                   std::unexpected(error));
             });
@@ -43,6 +50,4 @@ int main() {
       std::println(std::cerr, "{}", res.error());
     }
   }
-
-  return 0;
 }

@@ -13,9 +13,7 @@ using namespace std::chrono;
 using namespace std::literals::chrono_literals;
 using namespace std::ranges;
 
-using CustomerId = int;
-
-CustomerId get_current_customer_id() { return 42; }
+int get_current_customer_id() { return 42; }
 
 struct Merchant {
   int id{};
@@ -31,9 +29,8 @@ struct Item {
 };
 
 std::ostream &operator<<(std::ostream &os, const Item *item) {
-  auto stringify_optional = [](const auto &optional) {
-    using optional_value_type =
-        typename std::remove_cvref_t<decltype(optional)>::value_type;
+  auto stringify_optional = []<typename T>(const T &optional) {
+    using optional_value_type = typename std::remove_cvref_t<T>::value_type;
     if constexpr (std::is_same_v<optional_value_type, std::string>) {
       return optional ? *optional : "missing";
     } else {
@@ -68,7 +65,7 @@ struct Store {
 
 using Stores = std::vector<gsl::not_null<const Store *>>;
 
-Stores get_favorite_stores_for(const CustomerId &customer_id) {
+Stores get_favorite_stores_for(int customer_id) {
   static const auto merchants = std::vector<Merchant>{{17}, {29}};
   static const auto stores = std::vector<Store>{
       {.owner = &merchants[0],
@@ -100,7 +97,7 @@ Stores get_favorite_stores_for(const CustomerId &customer_id) {
        }},
        .categories = {Category::Artist, Category::Handicraft}}};
   static auto favorite_stores_by_customer =
-      std::unordered_map<CustomerId, Stores>{{42, {&stores[0], &stores[1]}}};
+      std::unordered_map<int, Stores>{{42, {&stores[0], &stores[1]}}};
   return favorite_stores_by_customer[customer_id];
 }
 
@@ -111,7 +108,7 @@ Items get_featured_items_for_store(const Store &store) {
                views::transform([](const auto &item) {
                  return gsl::not_null<const Item *>(&item);
                });
-  return Items(std::begin(items), std::end(items));
+  return {std::begin(items), std::end(items)};
 }
 
 Items get_all_featured_items(const Stores &stores) {
@@ -120,7 +117,7 @@ Items get_all_featured_items(const Stores &stores) {
                       });
 
   auto ret = Items{};
-  for_each(all_featured, [&](auto elem) {
+  for_each(all_featured, [&](const Items &elem) {
     ret.reserve(ret.size() + elem.size());
     copy(elem, std::back_inserter(ret));
   });
@@ -139,7 +136,7 @@ void render_item_gallery(const Items &items) {
 }
 
 int main() {
-  auto fav_stores = get_favorite_stores_for(get_current_customer_id());
+  const auto fav_stores = get_favorite_stores_for(get_current_customer_id());
 
   auto selected_items = get_all_featured_items(fav_stores);
 

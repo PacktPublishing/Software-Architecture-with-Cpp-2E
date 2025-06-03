@@ -2,7 +2,6 @@ module;
 
 #include <chrono>
 #include <format>
-#include <iomanip>
 #include <optional>
 #include <string>
 
@@ -32,7 +31,7 @@ export std::ostream &operator<<(std::ostream &os, const Item &item) {
   os << "name: " << item.name
      << ", photo_url: " << stringify_optional(item.photo_url)
      << ", description: " << item.description
-     << ", price: " << std::setprecision(2) << stringify_optional(item.price)
+     << ", price: " << std::format("{:.2f}", item.price.value_or(0))
      << ", date_added: " << std::format("{:%c %Z}", item.date_added)
      << ", featured: " << item.featured;
   return os;

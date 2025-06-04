@@ -95,3 +95,13 @@ For instance, the settings in `%USERPROFILE%\.conan2\profiles\default`:
 libiconv/*: libiconv/1.18
 libpq/*: libpq/15.12
 ```
+
+Configure [build options](https://docs.conan.io/2/reference/config_files/global_conf.html) globally or in your Conan profile.
+For instance, GCC 15 changes the default language version for C compilation from -std=gnu17 to -std=gnu23 that brakes some Conan recipes.
+
+```text
+[conf]
+tools.build:cflags=["-std=gnu17"]
+```
+
+The development libraries can also be installed with Homebrew.

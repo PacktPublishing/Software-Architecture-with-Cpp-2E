@@ -3,7 +3,23 @@
 #include <string>
 #include <utility>
 
-using Resource = std::string;
+class Resource final {
+  std::string s;
+
+ public:
+  explicit Resource(const std::string& s) : s(s) {
+    std::cout << "Resource constructor " << s << std::endl;
+  }
+
+  ~Resource() { std::cout << "Resource destructor " << s << std::endl; }
+
+  explicit operator std::string() const noexcept { return s; }
+};
+
+std::ostream& operator<<(std::ostream& os, const Resource& r) {
+  os << static_cast<std::string>(r);
+  return os;
+}
 
 void unique_ptr_val(std::unique_ptr<Resource> p) {
   std::cout << "unique_ptr_val: value = " << *p << std::endl;
@@ -66,7 +82,8 @@ int main() {
     // unique_ptr_val(ptr); // compilation error: deleted copy constructor
     unique_ptr_val(std::move(p));  // not copyable, but movable
 
-    std::cout << "unique_ptr_main: value = " << (p != nullptr ? *p : "null")
+    std::cout << "unique_ptr_main: value = "
+              << (p != nullptr ? static_cast<std::string>(*p) : "null")
               << std::endl;
   }
 
@@ -85,7 +102,8 @@ int main() {
 
     shared_ptr_val(sp);
 
-    std::cout << "unique_ptr_main: value = " << (up != nullptr ? *up : "null")
+    std::cout << "unique_ptr_main: value = "
+              << (up != nullptr ? static_cast<std::string>(*up) : "null")
               << std::endl;
     std::cout << "shared_ptr_main: value = " << *sp << std::endl;
   }
@@ -113,7 +131,8 @@ int main() {
 
     weak_ptr_val(wp);
 
-    std::cout << "shared_ptr_main: value = " << (sp != nullptr ? *sp : "null")
+    std::cout << "shared_ptr_main: value = "
+              << (sp != nullptr ? static_cast<std::string>(*sp) : "null")
               << std::endl;
   }
 
@@ -124,7 +143,8 @@ int main() {
     ref(*p.get());  // out of control
     raw(p.get());   // out of control
 
-    std::cout << "unique_ptr_main: value = " << (p != nullptr ? *p : "null")
+    std::cout << "unique_ptr_main: value = "
+              << (p != nullptr ? static_cast<std::string>(*p) : "null")
               << std::endl;
   }
 }

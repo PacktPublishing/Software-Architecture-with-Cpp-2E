@@ -13,6 +13,7 @@ class Resource final {
 
   ~Resource() { std::cout << "Resource destructor " << s << std::endl; }
 
+  // user-defined conversion function
   explicit operator std::string() const noexcept { return s; }
 };
 
@@ -82,6 +83,7 @@ int main() {
     // unique_ptr_val(ptr); // compilation error: deleted copy constructor
     unique_ptr_val(std::move(p));  // not copyable, but movable
 
+    // the resource is moved and destroyed in unique_ptr_val()
     std::cout << "unique_ptr_main: value = "
               << (p != nullptr ? static_cast<std::string>(*p) : "null")
               << std::endl;
@@ -90,9 +92,11 @@ int main() {
   {
     auto p = std::make_unique<Resource>("jet town");
 
-    unique_ptr_ref(p);   // conceptual error: exclusive ownership violation
-    unique_ptr_raw(&p);  // conceptual error: exclusive ownership violation
+    // violation: exclusive ownership
+    unique_ptr_ref(p);
+    unique_ptr_raw(&p);
 
+    // the ownership is not moved
     std::cout << "unique_ptr_main: value = " << *p << std::endl;
   }
 
@@ -100,6 +104,7 @@ int main() {
     auto up = std::make_unique<Resource>("walkman on");
     std::shared_ptr sp = std::move(up);
 
+    // shared ownership
     shared_ptr_val(sp);
 
     std::cout << "unique_ptr_main: value = "
@@ -109,25 +114,26 @@ int main() {
   }
 
   {
-    auto p = std::make_shared<Resource>("incognito");
+    auto p = std::make_shared<Resource>("playback");
 
-    shared_ptr_ref(p);   // conceptual error: ownership violation
-    shared_ptr_raw(&p);  // conceptual error: ownership violation
+    // no shared ownership
+    shared_ptr_ref(p);
+    shared_ptr_raw(&p);  // little sense
 
     std::cout << "shared_ptr_main: value = " << *p << std::endl;
   }
 
   {
-    auto sp = std::make_shared<Resource>("trip");
+    auto sp = std::make_shared<Resource>("synth samurai");
     std::weak_ptr wp = sp;
 
     weak_ptr_val(wp);
-    weak_ptr_ref(wp);
-    weak_ptr_val(wp);
+    weak_ptr_ref(wp);  // little sense
+    weak_ptr_val(wp);  // little sense
 
     std::cout << "shared_ptr_main: value = " << *sp << std::endl;
 
-    sp.reset();
+    sp.reset();  // nullified
 
     weak_ptr_val(wp);
 
@@ -139,9 +145,10 @@ int main() {
   {
     auto p = std::make_unique<Resource>("tonight");
 
-    val(*p.get());  // out of control
-    ref(*p.get());  // out of control
-    raw(p.get());   // out of control
+    // out of control
+    val(*p.get());
+    ref(*p.get());
+    raw(p.get());
 
     std::cout << "unique_ptr_main: value = "
               << (p != nullptr ? static_cast<std::string>(*p) : "null")

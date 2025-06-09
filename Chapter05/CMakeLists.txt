@@ -60,7 +60,7 @@ target_compile_features(monadic_expected PRIVATE cxx_std_23)
 target_compile_options(monadic_expected PRIVATE ${BASE_COMPILE_FLAGS})
 
 add_executable(pointers src/7_pointers.cpp)
-target_compile_features(pointers PRIVATE cxx_std_14)
+target_compile_features(pointers PRIVATE cxx_std_20)
 target_compile_options(pointers PRIVATE ${BASE_COMPILE_FLAGS})
 
 add_executable(raii src/8_raii.cpp)

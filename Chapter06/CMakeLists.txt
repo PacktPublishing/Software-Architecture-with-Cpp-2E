@@ -36,6 +36,9 @@ target_compile_features(static_polymorphism1 PRIVATE cxx_std_20)
 add_executable(static_polymorphism2 07_static_polymorphism_2.cpp)
 target_compile_features(static_polymorphism2 PRIVATE cxx_std_23)
 
+add_executable(raii_deducing_this 07_raii_deducing_this.cpp)
+target_compile_features(raii_deducing_this PRIVATE cxx_std_23)
+
 add_executable(type_erasure 08_type_erasure.cpp)
 target_compile_features(type_erasure PRIVATE cxx_std_20)
 

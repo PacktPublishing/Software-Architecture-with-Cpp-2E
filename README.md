@@ -42,7 +42,7 @@ Part 4: Cloud Native design and distributed systems
 
 Chapter 15: [Architecture of Distributed Systems](Chapter15)
 
-Chapter 16: [Communication](Chapter16)
+Chapter 16: [Interservice communication](Chapter16)
 
 Chapter 17: [Containers](Chapter17)
 

@@ -28,13 +28,26 @@ choco install llvm
 choco install conan
 ```
 
-The third option is the package manager [winget.run](https://winget.run/):
+The third option is the package manager [winget.run](https://winget.run/) or [winstall](https://winstall.app/)([apps](https://winstall.app/apps)):
 
 ```
 winget install -e --id Kitware.CMake
 winget install -e --id Ninja-build.Ninja
 winget install -e --id LLVM.LLVM
 winget install -e --id JFrog.Conan
+```
+
+The fourth option is the package manager [Scoop](https://scoop.sh/#/) ([apps](https://scoop.sh/#/apps)):
+
+```
+scoop bucket add main
+
+scoop install main/cmake
+scoop install main/ninja
+scoop install main/llvm
+scoop install main/conan
+
+scoop install main/mingw
 ```
 
 Conan is [integrated](https://docs.conan.io/2/integrations.html) with different IDEs including
@@ -104,3 +117,5 @@ Set the cstd version in the profile section `[settings]`:
 ```text
 compiler.cstd=gnu17
 ```
+
+The development libraries can be installed with Homebrew on Windows Subsystem for Linux (WSL).

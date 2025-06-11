@@ -88,3 +88,5 @@ Set the cstd version in the profile section `[settings]`:
 ```text
 compiler.cstd=gnu17
 ```
+
+The development libraries can be installed with Homebrew.

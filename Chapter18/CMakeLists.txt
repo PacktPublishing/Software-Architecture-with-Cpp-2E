@@ -26,12 +26,12 @@ if(NOT MSVC)
   target_compile_features(redis_client PRIVATE cxx_std_17)
   target_compile_options(redis_client PRIVATE "${BASE_COMPILE_FLAGS}")
   target_link_libraries(redis_client PRIVATE redis++::redis++_static)
-
-  find_package(gRPC REQUIRED)
-  find_package(protobuf REQUIRED)
 endif()
 
 if(NOT MSVC)
+  find_package(gRPC REQUIRED)
+  find_package(protobuf REQUIRED)
+
   add_library(grpc_service grpc/service.proto)
   target_link_libraries(grpc_service PUBLIC protobuf::libprotobuf gRPC::grpc++)
 

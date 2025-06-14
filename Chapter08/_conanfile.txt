@@ -2,7 +2,7 @@
 drogon/1.9.10
 
 [test_requires]
-gtest/1.15.0
+gtest/1.16.0
 
 [generators]
 CMakeDeps

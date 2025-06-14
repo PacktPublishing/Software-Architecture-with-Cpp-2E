@@ -133,4 +133,4 @@ tools.cmake.cmaketoolchain:generator=Ninja
 tools.build:compiler_executables={"c":"/usr/bin/gcc","cpp":"/usr/bin/g++"}
 ```
 
-The development libraries can be installed with Homebrew on Windows Subsystem for Linux (WSL).
+The development libraries and apps can be installed with Homebrew on Windows Subsystem for Linux (WSL).

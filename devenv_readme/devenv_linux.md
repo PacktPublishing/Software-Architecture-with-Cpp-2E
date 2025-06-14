@@ -94,4 +94,11 @@ Set the cstd version in the profile section `[settings]`:
 compiler.cstd=gnu17
 ```
 
+Setting `CXXFLAGS` and `CFLAGS` also works:
+
+```text
+[conf]
+tools.build:cflags=["-std=gnu17"]
+```
+
 The development libraries can be installed with Homebrew.

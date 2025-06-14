@@ -112,10 +112,4 @@ libpq/*: libpq/15.12
 Configure [build options](https://docs.conan.io/2/reference/config_files/global_conf.html) globally or in your Conan profile.
 For instance, GCC 15 changes the default language version for C compilation from -std=gnu17 to -std=gnu23 that brakes some Conan recipes.
 
-Set the cstd version in the profile section `[settings]`:
-
-```text
-compiler.cstd=gnu17
-```
-
 The development libraries can be installed with Homebrew on Windows Subsystem for Linux (WSL).

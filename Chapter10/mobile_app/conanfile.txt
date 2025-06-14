@@ -1,9 +1,9 @@
 [requires]
-catch2/3.7.1
+catch2/3.8.1
 trompeloeil/49
 cpputest/4.0
-gtest/1.15.0
-ms-gsl/4.1.0
+gtest/1.16.0
+ms-gsl/4.2.0
 
 [generators]
 CMakeDeps

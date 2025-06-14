@@ -1,8 +1,8 @@
 [requires]
 drogon/1.9.10
-opentelemetry-cpp/1.17.0
+opentelemetry-cpp/1.21.0
 grpc/1.67.1
-openssl/3.4.1
+openssl/3.5.0
 
 [generators]
 CMakeDeps

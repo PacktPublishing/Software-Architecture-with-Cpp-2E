@@ -17,6 +17,12 @@ To compile the examples, you need the recent versions of [CMake](https://cmake.o
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+To uninstall Homebrew, run the uninstall script:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+```
+
 ## Development tools
 
 Then install these tools with Homebrew
@@ -94,6 +100,14 @@ Setting `CXXFLAGS` and `CFLAGS` also works:
 ```text
 [conf]
 tools.build:cflags=["-std=gnu17"]
+```
+
+Using a compiler other than the [auto-detected](https://docs.conan.io/2/reference/tools/cmake/cmaketoolchain.html#conan-cmake-toolchain-conf) one:
+
+```text
+[conf]
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.build:compiler_executables={"c":"/usr/bin/gcc","cpp":"/usr/bin/g++"}
 ```
 
 The development libraries can be installed with Homebrew.

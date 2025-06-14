@@ -24,6 +24,16 @@ Add these settings to your shell configuration files (`.zshrc`, `.bashrc`) to ru
 
 ```
 [ -d /home/linuxbrew/.linuxbrew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+```
+
+To uninstall Homebrew, run the uninstall script:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 ```
 
 ## Development tools
@@ -75,7 +85,8 @@ Tools to manage Kubernetes clusters and deploy applications
 
 ### Troubleshooting
 
-If you use Conan and dependencies are not compiled in your environment, try configuring the [profiles](https://docs.conan.io/2/reference/config_files/profiles.html).
+If you use Conan and dependencies are not compiled in your environment, try Clang instead of GCC or
+configuring the [profiles](https://docs.conan.io/2/reference/config_files/profiles.html).
 You can [replace requirements](https://docs.conan.io/2/reference/config_files/profiles.html).
 For instance, the settings in `~/.conan2/profiles/default`:
 
@@ -99,6 +110,14 @@ Setting `CXXFLAGS` and `CFLAGS` also works:
 ```text
 [conf]
 tools.build:cflags=["-std=gnu17"]
+```
+
+Using a compiler other than the [auto-detected](https://docs.conan.io/2/reference/tools/cmake/cmaketoolchain.html#conan-cmake-toolchain-conf) one:
+
+```text
+[conf]
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.build:compiler_executables={"c":"/usr/bin/gcc","cpp":"/usr/bin/g++"}
 ```
 
 The development libraries can be installed with Homebrew.

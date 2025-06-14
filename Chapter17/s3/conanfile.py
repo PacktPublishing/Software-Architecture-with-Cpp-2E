@@ -5,7 +5,7 @@ class Pkg(ConanFile):
     generators = "CMakeDeps"
 
     def requirements(self):
-        self.requires("spdlog/1.15.0")
+        self.requires("spdlog/1.15.3")
         if not self.settings.os == "Windows":
             self.requires("aws-sdk-cpp/1.11.352")
 

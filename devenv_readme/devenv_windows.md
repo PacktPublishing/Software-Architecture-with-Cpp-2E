@@ -99,6 +99,8 @@ Tools to manage Kubernetes clusters and deploy applications
 
 ### Troubleshooting
 
+Try deleting the project's build files and recompiling it. It helps if you change Conan recipes because CMake files can cache previous settings.
+
 If you use Conan and dependencies are not compiled in your environment, try configuring the [profiles](https://docs.conan.io/2/reference/config_files/profiles.html).
 You can [replace requirements](https://docs.conan.io/2/reference/config_files/profiles.html).
 For instance, the settings in `%USERPROFILE%\.conan2\profiles\default`:
@@ -112,7 +114,7 @@ libpq/*: libpq/15.12
 Configure [build options](https://docs.conan.io/2/reference/config_files/global_conf.html) globally or in your Conan profile.
 For instance, GCC 15 changes the default language version for C compilation from -std=gnu17 to -std=gnu23 that brakes some Conan recipes.
 
-Set the cstd version in the profile section `[settings]`:
+For example, set the cstd version in the profile section `[settings]`:
 
 ```text
 compiler.cstd=gnu17

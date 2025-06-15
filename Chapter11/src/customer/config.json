@@ -1,0 +1,34 @@
+{
+  "listeners": [
+    {
+      "address": "0.0.0.0",
+      "port": 8080
+    }
+  ],
+  "app": {
+    "number_of_threads": 8,
+    "enable_server_header": false
+  },
+  "plugins": [
+    {
+      "name": "drogon::plugin::PromExporter",
+      "config": {
+        "path": "/metrics",
+        "collectors":[
+          {
+            "name": "http_requests_total",
+            "help": "The total number of http requests",
+            "type": "counter",
+            "labels": ["method", "path"]
+          },
+          {
+            "name": "http_request_duration_seconds",
+            "help": "The processing time of http requests, in seconds",
+            "type": "histogram",
+            "labels": ["method", "path"]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -86,7 +86,7 @@ invocation.
 In the build directory, run `cpack`. Simple as that. Assuming you're running on a system supporting DEB packages,
 you'll get a .tar.gz file, a .zip file, and a .deb package.
 
-# Docker
+### Docker
 
 In the build directory, run `cmake --build . --target docker` to build the Docker image and run the app
 from `docker/compose.yaml` with Compose.

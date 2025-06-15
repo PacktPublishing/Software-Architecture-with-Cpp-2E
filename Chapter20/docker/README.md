@@ -14,7 +14,7 @@ docker run -p 4317:4317 -p 4318:4318 --rm -v $(pwd)/collector-config.yaml:/etc/o
 
 ### The app in Docker
 
-Build the Docker image run this command:
+Build the Docker image and run this command:
 
 ```bash
 docker compose up

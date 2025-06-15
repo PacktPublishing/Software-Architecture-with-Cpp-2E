@@ -2,7 +2,7 @@
 
 Software Architecture with C++, Second Edition, Published by Packt
 
-## Chapter 20: Cloud Native Design
+## Chapter 11: Observability
 
 ### Prerequisites
 
@@ -24,6 +24,7 @@ Make sure that the profile section `[settings]` contains:
 ```text
 arch=x86_64
 compiler=gcc
+compiler.cppstd=gnu20
 compiler.libcxx=libstdc++11
 compiler.version=14
 os=Linux
@@ -69,14 +70,6 @@ git clone https://github.com/conan-io/cmake-conan.git build/cmake-conan
 cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan_provider.cmake -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
-
-### Docker
-
-In the build directory, run `cmake --build . --target docker` to build the Docker image. Run the app
-from `docker/compose.yaml` with Compose and `kubernetes/manifest.yaml` with Kubernetes.
-
-Read instructions regarding Development Containers in the file `containers/docker/README.md` in Chapter 19
-to build an executable file for Linux on macOS and Windows.
 
 ### Troubleshooting
 

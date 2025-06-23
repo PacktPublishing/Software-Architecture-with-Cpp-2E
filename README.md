@@ -42,15 +42,11 @@ Part 4: Cloud Native design and distributed systems
 
 Chapter 15: [Architecture of Distributed Systems](Chapter15)
 
-Chapter 16: [Inter-Process Communication](Chapter16)
+Chapter 16: [Communication](Chapter16)
 
-Chapter 17: [Service Oriented Architecture](Chapter17)
+Chapter 17: [Containers](Chapter17)
 
-Chapter 18: [Designing Microservices](Chapter18)
-
-Chapter 19: [Containers](Chapter19)
-
-Chapter 20: [Cloud Native Design](Chapter20)
+Chapter 18: [Cloud Native Design](Chapter18)
 
 <a href="https://www.packtpub.com/product/software-architecture-with-c/9781838554590"><img src="https://content.packt.com/_/image/original/B13870/cover_image.jpg" alt="" height="256px" align="right"></a>
 

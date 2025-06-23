@@ -2,7 +2,7 @@
 
 Software Architecture with C++, Second Edition, Published by Packt
 
-## Chapter 20: Cloud Native Design
+## Chapter 18: Cloud Native Design
 
 **Important**: The shortest path on Linux is to install MicroK8s, enable the dns, ingress and helm addons,
 check the status, build the customer image, deploy Aspire dashboard and the customer application,

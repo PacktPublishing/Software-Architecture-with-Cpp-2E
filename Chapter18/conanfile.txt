@@ -1,7 +1,18 @@
 [requires]
-redis-plus-plus/1.3.13
-grpc/1.67.1
-protobuf/5.27.0
+drogon/1.9.10
+opentelemetry-cpp/1.21.0
 
 [generators]
 CMakeDeps
+
+[options]
+drogon/*:with_boost=False
+drogon/*:with_orm=False
+opentelemetry-cpp/*:with_otlp_grpc=True
+opentelemetry-cpp/*:with_otlp_http=True
+opentelemetry-cpp/*:with_otlp_http_compression=True
+opentelemetry-cpp/*:with_zipkin=False
+opentelemetry-cpp/*:with_prometheus=False
+opentelemetry-cpp/*:with_elasticsearch=False
+opentelemetry-cpp/*:with_jaeger=False
+openssl/*:shared=False

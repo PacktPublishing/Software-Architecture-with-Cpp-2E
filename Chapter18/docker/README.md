@@ -2,7 +2,7 @@
 
 Software Architecture with C++, Second Edition, Published by Packt
 
-## Chapter 20: Cloud Native Design
+## Chapter 18: Cloud Native Design
 
 ### [OTLP exporters](https://opentelemetry.io/docs/languages/cpp/exporters/)
 

@@ -11,7 +11,7 @@ struct Available {
 };
 
 struct Discontinued {};
-}  // namespace state
+} // namespace state
 
 using State =
     std::variant<state::Depleted, state::Available, state::Discontinued>;
@@ -28,7 +28,7 @@ struct Purchased {
 
 struct Discontinued {};
 
-}  // namespace event
+} // namespace event
 
 State on_event(state::Available available, event::DeliveryArrived delivered) {
   available.count += delivered.count;
@@ -37,12 +37,12 @@ State on_event(state::Available available, event::DeliveryArrived delivered) {
 
 State on_event(state::Available available, event::Purchased purchased) {
   available.count -= purchased.count;
-  if (available.count > 0) return available;
+  if (available.count > 0)
+    return available;
   return state::Depleted{};
 }
 
-template <typename S>
-State on_event(S, event::Discontinued) {
+template <typename S> State on_event(S, event::Discontinued) {
   return state::Discontinued{};
 }
 
@@ -50,17 +50,14 @@ State on_event(state::Depleted depleted, event::DeliveryArrived delivered) {
   return state::Available{delivered.count};
 }
 
-template <class... Ts>
-struct overload : Ts... {
+template <class... Ts> struct overload : Ts... {
   using Ts::operator()...;
 };
-template <class... Ts>
-overload(Ts...) -> overload<Ts...>;
+template <class... Ts> overload(Ts...) -> overload<Ts...>;
 
 class ItemStateMachine {
- public:
-  template <typename Event>
-  void process_event(Event &&event) {
+public:
+  template <typename Event> void process_event(Event &&event) {
     state_ = std::visit(overload{
         [&](const auto &state)
           requires std::is_same_v<decltype(on_event(
@@ -87,7 +84,7 @@ class ItemStateMachine {
         state_);
   }
 
- private:
+private:
   State state_;
 };
 

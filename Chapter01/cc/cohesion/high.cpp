@@ -7,32 +7,32 @@ using WorkBatch = std::vector<int>;
 struct Listener;
 
 class WorkResultsCache {
- public:
+public:
   void addToCache(const WorkItem &work, const Result &result) {}
   void findInCache(const WorkItem &work) {}
   void limitCacheSize(std::size_t size) {}
 
- private:
+private:
   // ...
 };
 
 class ResultNotifier {
- public:
+public:
   void addListener(const Listener &listener) {}
   void removeListener(const Listener &listener) {}
   void notify(const Result &result) {}
 
- private:
+private:
   // ...
 };
 
 class CachingProcessor {
- public:
+public:
   explicit CachingProcessor(ResultNotifier &notifier) {}
   Result process(WorkItem work) { return {}; }
   Results processBatch(WorkBatch batch) { return {}; }
 
- private:
+private:
   WorkResultsCache cache_;
   ResultNotifier notifier_;
   // ...

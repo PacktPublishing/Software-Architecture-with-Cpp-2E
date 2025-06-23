@@ -13,13 +13,13 @@ struct IDocument {
 };
 
 class PdfDocument : public IDocument {
- public:
+public:
   explicit PdfDocument(std::string_view path) {}
   std::vector<std::string> extract_text() override { return {"Text from PDF"}; }
 };
 
 class HtmlDocument : public IDocument {
- public:
+public:
   explicit HtmlDocument(std::string_view path) {}
   std::vector<std::string> extract_text() override {
     return {"Text from HTML"};
@@ -27,21 +27,23 @@ class HtmlDocument : public IDocument {
 };
 
 class OdtDocument : public IDocument {
- public:
+public:
   explicit OdtDocument(std::string_view path) {}
   std::vector<std::string> extract_text() override { return {"Text from ODT"}; }
 };
 
 std::unique_ptr<IDocument> open(std::string_view path) {
   const auto extension = std::filesystem::path(path).extension();
-  if (extension == ".pdf") return std::make_unique<PdfDocument>(path);
-  if (extension == ".html") return std::make_unique<HtmlDocument>(path);
+  if (extension == ".pdf")
+    return std::make_unique<PdfDocument>(path);
+  if (extension == ".html")
+    return std::make_unique<HtmlDocument>(path);
 
   return nullptr;
 }
 
 class DocumentOpener {
- public:
+public:
   using DocumentType = std::unique_ptr<IDocument>;
   using ConcreteOpener = DocumentType (*)(std::string_view);
   //  using ConcreteOpener = std::function<DocumentType(std::string_view)>;
@@ -57,7 +59,7 @@ class DocumentOpener {
     throw std::invalid_argument{"Trying to open a file with no extension"};
   }
 
- private:
+private:
   std::unordered_map<std::string_view, ConcreteOpener> openerByExtension;
 };
 

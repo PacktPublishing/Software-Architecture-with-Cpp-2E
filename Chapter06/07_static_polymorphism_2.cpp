@@ -6,23 +6,22 @@
 #include <variant>
 
 class GlamorousItem {
- public:
+public:
   // void appear_in_full_glory(this auto&& self) {
-  template <typename Self>
-  void appear_in_full_glory(this Self&& self) {
+  template <typename Self> void appear_in_full_glory(this Self &&self) {
     self.appear_in_full_glory_impl();
   }
 };
 
 class PinkHeels : public GlamorousItem {
- public:
+public:
   void appear_in_full_glory_impl() {
     std::cout << "Pink high heels suddenly appeared in all their beauty\n";
   }
 };
 
 class GoldenWatch : public GlamorousItem {
- public:
+public:
   void appear_in_full_glory_impl() {
     std::cout << "Everyone wanted to watch this watch\n";
   }
@@ -36,16 +35,16 @@ using PreciousItems = std::tuple<Args...>;
 using GlamorousVariant = std::variant<PinkHeels, GoldenWatch>;
 
 class CommonGlamorousItem {
- public:
+public:
   template <typename T>
     requires std::is_base_of_v<GlamorousItem, T>
-  explicit CommonGlamorousItem(T&& item) : item_{std::forward<T>(item)} {}
+  explicit CommonGlamorousItem(T &&item) : item_{std::forward<T>(item)} {}
 
   void appear_in_full_glory() {
-    std::visit([]<typename T>(T& item) { item.appear_in_full_glory(); }, item_);
+    std::visit([]<typename T>(T &item) { item.appear_in_full_glory(); }, item_);
   }
 
- private:
+private:
   GlamorousVariant item_;
 };
 
@@ -60,9 +59,9 @@ int main() {
   {
     auto glamorous_items = std::array{GlamorousVariant{PinkHeels{}},
                                       GlamorousVariant{GoldenWatch{}}};
-    for (auto& elem : glamorous_items) {
+    for (auto &elem : glamorous_items) {
       std::visit([]<std::derived_from<GlamorousItem> T>(
-                     T& item) { item.appear_in_full_glory(); },
+                     T &item) { item.appear_in_full_glory(); },
                  elem);
     }
   }
@@ -70,7 +69,7 @@ int main() {
   {
     auto glamorous_items = std::array{CommonGlamorousItem{PinkHeels{}},
                                       CommonGlamorousItem{GoldenWatch{}}};
-    for (auto& elem : glamorous_items) {
+    for (auto &elem : glamorous_items) {
       elem.appear_in_full_glory();
     }
   }

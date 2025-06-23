@@ -7,7 +7,7 @@
 std::string access_key = "Q3AM3UQ867SPQQA43P2F";
 std::string secret_key = "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG";
 
-bool create_user_bucket(const std::string& username) {
+bool create_user_bucket(const std::string &username) {
   minio::s3::BaseUrl base_url("play.min.io");
   minio::creds::StaticProvider provider(access_key, secret_key);
 

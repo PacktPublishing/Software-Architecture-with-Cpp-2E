@@ -10,6 +10,6 @@ TEST_CASE("Basic responses",
   REQUIRE(value == "Hello, Bob!");
 }
 
-int main(const int argc, char* argv[]) {
+int main(const int argc, char *argv[]) {
   return Catch::Session().run(argc, argv);
 }

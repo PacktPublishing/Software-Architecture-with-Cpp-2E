@@ -10,7 +10,7 @@
 
 namespace {
 class mock_visited_merchant final : public i_visited_merchant {
- public:
+public:
   explicit mock_visited_merchant(fake_customer_review_store &store,
                                  const merchant_id_t id)
       : review_store_{store},
@@ -24,11 +24,11 @@ class mock_visited_merchant final : public i_visited_merchant {
     review_store_.post_review(review_);
   }
 
- private:
+private:
   fake_customer_review_store &review_store_;
   review review_;
 };
-}  // namespace
+} // namespace
 
 TEST_GROUP(history_with_one_rated_merchant) {
   static constexpr std::size_t CUSTOMER_ID = 7777;

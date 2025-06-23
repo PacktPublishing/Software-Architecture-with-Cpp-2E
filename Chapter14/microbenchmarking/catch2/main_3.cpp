@@ -9,8 +9,7 @@
 
 using namespace std::ranges;
 
-template <typename T>
-auto make_sorted_vector(std::size_t size) {
+template <typename T> auto make_sorted_vector(std::size_t size) {
   auto sorted = std::vector<T>{};
   sorted.reserve(size);
 
@@ -22,7 +21,7 @@ auto make_sorted_vector(std::size_t size) {
 constexpr auto MIN_HAYSTACK_SIZE = std::size_t{1'000};
 constexpr auto MAX_HAYSTACK_SIZE = std::size_t{10'000'000};
 
-void search_in_sorted_vector(const std::string& benchmarkName, std::size_t size,
+void search_in_sorted_vector(const std::string &benchmarkName, std::size_t size,
                              auto finder) {
   auto haystack = make_sorted_vector<int>(size);
   constexpr auto needle = 2137;
@@ -35,7 +34,7 @@ Catch::Generators::GeneratorWrapper<size_t> size_generator() {
   struct Generator final : Catch::Generators::IGenerator<size_t> {
     size_t cur{MIN_HAYSTACK_SIZE}, end{MAX_HAYSTACK_SIZE}, multiplier{10};
 
-    const size_t& get() const override { return cur; }
+    const size_t &get() const override { return cur; }
 
     bool next() override {
       cur *= multiplier;

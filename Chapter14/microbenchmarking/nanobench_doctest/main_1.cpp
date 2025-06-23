@@ -9,8 +9,7 @@
 
 using namespace std::ranges;
 
-template <typename T>
-auto make_sorted_vector(std::size_t size) {
+template <typename T> auto make_sorted_vector(std::size_t size) {
   auto sorted = std::vector<T>{};
   sorted.reserve(size);
 

@@ -7,7 +7,7 @@
 namespace {
 
 class mock_visited_merchant : public i_visited_merchant {
- public:
+public:
   explicit mock_visited_merchant(fake_customer_review_store &store,
                                  merchant_id_t id)
       : review_store_{store},
@@ -22,21 +22,21 @@ class mock_visited_merchant : public i_visited_merchant {
   MOCK_METHOD(stars, get_rating, (), (override));
   MOCK_METHOD(void, post_rating, (stars s), (override));
 
- private:
+private:
   fake_customer_review_store &review_store_;
   review review_;
 };
 
-}  // namespace
+} // namespace
 
 class history_with_one_rated_merchant : public ::testing::Test {
- public:
+public:
   static constexpr std::size_t CUSTOMER_ID = 7777;
   static constexpr std::size_t MERCHANT_ID = 1234;
   static constexpr const char *REVIEW_TEXT = "Very nice!";
   static constexpr stars RATING = stars{5.f};
 
- protected:
+protected:
   void SetUp() final {
     fake_review_store_.post_review(
         {CUSTOMER_ID, MERCHANT_ID, REVIEW_TEXT, RATING});

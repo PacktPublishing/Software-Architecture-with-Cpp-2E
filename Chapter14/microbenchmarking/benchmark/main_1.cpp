@@ -7,8 +7,7 @@ using namespace std::ranges;
 
 namespace {
 
-template <typename T>
-auto make_sorted_vector(std::size_t size) {
+template <typename T> auto make_sorted_vector(std::size_t size) {
   auto sorted = std::vector<T>{};
   sorted.reserve(size);
 
@@ -37,6 +36,6 @@ void linear_search_in_sorted_vector(benchmark::State &state) {
 BENCHMARK(binary_search_in_sorted_vector);
 BENCHMARK(linear_search_in_sorted_vector);
 
-}  // namespace
+} // namespace
 
 BENCHMARK_MAIN();

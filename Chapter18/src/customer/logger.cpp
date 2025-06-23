@@ -34,9 +34,9 @@ void init_logger() {
   logs_api::Provider::SetLoggerProvider(provider);
 }
 
-opentelemetry::nostd::shared_ptr<logs_api::Logger> get_logger(
-    std::string name) {
+opentelemetry::nostd::shared_ptr<logs_api::Logger>
+get_logger(std::string name) {
   const auto provider = logs_api::Provider::GetLoggerProvider();
   return provider->GetLogger(name + "_logger");
 }
-}  // namespace otlp_logger
+} // namespace otlp_logger

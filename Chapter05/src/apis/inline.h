@@ -13,4 +13,4 @@ struct EasilyDebuggable {
 #endif
 };
 
-}  // end namespace
+} // end namespace

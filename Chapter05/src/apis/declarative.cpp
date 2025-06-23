@@ -11,7 +11,8 @@ std::optional<std::size_t> imperative_adjacent_distance() {
   constexpr auto temperatures = std::array{-3.0, 2.0, 0.0, 8.0, -10.0, -7.0};
   for (std::size_t i = 0; i < temperatures.size() - 1; ++i) {
     for (std::size_t j = i + 1; j < temperatures.size(); ++j) {
-      if (std::abs(temperatures[i] - temperatures[j]) > 5) return j - i - 1;
+      if (std::abs(temperatures[i] - temperatures[j]) > 5)
+        return j - i - 1;
     }
   }
   return std::nullopt;
@@ -19,9 +20,10 @@ std::optional<std::size_t> imperative_adjacent_distance() {
 
 std::optional<std::size_t> declarative_adjacent_distance() {
   constexpr auto temperatures = std::array{-3.0, 2.0, 0.0, 8.0, -10.0, -7.0};
-  const auto it = std::ranges::adjacent_find(
-      temperatures,
-      [](double first, double second) { return std::abs(first - second) > 5; });
+  const auto it =
+      std::ranges::adjacent_find(temperatures, [](double first, double second) {
+        return std::abs(first - second) > 5;
+      });
   if (it != std::end(temperatures)) {
     return std::distance(std::begin(temperatures), it);
   }

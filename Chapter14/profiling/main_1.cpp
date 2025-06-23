@@ -30,7 +30,8 @@ std::string decode_morse(const std::string &morse_msg) {
     ZoneScopedN("decode-loop");
     if (c == '.' || c == '-') {
       ZoneScopedN("dot-dash");
-      if (is_space && !decoded.empty()) decoded += ' ';
+      if (is_space && !decoded.empty())
+        decoded += ' ';
       seq += c;
       is_space = false;
     } else if (c == ' ') {

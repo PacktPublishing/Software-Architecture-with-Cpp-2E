@@ -4,8 +4,7 @@
 #include <utility>
 
 struct NullPrintingPolicy {
-  template <typename... Args>
-  void operator()(Args...) {}
+  template <typename... Args> void operator()(Args...) {}
 };
 
 struct CoutPrintingPolicy {
@@ -14,7 +13,7 @@ struct CoutPrintingPolicy {
 
 template <typename T, typename DebugPrintingPolicy = NullPrintingPolicy>
 class Array {
- public:
+public:
   Array(T *array, int size) : array_{array}, size_{size} {
     DebugPrintingPolicy{}("constructor");
   }
@@ -52,13 +51,12 @@ class Array {
   T &operator[](int index) { return array_[index]; }
   int size() const { return size_; }
 
- private:
+private:
   T *array_;
   int size_;
 };
 
-template <typename T>
-Array<T> make_array(int size) {
+template <typename T> Array<T> make_array(int size) {
   return Array(new T[size], size);
 }
 

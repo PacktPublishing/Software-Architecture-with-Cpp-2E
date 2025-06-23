@@ -42,19 +42,19 @@ void init_tracer() {
           new trace_api::propagation::HttpTraceContext()));
 }
 
-opentelemetry::nostd::shared_ptr<trace_api::Tracer> get_tracer(
-    std::string name) {
+opentelemetry::nostd::shared_ptr<trace_api::Tracer>
+get_tracer(std::string name) {
   const auto provider = trace_api::Provider::GetTracerProvider();
   return provider->GetTracer(name + "_tracer");
 }
 
 class HttpTextMapCarrier final : public context::propagation::TextMapCarrier {
- public:
+public:
   explicit HttpTextMapCarrier(const drogon::SafeStringMap<std::string> &headers)
       : headers_(headers) {}
 
-  [[nodiscard]] opentelemetry::nostd::string_view Get(
-      const opentelemetry::nostd::string_view key) const noexcept override {
+  [[nodiscard]] opentelemetry::nostd::string_view
+  Get(const opentelemetry::nostd::string_view key) const noexcept override {
     if (const std::string key_ = key.data();
         headers_.find(key_) != headers_.end()) {
       return headers_.at(key_);
@@ -103,4 +103,4 @@ opentelemetry::nostd::shared_ptr<trace_api::Span> get_http_request_span(
 
   return span;
 }
-}  // namespace otlp_tracer
+} // namespace otlp_tracer

@@ -3,26 +3,25 @@
 #include <memory>
 
 class GlamorousItem {
- public:
+public:
   template <class T>
   explicit GlamorousItem(T t)
       : item_{std::make_unique<TypeErasedItem<T>>(std::move(t))} {}
 
   void appear_in_full_glory() { item_->appear_in_full_glory_impl(); }
 
- private:
+private:
   struct TypeErasedItemBase {
     virtual ~TypeErasedItemBase() = default;
     virtual void appear_in_full_glory_impl() = 0;
   };
 
-  template <class T>
-  class TypeErasedItem final : public TypeErasedItemBase {
-   public:
+  template <class T> class TypeErasedItem final : public TypeErasedItemBase {
+  public:
     explicit TypeErasedItem(T t) : t_{std::move(t)} {}
     void appear_in_full_glory_impl() override { t_.appear_in_full_glory(); }
 
-   private:
+  private:
     T t_;
   };
 
@@ -30,14 +29,14 @@ class GlamorousItem {
 };
 
 class PinkHeels {
- public:
+public:
   void appear_in_full_glory() {
     std::cout << "Pink high heels suddenly appeared in all their beauty\n";
   }
 };
 
 class GoldenWatch {
- public:
+public:
   void appear_in_full_glory() {
     std::cout << "Everyone wanted to watch this watch\n";
   }

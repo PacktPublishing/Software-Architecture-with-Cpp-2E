@@ -10,4 +10,4 @@ DROGON_TEST(given_name_when_prepare_responses_then_greets_friendly) {
   CHECK(value == "Hello, Bob!");
 }
 
-int main(const int argc, char** argv) { return drogon::test::run(argc, argv); }
+int main(const int argc, char **argv) { return drogon::test::run(argc, argv); }

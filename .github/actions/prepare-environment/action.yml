@@ -1,5 +1,5 @@
-name: prepare environment
-description:
+name: prepare-environment
+description: prepares the environment
 runs:
   using: "composite"
   steps:

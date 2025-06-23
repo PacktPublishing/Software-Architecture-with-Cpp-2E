@@ -11,7 +11,7 @@
 #include "tracer.h"
 
 class responder {
- public:
+public:
   auto prepare_response(const std::string &name)
       -> std::pair<drogon::HttpStatusCode, Json::Value>;
 
@@ -57,10 +57,10 @@ void handle_get(
   counter->Add(1, attributes);
 
   span->AddEvent("return response");
-  logger->Info(
-      std::string(__func__) + ": return response to '" + name.value() + "'",
-      ctx.trace_id(), ctx.span_id(), ctx.trace_flags(),
-      std::chrono::system_clock::now());
+  logger->Info(std::string(__func__) + ": return response to '" + name.value() +
+                   "'",
+               ctx.trace_id(), ctx.span_id(), ctx.trace_flags(),
+               std::chrono::system_clock::now());
 
   const auto [code, response] = responder.prepare_response(name.value());
   responder.respond(code, response, std::move(callback));

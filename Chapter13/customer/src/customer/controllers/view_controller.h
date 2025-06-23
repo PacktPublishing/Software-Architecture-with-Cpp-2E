@@ -6,12 +6,12 @@
 using namespace drogon;
 
 class ViewController final : public HttpSimpleController<ViewController> {
- public:
+public:
   PATH_LIST_BEGIN
   PATH_ADD("/customer/v3", Get);
   PATH_LIST_END
 
- protected:
+protected:
   void asyncHandleHttpRequest(
       const HttpRequestPtr &request,
       std::function<void(const HttpResponsePtr &)> &&callback) override;

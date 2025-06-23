@@ -7,9 +7,9 @@ using namespace ::testing;
 namespace {
 
 class responder_mock {
- public:
+public:
   MOCK_METHOD(
-      (std::pair<drogon::HttpStatusCode, Json::Value>),  // note the parentheses
+      (std::pair<drogon::HttpStatusCode, Json::Value>), // note the parentheses
       prepare_response, (const std::string &name), ());
   MOCK_METHOD(void, respond,
               (drogon::HttpStatusCode status, const Json::Value &response,
@@ -19,7 +19,7 @@ class responder_mock {
 
 MATCHER_P(contains_value, value, "") { return arg == value; }
 
-}  // namespace
+} // namespace
 
 TEST(basic_responses,
      given_name_when_handle_get_then_response_is_prepared_and_sent) {

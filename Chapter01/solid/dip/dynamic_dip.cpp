@@ -4,33 +4,33 @@
 #include <vector>
 
 class Notifier {
- public:
+public:
   virtual ~Notifier() = default;
   virtual void notify(const std::string &message) = 0;
 };
 
 class SMSNotifier : public Notifier {
- public:
+public:
   void notify(const std::string &message) override { sendSMS(message); }
 
- private:
+private:
   void sendSMS(const std::string &message) {
     std::cout << "SMS channel: " << message << std::endl;
   }
 };
 
 class EMailNotifier : public Notifier {
- public:
+public:
   void notify(const std::string &message) override { sendEmail(message); }
 
- private:
+private:
   void sendEmail(const std::string &message) {
     std::cout << "Email channel: " << message << std::endl;
   }
 };
 
 class NotificationSystem {
- public:
+public:
   using Notifiers = std::vector<std::unique_ptr<Notifier>>;
 
   explicit NotificationSystem(Notifiers notifiers)
@@ -42,7 +42,7 @@ class NotificationSystem {
     }
   }
 
- private:
+private:
   Notifiers notifiers_;
 };
 

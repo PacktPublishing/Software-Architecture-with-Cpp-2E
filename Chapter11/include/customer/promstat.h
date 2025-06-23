@@ -5,7 +5,7 @@
 using namespace drogon;
 
 class PromStat final : public HttpMiddleware<PromStat, false> {
- public:
+public:
   void invoke(const HttpRequestPtr &req, MiddlewareNextCallback &&nextCb,
               MiddlewareCallback &&mcb) override;
 };

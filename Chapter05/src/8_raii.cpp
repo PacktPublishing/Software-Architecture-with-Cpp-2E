@@ -8,9 +8,8 @@
 #endif
 #include <stdexcept>
 
-template <typename T>
-class Array {
- public:
+template <typename T> class Array {
+public:
   explicit Array(std::size_t size) : sz{size}, data{new T[size]()} {
     std::cout << "Resource acquired\n";
   }
@@ -26,15 +25,17 @@ class Array {
   }
 
   // not to release the acquired dynamic memory again
-  Array(const Array&) = delete;
-  Array& operator=(const Array&) = delete;
+  Array(const Array &) = delete;
+  Array &operator=(const Array &) = delete;
 
-  T& operator[](std::size_t idx) {
-    if (idx >= sz) throw std::out_of_range("Index is out of range");
+  T &operator[](std::size_t idx) {
+    if (idx >= sz)
+      throw std::out_of_range("Index is out of range");
     return data[idx];
   }
-  const T& operator[](std::size_t idx) const {
-    if (idx >= sz) throw std::out_of_range("Index is out of range");
+  const T &operator[](std::size_t idx) const {
+    if (idx >= sz)
+      throw std::out_of_range("Index is out of range");
     return data[idx];
   }
 
@@ -50,8 +51,8 @@ class Array {
 #endif
     using difference_type = std::ptrdiff_t;
     using value_type = T;
-    using pointer = T*;
-    using reference = T&;
+    using pointer = T *;
+    using reference = T &;
 
     Iterator() = default;
 
@@ -60,7 +61,7 @@ class Array {
     reference operator*() const { return *ptr; }
     pointer operator->() { return ptr; }
 
-    Iterator& operator++() {
+    Iterator &operator++() {
       ++ptr;
       return *this;
     }
@@ -69,14 +70,14 @@ class Array {
       ++(*this);
       return tmp;
     }
-    friend bool operator==(const Iterator& a, const Iterator& b) {
+    friend bool operator==(const Iterator &a, const Iterator &b) {
       return a.ptr == b.ptr;
     };
-    friend bool operator!=(const Iterator& a, const Iterator& b) {
+    friend bool operator!=(const Iterator &a, const Iterator &b) {
       return a.ptr != b.ptr;
     };
 
-   private:
+  private:
     pointer ptr;
   };
 
@@ -89,21 +90,19 @@ class Array {
 #if __cplusplus >= 202002L
   static_assert(std::forward_iterator<Iterator>);
 #endif
- private:
+private:
   std::size_t sz;
-  T* data;
+  T *data;
 };
 
 #if __cplusplus >= 202002L
-template <typename T>
-void print_span(std::span<T> s) {
+template <typename T> void print_span(std::span<T> s) {
   std::copy(std::begin(s), std::end(s), std::ostream_iterator<T>(std::cout));
   std::cout << std::endl;
 }
 #endif
 
-template <typename T>
-void print_array(const Array<T>& arr) {
+template <typename T> void print_array(const Array<T> &arr) {
   for (auto it = arr.begin(); it != arr.end(); ++it) {
     std::cout << *it;
   }
@@ -130,7 +129,7 @@ int main() {
   print_array(arr);
 #endif
 
-  for (auto& c : arr) {
+  for (auto &c : arr) {
     c += 32;
   }
 

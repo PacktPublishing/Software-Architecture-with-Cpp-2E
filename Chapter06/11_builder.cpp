@@ -16,9 +16,8 @@ struct Item {
   bool featured{};
 };
 
-template <typename ConcreteBuilder>
-class GenericItemBuilder {
- public:
+template <typename ConcreteBuilder> class GenericItemBuilder {
+public:
   explicit GenericItemBuilder(std::string name)
       : item_{.name = std::move(name)} {}
 
@@ -47,7 +46,7 @@ class GenericItemBuilder {
     return std::move(item_);
   }
 
- protected:
+protected:
   Item item_;
 };
 
@@ -65,11 +64,11 @@ Item fetch_item(std::string_view url) {
   }
   return {};
 }
-}  // namespace
+} // namespace
 
 class FetchingItemBuilder final
     : public GenericItemBuilder<FetchingItemBuilder> {
- public:
+public:
   explicit FetchingItemBuilder(std::string name)
       : GenericItemBuilder(std::move(name)) {}
 

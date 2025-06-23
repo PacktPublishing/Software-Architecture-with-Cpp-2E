@@ -12,7 +12,8 @@ struct contains_fn final {
                                             std::projected<It, Proj>, const T *>
   constexpr bool operator()(It first, Sent last, const T &value,
                             Proj projection = {}) const {
-    while (first != last && std::invoke(projection, *first) != value) ++first;
+    while (first != last && std::invoke(projection, *first) != value)
+      ++first;
     return first != last;
   }
 
@@ -27,10 +28,10 @@ struct contains_fn final {
                    std::move(projection));
   }
 };
-}  // namespace detail
+} // namespace detail
 
 inline constexpr detail::contains_fn contains{};
-}  // namespace my_ranges
+} // namespace my_ranges
 
 int main() {
   constexpr auto ints =

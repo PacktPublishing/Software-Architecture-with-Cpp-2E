@@ -24,7 +24,7 @@ int main() {
 
     std::copy(vec.begin(), vec.end(),
               std::ostream_iterator<std::string>(std::cout, " "));
-  } catch (const Error& e) {
+  } catch (const Error &e) {
     cerr << "Error: " << e.what() << endl;
   }
 

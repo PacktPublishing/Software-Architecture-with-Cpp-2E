@@ -7,8 +7,8 @@
 namespace otlp_tracer {
 void init_tracer();
 
-opentelemetry::nostd::shared_ptr<opentelemetry::trace::Tracer> get_tracer(
-    std::string name);
+opentelemetry::nostd::shared_ptr<opentelemetry::trace::Tracer>
+get_tracer(std::string name);
 
 opentelemetry::nostd::shared_ptr<opentelemetry::trace::Span>
 get_http_request_span(
@@ -16,4 +16,4 @@ get_http_request_span(
     const opentelemetry::nostd::shared_ptr<opentelemetry::trace::Tracer>
         &tracer,
     std::string name);
-}  // namespace otlp_tracer
+} // namespace otlp_tracer

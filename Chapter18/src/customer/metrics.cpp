@@ -41,4 +41,4 @@ init_int64_counter(std::string name) {
       provider->GetMeter(name);
   return meter->CreateUInt64Counter(name + "_counter");
 }
-}  // namespace otlp_metrics
+} // namespace otlp_metrics

@@ -8,7 +8,7 @@
 
 constexpr auto region = Aws::S3::Model::BucketLocationConstraint::eu_central_1;
 
-bool create_user_bucket(const std::string& username) {
+bool create_user_bucket(const std::string &username) {
   Aws::S3::Model::CreateBucketRequest request;
 
   const Aws::String unique_prefix = Aws::Utils::UUID::RandomUUID();
@@ -25,7 +25,7 @@ bool create_user_bucket(const std::string& username) {
 
   if (const auto outcome = s3_client.CreateBucket(request);
       !outcome.IsSuccess()) {
-    const auto& err = outcome.GetError();
+    const auto &err = outcome.GetError();
     spdlog::error("ERROR:  CreateBucket:  {}:  {}", err.GetExceptionName(),
                   err.GetMessage());
     return false;

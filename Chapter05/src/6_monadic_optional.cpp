@@ -4,14 +4,14 @@
 #include <stdexcept>
 #include <string>
 
-std::optional<int> parse_int(const std::string& s) {
+std::optional<int> parse_int(const std::string &s) {
   try {
     std::println("Parsing {} to integer", s);
     return std::stoi(s);
-  } catch (const std::invalid_argument& ex) {
+  } catch (const std::invalid_argument &ex) {
     std::println(std::cerr, "std::invalid_argument::what(): {}", ex.what());
     return std::nullopt;
-  } catch (const std::out_of_range& ex) {
+  } catch (const std::out_of_range &ex) {
     std::println(std::cerr, "std::out_of_range::what(): {}", ex.what());
     return std::nullopt;
   }

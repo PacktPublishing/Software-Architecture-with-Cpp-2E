@@ -8,7 +8,7 @@
 #include <utility>
 
 class responder {
- public:
+public:
   auto prepare_response(const std::string &name)
       -> std::pair<drogon::HttpStatusCode, Json::Value>;
 

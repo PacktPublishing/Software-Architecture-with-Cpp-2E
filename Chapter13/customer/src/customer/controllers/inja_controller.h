@@ -6,12 +6,12 @@
 using namespace drogon;
 
 class InjaController final : public HttpSimpleController<InjaController> {
- public:
+public:
   PATH_LIST_BEGIN
   PATH_ADD("/customer/v4", Get);
   PATH_LIST_END
 
- protected:
+protected:
   void asyncHandleHttpRequest(
       const HttpRequestPtr &request,
       std::function<void(const HttpResponsePtr &)> &&callback) override;

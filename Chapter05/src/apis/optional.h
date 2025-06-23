@@ -3,7 +3,7 @@
 #include <optional>
 
 // bad optional function parameters
-void calculate_v1(int param) {}  // if param equals -1 it means "no value"
+void calculate_v1(int param) {} // if param equals -1 it means "no value"
 void calculate_v2(int param = -1) {}
 
 // good optional function parameter

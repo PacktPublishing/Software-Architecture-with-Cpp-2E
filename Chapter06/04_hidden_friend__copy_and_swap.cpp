@@ -2,9 +2,8 @@
 #include <cassert>
 #include <utility>
 
-template <typename T>
-class Array {
- public:
+template <typename T> class Array {
+public:
   Array(T *array, int size) : array_{array}, size_{size} {}
 
   Array(const Array &other) : array_{new T[other.size_]}, size_{other.size_} {
@@ -32,21 +31,20 @@ class Array {
   T &operator[](int index) { return array_[index]; }
   int size() const { return size_; }
 
- private:
+private:
   T *array_;
   int size_;
 };
 
-template <typename T>
-Array<T> make_array(int size) {
+template <typename T> Array<T> make_array(int size) {
   return Array(new T[size], size);
 }
 
 int main() {
   auto my_array = make_array<int>(7);
   auto my_move_constructed_array = std::move(my_array);
-  my_array = std::move(my_move_constructed_array);  // move back
+  my_array = std::move(my_move_constructed_array); // move back
   auto my_copy_constructed_array = my_array;
-  my_array = my_copy_constructed_array;  // copy back
+  my_array = my_copy_constructed_array; // copy back
   assert(my_array.size() == 7);
 }

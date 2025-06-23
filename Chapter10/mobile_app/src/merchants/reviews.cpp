@@ -9,7 +9,7 @@ constexpr bool is_range_of_reviews_v =
     std::is_same_v<std::ranges::range_value_t<T>, review>;
 
 class CustomerReviewStore : public i_customer_review_store {
- public:
+public:
   CustomerReviewStore() = default;
   explicit CustomerReviewStore(const std::ranges::range auto &initial_reviews) {
     static_assert(is_range_of_reviews_v<decltype(initial_reviews)>,
@@ -30,7 +30,7 @@ class CustomerReviewStore : public i_customer_review_store {
     reviews_.push_back(std::move(review));
   }
 
- private:
+private:
   std::vector<review> reviews_;
 };
 

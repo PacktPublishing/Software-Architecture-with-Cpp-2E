@@ -3,7 +3,7 @@
 namespace factory_method {
 
 class Pixel {
- public:
+public:
   static Pixel fromRgba(std::byte r, std::byte g, std::byte b, std::byte a) {
     return Pixel{r, g, b, a};
   }
@@ -13,20 +13,20 @@ class Pixel {
 
   // other members
 
- private:
+private:
   Pixel(std::byte r, std::byte g, std::byte b, std::byte a)
       : r_(r), g_(g), b_(b), a_(a) {}
   std::byte r_, g_, b_, a_;
 };
 
-}  // namespace factory_method
+} // namespace factory_method
 
 namespace factory_function {
 
 struct Pixel {
   std::byte r, g, b, a;
 
- private:
+private:
   Pixel(std::byte r, std::byte g, std::byte b, std::byte a)
       : r(r), g(g), b(b), a(a) {}
   friend Pixel makePixelFromRgba(std::byte r, std::byte g, std::byte b,
@@ -43,7 +43,7 @@ Pixel makePixelFromBgra(std::byte b, std::byte g, std::byte r, std::byte a) {
   return Pixel{r, g, b, a};
 }
 
-}  // namespace factory_function
+} // namespace factory_function
 
 int main() {
   auto black_pixel = factory_method::Pixel::fromRgba(

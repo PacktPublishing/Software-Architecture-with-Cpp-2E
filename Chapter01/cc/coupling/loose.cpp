@@ -5,38 +5,37 @@
 #include <vector>
 
 class SMSNotifier {
- public:
+public:
   void notify(const std::string &message) { sendSMS(message); }
 
- private:
+private:
   void sendSMS(const std::string &message) {
     std::cout << "SMS channel: " << message << std::endl;
   }
 };
 
 class EMailNotifier {
- public:
+public:
   void notify(const std::string &message) { sendEmail(message); }
 
- private:
+private:
   void sendEmail(const std::string &message) {
     std::cout << "Email channel: " << message << std::endl;
   }
 };
 
 class ChatNotifier {
- public:
+public:
   void notify(const std::string &message) { sendMessage(message); }
 
- private:
+private:
   void sendMessage(const std::string &message) {
     std::cout << "Chat channel: " << message << std::endl;
   }
 };
 
-template <typename... T>
-class NotificationSystem {
- public:
+template <typename... T> class NotificationSystem {
+public:
   using Notifiers = std::vector<std::variant<T...>>;
 
   explicit NotificationSystem(Notifiers notifiers)
@@ -48,7 +47,7 @@ class NotificationSystem {
     }
   }
 
- private:
+private:
   Notifiers notifiers_;
 };
 

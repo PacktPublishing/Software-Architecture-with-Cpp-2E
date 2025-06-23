@@ -1,7 +1,7 @@
 #include <memory>
 
 class PotentiallyMisleading {
- public:
+public:
   PotentiallyMisleading() = default;
   PotentiallyMisleading(const PotentiallyMisleading &) = default;
   PotentiallyMisleading &operator=(const PotentiallyMisleading &) = default;
@@ -9,7 +9,7 @@ class PotentiallyMisleading {
   PotentiallyMisleading &operator=(PotentiallyMisleading &&) = default;
   ~PotentiallyMisleading() = default;
 
- private:
+private:
   std::unique_ptr<int> int_;
 };
 

@@ -16,11 +16,11 @@ void using_memory_arenas() {
 }
 
 class verbose_resource : public std::pmr::memory_resource {
- public:
+public:
   explicit verbose_resource(std::pmr::memory_resource *upstream_resource)
       : upstream_resource_(upstream_resource) {}
 
- private:
+private:
   void *do_allocate(size_t bytes, size_t alignment) override {
     std::cout << "Allocating " << bytes << " bytes\n";
     return upstream_resource_->allocate(bytes, alignment);
@@ -31,8 +31,8 @@ class verbose_resource : public std::pmr::memory_resource {
     upstream_resource_->deallocate(p, bytes, alignment);
   }
 
-  [[nodiscard]] bool do_is_equal(
-      const memory_resource &other) const noexcept override {
+  [[nodiscard]] bool
+  do_is_equal(const memory_resource &other) const noexcept override {
     return this == &other;
   }
 
@@ -57,8 +57,8 @@ void using_pool_resources_and_writing_your_own() {
 void ensuring_no_unexpected_allocations() {
   std::pmr::set_default_resource(std::pmr::null_memory_resource());
 
-  auto buffer = std::array<std::byte, 640 * 1024>{};  // 640K ought to be enough
-                                                      // for anybody
+  auto buffer = std::array<std::byte, 640 * 1024>{}; // 640K ought to be enough
+                                                     // for anybody
   auto resource = std::pmr::monotonic_buffer_resource{
       buffer.data(), buffer.size(), std::pmr::null_memory_resource()};
 

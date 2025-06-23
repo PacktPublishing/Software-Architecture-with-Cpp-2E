@@ -2,8 +2,7 @@
 
 using namespace std;
 
-template <typename T>
-T minimum(const T& x, const T& y) {
+template <typename T> T minimum(const T &x, const T &y) {
   return x < y ? x : y;
 }
 

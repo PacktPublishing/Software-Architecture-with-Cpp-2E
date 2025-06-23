@@ -2,7 +2,7 @@
 
 Software Architecture with C++, Second Edition, Published by Packt
 
-## Chapter 18: Microservices
+## Chapter 18: Cloud Native Design
 
 ### Prerequisites
 
@@ -70,21 +70,15 @@ cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan
 cmake --build build
 ```
 
-### Docker, Redis, Valkey and Dragonfly
+### Docker
 
-You need to install Docker tools to run the example:
+In the build directory, run `cmake --build . --target docker` to build the Docker image. Run the app
+from `docker/compose.yaml` with Compose and `kubernetes/manifest.yaml` with Kubernetes.
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Rancher Desktop](https://rancherdesktop.io/) or [Docker](https://docs.docker.com/engine/install/)
-- [Docker Compose](https://docs.docker.com/compose/)
+Read instructions regarding Development Containers in the file `containers/docker/README.md` in Chapter 17
+to build an executable file for Linux on macOS and Windows.
 
-And Redis Insight or Redis CLI to see the results:
+### Troubleshooting
 
-- [Redis Insight](https://redis.io/insight/)
-- [Redis CLI](https://redis.io/docs/latest/develop/tools/cli/)
-- Or on Docker with `./redis/compose-redis-insight.yaml` in this directory
-
-In the last case, open [http://localhost:5540](http://localhost:5540) (Redis Insight UI) in a browser and add these databases:
-
-- redis://default@redis:6379
-- redis://default@valkey:6379
-- redis://default@dragonfly:6379
+Windows Firewall can block connections to the IP address 0.0.0.0 therefore set 127.0.0.1 in customer/src/customer/main.cpp
+as a workaround or allow connections to that address

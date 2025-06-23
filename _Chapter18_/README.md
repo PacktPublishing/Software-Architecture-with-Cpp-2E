@@ -2,7 +2,7 @@
 
 Software Architecture with C++, Second Edition, Published by Packt
 
-## Chapter 20: Cloud Native Design
+## Chapter 18: Microservices
 
 ### Prerequisites
 
@@ -70,15 +70,21 @@ cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan
 cmake --build build
 ```
 
-### Docker
+### Docker, Redis, Valkey and Dragonfly
 
-In the build directory, run `cmake --build . --target docker` to build the Docker image. Run the app
-from `docker/compose.yaml` with Compose and `kubernetes/manifest.yaml` with Kubernetes.
+You need to install Docker tools to run the example:
 
-Read instructions regarding Development Containers in the file `containers/docker/README.md` in Chapter 19
-to build an executable file for Linux on macOS and Windows.
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Rancher Desktop](https://rancherdesktop.io/) or [Docker](https://docs.docker.com/engine/install/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
-### Troubleshooting
+And Redis Insight or Redis CLI to see the results:
 
-Windows Firewall can block connections to the IP address 0.0.0.0 therefore set 127.0.0.1 in customer/src/customer/main.cpp
-as a workaround or allow connections to that address
+- [Redis Insight](https://redis.io/insight/)
+- [Redis CLI](https://redis.io/docs/latest/develop/tools/cli/)
+- Or on Docker with `./redis/compose-redis-insight.yaml` in this directory
+
+In the last case, open [http://localhost:5540](http://localhost:5540) (Redis Insight UI) in a browser and add these databases:
+
+- redis://default@redis:6379
+- redis://default@valkey:6379
+- redis://default@dragonfly:6379

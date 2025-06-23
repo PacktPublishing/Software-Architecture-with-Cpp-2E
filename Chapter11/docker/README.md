@@ -22,6 +22,7 @@ Then open the [customer app](http://localhost:8080/customer/v1?name=anonymous) a
 Grafana credentials are `admin` and `admin`.
 
 The other HTTP endpoints:
+
 - [application metrics](http://localhost:8080/metrics): http_requests_total and http_request_duration_seconds_bucket
 - [Grafana explore](http://localhost:3000/explore)
 - [Grafana drilldown](http://localhost:3000/drilldown)

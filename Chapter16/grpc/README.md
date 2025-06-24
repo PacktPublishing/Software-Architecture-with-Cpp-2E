@@ -2,7 +2,7 @@
 
 Software Architecture with C++, Second Edition, Published by Packt
 
-## Chapter 17: Service Oriented Architecture
+## Chapter 16: Communication
 
 ### Prerequisites
 
@@ -30,8 +30,6 @@ os=Linux
 ```
 
 ### Building
-
-**Important**: MinIO's dependency requires Python 3
 
 To build the project, configure the Conan profile as described above, cd to its directory, and then run:
 

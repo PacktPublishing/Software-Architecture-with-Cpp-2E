@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "grpc/service.grpc.pb.h"
+#include "service.grpc.pb.h"
 
 using grpc::ServerBuilder;
 using grpc::ServerContext;

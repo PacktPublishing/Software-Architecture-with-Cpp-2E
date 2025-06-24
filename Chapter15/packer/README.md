@@ -2,7 +2,7 @@
 
 Software Architecture with C++, Second Edition, Published by Packt
 
-## Chapter 17: Service Oriented Architecture
+## Chapter 15: Architecture of Distributed Systems
 
 ### Packer
 

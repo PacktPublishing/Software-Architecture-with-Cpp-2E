@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 
 project(
-  Chapter18
+  gRPC
   VERSION 0.0.1
   LANGUAGES CXX)
 
@@ -14,26 +14,13 @@ if(CCACHE_PROGRAM)
   set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
 endif()
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
-list(APPEND CMAKE_PREFIX_PATH "${CMAKE_BINARY_DIR}")
-
-include(CommonCompileFlags)
-
-if(NOT MSVC)
-  find_package(redis++ REQUIRED)
-
-  add_executable(redis_client redis/redis.cpp)
-  target_compile_features(redis_client PRIVATE cxx_std_17)
-  target_compile_options(redis_client PRIVATE "${BASE_COMPILE_FLAGS}")
-  target_link_libraries(redis_client PRIVATE redis++::redis++_static)
-endif()
-
 if(NOT MSVC)
   find_package(gRPC REQUIRED)
   find_package(protobuf REQUIRED)
 
-  add_library(grpc_service grpc/service.proto)
+  add_library(grpc_service service.proto)
   target_link_libraries(grpc_service PUBLIC protobuf::libprotobuf gRPC::grpc++)
+  target_compile_features(grpc_service PUBLIC cxx_std_20)
 
   include(protobuf-generate)
   protobuf_generate(TARGET grpc_service LANGUAGE cpp)
@@ -49,9 +36,9 @@ if(NOT MSVC)
     "protoc-gen-grpc=\$<TARGET_FILE:gRPC::grpc_cpp_plugin>")
   target_include_directories(grpc_service PUBLIC "${CMAKE_CURRENT_BINARY_DIR}")
 
-  add_executable(grpc_client grpc/AsyncClient.cpp)
+  add_executable(grpc_client AsyncClient.cpp)
   target_link_libraries(grpc_client grpc_service)
 
-  add_executable(grpc_server grpc/AsyncServer.cpp)
+  add_executable(grpc_server AsyncServer.cpp)
   target_link_libraries(grpc_server grpc_service)
 endif()

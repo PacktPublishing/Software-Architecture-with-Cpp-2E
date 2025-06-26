@@ -50,6 +50,44 @@ scoop install main/conan
 scoop install main/mingw
 ```
 
+The fifth option is [MSYS2](https://www.msys2.org/), a software distribution and development platform for Windows,
+that provides a Unix-like environment ([introduction](https://www.msys2.org/wiki/MSYS2-introduction/),
+[environments](https://www.msys2.org/docs/environments/), [packages](https://packages.msys2.org/packages/):
+
+Update MSYS2 with following command:
+
+```
+pacman -Syu
+```
+
+Install the necessary tools (for instance `UCRT64`. The other environments are `CLANG64`, `CLANGARM64`, `MINGW64`, `MSYS`):
+
+```
+pacman -S base-devel cmake ninja mingw-w64-ucrt-x86_64-python-conan git
+pacman -S mingw-w64-ucrt-x86_64-toolchain
+pacman -S mingw-w64-ucrt-x86_64-gdb
+```
+
+Optional: Add executables to your Windows PATH:
+
+```
+C:\msys64\ucrt64\bin
+C:\msys64\usr\bin
+```
+
+Libraries and include files can be found in two places:
+
+```
+C:\msys64\ucrt64\bin
+C:\msys64\ucrt64\lib
+C:\msys64\ucrt64\include
+C:\msys64\usr\bin
+C:\msys64\usr\lib
+C:\msys64\usr\include
+```
+
+## Conan
+
 Conan is [integrated](https://docs.conan.io/2/integrations.html) with different IDEs including
 [CLion](https://docs.conan.io/2/integrations/clion.html) ([plugin](https://www.jetbrains.com/help/clion/conan-plugin.html)),
 [Qt Creator](https://doc.qt.io/qtcreator/creator-project-conan.html) ([plugin](https://doc.qt.io/qtcreator/creator-project-conan.html)),

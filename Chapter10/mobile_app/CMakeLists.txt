@@ -28,7 +28,7 @@ include(CommonCompileFlags)
 
 add_subdirectory(src)
 
-if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+if(PROJECT_IS_TOP_LEVEL)
   include(CTest)
   if(BUILD_TESTING)
     add_subdirectory(test)

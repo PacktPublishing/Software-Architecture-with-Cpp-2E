@@ -1,3 +1,4 @@
+# https://github.com/cpm-cmake/CPM.cmake?tab=readme-ov-file#options
 option(
   USE_CPM_CMAKE
   "Use CPM.cmake: a small CMake script for setup-free, cross-platform, reproducible dependency management"

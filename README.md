@@ -120,6 +120,14 @@ has more than 10 years of experience in programming and practicing DevOps and us
 He has worked in the IT industry both in full-time positions and as a freelancer, but his true passion is music. When not making his skills useful at work, you can find him building communities.
 
 **Andrey Gavrilin**
+is a seasoned software engineer who started his journey into software development back in the 1990s. His career began with an eagerness for computer games,
+which led to learning C++, Pascal and Assembly languages. He has an MSc degree in engineering (industrial automation) and
+has worked in different areas which allowed him to gain comprehension of the importance of quality software architecture.
+His interests include system, embedded and game programming, electronics. Being an enthusiast of retro gaming and vintage computing,
+he enjoys exploring how historical technologies inform modern system design. These hobbies complement his professional work,
+providing creative inspiration and perspective on the IT evolution.
+
+"If a task has once begun, never leave it till it's done. Be the labor great or small, do it well or not at all."
 
 ### Download a free PDF
 

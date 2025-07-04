@@ -6,7 +6,7 @@ class Pkg(ConanFile):
     default_options = {"tracy/*:no_exit": True, "libcoro/*:with_networking": False}
 
     def requirements(self):
-        self.requires("benchmark/1.9.1")
+        self.requires("benchmark/1.9.4")
         self.requires("nanobench/4.3.11")
         self.requires("doctest/2.4.11")
         self.requires("catch2/3.8.1")

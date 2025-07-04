@@ -52,7 +52,22 @@ add_executable(builder 11_builder.cpp)
 target_compile_features(builder PRIVATE cxx_std_23)
 
 add_executable(state_and_visitation 12_state_and_visitation.cpp)
-target_compile_features(state_and_visitation PRIVATE cxx_std_20)
+target_compile_features(state_and_visitation PRIVATE cxx_std_23)
 
 add_executable(memory_arenas 13_memory_arenas.cpp)
 target_compile_features(memory_arenas PRIVATE cxx_std_20)
+
+add_executable(memory_arena_winking_out 13_memory_arena_winking_out.cpp)
+target_compile_features(memory_arena_winking_out PRIVATE cxx_std_20)
+
+add_executable(small_string_optimization 14_small_string_optimization.cpp)
+target_compile_features(small_string_optimization PRIVATE cxx_std_11)
+
+add_executable(placement_syntax1 15_placement_syntax1.cpp)
+target_compile_features(placement_syntax1 PRIVATE cxx_std_20)
+
+add_executable(placement_syntax2 15_placement_syntax2.cpp)
+target_compile_features(placement_syntax2 PRIVATE cxx_std_20)
+
+add_executable(string_cow 15_string_copy_on_write.cpp)
+target_compile_features(string_cow PRIVATE cxx_std_98)

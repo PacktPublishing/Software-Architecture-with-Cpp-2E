@@ -12,8 +12,9 @@ struct contains_fn final {
                                             std::projected<It, Proj>, const T *>
   constexpr bool operator()(It first, Sent last, const T &value,
                             Proj projection = {}) const {
-    while (first != last && std::invoke(projection, *first) != value)
+    while (first != last && std::invoke(projection, *first) != value) {
       ++first;
+    }
     return first != last;
   }
 

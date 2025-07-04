@@ -12,27 +12,27 @@ struct IDocument {
   virtual std::vector<std::string> extract_text() = 0;
 };
 
-class PdfDocument : public IDocument {
+class PdfDocument final : public IDocument {
 public:
-  explicit PdfDocument(std::string_view path) {}
+  explicit PdfDocument(const std::string &path) {}
   std::vector<std::string> extract_text() override { return {"Text from PDF"}; }
 };
 
-class HtmlDocument : public IDocument {
+class HtmlDocument final : public IDocument {
 public:
-  explicit HtmlDocument(std::string_view path) {}
+  explicit HtmlDocument(const std::string &path) {}
   std::vector<std::string> extract_text() override {
     return {"Text from HTML"};
   }
 };
 
-class OdtDocument : public IDocument {
+class OdtDocument final : public IDocument {
 public:
-  explicit OdtDocument(std::string_view path) {}
+  explicit OdtDocument(const std::string &path) {}
   std::vector<std::string> extract_text() override { return {"Text from ODT"}; }
 };
 
-std::unique_ptr<IDocument> open(std::string_view path) {
+std::unique_ptr<IDocument> open(const std::string &path) {
   const auto extension = std::filesystem::path(path).extension();
   if (extension == ".pdf")
     return std::make_unique<PdfDocument>(path);
@@ -42,17 +42,18 @@ std::unique_ptr<IDocument> open(std::string_view path) {
   return nullptr;
 }
 
-class DocumentOpener {
+class DocumentOpener final {
 public:
   using DocumentType = std::unique_ptr<IDocument>;
-  using ConcreteOpener = DocumentType (*)(std::string_view);
-  //  using ConcreteOpener = std::function<DocumentType(std::string_view)>;
+  using ConcreteOpener = DocumentType (*)(const std::string &);
+  // using ConcreteOpener = std::function<DocumentType(const std::string&)>;
 
-  void register_plugin(std::string_view extension, ConcreteOpener opener) {
+  void register_plugin(const std::string &extension,
+                       const ConcreteOpener &opener) {
     openerByExtension.emplace(extension, opener);
   }
 
-  DocumentType open(std::string_view path) {
+  DocumentType open(const std::string &path) const {
     if (const auto p = std::filesystem::path(path); p.has_extension()) {
       return openerByExtension.at(p.extension().string())(path);
     }
@@ -60,24 +61,24 @@ public:
   }
 
 private:
-  std::unordered_map<std::string_view, ConcreteOpener> openerByExtension;
+  std::unordered_map<std::string, ConcreteOpener> openerByExtension;
 };
 
 int main() {
   auto document_opener = DocumentOpener{};
   document_opener.register_plugin(
-      ".pdf", [](auto path) -> DocumentOpener::DocumentType {
+      ".pdf", [](const auto &path) -> DocumentOpener::DocumentType {
         return std::make_unique<PdfDocument>(path);
       });
   document_opener.register_plugin(
-      ".html", [](auto path) -> DocumentOpener::DocumentType {
+      ".html", [](const auto &path) -> DocumentOpener::DocumentType {
         return std::make_unique<HtmlDocument>(path);
       });
   document_opener.register_plugin(
-      ".odt", [](auto path) -> DocumentOpener::DocumentType {
+      ".odt", [](const auto &path) -> DocumentOpener::DocumentType {
         return std::make_unique<OdtDocument>(path);
       });
 
-  auto document = document_opener.open("file.odt");
+  const auto document = document_opener.open("file.odt");
   std::cout << document->extract_text().front();
 }

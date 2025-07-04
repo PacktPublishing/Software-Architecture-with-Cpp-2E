@@ -15,10 +15,14 @@ public:
     std::copy(l.begin(), l.end(), data);
   }
 
+  ~Array() { delete[] data; }
+
   Array(const Array &other) { *this = other; }
 
   Array &operator=(const Array &other) {
     if (this != &other) {
+      delete[] data;
+
       sz = other.sz;
       data = new T[other.sz];
 
@@ -90,7 +94,7 @@ public:
 
 private:
   std::size_t sz;
-  T *data;
+  T *data{nullptr};
 };
 
 template <typename T>
@@ -112,6 +116,7 @@ int main() {
   std::ranges::iota(a, 1);
 
   a = a;
+  a = std::move(a);
   std::cout << "iota:\n" << "a=" << a << std::endl;
 
   const Array d = a;

@@ -1,6 +1,6 @@
 #include <memory>
 
-class PotentiallyMisleading {
+class PotentiallyMisleading final {
 public:
   PotentiallyMisleading() = default;
   PotentiallyMisleading(const PotentiallyMisleading &) = default;
@@ -10,11 +10,15 @@ public:
   ~PotentiallyMisleading() = default;
 
 private:
-  std::unique_ptr<int> int_;
+  std::unique_ptr<int> value;
 };
 
-class RuleOfZero {
-  std::unique_ptr<int> int_;
+class RuleOfZero final {
+public:
+  // would be implicitly non-movable
+  // ~RuleOfZero() = default;
+
+  std::unique_ptr<int> value;
 };
 
 int main() {

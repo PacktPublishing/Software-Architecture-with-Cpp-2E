@@ -2,9 +2,9 @@
 #include <cassert>
 #include <utility>
 
-template <typename T> class Array {
+template <typename T> class Array final {
 public:
-  Array(T *array, int size) : array_{array}, size_{size} {}
+  Array(T *array, std::size_t size) : array_{array}, size_{size} {}
 
   Array(const Array &other) : array_{new T[other.size_]}, size_{other.size_} {
     std::copy_n(other.array_, size_, array_);
@@ -28,15 +28,15 @@ public:
     swap(left.size_, right.size_);
   }
 
-  T &operator[](int index) { return array_[index]; }
-  int size() const { return size_; }
+  T &operator[](std::size_t index) { return array_[index]; }
+  [[nodiscard]] std::size_t size() const noexcept { return size_; }
 
 private:
   T *array_;
-  int size_;
+  std::size_t size_;
 };
 
-template <typename T> Array<T> make_array(int size) {
+template <typename T> Array<T> make_array(std::size_t size) {
   return Array(new T[size], size);
 }
 

@@ -50,12 +50,26 @@ State on_event(state::Depleted depleted, event::DeliveryArrived delivered) {
   return state::Available{delivered.count};
 }
 
+#if __cplusplus >= 202302L
+template <class... Ts> struct overload : Ts... {
+  using Ts::operator()...;
+
+  /*consteval void operator()(auto) const {
+    static_assert(false, "Unsupported type");
+  }*/
+};
+#elif __cplusplus >= 202002L
+template <class... Ts> struct overload : Ts... {
+  using Ts::operator()...;
+};
+#else
 template <class... Ts> struct overload : Ts... {
   using Ts::operator()...;
 };
 template <class... Ts> overload(Ts...) -> overload<Ts...>;
+#endif
 
-class ItemStateMachine {
+class ItemStateMachine final {
 public:
   template <typename Event> void process_event(Event &&event) {
     state_ = std::visit(overload{

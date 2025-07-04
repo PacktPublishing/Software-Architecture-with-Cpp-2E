@@ -2,6 +2,11 @@
 // https://conan.io/center/recipes/drogon when with_boost=False
 #define BOOST_TEST_UNIT_TEST_SUITE_IPP_012205GER
 #define BOOST_TEST_UNIT_TEST_PARAMETERS_IPP_012205GER
+#define BOOST_TEST_COMPILER_LOG_FORMATTER_IPP_020105GER
+#define BOOST_TEST_JUNIT_LOG_FORMATTER_IPP__
+#define BOOST_TEST_TEST_TOOLS_IPP_012205GER
+#define BOOST_TEST_TREE_DECORATOR_IPP_091911GER
+#define BOOST_TEST_DEBUG_API_IPP_112006GER
 
 #define BOOST_TEST_MODULE basic_responses
 #include <boost/test/included/unit_test.hpp>

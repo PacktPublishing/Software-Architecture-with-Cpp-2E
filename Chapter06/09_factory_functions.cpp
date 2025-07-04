@@ -2,7 +2,7 @@
 
 namespace factory_method {
 
-class Pixel {
+class Pixel final {
 public:
   static Pixel fromRgba(std::byte r, std::byte g, std::byte b, std::byte a) {
     return Pixel{r, g, b, a};

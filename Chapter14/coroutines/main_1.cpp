@@ -12,15 +12,16 @@ std::mt19937 gen(rd());
 std::uniform_int_distribution<> distrib(0, 800);
 
 coro::task<> fill_number(int i, std::vector<int> &ints,
-                         coro::thread_pool &thread_pool, coro::mutex &mutex) {
-  co_await thread_pool.schedule();
+                         std::shared_ptr<coro::thread_pool> thread_pool,
+                         coro::mutex &mutex) {
+  co_await thread_pool->schedule();
 
   std::println("Thread {}: producing {}", std::this_thread::get_id(), i);
   std::this_thread::sleep_for(std::chrono::milliseconds(distrib(gen)));
 
   {
     // remember to co_await!
-    auto lock = co_await mutex.lock();
+    auto lock = co_await mutex.scoped_lock();
     ints.emplace_back(i);
   }
 
@@ -28,7 +29,8 @@ coro::task<> fill_number(int i, std::vector<int> &ints,
   co_return;
 }
 
-coro::task<std::vector<int>> do_routine_work(coro::thread_pool &thread_pool) {
+coro::task<std::vector<int>>
+do_routine_work(std::shared_ptr<coro::thread_pool> thread_pool) {
   auto mutex = coro::mutex{};
   auto ints = std::vector<int>{};
   ints.reserve(WORK_ITEMS);
@@ -36,7 +38,7 @@ coro::task<std::vector<int>> do_routine_work(coro::thread_pool &thread_pool) {
   std::println("Thread {}: passing execution to the pool",
                std::this_thread::get_id());
 
-  co_await thread_pool.schedule();
+  co_await thread_pool->schedule();
   std::println("Thread {}: running first pooled job",
                std::this_thread::get_id());
 
@@ -53,7 +55,7 @@ coro::task<std::vector<int>> do_routine_work(coro::thread_pool &thread_pool) {
 }
 
 int main() {
-  auto thread_pool = coro::thread_pool{{.thread_count = 3}};
+  auto thread_pool = coro::thread_pool::make_shared({.thread_count = 3});
 
   std::println("Thread {}: preparing work", std::this_thread::get_id());
   auto work = do_routine_work(thread_pool);

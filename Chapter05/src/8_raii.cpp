@@ -23,8 +23,8 @@ public:
     std::cout << "Resource released\n";
   }
 
-  // copy constructors and assignment operator are deleted not to free
-  // deallocated dynamic memory many times and to avoid shallow copying
+  // Copy constructor and assignment operator are deleted to prevent shallow
+  // copies and multiple deletions of the same dynamic memory.
   Array(const Array &) = delete;
   Array &operator=(const Array &) = delete;
 

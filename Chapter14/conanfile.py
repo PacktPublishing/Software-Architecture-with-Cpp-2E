@@ -11,7 +11,8 @@ class Pkg(ConanFile):
         self.requires("doctest/2.4.11")
         self.requires("catch2/3.9.0")
         self.requires("tracy/0.11.0")
-        self.requires("libcoro/0.14.1")  # requires Linux
+        # requires Linux for networking
+        self.requires("libcoro/0.15.0")
         self.requires("boost/1.88.0")
         if not self.settings.os == "Windows":
             self.requires("coost/3.0.2")  # const char to PCHAR on Windows

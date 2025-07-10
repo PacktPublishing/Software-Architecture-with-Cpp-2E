@@ -18,7 +18,7 @@ Chapter 4: [Architectural and System Design Patterns](Chapter04)
 
 Chapter 5: [Leveraging C++ Language Features](Chapter05)
 
-Chapter 6: [Design Patterns and C++](Chapter06)
+Chapter 6: [Design Patterns and C++ Idioms](Chapter06)
 
 Chapter 7: [Building and Packaging](Chapter07)
 

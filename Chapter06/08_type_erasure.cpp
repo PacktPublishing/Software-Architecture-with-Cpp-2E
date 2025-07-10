@@ -5,8 +5,8 @@
 class GlamorousItem {
 public:
   template <class T>
-  explicit GlamorousItem(T t)
-      : item_{std::make_unique<TypeErasedItem<T>>(std::move(t))} {}
+  explicit GlamorousItem(T &&t)
+      : item_{std::make_unique<TypeErasedItem<T>>(std::forward<T>(t))} {}
 
   void appear_in_full_glory() { item_->appear_in_full_glory_impl(); }
 
@@ -18,7 +18,7 @@ private:
 
   template <class T> class TypeErasedItem final : public TypeErasedItemBase {
   public:
-    explicit TypeErasedItem(T t) : t_{std::move(t)} {}
+    explicit TypeErasedItem(T &&t) : t_{std::forward<T>(t)} {}
     void appear_in_full_glory_impl() override { t_.appear_in_full_glory(); }
 
   private:

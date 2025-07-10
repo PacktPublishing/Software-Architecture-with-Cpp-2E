@@ -50,7 +50,7 @@ int main() {
   {
     auto glamorous_items = PreciousItems<PinkHeels, GoldenWatch>{};
     std::apply(
-        []<typename... T>(GlamorousItem<T>... items) {
+        []<typename... T>(GlamorousItem<T> &...items) {
           (items.appear_in_full_glory(), ...);
         },
         glamorous_items);

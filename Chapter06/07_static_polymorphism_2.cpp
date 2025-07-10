@@ -52,7 +52,7 @@ int main() {
   {
     auto glamorous_items = PreciousItems<PinkHeels, GoldenWatch>{};
     std::apply([]<std::derived_from<GlamorousItem>... T>(
-                   T... items) { (items.appear_in_full_glory(), ...); },
+                   T &...items) { (items.appear_in_full_glory(), ...); },
                glamorous_items);
   }
   std::cout << "---\n";

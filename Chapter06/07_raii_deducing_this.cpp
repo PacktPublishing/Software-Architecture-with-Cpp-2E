@@ -3,30 +3,27 @@
 #include <initializer_list>
 #include <iostream>
 #include <iterator>
-#include <numeric>
-#include <ranges>
-#include <stdexcept>
 
-template <typename T> class Array {
+template <typename T> class Array final {
 public:
-  explicit Array(std::size_t size) : sz{size}, data{new T[size]()} {}
+  explicit Array(std::size_t size) : sz_{size}, data_{new T[size]()} {}
 
-  Array(std::initializer_list<T> l) : Array(l.size()) {
-    std::copy(l.begin(), l.end(), data);
+  Array(std::initializer_list<T> list) : Array(list.size()) {
+    std::copy(list.begin(), list.end(), data_);
   }
 
-  ~Array() { delete[] data; }
+  ~Array() { delete[] data_; }
 
   Array(const Array &other) { *this = other; }
 
   Array &operator=(const Array &other) {
     if (this != &other) {
-      delete[] data;
+      delete[] data_;
 
-      sz = other.sz;
-      data = new T[other.sz];
+      sz_ = other.sz_;
+      data_ = new T[other.sz_];
 
-      std::copy(other.begin(), other.end(), data);
+      std::copy(other.begin(), other.end(), data_);
     }
     return *this;
   };
@@ -35,11 +32,11 @@ public:
 
   Array &operator=(Array &&other) noexcept {
     if (this != &other) {
-      sz = other.sz;
-      data = other.data;
+      sz_ = other.sz_;
+      data_ = other.data_;
 
-      other.sz = 0;
-      other.data = nullptr;
+      other.sz_ = 0;
+      other.data_ = nullptr;
     }
     return *this;
   }
@@ -47,12 +44,10 @@ public:
   // Use an explicit object parameter (self) and auto&&
   // to differentiate const vs non-const
   auto &&operator[](this auto &&self, std::size_t idx) {
-    if (idx >= self.sz)
-      throw std::out_of_range("Index is out of range");
-    return self.data[idx];
+    return self.data_[idx];
   }
 
-  [[nodiscard]] std::size_t size() const { return sz; }
+  [[nodiscard]] std::size_t size() const noexcept { return sz_; }
 
   struct Iterator {
     using difference_type = std::ptrdiff_t;
@@ -87,14 +82,14 @@ public:
     pointer ptr;
   };
 
-  Iterator begin(this auto &&self) { return Iterator(&self.data[0]); }
-  Iterator end(this auto &&self) { return Iterator(&self.data[self.sz]); }
+  Iterator begin(this auto &&self) { return Iterator(&self.data_[0]); }
+  Iterator end(this auto &&self) { return Iterator(&self.data_[self.sz_]); }
 
   static_assert(std::forward_iterator<Iterator>);
 
 private:
-  std::size_t sz;
-  T *data{nullptr};
+  std::size_t sz_;
+  T *data_{nullptr};
 };
 
 template <typename T>
@@ -134,4 +129,9 @@ int main() {
   a = std::move(a);
   std::cout << "move:\na=" << a << "\nb=" << b << "\nc=" << c << "\ne=" << e
             << "\nf=" << f << std::endl;
+
+  // shallow and deep copying
+  Array<int> array{};
+  array = {1, 2, 3, 4, 5};
+  std::cout << "array:\n" << array << std::endl;
 }

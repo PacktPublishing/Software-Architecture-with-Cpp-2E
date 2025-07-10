@@ -1,15 +1,25 @@
 #include <algorithm>
 
+#if __cplusplus >= 201103L
 struct NonCopyable {
   NonCopyable() = default;
   NonCopyable(const NonCopyable &) = delete;
   NonCopyable &operator=(const NonCopyable &) = delete;
+
   // NOTE: also non-movable
   // without defined move constructor and assignment operator
   // NonCopyable(NonCopyable &&) = default;
   // NonCopyable &operator=(NonCopyable &&) = default;
-  virtual ~NonCopyable() = default;
 };
+#else
+struct NonCopyable {
+  NonCopyable() {}
+
+private:
+  NonCopyable(const NonCopyable &);
+  NonCopyable &operator=(const NonCopyable &);
+};
+#endif
 
 class MyType : NonCopyable {};
 

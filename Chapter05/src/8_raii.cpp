@@ -6,43 +6,35 @@
 #if __cplusplus >= 202002L
 #include <span>
 #endif
-#include <stdexcept>
 
-template <typename T> class Array {
+template <typename T> class Array final {
 public:
-  explicit Array(std::size_t size) : sz{size}, data{new T[size]()} {
+  explicit Array(std::size_t size) : sz_{size}, data_{new T[size]()} {
     std::cout << "Resource acquired\n";
   }
 
-  Array(std::initializer_list<T> l) : Array(l.size()) {
-    std::copy(l.begin(), l.end(), data);
+  Array(std::initializer_list<T> list) : Array(list.size()) {
+    std::copy(list.begin(), list.end(), data_);
   }
 
   ~Array() {
-    delete[] data;
+    delete[] data_;
 
     std::cout << "Resource released\n";
   }
 
-  // not to release the acquired dynamic memory again
+  // copy constructors and assignment operator are deleted not to free
+  // deallocated dynamic memory many times and to avoid shallow copying
   Array(const Array &) = delete;
   Array &operator=(const Array &) = delete;
 
-  T &operator[](std::size_t idx) {
-    if (idx >= sz)
-      throw std::out_of_range("Index is out of range");
-    return data[idx];
-  }
-  const T &operator[](std::size_t idx) const {
-    if (idx >= sz)
-      throw std::out_of_range("Index is out of range");
-    return data[idx];
-  }
+  T &operator[](std::size_t idx) { return data_[idx]; }
+  const T &operator[](std::size_t idx) const { return data_[idx]; }
 
-  [[nodiscard]] std::size_t size() const { return sz; }
+  [[nodiscard]] std::size_t size() const noexcept { return sz_; }
 
 #if __cplusplus >= 202002L
-  std::span<const T> span() { return std::span{data, sz}; }
+  std::span<const T> span() { return std::span{data_, sz_}; }
 #endif
 
   struct Iterator {
@@ -81,23 +73,23 @@ public:
     pointer ptr;
   };
 
-  Iterator begin() { return Iterator(&data[0]); }
-  Iterator end() { return Iterator(&data[sz]); }
+  Iterator begin() { return Iterator(&data_[0]); }
+  Iterator end() { return Iterator(&data_[sz_]); }
 
-  [[nodiscard]] Iterator begin() const { return Iterator(&data[0]); }
-  [[nodiscard]] Iterator end() const { return Iterator(&data[sz]); }
+  [[nodiscard]] Iterator begin() const { return Iterator(&data_[0]); }
+  [[nodiscard]] Iterator end() const { return Iterator(&data_[sz_]); }
 
 #if __cplusplus >= 202002L
   static_assert(std::forward_iterator<Iterator>);
 #endif
 private:
-  std::size_t sz;
-  T *data;
+  std::size_t sz_;
+  T *data_;
 };
 
 #if __cplusplus >= 202002L
 template <typename T> void print_span(std::span<T> s) {
-  std::copy(std::begin(s), std::end(s), std::ostream_iterator<T>(std::cout));
+  std::copy(s.begin(), s.end(), std::ostream_iterator<T>(std::cout));
   std::cout << std::endl;
 }
 #endif
@@ -134,4 +126,10 @@ int main() {
   }
 
   print_array(arr);
+
+  // shallow and deep copying: try commenting deleted copy constructor and
+  // assignment operator
+  Array<int> array{};
+  // array = {1, 2, 3, 4, 5};
+  // Array copy_array{array};
 }

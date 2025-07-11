@@ -48,13 +48,13 @@ public:
 
     Iterator() = default;
 
-    explicit Iterator(pointer ptr) : ptr(ptr) {}
+    explicit Iterator(pointer ptr) : ptr_{ptr} {}
 
-    reference operator*() const { return *ptr; }
-    pointer operator->() { return ptr; }
+    reference operator*() const { return *ptr_; }
+    pointer operator->() { return ptr_; }
 
     Iterator &operator++() {
-      ++ptr;
+      ++ptr_;
       return *this;
     }
     Iterator operator++(int) {
@@ -63,21 +63,21 @@ public:
       return tmp;
     }
     friend bool operator==(const Iterator &a, const Iterator &b) {
-      return a.ptr == b.ptr;
+      return a.ptr_ == b.ptr_;
     };
     friend bool operator!=(const Iterator &a, const Iterator &b) {
-      return a.ptr != b.ptr;
+      return a.ptr_ != b.ptr_;
     };
 
   private:
-    pointer ptr;
+    pointer ptr_{nullptr};
   };
 
-  Iterator begin() { return Iterator(&data_[0]); }
-  Iterator end() { return Iterator(&data_[sz_]); }
+  [[nodiscard]] Iterator begin() { return Iterator(&data_[0]); }
+  [[nodiscard]] Iterator end() { return Iterator(&data_[sz_]); }
 
-  [[nodiscard]] Iterator begin() const { return Iterator(&data_[0]); }
-  [[nodiscard]] Iterator end() const { return Iterator(&data_[sz_]); }
+  [[nodiscard]] const Iterator begin() const { return Iterator(&data_[0]); }
+  [[nodiscard]] const Iterator end() const { return Iterator(&data_[sz_]); }
 
 #if __cplusplus >= 202002L
   static_assert(std::forward_iterator<Iterator>);
@@ -129,7 +129,7 @@ int main() {
 
   // shallow and deep copying: try commenting deleted copy constructor and
   // assignment operator
-  Array<int> array{};
+  // Array<int> array{};
   // array = {1, 2, 3, 4, 5};
   // Array copy_array{array};
 }

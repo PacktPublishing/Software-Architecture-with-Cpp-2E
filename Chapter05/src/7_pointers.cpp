@@ -4,17 +4,17 @@
 #include <utility>
 
 class Resource final {
-  std::string s;
+  std::string m_s;
 
 public:
-  explicit Resource(const std::string &s) : s(s) {
-    std::cout << "Resource constructor " << s << std::endl;
+  explicit Resource(std::string s) : m_s{std::move(s)} {
+    std::cout << "Resource constructor " << m_s << '\n';
   }
 
-  ~Resource() { std::cout << "Resource destructor " << s << std::endl; }
+  ~Resource() { std::cout << "Resource destructor " << m_s << '\n'; }
 
   // user-defined conversion function
-  explicit operator std::string() const noexcept { return s; }
+  explicit operator std::string() const { return m_s; }
 };
 
 std::ostream &operator<<(std::ostream &os, const Resource &r) {

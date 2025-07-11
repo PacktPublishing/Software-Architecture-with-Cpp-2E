@@ -57,13 +57,13 @@ public:
 
     Iterator() = default;
 
-    explicit Iterator(pointer ptr) : ptr(ptr) {}
+    explicit Iterator(pointer ptr) : ptr_{ptr} {}
 
-    reference operator*() const { return *ptr; }
-    pointer operator->() { return ptr; }
+    reference operator*() const { return *ptr_; }
+    pointer operator->() { return ptr_; }
 
     Iterator &operator++() {
-      ++ptr;
+      ++ptr_;
       return *this;
     }
     Iterator operator++(int) {
@@ -72,18 +72,22 @@ public:
       return tmp;
     }
     friend bool operator==(const Iterator &a, const Iterator &b) {
-      return a.ptr == b.ptr;
+      return a.ptr_ == b.ptr_;
     };
     friend bool operator!=(const Iterator &a, const Iterator &b) {
-      return a.ptr != b.ptr;
+      return a.ptr_ != b.ptr_;
     };
 
   private:
-    pointer ptr;
+    pointer ptr_{nullptr};
   };
 
-  Iterator begin(this auto &&self) { return Iterator(&self.data_[0]); }
-  Iterator end(this auto &&self) { return Iterator(&self.data_[self.sz_]); }
+  [[nodiscard]] Iterator begin(this auto &&self) {
+    return Iterator(&self.data_[0]);
+  }
+  [[nodiscard]] Iterator end(this auto &&self) {
+    return Iterator(&self.data_[self.sz_]);
+  }
 
   static_assert(std::forward_iterator<Iterator>);
 

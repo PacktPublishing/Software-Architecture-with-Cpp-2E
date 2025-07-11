@@ -66,3 +66,8 @@ target_compile_options(pointers PRIVATE ${BASE_COMPILE_FLAGS})
 add_executable(raii src/8_raii.cpp)
 target_compile_features(raii PRIVATE cxx_std_20)
 target_compile_options(raii PRIVATE ${BASE_COMPILE_FLAGS})
+
+add_executable(gsl_asserts src/9_gsl_asserts.cpp)
+target_link_libraries(gsl_asserts PRIVATE Microsoft.GSL::GSL)
+target_compile_features(gsl_asserts PRIVATE cxx_std_17)
+target_compile_options(gsl_asserts PRIVATE ${BASE_COMPILE_FLAGS})

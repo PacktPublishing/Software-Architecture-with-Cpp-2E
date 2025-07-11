@@ -1,6 +1,11 @@
 #include <algorithm>
 #include <chrono>
+#if __cplusplus >= 202002L
 #include <format>
+#else
+#include <ctime>
+#include <iomanip>
+#endif
 #include <gsl/pointers>
 #include <iostream>
 #include <optional>
@@ -37,11 +42,19 @@ std::ostream &operator<<(std::ostream &os, const Item *item) {
     }
   };
 
+#if __cplusplus < 202002L
+  auto date_added = system_clock::to_time_t(item->date_added);
+#endif
+
   os << "name: " << item->name
      << ", photo_url: " << stringify_optional(item->photo_url)
      << ", description: " << item->description
      << ", price: " << stringify_optional(item->price)
+#if __cplusplus >= 202002L
      << ", date_added: " << std::format("{:%c %Z}", item->date_added)
+#else
+     << std::put_time(std::localtime(&date_added), "%c %Z")
+#endif
      << ", featured: " << item->featured;
   return os;
 }

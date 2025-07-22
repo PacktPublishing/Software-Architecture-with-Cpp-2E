@@ -17,18 +17,18 @@ For example, type `conan-local` in the `Repository key` and click on `Create Loc
 Connect the Conan remote repository:
 
 ```bash
-conan remote add artifactory http://localhost:8081/artifactory/api/conan/conan-local
+conan remote add hinrg-tapps http://localhost:8081/artifactory/api/conan/conan-local
 ```
 
 Configure the credentials for the remote. By default, they are `admin:password`:
 
 ```bash
-conan remote login artifactory admin -p password
+conan remote login hinrg-tapps admin -p password
 ```
 
-Upload the customer package (from the directory containing `conanfile.py`):
+Upload the built customer package (from the directory containing `conanfile.py`) and search for the package:
 
 ```bash
-conan upload customer -r=artifactory
-conan search "*" -r=artifactory
+conan upload customer -r=hinrg-tapps
+conan search "*" -r=hinrg-tapps
 ```

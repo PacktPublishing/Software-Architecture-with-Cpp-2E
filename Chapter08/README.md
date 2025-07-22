@@ -133,25 +133,25 @@ For example, type `conan-local` in the `Repository key` and click on `Create Loc
 Connect the Conan remote repository:
 
 ```bash
-conan remote add artifactory http://localhost:8081/artifactory/api/conan/conan-local
+conan remote add hinrg-tapps http://localhost:8081/artifactory/api/conan/conan-local
 ```
 
 Configure the credentials for the remote. By default, they are `admin:password`:
 
 ```bash
-conan remote login artifactory admin -p password
+conan remote login hinrg-tapps admin -p password
 ```
 
-Upload the customer package:
+Upload the built customer package:
 
 ```bash
-conan upload customer -r=artifactory
+conan upload customer -r=hinrg-tapps
 ```
 
-Search the customer package:
+Search for the customer package:
 
 ```bash
-conan search "*" -r=artifactory
+conan search "*" -r=hinrg-tapps
 ```
 
 Navigate to either `Application -> Artifacts` or `Application -> Packages` (wait for package processing).

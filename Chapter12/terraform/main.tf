@@ -7,11 +7,6 @@ terraform {
   }
 }
 
-# Configure the AWS provider
-provider "aws" {
-  region  = var.region
-}
-
 # Input variable pointing to an SSH key we ant to associate with the newly
 # created machine
 variable "public_key_path" {
@@ -42,7 +37,12 @@ variable "env" {
 variable "region" {
 }
 
-# Create a new AWS key pair cotaining the public key set as the input
+# Configure the AWS provider
+provider "aws" {
+  region  = var.region
+}
+
+# Create a new AWS key pair containing the public key set as the input
 # variable
 resource "aws_key_pair" "deployer" {
   key_name   = var.aws_key_name

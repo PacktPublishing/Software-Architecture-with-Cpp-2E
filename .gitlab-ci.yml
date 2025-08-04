@@ -9,7 +9,7 @@ variables:
   CONAN_HOME: "$CI_PROJECT_DIR/.conan2"
 
 cache:
-  key: all
+  key: build-cache
   paths:
     - .cache/pip
     - .conan2

@@ -1,7 +1,7 @@
-#include <Sum.h>
+#include <cucumber-cpp/autodetect.hpp>
 #include <gtest/gtest.h>
 
-#include <cucumber-cpp/autodetect.hpp>
+#include "sum.h"
 
 using cucumber::ScenarioScope;
 

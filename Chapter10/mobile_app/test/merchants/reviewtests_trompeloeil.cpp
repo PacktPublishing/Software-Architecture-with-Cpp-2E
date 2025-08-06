@@ -19,7 +19,7 @@ SCENARIO("merchant history keeps store up to date", "[mobile app]") {
   GIVEN("a history with one rated merchant") {
     static constexpr std::size_t CUSTOMER_ID = 7777;
     static constexpr std::size_t MERCHANT_ID = 1234;
-    static constexpr const char *REVIEW_TEXT = "Very nice!";
+    static constexpr const char *REVIEW_TEXT = "I'm like TT, just like TT";
     static constexpr stars RATING = stars{5.f};
 
     auto fake_review_store_ = fake_customer_review_store{CUSTOMER_ID};

@@ -1,15 +1,13 @@
+#include <cstdint>
 #include <string_view>
 
-constexpr int generate_lucky_number(std::string_view name) {
-  if (name == "Bob") {
-    return 808;
-  }
-
-  int number = 1;
+consteval uint64_t generate_lucky_number(std::string_view name) {
+  uint64_t number = 1;
   for (const auto letter : name) {
-    number = number * 7 + static_cast<int>(letter);
+    number = number * 7 + static_cast<uint64_t>(letter);
   }
   return number;
 }
 
-static_assert(generate_lucky_number("Bob") == 808);
+static_assert(generate_lucky_number("Paul and Jessica") == 491752089676924,
+              "Generate the lucky number for Paul and Jessica");

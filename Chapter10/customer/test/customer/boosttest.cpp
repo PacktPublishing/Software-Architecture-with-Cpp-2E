@@ -14,8 +14,8 @@
 #include "customer/responder.h"
 
 BOOST_AUTO_TEST_CASE(given_name_when_prepare_responses_then_greets_friendly) {
-  const auto name = "Bob";
+  const auto name = "Bulk Bogan";
   const auto [status, value] = responder{}.prepare_response(name);
   BOOST_CHECK_EQUAL(status, drogon::k200OK);
-  BOOST_CHECK_EQUAL(value, "Hello, Bob!");
+  BOOST_CHECK_EQUAL(value, "Hello, Bulk Bogan!");
 }

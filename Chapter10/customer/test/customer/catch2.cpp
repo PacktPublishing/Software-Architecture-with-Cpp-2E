@@ -4,10 +4,10 @@
 
 TEST_CASE("Basic responses",
           "Given Name When Prepare Responses Then Greets Friendly") {
-  const auto name = "Bob";
+  const auto name = "Mikey";
   const auto [status, value] = responder{}.prepare_response(name);
   REQUIRE(status == drogon::k200OK);
-  REQUIRE(value == "Hello, Bob!");
+  REQUIRE(value == "Hello, Mikey!");
 }
 
 int main(const int argc, char *argv[]) {

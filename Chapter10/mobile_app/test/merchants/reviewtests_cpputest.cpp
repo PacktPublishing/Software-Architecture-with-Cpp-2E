@@ -33,7 +33,8 @@ private:
 TEST_GROUP(history_with_one_rated_merchant) {
   static constexpr std::size_t CUSTOMER_ID = 7777;
   static constexpr std::size_t MERCHANT_ID = 1234;
-  static constexpr const char *REVIEW_TEXT = "Very nice!";
+  static constexpr const char *REVIEW_TEXT =
+      "It's not 'Door to Heaven' it is...";
   static constexpr stars RATING = stars{5.f};
 
   TEST_SETUP() {

@@ -1,4 +1,4 @@
-add_executable(catch2tests catch.cpp)
+add_executable(catch2tests catch2.cpp)
 target_link_libraries(catch2tests PRIVATE tradefair::libcustomer Catch2::Catch2)
 target_compile_options(catch2tests PRIVATE ${BASE_COMPILE_FLAGS})
 catch_discover_tests(catch2tests)
@@ -45,6 +45,6 @@ target_compile_options(doctests PRIVATE ${BASE_COMPILE_FLAGS})
 doctest_discover_tests(doctests)
 
 add_library(compiletimetests OBJECT compiletime.cpp)
-target_compile_features(compiletimetests PRIVATE cxx_std_17)
+target_compile_features(compiletimetests PRIVATE cxx_std_20)
 target_compile_options(compiletimetests PRIVATE ${BASE_COMPILE_FLAGS})
 target_link_libraries(compiletimetests PRIVATE tradefair::libcustomer)

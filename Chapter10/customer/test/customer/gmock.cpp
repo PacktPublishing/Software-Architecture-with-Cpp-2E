@@ -26,12 +26,12 @@ TEST(basic_responses,
   drogon::HttpRequestPtr request = drogon::HttpRequest::newHttpRequest();
   request->setMethod(drogon::HttpMethod::Get);
   request->setPath("/customer");
-  request->setParameter("name", "Bob");
+  request->setParameter("name", "Rotoro");
 
   auto responder = StrictMock<responder_mock>{};
-  const auto response = Json::Value("my response");
+  const auto response = Json::Value("Bizarre Club");
 
-  EXPECT_CALL(responder, prepare_response("Bob"))
+  EXPECT_CALL(responder, prepare_response("Rotoro"))
       .WillOnce(Return(std::pair{drogon::k200OK, response}));
   EXPECT_CALL(responder, respond(drogon::k200OK, contains_value(response), _));
 

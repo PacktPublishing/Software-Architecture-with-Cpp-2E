@@ -6,10 +6,10 @@
 #include <doctest/doctest.h>
 
 TEST_CASE("Basic responses") {
-  auto name = "Bob";
+  auto name = "Donnie";
   drogon::HttpStatusCode status;
   Json::Value value;
   std::tie(status, value) = responder{}.prepare_response(name);
   REQUIRE(status == drogon::k200OK);
-  REQUIRE(value == "Hello, Bob!");
+  REQUIRE(value == "Hello, Donnie!");
 }

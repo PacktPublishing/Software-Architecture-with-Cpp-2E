@@ -5,7 +5,7 @@
 #include <stdexcept>
 
 class String final {
-  static constexpr std::size_t BUF_SIZE = 15;
+  static const std::size_t BUF_SIZE = 15;
 
   union {
     char buffer[BUF_SIZE + 1];
@@ -13,7 +13,9 @@ class String final {
   };
   std::size_t size{};
 
-  [[nodiscard]] bool is_small_string() const { return size <= BUF_SIZE; }
+  [[nodiscard]] bool is_small_string() const noexcept {
+    return size <= BUF_SIZE;
+  }
 
 public:
   explicit String(const char *s) {
@@ -65,17 +67,13 @@ public:
   }
 
   char &operator[](std::size_t idx) {
-    if (idx >= size)
-      throw std::out_of_range("Index is out of range");
     return !is_small_string() ? data[idx] : buffer[idx];
   }
-  const char &operator[](std::size_t idx) const {
-    if (idx >= size)
-      throw std::out_of_range("Index is out of range");
+  char operator[](std::size_t idx) const {
     return !is_small_string() ? data[idx] : buffer[idx];
   }
 
-  [[nodiscard]] std::size_t length() const { return size; }
+  [[nodiscard]] std::size_t length() const noexcept { return size; }
 
   friend std::ostream &operator<<(std::ostream &os, const String &s) {
     os << (!s.is_small_string() ? s.data : s.buffer);

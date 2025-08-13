@@ -4,7 +4,7 @@
 #include <new>
 #include <string>
 
-struct Test {
+struct Test final {
   std::string name;
 
   explicit Test(std::string n) : name(std::move(n)) {

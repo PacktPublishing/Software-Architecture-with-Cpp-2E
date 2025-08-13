@@ -16,7 +16,7 @@ void self_measuring_function() {
         << " us";
   });
 
-  // perform work
+  // simulate some operations that might
   // throw std::runtime_error{"Unexpected fault"};
 }
 

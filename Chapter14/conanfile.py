@@ -8,7 +8,7 @@ class Pkg(ConanFile):
     def requirements(self):
         self.requires("benchmark/1.9.4")
         self.requires("nanobench/4.3.11")
-        self.requires("doctest/2.4.11")
+        self.requires("doctest/2.4.12")
         self.requires("catch2/3.9.0")
         self.requires("tracy/0.11.0")
         # requires Linux for networking

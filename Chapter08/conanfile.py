@@ -20,7 +20,7 @@ class CustomerConan(ConanFile):
         self.requires("drogon/1.9.10")
 
     def build_requirements(self):
-        self.test_requires("gtest/1.16.0")
+        self.test_requires("gtest/1.17.0")
 
     def layout(self):
         cmake_layout(self)

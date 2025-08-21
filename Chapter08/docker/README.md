@@ -1,6 +1,6 @@
 # Software Architecture with C++, Second Edition
 
-Software Architecture with C++, Second Edition, Published by Packt
+Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
 ## [Running Artifactory CE](https://docs.conan.io/2/tutorial/conan_repositories/setting_up_conan_remotes/artifactory/artifactory_ce_cpp.html)
 

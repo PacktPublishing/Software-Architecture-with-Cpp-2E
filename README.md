@@ -1,6 +1,6 @@
 # Software Architecture with C++, Second Edition
 
-Software Architecture with C++, Second Edition, Published by Packt
+Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
 ## Table of Contents
 
@@ -48,31 +48,46 @@ Chapter 17: [Containers](Chapter17)
 
 Chapter 18: [Cloud Native Design](Chapter18)
 
-<a href="https://www.packtpub.com/product/software-architecture-with-c/9781838554590"><img src="https://content.packt.com/_/image/original/B13870/cover_image.jpg" alt="" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016"><img src="https://content.packt.com/_/image/original/B18456/cover_image.jpg" alt="" height="256px" align="right"></a>
 
-This is the code repository for [Software Architecture with C++](https://www.packtpub.com/product/software-architecture-with-c/9781838554590), Second Edition, published by Packt.
+This is the code repository for [Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016), published by Packt.
 
-**Design modern systems using effective architecture concepts, design patterns, and techniques with C++23**
+**Architect high-quality C++ applications using modern features and patterns, with expanded coverage of observability and cloud-native tooling, plus new content on monadic design techniques for modular C++ development.**
 
-## What is this book about?
+### Key features
 
-Software architecture refers to the high-level design of complex applications. It is evolving just like the languages we use. Modern C++ allows developers to write high-performance apps in a high-level language without sacrificing readability and maintainability. If you're working with modern C++, this practical guide will help you put your knowledge to work and design distributed, large-scale apps. You'll start by getting up to speed with architectural concepts, including established patterns and rising trends. The book will then explain what software architecture is and help you explore its components. Next, you'll discover the design concepts involved in application architecture and the patterns in software development, before going on to learn how to build, package, integrate, and deploy your components. In the concluding chapters, you'll explore different architectural qualities, such as maintainability, reusability, testability, performance, scalability, and security. Finally, you will get an overview of distributed systems, such as service-oriented architecture, microservices, and cloud-native, and understand how to apply them in application development.
+- Architect high-performance C++ systems using C++20 and beyond
+- Build, test, and secure production-ready systems by applying solid design principles
+- Manage, package, and deploy cloud-native applications using CMake, Conan, and CI/CD
 
-This book covers the following exciting features:
+### Book Description
 
-- Understand how to apply the principles of software architecture
-- Apply design patterns and best practices to meet your architectural goals
-- Write elegant, safe, and performant code using the latest C++ features
-- Build applications that are easy to maintain and deploy
-- Explore the different architectural approaches and learn to apply them as per your requirement
-- Simplify development and operations using application containers
-- Discover various techniques to solve common problems in software design and development
+Designing scalable and maintainable software with C++ requires more than language expertise—it demands architectural thinking and an ability to deliver systems in dynamic environments. This practical guide equips you with the architectural skills needed to design and build robust, distributed software systems using modern C++.
 
-If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1838554599) today!
+Starting with fundamental architectural principles and design philosophies, the book walks readers through practical approaches to designing and deploying reliable systems. This edition includes significant updates and new content: chapters on observability, package management, and C++ modules address real-world software challenges. Readers will explore software decomposition strategies, design and system patterns, fault tolerance, API management, and testability—all applied with C++.
+
+Additionally, the book covers modern CI/CD pipelines, cloud-native design, microservices, and modular development, helping developers navigate today's fast-evolving software landscape. With updated examples and a renewed emphasis on maintainable and observable architectures, this edition equips C++ professionals to architect modern, production-grade systems. By the end of this book, you will be able to design, build, test, and deploy enterprise-grade software solutions using modern C++ and proven architectural techniques.
+
+### What you will learn
+
+- Apply architectural fundamentals to design scalable C++ systems
+- Use modern C++ features to create maintainable and secure applications
+- Implement architectural and system design patterns
+- Design testable code and automate quality checks via CI/CD pipelines
+- Manage dependencies and build systems using CMake and Conan
+- Explore microservices, containers, and cloud-native practices in C++
+- Improve observability with logging, tracing, and monitoring tools
+- Build secure, fault-tolerant, and high-performance production-grade software
+
+### Who this book is for
+
+This book is intended for experienced C++ developers and software engineers aiming to expand their architectural knowledge, lead software projects, or build scalable systems. It assumes readers are comfortable with modern C++ (C++11 onwards) and familiar with basic design principles and patterns.
+
+If you feel this book is for you, get your [copy](https://www.amazon.com/Software-Architecture-Designing-Architectural-Practices-ebook/dp/B0FGPS463L/) today!
 
 <a href="https://www.packtpub.com/"><img src="https://avatars.githubusercontent.com/u/10974906?s=200&v=4" alt="https://www.packtpub.com/" border="5"/></a>
 
-### Development environment
+## Development environment
 
 Follow these guides to configure the development environment:
 
@@ -80,7 +95,7 @@ Follow these guides to configure the development environment:
 - [macOS environment](devenv_readme/devenv_macos.md)
 - [Windows environment](devenv_readme/devenv_windows.md)
 
-### C++ compilers
+## C++ compilers
 
 You need at least one of the following compilers:
 
@@ -107,7 +122,7 @@ The code will look like the following:
 
 This software architecture C++ programming book is for experienced C++ developers who are looking to become software architects or are interested in developing enterprise-grade applications.
 
-With the following software and hardware list you can run all code files present in the book (Chapter 1-20).
+With the following software and hardware list you can run all code files present in the book (Chapter 1-18).
 
 ## Get to Know the Authors
 
@@ -126,11 +141,3 @@ has worked in different areas which allowed him to gain comprehension of the imp
 His interests include system, embedded and game programming, electronics. Being an enthusiast of retro gaming and vintage computing,
 he enjoys exploring how historical technologies inform modern system design. These hobbies complement his professional work,
 providing creative inspiration and perspective on the IT evolution.
-
-"If a task has once begun, never leave it till it's done. Be the labor great or small, do it well or not at all."
-
-### Download a free PDF
-
-<i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
-
-<p> <a href="https://packt.link/free-ebook/9781838554590">https://packt.link/free-ebook/9781838554590 </a> </p>

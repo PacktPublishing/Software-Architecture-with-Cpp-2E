@@ -5,7 +5,7 @@ catch2/3.9.0
 doctest/2.4.12
 cpputest/4.0
 boost-ext-ut/2.3.1
-gtest/1.16.0
+gtest/1.17.0
 
 [generators]
 CMakeDeps

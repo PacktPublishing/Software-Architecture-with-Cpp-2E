@@ -2,7 +2,7 @@
 
 Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
-## Table of Contents
+## Table of contents
 
 Part 1: Concepts and Components of Software Architecture
 
@@ -60,7 +60,7 @@ This is the code repository for [Software Architecture with C++: Designing Robus
 - Build, test, and secure production-ready systems by applying solid design principles
 - Manage, package, and deploy cloud-native applications using CMake, Conan, and CI/CD
 
-### Book Description
+### Book description
 
 Designing scalable and maintainable software with C++ requires more than language expertise—it demands architectural thinking and an ability to deliver systems in dynamic environments. This practical guide equips you with the architectural skills needed to design and build robust, distributed software systems using modern C++.
 
@@ -95,7 +95,7 @@ Follow these guides to configure the development environment:
 - [macOS environment](devenv_readme/devenv_macos.md)
 - [Windows environment](devenv_readme/devenv_windows.md)
 
-## C++ compilers
+### C++ compilers
 
 You need at least one of the following compilers:
 
@@ -105,7 +105,7 @@ You need at least one of the following compilers:
 | 2   | Clang 19                   | Windows, Mac OS X, and Linux (Any) |
 | 3   | Microsoft Visual C++ 19.40 | Windows                            |
 
-## Instructions and Navigations
+### Instructions and navigations
 
 All the code is organized into folders. For example, Chapter02.
 
@@ -124,7 +124,7 @@ This software architecture C++ programming book is for experienced C++ developer
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-18).
 
-## Get to Know the Authors
+### Get to know the authors
 
 **Adrian Ostrowski**
 is a modern C++ enthusiast interested in the development of both the C++ language itself and the high-quality code written in it. A lifelong learner with over a decade of experience in the IT industry and more than 8 years of experience with C++ specifically, he's always eager to share his knowledge. His past projects range from parallel computing, through fiber networking, to working on a commodity exchange's trading system. Currently, he's one of the architects of Intel and Habana's integration with machine learning frameworks.

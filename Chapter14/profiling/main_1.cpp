@@ -25,7 +25,7 @@ std::string decode_morse(const std::string &morse_msg) {
   std::string decoded, seq;
   bool is_space{false};
 
-  ZoneScoped;
+  ZoneScoped; // the scope name is decode_morse
   for (const auto c : morse_msg) {
     ZoneScopedN("decode-loop");
     if (c == '.' || c == '-') {
@@ -53,7 +53,7 @@ std::string decode_morse(const std::string &morse_msg) {
 }
 
 int main() {
-  ZoneScoped;
+  ZoneScoped; // the scope name is main
   assert(decode_morse("-.-- --- -....- .-- .- -.-- -....- -.-- ---") ==
          "YO-WAY-YO");
 

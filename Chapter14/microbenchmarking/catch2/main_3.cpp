@@ -55,5 +55,5 @@ TEST_CASE("binary_search_in_sorted_vector", "[benchmark]") {
 TEST_CASE("linear_search_in_sorted_vector", "[benchmark]") {
   const auto size = GENERATE(size_generator());
 
-  search_in_sorted_vector("find", size, lower_bound);
+  search_in_sorted_vector("find", size, find);
 }

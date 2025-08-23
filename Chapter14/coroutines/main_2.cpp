@@ -34,6 +34,7 @@ cobalt::task<void> fill_number(int i, std::vector<int> &ints,
 
 cobalt::task<std::vector<int>> do_routine_work() {
   cobalt::channel<void> mutex{1, cobalt::this_thread::get_executor()};
+
   auto ints = std::vector<int>{};
   ints.reserve(WORK_ITEMS);
 

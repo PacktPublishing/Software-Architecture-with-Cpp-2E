@@ -1,7 +1,7 @@
 [requires]
 drogon/1.9.10
 boost/1.88.0
-catch2/3.9.0
+catch2/3.10.0
 doctest/2.4.12
 cpputest/4.0
 boost-ext-ut/2.3.1

@@ -1,6 +1,6 @@
 services:
   valkey:
-    image: bitnami/valkey:latest
+    image: bitnami/valkey:8.1
     hostname: valkey
     environment:
       - ALLOW_EMPTY_PASSWORD=yes

@@ -1,6 +1,6 @@
 services:
   redis:
-    image: bitnami/redis:latest
+    image: bitnami/redis:8.2
     hostname: redis
     environment:
       - ALLOW_EMPTY_PASSWORD=yes

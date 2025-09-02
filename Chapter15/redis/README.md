@@ -88,3 +88,6 @@ In the last case, open [http://localhost:5540](http://localhost:5540) (Redis Ins
 - redis://default@redis:6379
 - redis://default@valkey:6379
 - redis://default@dragonfly:6379
+
+These databases run on a Docker network, and the Redis Insight UI connects to these databases on this network by
+their hostnames defined in the Docker Compose files.

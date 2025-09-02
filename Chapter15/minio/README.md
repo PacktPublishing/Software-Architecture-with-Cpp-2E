@@ -71,3 +71,12 @@ git clone https://github.com/conan-io/cmake-conan.git build/cmake-conan
 cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan_provider.cmake -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
+
+### MinIO Console
+
+The [MinIO Console](https://docs.min.io/community/minio-object-store/administration/minio-console.html) is
+a rich graphical user interface that supports browsing buckets and objects on your deployment.
+You can explore the console by opening https://play.min.io:9443 in a browser. Log in with the following credentials:
+
+- Username: Q3AM3UQ867SPQQA43P2F
+- Password: zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG

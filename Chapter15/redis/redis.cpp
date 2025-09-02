@@ -4,28 +4,27 @@
 #include <iostream>
 #include <iterator>
 
-using namespace std;
 using namespace sw::redis;
 
 int main() {
   try {
     auto redis = Redis("tcp://127.0.0.1:6379");
 
-    redis.set("key", "val");
-    if (const auto val = redis.get("key")) {
-      cout << *val << endl;
+    redis.set("poem", "late goodbye");
+    if (const auto val = redis.get("poem")) {
+      std::cout << *val << std::endl;
     }
 
-    redis.del("list");
+    redis.del("students");
 
-    redis.rpush("list", {"a", "b", "c"});
+    redis.rpush("students", {"Allison", "John", "Brian", "Andrew", "Claire"});
     std::vector<std::string> vec;
-    redis.lrange("list", 0, -1, std::back_inserter(vec));
+    redis.lrange("students", 0, -1, std::back_inserter(vec));
 
     std::copy(vec.begin(), vec.end(),
               std::ostream_iterator<std::string>(std::cout, " "));
   } catch (const Error &e) {
-    cerr << "Error: " << e.what() << endl;
+    std::cerr << "Error: " << e.what() << std::endl;
   }
 
   return 0;

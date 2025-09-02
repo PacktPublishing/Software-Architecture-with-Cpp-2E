@@ -14,7 +14,7 @@ bool create_user_bucket(const std::string &username) {
   minio::s3::Client client(base_url, &provider);
 
   std::string unique_prefix = sole::uuid4().str();
-  std::string bucket_name{"user-bucket-" + username};
+  std::string bucket_name{"petticoat-acres-" + username};
   std::string full_name{unique_prefix + bucket_name};
 
   minio::s3::MakeBucketArgs args;
@@ -32,7 +32,8 @@ bool create_user_bucket(const std::string &username) {
 }
 
 int main() {
-  if (const std::string username = "random-42"; create_user_bucket(username)) {
+  if (const std::string username = "prayerincpp";
+      create_user_bucket(username)) {
     spdlog::info("The bucket for {} is ready", username);
   }
 

@@ -77,7 +77,9 @@ cmake --build build
 You need valid AWS credentials for the program to run successfully.
 
 Get your credentials by following this document:
-https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-your-credentials.html
+https://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/credentials.html
+https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AdministratorAccess.html
+https://docs.aws.amazon.com/sdkref/latest/guide/feature-static-credentials.html
 
 If you are creating a new user just for testing, you can attach the
 `AdministratorAccess` policy to the created user. For production use, apply

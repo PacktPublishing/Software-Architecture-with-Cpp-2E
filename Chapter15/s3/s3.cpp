@@ -13,7 +13,7 @@ bool create_user_bucket(const std::string &username) {
 
   const Aws::String unique_prefix = Aws::Utils::UUID::RandomUUID();
 
-  const Aws::String bucket_name("user-bucket-" + username);
+  const Aws::String bucket_name("games-" + username);
   const Aws::String full_name = unique_prefix + bucket_name;
   request.SetBucket(Aws::Utils::StringUtils::ToLower(full_name.c_str()));
 
@@ -35,7 +35,7 @@ bool create_user_bucket(const std::string &username) {
 }
 
 int main() {
-  const std::string username = "random-42";
+  const std::string username = "david-lightman";
 
   const Aws::SDKOptions options;
   Aws::InitAPI(options);

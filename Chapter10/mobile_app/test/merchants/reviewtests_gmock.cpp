@@ -33,7 +33,7 @@ class history_with_one_rated_merchant : public ::testing::Test {
 public:
   static constexpr std::size_t CUSTOMER_ID = 7777;
   static constexpr std::size_t MERCHANT_ID = 1234;
-  static constexpr const char *REVIEW_TEXT = "Very nice!";
+  static constexpr const char *REVIEW_TEXT = "Blue Manic Monday";
   static constexpr stars RATING = stars{5.f};
 
 protected:

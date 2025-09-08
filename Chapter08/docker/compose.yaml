@@ -13,7 +13,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - /etc/localtime:/etc/localtime:ro
   artifactory-ce:
-    image: releases-docker.jfrog.io/jfrog/artifactory-cpp-ce:7.111.12
+    image: releases-docker.jfrog.io/jfrog/artifactory-cpp-ce:7.117.15
     container_name: artifactory-ce
     volumes:
       - artifactory_data:/var/opt/jfrog/artifactory

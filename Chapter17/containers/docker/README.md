@@ -8,15 +8,16 @@ Software Architecture with C++: Designing Robust C++ Systems with Modern Archite
 
 ```bash
 docker build -t basic -f basic.Dockerfile .
+docker build -t simple -f simple.Dockerfile .
+docker build -t scratch -f scratch.Dockerfile .
 docker build -t compile -f compile.Dockerfile .
 docker build -t multi-stage -f multi-stage.Dockerfile .
-docker build -t scratch -f scratch.Dockerfile .
 ```
 
 After you build the container image, you should be able to list it with `docker images`, the new image should be listed there.
 
 The `compile` and `multi-stage` examples require a copy of C++ sources present in the current directory.
-The `scratch` example requires binary to be present in the working directory.
+The `simple` and `scratch` examples require binary to be present in the working directory.
 
 To build a static binary, you may use:
 
@@ -40,7 +41,7 @@ but obviously not for windows/amd64 or windows/arm64:
 - linux/s390x
 
 `basic`, `compile` and `multi-stage` have no external dependencies except C++ sources.
-But `scratch` depends on the artifact `customer` that has to be compiled for a target platform.
+But `simple` and `scratch` depend on the artifact `customer` that has to be compiled for a target platform.
 
 [Development Containers](https://containers.dev) are used to develop inside containers.
 `customer/.devcontainer/devcontainer.json` is an example of such a Docker image created from scratch.
@@ -48,9 +49,10 @@ IDEs in particular `Visual Studio Code`, `Visual Studio` and `IntelliJ IDEA` sup
 
 ```bash
 docker build -t basic -f basic.Dockerfile --platform linux/amd64 .
+docker build -t simple -f simple.Dockerfile --platform linux/s390x .
+docker build -t scratch -f scratch.Dockerfile --platform linux/riscv64 .
 docker build -t compile -f compile.Dockerfile --platform linux/ppc64le .
 docker build -t multi-stage -f multi-stage.Dockerfile --platform linux/arm64 .
-docker build -t scratch -f scratch.Dockerfile --platform linux/riscv64 .
 ```
 
 In fact, you can build a development image yourself. For instance, by using `customer/.devcontainer/Dockerfile`.

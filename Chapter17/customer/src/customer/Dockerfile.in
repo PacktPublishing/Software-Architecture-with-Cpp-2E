@@ -1,4 +1,4 @@
-FROM ubuntu:plucky
+FROM ubuntu:questing
 ADD Customer-@PROJECT_VERSION@-Linux.deb .
 
 RUN apt update && \

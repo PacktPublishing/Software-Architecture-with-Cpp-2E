@@ -2,7 +2,7 @@
 
 set -x
 
-ctr=$(buildah from ubuntu:plucky)
+ctr=$(buildah from ubuntu:questing)
 
 buildah run $ctr -- /bin/sh -c 'apt update && apt install -y build-essential gcc'
 

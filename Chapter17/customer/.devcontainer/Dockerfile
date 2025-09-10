@@ -1,4 +1,4 @@
-FROM ubuntu:plucky AS builder
+FROM ubuntu:questing AS builder
 
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y build-essential gcc cmake gdb file ninja-build git python3-pip python3-venv
 

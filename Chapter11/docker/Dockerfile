@@ -1,4 +1,4 @@
-FROM ubuntu:plucky AS builder
+FROM ubuntu:questing AS builder
 
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y build-essential gcc cmake ninja-build python3-pip python3-venv
 
@@ -13,7 +13,7 @@ RUN mkdir -p build && cd build && \
     conan install .. --build=missing -s:a build_type=Release -s:a compiler.cppstd=gnu20 -of . && \
     cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release && cmake --build . && cmake --install .
 
-FROM ubuntu:plucky
+FROM ubuntu:questing
 
 RUN apt update && apt install -y curl && apt clean
 

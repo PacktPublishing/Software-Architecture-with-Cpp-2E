@@ -17,11 +17,10 @@ int main() {
       .registerMiddleware(std::make_shared<PromStat>())
       .registerHandler(
           "/customer/v1",
-          [&, func = __func__](
-              const HttpRequestPtr &request,
+          [&](const HttpRequestPtr &request,
               std::function<void(const HttpResponsePtr &)> &&callback) {
-            logger->info(std::string(func) + ": handling HTTP request to " +
-                         request->path());
+            SPDLOG_LOGGER_INFO(logger, "handling HTTP request to {}",
+                               request->path());
 
             handle_get(request, get_responder, std::move(callback));
           },

@@ -24,20 +24,19 @@ void handle_get(
   const auto sink = std::make_shared<spdlog::sinks::stdout_sink_st>();
   const auto logger = std::make_shared<spdlog::logger>("responder", sink);
 
-  logger->info(std::string(__func__) + ": get optional parameter 'name'");
+  SPDLOG_LOGGER_INFO(logger, "get optional parameter 'name'");
   auto name = request->getOptionalParameter<std::string>("name");
 
   if (!name) {
     const auto err = "missing value for 'name'";
 
-    logger->error(std::string(__func__) + ": " + err);
+    SPDLOG_LOGGER_ERROR(logger, err);
     responder.respond(drogon::k400BadRequest, Json::Value(err),
                       std::move(callback));
     return;
   }
 
-  logger->info(std::string(__func__) + ": return response to '" + name.value() +
-               "'");
+  SPDLOG_LOGGER_INFO(logger, "return response to '{0}'", name.value());
 
   const auto [code, response] = responder.prepare_response(name.value());
   responder.respond(code, response, std::move(callback));

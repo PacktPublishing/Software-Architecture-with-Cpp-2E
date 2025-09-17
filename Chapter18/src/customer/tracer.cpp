@@ -7,10 +7,12 @@
 #include <opentelemetry/nostd/shared_ptr.h>
 #include <opentelemetry/sdk/trace/simple_processor_factory.h>
 #include <opentelemetry/sdk/trace/tracer_provider_factory.h>
+#include <opentelemetry/semconv/http_attributes.h>
+#include <opentelemetry/semconv/network_attributes.h>
+#include <opentelemetry/semconv/url_attributes.h>
 #include <opentelemetry/trace/context.h>
 #include <opentelemetry/trace/propagation/http_trace_context.h>
 #include <opentelemetry/trace/provider.h>
-#include <opentelemetry/trace/semantic_conventions.h>
 #include <opentelemetry/trace/span_metadata.h>
 #include <opentelemetry/trace/span_startoptions.h>
 #include <opentelemetry/trace/tracer.h>
@@ -22,7 +24,7 @@ namespace otlp_exporter = opentelemetry::exporter::otlp;
 namespace trace_sdk = opentelemetry::sdk::trace;
 namespace trace_api = opentelemetry::trace;
 namespace context = opentelemetry::context;
-namespace semconv = trace_api::SemanticConventions;
+namespace semconv = opentelemetry::semconv;
 
 namespace otlp_tracer {
 void init_tracer() {
@@ -86,14 +88,14 @@ opentelemetry::nostd::shared_ptr<trace_api::Span> get_http_request_span(
 
   auto span = tracer->StartSpan(
       name,
-      {{semconv::kHttpRequestMethod, request->method()},
-       {semconv::kUrlPath, request->path()},
-       {semconv::kUrlQuery, request->query()},
-       {semconv::kNetworkLocalAddress, request->getLocalAddr().toIp()},
-       {semconv::kNetworkLocalPort,
+      {{semconv::http::kHttpRequestMethod, request->method()},
+       {semconv::url::kUrlPath, request->path()},
+       {semconv::url::kUrlQuery, request->query()},
+       {semconv::network::kNetworkLocalAddress, request->getLocalAddr().toIp()},
+       {semconv::network::kNetworkLocalPort,
         std::to_string(request->getLocalAddr().toPort())},
-       {semconv::kNetworkPeerAddress, request->getPeerAddr().toIp()},
-       {semconv::kNetworkPeerPort,
+       {semconv::network::kNetworkPeerAddress, request->getPeerAddr().toIp()},
+       {semconv::network::kNetworkPeerPort,
         std::to_string(request->getPeerAddr().toPort())}},
       options);
 

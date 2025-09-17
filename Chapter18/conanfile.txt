@@ -1,6 +1,6 @@
 [requires]
 drogon/1.9.10
-opentelemetry-cpp/1.21.0
+opentelemetry-cpp/1.22.0
 
 [generators]
 CMakeDeps

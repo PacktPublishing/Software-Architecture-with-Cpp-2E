@@ -34,6 +34,8 @@ void PromStat::invoke(const HttpRequestPtr &req,
         const auto end = trantor::Date::date();
         const auto duration =
             end.microSecondsSinceEpoch() - start.microSecondsSinceEpoch();
+        // The parameters 1h and 6 are the lifetime of the metric and the number
+        // of time buckets
         collector->metric({method, path}, boundaries, 1h, 6)
             ->observe(static_cast<double>(duration) / 1000000);
       }

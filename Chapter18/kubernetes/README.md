@@ -102,6 +102,8 @@ The alternatives ([vendors](https://opentelemetry.io/ecosystem/vendors/) and [in
 - [Uptrace](https://artifacthub.io/packages/helm/uptrace/uptrace) ([Helm charts](https://github.com/uptrace/helm-charts))
 - [Lightstep](https://docs.lightstep.com/docs/quick-start-operator) (OpenTelemetry Collector and Kubernetes Operator)
 
+[The Helm chart to deploy the aspire-dashboard to kubernetes](https://artifacthub.io/packages/helm/aspire-dashboard/aspire-dashboard)
+
 ```bash
 microk8s helm repo add aspire-dashboard https://kube-the-home.github.io/aspire-dashboard-helm/
 microk8s helm install -f values.yaml aspire-dashboard aspire-dashboard/aspire-dashboard

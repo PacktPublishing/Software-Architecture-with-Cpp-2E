@@ -72,8 +72,8 @@ cmake --build build
 
 ### Docker
 
-In the build directory, run `cmake --build . --target docker` to build the Docker image. Run the app
-from `docker/compose.yaml` with Compose and `kubernetes/manifest.yaml` with Kubernetes.
+In the build directory, run `cmake --build . --target docker` to build the Docker image. Follow the instructions to
+run the app in either [Docker](docker/README.md) or [Kubernetes](kubernetes/README.md).
 
 Read instructions regarding Development Containers in the file `containers/docker/README.md` in Chapter 17
 to build an executable file for Linux on macOS and Windows.

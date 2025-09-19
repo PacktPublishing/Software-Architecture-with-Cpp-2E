@@ -63,7 +63,7 @@ that support CMake-based projects.
 
 ## Local Kubernetes installation
 
-- [microk8s](https://microk8s.io/docs/install-macos) (tested)
+- [microk8s](https://microk8s.io/docs/install-macos)
 - [minikube](https://minikube.sigs.k8s.io/docs/)
 - [kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
 - [Rancher Desktop](https://docs.rancherdesktop.io/ui/preferences/kubernetes/)

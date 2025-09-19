@@ -1,14 +1,17 @@
 #pragma once
 
-#include <drogon/drogon.h>
-
-#include <map>
-#include <string>
-#include <utility>
-
 #include "logger.h"
 #include "metrics.h"
 #include "tracer.h"
+
+#include <drogon/drogon.h>
+
+#include <map>
+#include <source_location>
+#include <string>
+#include <utility>
+
+namespace common = opentelemetry::common;
 
 class responder {
 public:
@@ -33,7 +36,10 @@ void handle_get(
   const auto ctx = span->GetContext();
   const auto logger = otlp_logger::get_logger("responder");
 
-  logger->Info(std::string(__func__) + ": get optional parameter 'name'",
+  auto location = std::source_location::current();
+  logger->Info("get optional parameter 'name'",
+               common::MakeAttributes(
+                   {{"file", location.file_name()}, {"line", location.line()}}),
                ctx.trace_id(), ctx.span_id(), ctx.trace_flags(),
                std::chrono::system_clock::now());
   auto name = request->getOptionalParameter<std::string>("name");
@@ -41,8 +47,12 @@ void handle_get(
   if (!name) {
     const auto err = "missing value for 'name'";
     span->AddEvent(err);
-    logger->Error(std::string(__func__) + ": " + err, ctx.trace_id(),
-                  ctx.span_id(), ctx.trace_flags(),
+
+    location = std::source_location::current();
+    logger->Error(err,
+                  common::MakeAttributes({{"file", location.file_name()},
+                                          {"line", location.line()}}),
+                  ctx.trace_id(), ctx.span_id(), ctx.trace_flags(),
                   std::chrono::system_clock::now());
 
     responder.respond(drogon::k400BadRequest, Json::Value(err),
@@ -53,12 +63,15 @@ void handle_get(
   const auto counter = otlp_metrics::init_int64_counter("handle_get");
 
   const std::map<std::string, std::string> labels = {{"name", name.value()}};
-  const auto attributes = opentelemetry::common::KeyValueIterableView{labels};
+  const auto attributes = common::KeyValueIterableView{labels};
   counter->Add(1, attributes);
 
   span->AddEvent("return response");
-  logger->Info(std::string(__func__) + ": return response to '" + name.value() +
-                   "'",
+
+  location = std::source_location::current();
+  logger->Info("return response to '" + name.value() + "'",
+               common::MakeAttributes(
+                   {{"file", location.file_name()}, {"line", location.line()}}),
                ctx.trace_id(), ctx.span_id(), ctx.trace_flags(),
                std::chrono::system_clock::now());
 

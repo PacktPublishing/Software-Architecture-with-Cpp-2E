@@ -73,5 +73,5 @@ cmake --build build
 
 ### Troubleshooting
 
-Windows Firewall can block connections to the IP address 0.0.0.0 therefore set 127.0.0.1 in customer/src/customer/main.cpp
+Windows Firewall can block connections to the IP address 0.0.0.0 therefore set 127.0.0.1 in customer/src/customer/config.json
 as a workaround or allow connections to that address

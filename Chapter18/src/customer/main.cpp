@@ -5,11 +5,16 @@
 #include "customer/responder.h"
 #include "customer/tracer.h"
 
+#include <source_location>
+
 using namespace drogon;
 
+namespace common = opentelemetry::common;
 namespace trace_api = opentelemetry::trace;
 
 int main() {
+  std::cout << "Server started 🖖" << std::endl;
+
   otlp_logger::init_logger();
   otlp_metrics::init_metrics();
   otlp_tracer::init_tracer();
@@ -20,12 +25,11 @@ int main() {
 
   app()
       .addListener("0.0.0.0", 8080)
-      .setThreadNum(8)
+      .setThreadNum(0) // the number is equal to the number of CPU cores
       .enableServerHeader(false)
       .registerHandler(
           "/customer/v1",
-          [&, func = __func__](
-              const HttpRequestPtr &request,
+          [&](const HttpRequestPtr &request,
               std::function<void(const HttpResponsePtr &)> &&callback) {
             const auto tracer = otlp_tracer::get_tracer("http-server");
             auto span = otlp_tracer::get_http_request_span(
@@ -33,9 +37,11 @@ int main() {
             auto scope = opentelemetry::nostd::shared_ptr<
                 trace_api::Tracer>::element_type::WithActiveSpan(span);
 
+            const auto location = std::source_location::current();
             const auto ctx = span->GetContext();
-            logger->Info(std::string(func) + ": handling HTTP request to " +
-                             request->path(),
+            logger->Info("handling HTTP request to " + request->path(),
+                         common::MakeAttributes({{"file", location.file_name()},
+                                                 {"line", location.line()}}),
                          ctx.trace_id(), ctx.span_id(), ctx.trace_flags(),
                          std::chrono::system_clock::now());
 

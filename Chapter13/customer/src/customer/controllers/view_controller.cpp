@@ -8,8 +8,8 @@ void ViewController::asyncHandleHttpRequest(
   auto name = request->getOptionalParameter<std::string>("name");
   HttpViewData data;
   if (name) {
-    data["name"] = html_escape(name.value());
+    data["name"] = HttpViewData::htmlTranslate(name.value());
   }
-  const auto viewResponse = HttpResponse::newHttpViewResponse("view", data);
+  const auto viewResponse = HttpResponse::newHttpViewResponse("greet", data);
   callback(viewResponse);
 }

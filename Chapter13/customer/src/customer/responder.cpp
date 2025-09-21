@@ -34,17 +34,11 @@ std::string html_escape(const std::string &str) {
     case '>':
       ss << "&gt;";
       break;
-    case ' ':
-      ss << "&nbsp;";
-      break;
     case '&':
       ss << "&amp;";
       break;
-    case '\"':
+    case '"':
       ss << "&quot;";
-      break;
-    case '\'':
-      ss << "&apos;";
       break;
     default:
       ss << ch;

@@ -89,6 +89,8 @@ int main() {
               << std::endl;
   }
 
+  std::cout << std::endl;
+
   {
     auto p = std::make_unique<Resource>("jet town");
 
@@ -99,6 +101,8 @@ int main() {
     // the ownership is not moved
     std::cout << "unique_ptr_main: value = " << *p << std::endl;
   }
+
+  std::cout << std::endl;
 
   {
     auto up = std::make_unique<Resource>("walkman on");
@@ -113,6 +117,8 @@ int main() {
     std::cout << "shared_ptr_main: value = " << *sp << std::endl;
   }
 
+  std::cout << std::endl;
+
   {
     auto p = std::make_shared<Resource>("playback");
 
@@ -122,6 +128,8 @@ int main() {
 
     std::cout << "shared_ptr_main: value = " << *p << std::endl;
   }
+
+  std::cout << std::endl;
 
   {
     auto sp = std::make_shared<Resource>("synth samurai");
@@ -141,6 +149,8 @@ int main() {
               << (sp != nullptr ? static_cast<std::string>(*sp) : "null")
               << std::endl;
   }
+
+  std::cout << std::endl;
 
   {
     auto p = std::make_unique<Resource>("tonight");

@@ -12,6 +12,8 @@ Install the following software:
 - Conan 2
 - GCC 15
 
+The C++ compiler in your IDE and the Conan profile must be compatible if the examples are compiled from the IDE.
+
 Assuming you're on Linux or using WSL, configure a local Conan profile and remotes by running:
 
 ```bash

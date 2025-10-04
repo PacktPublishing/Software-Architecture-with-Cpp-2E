@@ -57,10 +57,12 @@ void handle_get(
 
     responder.respond(drogon::k400BadRequest, Json::Value(err),
                       std::move(callback));
+    span->End();
+
     return;
   }
 
-  const auto counter = otlp_metrics::init_int64_counter("handle_get");
+  const auto counter = otlp_metrics::init_uint64_counter("handle_get");
 
   const std::map<std::string, std::string> labels = {{"name", name.value()}};
   const auto attributes = common::KeyValueIterableView{labels};
@@ -77,4 +79,6 @@ void handle_get(
 
   const auto [code, response] = responder.prepare_response(name.value());
   responder.respond(code, response, std::move(callback));
+
+  span->End();
 }

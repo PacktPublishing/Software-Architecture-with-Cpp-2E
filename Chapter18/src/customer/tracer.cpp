@@ -45,7 +45,7 @@ void init_tracer() {
 }
 
 opentelemetry::nostd::shared_ptr<trace_api::Tracer>
-get_tracer(std::string name) {
+get_tracer(const std::string &name) {
   const auto provider = trace_api::Provider::GetTracerProvider();
   return provider->GetTracer(name + "_tracer");
 }
@@ -57,8 +57,7 @@ public:
 
   [[nodiscard]] opentelemetry::nostd::string_view
   Get(const opentelemetry::nostd::string_view key) const noexcept override {
-    if (const std::string key_ = key.data();
-        headers_.find(key_) != headers_.end()) {
+    if (const std::string key_ = key.data(); headers_.contains(key_)) {
       return headers_.at(key_);
     }
     return "";
@@ -75,17 +74,20 @@ public:
 opentelemetry::nostd::shared_ptr<trace_api::Span> get_http_request_span(
     const drogon::HttpRequestPtr &request,
     const opentelemetry::nostd::shared_ptr<trace_api::Tracer> &tracer,
-    std::string name) {
+    const std::string &name) {
   trace_api::StartSpanOptions options;
   options.kind = trace_api::SpanKind::kServer;
 
   const HttpTextMapCarrier carrier{request->headers()};
   const auto propagator =
       context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+
+  // extract context from HTTP headers
   auto current_ctx = context::RuntimeContext::GetCurrent();
   const auto new_context = propagator->Extract(carrier, current_ctx);
   options.parent = trace_api::GetSpan(new_context)->GetContext();
 
+  // start span with parent context extracted from HTTP headers
   auto span = tracer->StartSpan(
       name,
       {{semconv::http::kHttpRequestMethod, request->method()},
@@ -100,7 +102,7 @@ opentelemetry::nostd::shared_ptr<trace_api::Span> get_http_request_span(
       options);
 
   for (const auto &[key, value] : request->headers()) {
-    span->SetAttribute(key, value);
+    span->SetAttribute("http.header." + key, value);
   }
 
   return span;

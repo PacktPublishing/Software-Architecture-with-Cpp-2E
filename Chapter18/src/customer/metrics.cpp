@@ -22,20 +22,19 @@ void init_metrics() {
   auto exporter =
       otlp_exporter::OtlpGrpcMetricExporterFactory::Create(exporter_options);
 
-  const metrics_sdk::PeriodicExportingMetricReaderOptions reader_options;
+  constexpr metrics_sdk::PeriodicExportingMetricReaderOptions reader_options;
   std::unique_ptr<metrics_sdk::MetricReader> reader{
       new metrics_sdk::PeriodicExportingMetricReader(std::move(exporter),
                                                      reader_options)};
-  const auto provider =
-      std::static_pointer_cast<opentelemetry::metrics::MeterProvider>(
-          std::make_shared<metrics_sdk::MeterProvider>());
+  const auto provider = std::static_pointer_cast<metrics_api::MeterProvider>(
+      std::make_shared<metrics_sdk::MeterProvider>());
   const auto p = std::static_pointer_cast<metrics_sdk::MeterProvider>(provider);
   p->AddMetricReader(std::move(reader));
   metrics_api::Provider::SetMeterProvider(provider);
 }
 
 opentelemetry::nostd::unique_ptr<metrics_api::Counter<uint64_t>>
-init_int64_counter(std::string name) {
+init_uint64_counter(const std::string &name) {
   const auto provider = metrics_api::Provider::GetMeterProvider();
   const opentelemetry::nostd::shared_ptr<metrics_api::Meter> meter =
       provider->GetMeter(name);

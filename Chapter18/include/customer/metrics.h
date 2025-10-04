@@ -7,5 +7,5 @@ namespace otlp_metrics {
 void init_metrics();
 
 opentelemetry::nostd::unique_ptr<opentelemetry::metrics::Counter<uint64_t>>
-init_int64_counter(std::string name);
+init_uint64_counter(const std::string &name);
 } // namespace otlp_metrics

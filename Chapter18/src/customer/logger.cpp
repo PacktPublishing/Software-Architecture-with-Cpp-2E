@@ -43,7 +43,7 @@ void init_logger() {
   logs_api::Provider::SetLoggerProvider(provider);
 }
 
-nostd::shared_ptr<logs_api::Logger> get_logger(std::string name) {
+nostd::shared_ptr<logs_api::Logger> get_logger(const std::string &name) {
   const auto provider = logs_api::Provider::GetLoggerProvider();
   return provider->GetLogger(name + "_logger");
 }

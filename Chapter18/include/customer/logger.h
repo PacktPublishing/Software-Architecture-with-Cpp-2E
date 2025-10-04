@@ -7,5 +7,5 @@ namespace otlp_logger {
 void init_logger();
 
 opentelemetry::nostd::shared_ptr<opentelemetry::logs::Logger>
-get_logger(std::string name);
+get_logger(const std::string &name);
 } // namespace otlp_logger

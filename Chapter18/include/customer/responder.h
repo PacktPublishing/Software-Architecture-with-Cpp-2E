@@ -5,6 +5,7 @@
 #include "tracer.h"
 
 #include <drogon/drogon.h>
+#include <opentelemetry/trace/span_metadata.h>
 
 #include <map>
 #include <source_location>
@@ -47,6 +48,7 @@ void handle_get(
   if (!name) {
     const auto err = "missing value for 'name'";
     span->AddEvent(err);
+    span->SetStatus(opentelemetry::trace::StatusCode::kError);
 
     location = std::source_location::current();
     logger->Error(err,
@@ -80,5 +82,6 @@ void handle_get(
   const auto [code, response] = responder.prepare_response(name.value());
   responder.respond(code, response, std::move(callback));
 
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
   span->End();
 }

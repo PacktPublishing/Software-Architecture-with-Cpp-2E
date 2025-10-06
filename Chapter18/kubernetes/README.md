@@ -110,6 +110,7 @@ microk8s helm install -f values.yaml aspire-dashboard aspire-dashboard/aspire-da
 ```
 
 MicroK8S runs on [Multipass](https://canonical.com/multipass) on macOS, Windows and as a deployment option on Linux.
+MicroK8s can also be installed inside an LXD (Linux Container Daemon) VM and on WSL2 (Windows Subsystem for Linux 2).
 
 Transfer the file `values.yaml` to the virtual machine (VM) if MicroK8S runs on Multipass and Helm complains the file is not found.<br>
 `Error: INSTALLATION FAILED: open values.yaml: no such file or directory`

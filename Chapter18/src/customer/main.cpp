@@ -5,6 +5,7 @@
 #include "customer/responder.h"
 #include "customer/tracer.h"
 
+#include <filesystem>
 #include <source_location>
 
 using namespace drogon;
@@ -14,6 +15,9 @@ namespace trace_api = opentelemetry::trace;
 
 int main() {
   std::cout << "Server started 🖖" << std::endl;
+
+  const auto upload_path = std::filesystem::temp_directory_path() / "uploads";
+  std::cout << "Upload path: " << upload_path.string() << std::endl;
 
   otlp_logger::init_logger();
   otlp_metrics::init_metrics();
@@ -27,6 +31,7 @@ int main() {
       .addListener("0.0.0.0", 8080)
       .setThreadNum(0) // the number is equal to the number of CPU cores
       .enableServerHeader(false)
+      .setUploadPath(upload_path)
       .registerHandler(
           "/customer/v1",
           [&](const HttpRequestPtr &request,

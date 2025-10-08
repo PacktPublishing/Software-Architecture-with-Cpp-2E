@@ -37,6 +37,14 @@ spec:
               value: customer
             - name: OTEL_EXPORTER_OTLP_INSECURE
               value: "true"
+          securityContext:
+            readOnlyRootFilesystem: true
+          volumeMounts:
+            - mountPath: /var/run
+              name: tmpfs
+      volumes:
+        - name: tmpfs
+          emptyDir: {}
 ---
 apiVersion: v1
 kind: Service

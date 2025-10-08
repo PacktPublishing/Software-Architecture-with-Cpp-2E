@@ -69,7 +69,7 @@ microk8s enable metallb
 The alternative is to provide the address as the [IP address pool](https://microk8s.io/docs/addon-metallb) parameter:
 
 ```bash
-microk8s enable metallb ODE_IP-NODE_IP
+microk8s enable metallb NODE_IP-NODE_IP
 ```
 
 Or enable the addon [host-access](https://microk8s.io/docs/addon-host-access)

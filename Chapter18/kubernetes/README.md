@@ -4,11 +4,11 @@ Software Architecture with C++: Designing Robust C++ Systems with Modern Archite
 
 ## Chapter 18: Cloud Native Design
 
-**Important**: The shortest path on Linux is to install MicroK8s, enable the dns, ingress and helm addons,
-check the status, build the customer image, deploy Aspire dashboard and the customer application,
-resolve domain names relatively the loopback IP address `127.0.0.1`. But MicroK8s is a production-grade
-conformant K8s tool and YOUR configuration may differ. Therefore, this manual describes different K8S tools and
-ways to configure the development environment.
+**Important**: The deployment was mainly tested with MicroK8s on Linux. It required to enable the dns,
+ingress and helm addons, check the status, build the customer image, deploy Aspire dashboard and the customer application.
+The domain names were resolved relatively the loopback IP address `127.0.0.1`. Your configuration may differ.
+
+MicroK8s is a production-grade conformant K8s tool. This manual describes different K8S tools and ways to configure the development environment.
 
 ### MicroK8s
 
@@ -69,21 +69,35 @@ microk8s enable metallb
 The alternative is to provide the address as the [IP address pool](https://microk8s.io/docs/addon-metallb) parameter:
 
 ```bash
-microk8s enable metallb NODE_IP-NODE_IP
+microk8s enable metallb <node-ip>-<node-ip>
 ```
 
-Or enable the addon [host-access](https://microk8s.io/docs/addon-host-access)
-(NODE_IP is the Fixed IP `10.0.1.1` address by default) instead of retrieving NODE_IP:
+Or enable the addon [host-access](https://microk8s.io/docs/addon-host-access) instead of retrieving a node IP address.
+The default IP address is 10.0.1.1:
 
 ```bash
 microk8s enable host-access
 ```
+
+Alternatively, you can provide a different IP address when enabling the addon:
+
+```bash
+microk8s enable host-access:ip=<desired-ip>
+```
+
+Using these plugins may result in connection errors to the dashboard, as the IP addresses used
+may not be in the list of allowed addresses in [the SSL certificate](#troubleshooting).
 
 This command is to open the Kubernetes dashboard:
 
 ```bash
 microk8s dashboard-proxy
 ```
+
+Kubernetes UI:
+
+- [Headlamp](https://headlamp.dev/)
+- [Portainer](https://docs.portainer.io/start/install-ce/server/kubernetes/baremetal)
 
 #### [Aspire Dashboard](https://aspiredashboard.com/)
 
@@ -181,12 +195,26 @@ To delete the app:
 microk8s kubectl delete -f manifest.yaml
 ```
 
+`kubectl` can be executed [directly](https://microk8s.io/docs/working-with-kubectl).
+Apply it again when the IP address in changed:
+
+```bash
+cd $HOME
+mkdir .kube
+cd .kube
+microk8s config > config
+```
+
 #### Accessing the customer app and Aspire Dashboard
 
-Get the IP address (NODE_IP) of your Kubernetes node by using the command above. Or use this command:
+Get the IP address of your Kubernetes node by using the command above. Or use these command:
 
 ```bash
 ip route | grep default
+```
+
+```bash
+hostname -I
 ```
 
 Alternatively, use this recipe if the `jq` command is installed:
@@ -197,13 +225,13 @@ microk8s kubectl get node -o json | jq '.items[].status.addresses[] | select(.ty
 
 The host names are specified in `kubernetes/manifest.yaml` and `kubernetes/values.yaml`.
 MicroK8S redirects all the requests to `127.0.0.1` to its Kubernetes node if host names in the Ingress configuration are not set.
-Replace NODE_IP and run this command in the console:
+Replace <node-ip> and run this command in the console:
 
 ```bash
-curl --header "Host: customer.local" http://NODE_IP/customer/v1?name=anonymous
+curl --header "Host: customer.local" http://<node-ip>/customer/v1?name=anonymous
 ```
 
-The address NODE_IP is static if the addon `host-access` is enabled:
+The address <node-ip> is static if the addon `host-access` is enabled:
 
 ```bash
 curl --header "Host: customer.local" http://10.0.1.1/customer/v1?name=anonymous
@@ -214,16 +242,17 @@ The simplest solution is to change `/etc/hosts` because Kubernetes Ingress works
 when the HTTP header `Host` is provided. A browser sets that header automatically:
 
 ```
-NODE_IP customer.local
-NODE_IP opentelemetry.local  # opentelemetry-collector
-NODE_IP dashboard.local      # aspire-dashboard
+<node-ip> customer.local
+<node-ip> opentelemetry.local  # opentelemetry-collector
+<node-ip> dashboard.local      # aspire-dashboard
 ```
 
 In Windows, the default path to the file looks like this: `%SystemRoot%\system32\drivers\etc\hosts`
 
-NODE_IP changes when DHCP (Dynamic Host Configuration Protocol) assigns a new IP address,
+The <node-ip> changes when DHCP (Dynamic Host Configuration Protocol) assigns a new IP address,
 and you must change these fully qualified domain names (FQDN) in `/etc/hosts` in this case,
-but the address NODE_IP can be static if the addon `host-access` is enabled:
+but the address <node-ip> can be static if the addon `host-access` is enabled.
+Or assign static DHCP IP addresses (DHCP reservations) specific to your environment:
 
 ```
 10.0.1.1 customer.local
@@ -245,14 +274,17 @@ Open [customer app](http://customer.local/customer/v1?name=anonymous) and [dashb
 
 #### [Troubleshooting](https://microk8s.io/docs/troubleshooting)
 
-Refresh CA certificates if `microk8s dashboard-proxy` fails to verify the certificate:<br>
+Refresh the certificates if `microk8s dashboard-proxy` fails to verify the certificate:<br>
 `error: error upgrading connection: error dialing backend: tls: failed to verify certificate: x509: certificate is valid for`<br>
 `Unable to connect to the server: x509: certificate is valid for`
 `Unable to connect to the server: x509: certificate has expired or is not yet valid`<br>
-The addresses are set here `/var/snap/microk8s/current/certs/csr.conf.template`
+The addresses are set here `/var/snap/microk8s/current/certs/csr.conf.template`.
+But this does not always help, so you need to conduct further research in this case because it depends on your environment.
 
 ```bash
 sudo microk8s refresh-certs --cert ca.crt
+sudo microk8s refresh-certs --cert front-proxy-client.crt
+sudo microk8s refresh-certs --cert server.crt
 ```
 
 Clear browser data if Aspire Dashboard partially does not work after redeployment:<br>

@@ -97,3 +97,22 @@ you'll get a .tar.gz file, a .zip file, a .deb package and an AppImage executabl
 
 Windows Firewall can block connections to the IP address 0.0.0.0 therefore set 127.0.0.1 in customer/src/customer/main.cpp
 as a workaround or allow connections to that address
+
+AppImages require [FUSE](https://github.com/AppImage/AppImageKit/wiki/FUSE). Package building may fail
+due to Linux application security systems such as AppArmor and SELinux.
+[fusermount3](https://man.archlinux.org/man/fusermount3.1.en) mounts and unmount [FUSE filesystems](https://wiki.gentoo.org/wiki/Filesystem_in_Userspace/en) in userspace.
+This happened after the release of Ubuntu 25.10, where [Flatpak](https://bugs.launchpad.net/ubuntu/+source/flatpak/+bug/2122161/comments/5) packages stopped working.
+
+Temporary workaround to be able to use Flatpak on 25.10 is to disable the Apparmor profile for [fusermount3](https://man.archlinux.org/man/fusermount3.1.en):
+
+```bash
+sudo ln -s /etc/apparmor.d/fusermount3 /etc/apparmor.d/disable/
+sudo apparmor_parser -R /etc/apparmor.d/fusermount3
+```
+
+To later re-enable the profile:
+
+```bash
+$ sudo rm /etc/apparmor.d/disable/fusermount3
+$ cat /etc/apparmor.d/fusermount3 | sudo apparmor_parser -a
+```

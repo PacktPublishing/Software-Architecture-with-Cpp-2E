@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.16)
+project(app)
+
+set(CMAKE_CXX_STANDARD 20)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+
+add_executable(app.js main.cpp)
+
+add_custom_command(
+  TARGET app.js
+  POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/index.html
+          ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/index.html
+  VERBATIM)

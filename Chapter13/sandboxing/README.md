@@ -20,7 +20,8 @@ Install the following software:
 There are several options:
 
 - [Ubuntu](https://cheerp.io/docs/getting-started/installation#ubuntu):
-  [packages](https://launchpad.net/~leaningtech-dev/+archive/ubuntu/cheerp-ppa) were published up to Ubuntu 22.04 (Jammy Jellyfish)
+  [release versions](https://launchpad.net/~leaningtech-dev/+archive/ubuntu/cheerp-ppa) were published up to Ubuntu 22.04 (Jammy Jellyfish), but
+  [nightly builds](https://launchpad.net/~leaningtech-dev/+archive/ubuntu/cheerp-nightly-ppa) are regularly published for Ubuntu LTS (Long Term Support) versions
 - [Arch Linux](https://cheerp.io/docs/getting-started/installation#arch): the [AUR](https://aur.archlinux.org/packages/cheerp-git) package was published in 2024
 - [Building from source](https://cheerp.io/docs/building-from-source/linux): the compiler is supported and developed
 - [Developing inside a container](https://containers.dev/): [CLion](https://www.jetbrains.com/help/clion/remote-development.html),

@@ -58,12 +58,18 @@ sudo xattr -d com.apple.quarantine /Applications/cheerp/bin/
 #### Running the web app
 
 Due to security reasons, web browsers do not allow local JavaScript files to run.
-Instead, run an HTTP server and open the page there.
+Instead, run an HTTP server from the build directory and open the page there.
 
 This requires [Node.js](https://nodejs.org/en/download/) to be installed:
 
 ```bash
 npx http-server
+```
+
+Or [Python](https://www.python.org/downloads/):
+
+```bash
+python -m http.server 8000
 ```
 
 #### [Building a CMake project using Cheerp](https://cheerp.io/docs/guides/build-systems/cmake)

@@ -1,10 +1,18 @@
+#include <algorithm>
+#include <string>
+
 #include <cheerp/client.h>
 #include <cheerp/clientlib.h>
+
+[[cheerp::wasm]]
+std::string transformStr(std::string str) {
+  std::reverse(str.begin(), str.end());
+  return str;
+}
 
 [[cheerp::genericjs]]
 void configureUI() {
   using namespace client;
-
   console.log("configure UI");
 
   HTMLElement *body = document.get_body();
@@ -19,7 +27,10 @@ void configureUI() {
 
   auto mirrorText = [textDisplay, inputBox]() -> void {
     const String *text = inputBox->get_value();
-    textDisplay->set_textContent(text);
+    // no Unicode support
+    const auto &jsStr =
+        String(transformStr(static_cast<std::string>(*text)).c_str());
+    textDisplay->set_textContent(jsStr);
   };
 
   mirrorText();
@@ -31,13 +42,9 @@ void configureUI() {
 }
 
 [[cheerp::genericjs]]
-void loadCallback() {
-  configureUI();
-}
-
-[[cheerp::genericjs]]
 void webMain() {
   using namespace client;
+  console.log("web main");
 
-  document.addEventListener("load", cheerp::Callback(loadCallback));
+  configureUI();
 }

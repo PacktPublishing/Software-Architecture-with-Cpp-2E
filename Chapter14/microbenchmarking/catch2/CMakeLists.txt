@@ -1,7 +1,7 @@
 function(add_benchmark NAME SOURCE)
   add_executable(${NAME} ${SOURCE})
-  target_compile_features(${NAME} PRIVATE cxx_std_23)
   target_link_libraries(${NAME} PRIVATE Catch2::Catch2WithMain)
+  target_compile_features(${NAME} PRIVATE cxx_std_23)
 endfunction()
 
 add_benchmark(catch2bench_1 main_1.cpp)

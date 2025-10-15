@@ -1,7 +1,7 @@
 function(add_benchmark NAME SOURCE)
   add_executable(${NAME} ${SOURCE})
-  target_compile_features(${NAME} PRIVATE cxx_std_20)
   target_link_libraries(${NAME} PRIVATE benchmark::benchmark)
+  target_compile_features(${NAME} PRIVATE cxx_std_20)
 endfunction()
 
 add_benchmark(benchmark_1 main_1.cpp)

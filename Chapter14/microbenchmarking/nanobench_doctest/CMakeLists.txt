@@ -1,7 +1,7 @@
 function(add_benchmark NAME SOURCE)
   add_executable(${NAME} ${SOURCE})
-  target_compile_features(${NAME} PRIVATE cxx_std_23)
   target_link_libraries(${NAME} PRIVATE nanobench::nanobench doctest::doctest)
+  target_compile_features(${NAME} PRIVATE cxx_std_23)
 endfunction()
 
 add_benchmark(nanobench_1 main_1.cpp)

@@ -1,0 +1,10 @@
+[requires]
+libevent/2.1.12
+amqp-cpp/4.3.27
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[layout]
+cmake_layout

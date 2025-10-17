@@ -1,0 +1,90 @@
+asyncapi: 3.0.0
+info:
+  title: Greet API
+  version: 2.0.0
+  description: HTTP API to greet customers
+  contact:
+    name: API Support
+    url: 'https://www.example.com/support'
+    email: support@example.com
+  license:
+    name: MIT
+    url: 'https://mit-license.org/'
+  tags:
+    - name: greet-api
+defaultContentType: application/json
+servers:
+  development:
+    host: localhost:8080
+    protocol: http
+    protocolVersion: '1.1'
+    tags:
+      - name: 'env:dev'
+        description: Development environment
+      - name: 'kind:local'
+        description: This server is local
+      - name: 'visibility:private'
+        description: This resource is private
+channels:
+  customerGreeting:
+    address: /customer/v1
+    messages:
+      greetRequest:
+        $ref: '#/components/messages/GreetRequest'
+      greetResponse:
+        $ref: '#/components/messages/GreetResponse'
+      greetError:
+        $ref: '#/components/messages/GreetError'
+    bindings:
+      http:
+        method: GET
+operations:
+  greet:
+    action: send
+    channel:
+      $ref: '#/channels/customerGreeting'
+    messages:
+      - $ref: '#/channels/customerGreeting/messages/greetRequest'
+    reply:
+      channel:
+        $ref: '#/channels/customerGreeting'
+      messages:
+        - $ref: '#/channels/customerGreeting/messages/greetResponse'
+        - $ref: '#/channels/customerGreeting/messages/greetError'
+components:
+  messages:
+    GreetRequest:
+      payload:
+        type: object
+        properties:
+          name:
+            type: string
+            description: Customer name
+    GreetResponse:
+      payload:
+        type: object
+        properties:
+          status:
+            type: integer
+          response:
+            type: string
+        example:
+          status: 200
+          response: Hi, Ramona
+      bindings:
+        http:
+          statusCode: 200
+    GreetError:
+      payload:
+        type: object
+        properties:
+          status:
+            type: integer
+          response:
+            type: string
+        example:
+          status: 400
+          response: No name
+      bindings:
+        http:
+          statusCode: 400

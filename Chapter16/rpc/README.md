@@ -6,4 +6,4 @@ Software Architecture with C++: Designing Robust C++ Systems with Modern Archite
 
 ### Example manifests
 
-This directory contains example manifests meant for illustration purposes.
+This directory also contains examples meant for illustration purposes.

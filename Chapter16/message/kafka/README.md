@@ -2,7 +2,7 @@
 
 Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
-## Chapter 17: Containers
+## Chapter 16: Interservice communication
 
 ### Prerequisites
 
@@ -11,11 +11,6 @@ Install the following software:
 - CMake 3.28
 - Conan 2
 - GCC 14
-
-For optional packaging with CPack:
-
-- dpkg build tools: [dh_make](https://manpages.ubuntu.com/manpages/trusty/man8/dh_make.8.html) and [dpkg-buildpackage](https://manpages.ubuntu.com/manpages/trusty/man1/dpkg-buildpackage.1.html) to assemble DEB packages
-- rpm build tools: [rpmbuild](https://manpages.ubuntu.com/manpages/trusty/man8/rpmbuild.8.html) to assemble RPM packages
 
 The C++ compiler in your IDE and the Conan profile must be compatible if the examples are compiled from the IDE.
 
@@ -77,26 +72,12 @@ cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan
 cmake --build build
 ```
 
-### Installing
-
-In the build directory, run `cmake --install .` to install the software into `${CMAKE_PREFIX_PATH}`. If no prefix is
-given, it will install system-wide. To change this, add `-DCMAKE_INSTALL_PREFIX=/path/to/install/to` to your cmake
-invocation.
-
-### Packaging
-
-In the build directory, run `cpack`. Simple as that. Assuming you're running on a system supporting DEB and RPM packages,
-you'll get a .tar.gz file, a .zip file, a .deb and .rpm packages.
-
 ### Docker
 
-In the build directory, run `cmake --build . --target docker` to build the Docker image and run the app
-from `docker/compose.yaml` with Compose.
+Just run the Kafka server:
 
-Read instructions regarding Development Containers in the file `../containers/docker/README.md`
-to build an executable file for Linux on macOS and Windows.
+```bash
+docker compose up -d
+```
 
-### Troubleshooting
-
-Windows Firewall can block connections to the IP address 0.0.0.0 therefore set 127.0.0.1 in customer/src/customer/main.cpp
-as a workaround or allow connections to that address
+[Kafbat](https://kafbat.io/) is versatile, fast and lightweight web UI for managing Apache Kafka® clusters.

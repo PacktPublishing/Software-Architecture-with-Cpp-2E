@@ -1,0 +1,71 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Greet API",
+    "version": "2.0.0"
+  },
+  "paths": {
+    "/customer/v1": {
+      "get": {
+        "operationId": "greet",
+        "summary": "Greet customers",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Customer name",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "response": {
+                      "type": "string"
+                    }
+                  },
+                  "example": {
+                    "status": 200,
+                    "response": "Hi, Scott"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "response": {
+                      "type": "string"
+                    }
+                  },
+                  "example": {
+                    "status": 400,
+                    "response": "No name"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

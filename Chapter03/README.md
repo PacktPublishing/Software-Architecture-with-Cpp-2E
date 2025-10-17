@@ -23,6 +23,13 @@ Install the following software:
 - sphinx-mdinclude
 - Doxygen
 
+### Python requirements files
+
+Sphinx is a Python application that can be installed in a Python virtual environment.
+[JetBrains IDEs](https://www.jetbrains.com/help/pycharm/managing-dependencies.html),
+[Visual Studio](https://learn.microsoft.com/en-us/visualstudio/python/managing-required-packages-with-requirements-txt),
+[Qt Creator](https://doc.qt.io/qtcreator/creator-python-development.html) and the others support these requirements files.
+
 ### Building
 
 To build the project, first cd to its directory, and then run:

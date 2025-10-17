@@ -2,7 +2,7 @@
 
 Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
-## Chapter 7: Building and Packaging
+## Chapter 16: Interservice communication
 
 ### Prerequisites
 
@@ -16,7 +16,6 @@ For optional packaging with CPack:
 
 - dpkg build tools: [dh_make](https://manpages.ubuntu.com/manpages/trusty/man8/dh_make.8.html) and [dpkg-buildpackage](https://manpages.ubuntu.com/manpages/trusty/man1/dpkg-buildpackage.1.html) to assemble DEB packages
 - rpm build tools: [rpmbuild](https://manpages.ubuntu.com/manpages/trusty/man8/rpmbuild.8.html) to assemble RPM packages
-- [linuxdeploy](https://github.com/linuxdeploy/linuxdeploy) to assemble AppImages
 
 The C++ compiler in your IDE and the Conan profile must be compatible if the examples are compiled from the IDE.
 
@@ -78,10 +77,6 @@ cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan
 cmake --build build
 ```
 
-### Testing
-
-To run tests from each of the projects, cd into their respective build directory, and then simply run `ctest`.
-
 ### Installing
 
 In the build directory, run `cmake --install .` to install the software into `${CMAKE_PREFIX_PATH}`. If no prefix is
@@ -91,28 +86,9 @@ invocation.
 ### Packaging
 
 In the build directory, run `cpack`. Simple as that. Assuming you're running on a system supporting DEB and RPM packages,
-you'll get a .tar.gz file, a .zip file, a .deb and .rpm packages, and an AppImage executable.
+you'll get a .tar.gz file, a .zip file, .deb and .rpm packages.
 
 ### Troubleshooting
 
 Windows Firewall can block connections to the IP address 0.0.0.0 therefore set 127.0.0.1 in customer/src/customer/main.cpp
 as a workaround or allow connections to that address
-
-AppImages require [FUSE](https://github.com/AppImage/AppImageKit/wiki/FUSE). Package building may fail
-due to Linux application security systems such as AppArmor and SELinux.
-[fusermount3](https://man.archlinux.org/man/fusermount3.1.en) mounts and unmount [FUSE filesystems](https://wiki.gentoo.org/wiki/Filesystem_in_Userspace/en) in userspace.
-This happened after the release of Ubuntu 25.10, where [Flatpak](https://bugs.launchpad.net/ubuntu/+source/flatpak/+bug/2122161/comments/5) packages stopped working.
-
-Temporary workaround to be able to use Flatpak on 25.10 is to disable the Apparmor profile for [fusermount3](https://man.archlinux.org/man/fusermount3.1.en):
-
-```bash
-sudo ln -s /etc/apparmor.d/fusermount3 /etc/apparmor.d/disable/
-sudo apparmor_parser -R /etc/apparmor.d/fusermount3
-```
-
-To later re-enable the profile:
-
-```bash
-$ sudo rm /etc/apparmor.d/disable/fusermount3
-$ cat /etc/apparmor.d/fusermount3 | sudo apparmor_parser -a
-```

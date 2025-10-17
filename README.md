@@ -30,25 +30,27 @@ Part 3: Developing Quality Software
 
 Chapter 10: [Writing Testable Code](Chapter10)
 
-Chapter 11: [Observability](Chapter11)
+Chapter 11: [Continuous Integration and Continuous Deployment](Chapter11)
 
-Chapter 12: [Continuous Integration and Continuous Deployment](Chapter12)
+Chapter 12: [Security in Code and Deployment](Chapter12)
 
-Chapter 13: [Security in Code and Deployment](Chapter13)
-
-Chapter 14: [Performance](Chapter14)
+Chapter 13: [Performance](Chapter13)
 
 Part 4: Cloud Native design and distributed systems
 
-Chapter 15: [Architecture of Distributed Systems](Chapter15)
+Chapter 14: [Architecture of Distributed Systems](Chapter14)
 
-Chapter 16: [Interservice communication](Chapter16)
+Chapter 15: [Interservice communication](Chapter15)
 
-Chapter 17: [Containers](Chapter17)
+Chapter 16: [Containers](Chapter16)
+
+Chapter 17: [Observability](Chapter17)
 
 Chapter 18: [Cloud Native Design](Chapter18)
 
-<a href="https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016"><img src="https://content.packt.com/_/image/original/B18456/cover_image.jpg" alt="" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016">
+  <img src="pics/cover_image.jpg" height="200px" align="right"/>
+</a>
 
 This is the code repository for [Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016), published by Packt.
 
@@ -83,17 +85,22 @@ Additionally, the book covers modern CI/CD pipelines, cloud-native design, micro
 
 This book is intended for experienced C++ developers and software engineers aiming to expand their architectural knowledge, lead software projects, or build scalable systems. It assumes readers are comfortable with modern C++ (C++11 onwards) and familiar with basic design principles and patterns.
 
-If you feel this book is for you, get your [copy](https://www.amazon.com/Software-Architecture-Designing-Architectural-Practices-ebook/dp/B0FGPS463L/) today!
+<a href="https://www.packtpub.com/">
+  <img src="pics/packt-logo.png" height="50px" alt="https://www.packtpub.com/" border="5" align="right"/>
+</a>
 
-<a href="https://www.packtpub.com/"><img src="https://avatars.githubusercontent.com/u/10974906?s=200&v=4" alt="https://www.packtpub.com/" border="5"/></a>
+If you feel this book is for you, get your copy at
+[Amazon](https://www.amazon.com/Software-Architecture-Designing-Architectural-Practices-ebook/dp/B0FGPS463L/)
+,[Packt](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016) or
+[Barnes & Noble](https://www.barnesandnoble.com/w/software-architecture-with-c-andrey-gavrilin/1147771333) today!
 
 ## Development environment
 
 Follow these guides to configure the development environment:
 
-- [Linux environment](devenv_readme/devenv_linux.md)
-- [macOS environment](devenv_readme/devenv_macos.md)
-- [Windows environment](devenv_readme/devenv_windows.md)
+- [<img src="pics/linux-svgrepo-com.svg" height="14em;"/> Linux environment](devenv_readme/devenv_linux.md)
+- [<img src="pics/apple-svgrepo-com.svg" height="14em;"/> macOS environment](devenv_readme/devenv_macos.md)
+- [<img src="pics/microsoft-svgrepo-com.svg" height="12em;"/> Windows environment](devenv_readme/devenv_windows.md)
 
 ### C++ compilers
 
@@ -141,3 +148,5 @@ has worked in different areas which allowed him to gain comprehension of the imp
 His interests include system, embedded and game programming, electronics. Being an enthusiast of retro gaming and vintage computing,
 he enjoys exploring how historical technologies inform modern system design. These hobbies complement his professional work,
 providing creative inspiration and perspective on the IT evolution.
+
+Vectors and icons by <a href="https://www.svgrepo.com" target="_blank">SVG Repo</a>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<methodCall>
+    <methodName>FindMerchants</methodName>
+    <params>
+        <param>
+            <value>
+                <struct>
+                    <member>
+                        <name>lat</name>
+                        <value><string>54.350989</string></value>
+                    </member>
+                    <member>
+                        <name>long</name>
+                        <value><string>18.6548168</string></value>
+                    </member>
+                    <member>
+                        <name>distance</name>
+                        <value><int>200</int></value>
+                    </member>
+                </struct>
+            </value>
+        </param>
+    </params>
+</methodCall>

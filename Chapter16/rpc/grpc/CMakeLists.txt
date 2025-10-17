@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.16)
 
 project(
   gRPC
@@ -36,9 +36,9 @@ if(NOT MSVC)
     "protoc-gen-grpc=\$<TARGET_FILE:gRPC::grpc_cpp_plugin>")
   target_include_directories(grpc_service PUBLIC "${CMAKE_CURRENT_BINARY_DIR}")
 
-  add_executable(grpc_client AsyncClient.cpp)
+  add_executable(grpc_client async_client.cpp)
   target_link_libraries(grpc_client grpc_service)
 
-  add_executable(grpc_server AsyncServer.cpp)
+  add_executable(grpc_server async_server.cpp)
   target_link_libraries(grpc_server grpc_service)
 endif()

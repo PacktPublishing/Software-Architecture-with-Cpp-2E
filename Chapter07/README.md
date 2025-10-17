@@ -90,8 +90,8 @@ invocation.
 
 ### Packaging
 
-In the build directory, run `cpack`. Simple as that. Assuming you're running on a system supporting DEB packages,
-you'll get a .tar.gz file, a .zip file, a .deb package and an AppImage executable.
+In the build directory, run `cpack`. Simple as that. Assuming you're running on a system supporting DEB and RPM packages,
+you'll get a .tar.gz file, a .zip file, a .deb and .rpm packages, and an AppImage executable.
 
 ### Troubleshooting
 

@@ -2,7 +2,7 @@
 
 Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
-## Chapter 13: Performance
+## Chapter 14: Architecture of Distributed Systems
 
 ### Prerequisites
 
@@ -26,7 +26,6 @@ Make sure that the profile section `[settings]` contains:
 ```text
 arch=x86_64
 compiler=gcc
-compiler.cppstd=gnu20
 compiler.libcxx=libstdc++11
 compiler.version=14
 os=Linux
@@ -73,18 +72,24 @@ cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan
 cmake --build build
 ```
 
-### Tracy
+### Docker, Redis, Valkey and Dragonfly
 
-`tracy-profiler` is a GUI application. You can download this app from [GitHub](https://github.com/wolfpld/tracy/releases) compiled for Windows
-or install with [Homebrew](https://formulae.brew.sh/formula/tracy) on Linux and macOS.
+You need to install Docker tools to run the example:
 
-The protocol may be incompatible with the required library in conanfile.py.
-This [application](https://github.com/wolfpld/tracy/tree/master/profiler) can also be compiled from source code or change the library version.
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/), [Rancher Desktop](https://rancherdesktop.io/) or [Docker](https://docs.docker.com/engine/install/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
-### Troubleshooting
+And Redis Insight or Redis CLI to see the results:
 
-If you see this error, edit `~/.conan2/profiles/default` and set `compiler.cppstd=gnu20` (or higher):
+- [Redis Insight](https://redis.io/insight/)
+- [Redis CLI](https://redis.io/docs/latest/develop/tools/cli/)
+- Or on Docker with `./redis/compose-redis-insight.yaml` in this directory
 
-```
-libcoro/*: Invalid: Current cppstd (gnu17) is lower than the required C++ standard (20).
-```
+In the last case, open [http://localhost:5540](http://localhost:5540) (Redis Insight UI) in a browser and add these databases:
+
+- redis://default@redis:6379
+- redis://default@valkey:6379
+- redis://default@dragonfly:6379
+
+These databases run on a Docker network, and the Redis Insight UI connects to these databases on this network by
+their hostnames defined in the Docker Compose files.

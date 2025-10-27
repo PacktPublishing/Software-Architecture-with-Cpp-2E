@@ -2,7 +2,7 @@
 
 Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
-## Chapter 13: Performance
+## Chapter 15: Interservice communication
 
 ### Prerequisites
 
@@ -26,7 +26,6 @@ Make sure that the profile section `[settings]` contains:
 ```text
 arch=x86_64
 compiler=gcc
-compiler.cppstd=gnu20
 compiler.libcxx=libstdc++11
 compiler.version=14
 os=Linux
@@ -73,18 +72,13 @@ cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan
 cmake --build build
 ```
 
-### Tracy
+### Docker
 
-`tracy-profiler` is a GUI application. You can download this app from [GitHub](https://github.com/wolfpld/tracy/releases) compiled for Windows
-or install with [Homebrew](https://formulae.brew.sh/formula/tracy) on Linux and macOS.
+Just run the Kafka server:
 
-The protocol may be incompatible with the required library in conanfile.py.
-This [application](https://github.com/wolfpld/tracy/tree/master/profiler) can also be compiled from source code or change the library version.
-
-### Troubleshooting
-
-If you see this error, edit `~/.conan2/profiles/default` and set `compiler.cppstd=gnu20` (or higher):
-
+```bash
+docker compose up -d
 ```
-libcoro/*: Invalid: Current cppstd (gnu17) is lower than the required C++ standard (20).
-```
+
+[The RabbitMQ management plugin ](https://www.rabbitmq.com/docs/management)provides an HTTP-based API for management and
+monitoring of RabbitMQ nodes and clusters, along with a browser-based UI and a command line tool, rabbitmqadmin.

@@ -1,9 +1,0 @@
-[requires]
-thrift/0.20.0
-
-[generators]
-CMakeDeps
-CMakeToolchain
-
-[layout]
-cmake_layout

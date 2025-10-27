@@ -1,11 +1,6 @@
 [requires]
 drogon/1.9.10
-boost/1.89.0
-catch2/3.11.0
-doctest/2.4.12
-cpputest/4.0
-boost-ext-ut/2.3.1
-gtest/1.17.0
+spdlog/1.16.0
 
 [generators]
 CMakeDeps

@@ -1,0 +1,12 @@
+[requires]
+drogon/1.9.10
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[layout]
+cmake_layout
+
+[options]
+drogon/*:with_orm=False

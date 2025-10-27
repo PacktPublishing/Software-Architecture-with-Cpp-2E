@@ -9,8 +9,8 @@ To compile the examples, you need the recent versions of [CMake](https://cmake.o
 
 # The package manager [Homebrew](https://brew.sh/) installation
 
-- [installation](https://docs.brew.sh/Installation)
-- [common issues](https://docs.brew.sh/Common-Issues)
+- [Installation](https://docs.brew.sh/Installation)
+- [Common issues](https://docs.brew.sh/Common-Issues)
 - [FAQ](https://docs.brew.sh/FAQ)
 
 ```bash
@@ -63,11 +63,12 @@ that support CMake-based projects.
 
 ## Local Kubernetes installation
 
-- [microk8s](https://microk8s.io/docs/install-macos)
+- [Microk8s](https://microk8s.io/docs/install-macos)
 - [minikube](https://minikube.sigs.k8s.io/docs/)
-- [kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
+- [k8s kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
 - [Rancher Desktop](https://docs.rancherdesktop.io/ui/preferences/kubernetes/)
 - [Docker Desktop](https://docs.docker.com/desktop/features/kubernetes/)
+- [Podman Desktop](https://podman-desktop.io/tutorial/running-a-kubernetes-cluster)
 
 Tools to manage Kubernetes clusters and deploy applications
 

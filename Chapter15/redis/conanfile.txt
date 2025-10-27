@@ -1,5 +1,0 @@
-[requires]
-redis-plus-plus/1.3.13
-
-[generators]
-CMakeDeps

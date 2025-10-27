@@ -2,78 +2,89 @@
 
 Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
-## Chapter 11: Observability
+## Chapter 11: Continuous Integration and Continuous Deployment
 
-### Prerequisites
+### Packer
 
-Install the following software:
+To try the Packer and Terraform code, you first need an AWS account. You can get
+a free trial at https://aws.amazon.com/ .
 
-- CMake 3.28
-- Conan 2
-- GCC 14
+Get your credentials by following this document:
+https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-your-credentials.html
+.
 
-The C++ compiler in your IDE and the Conan profile must be compatible if the examples are compiled from the IDE.
+If you are creating a new user just for testing, you can attach the
+`AdministratorAccess` policy to the created user. For production use, apply
+fine-grained permissions.
 
-Assuming you're on Linux or using WSL, configure a local Conan profile and remotes by running:
+Set the environment variables to the values you got from IAM using:
 
-```bash
-rm -rf ./build/
-conan profile detect --name ./build/conan_profile
+```
+export AWS_ACCESS_KEY_ID="anaccesskey"
+export AWS_SECRET_ACCESS_KEY="asecretkey"
 ```
 
-Make sure that the profile section `[settings]` contains:
+If you are using Direnv, you can also put these variables to your `.env` file in
+the current directory. Fill in your secret values in the `env.example` file and
+rename it to `.env`.
 
-```text
-arch=x86_64
-compiler=gcc
-compiler.cppstd=gnu20
-compiler.libcxx=libstdc++11
-compiler.version=14
-os=Linux
+Set up AWS CLI (following this manual: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) and run `aws configure`
+
+To build the image with Packer run
+
+```
+packer build packer_ami.json
 ```
 
-### Building
+When Packer finishes, take a note of the AMI it created. You need to use it with
+Terraform. The AMI will look like the example one: ami-0265dc4673f9d6a35
 
-To build the project, configure the Conan profile as described above, cd to its directory, and then run:
+**Important**: make sure to clean all the
+cloud resources. Log in to the AWS Web console and remove
+all the AMIs and snapshots:
+https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Images:sort=name
+. Otherwise you will be billed by AWS based on your resource usage.
 
-```bash
-cd build
-conan install .. --build=missing -s build_type=Release -pr:a=./conan_profile -of .
-cmake .. -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
-cmake --build .
+### Creating Terraform resources
+
+First, you have to initialize the Terraform state:
+
+```
+terraform init
 ```
 
-If GCC 14 is not your default compiler, you can tell CMake to use it with the `CMAKE_CXX_COMPILER` flag:
+To see which resources are created, use `terraform plan`. Set the variables to
+point to the AMI you created with Packer and to the desired region (the region
+of Terraform resources has to be the same as the AMI region used in Packer).
+Here's an example:
 
-```bash
-cd build
-conan install .. --build=missing -s build_type=Release -pr:a=./conan_profile -of .
-cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=`which g++-14` # build type must match Conan's
-cmake --build .
+```
+terraform plan -var packer_ami=ami-0265dc4673f9d6a35 -var region=eu-central-1
 ```
 
-To pass the settings directly without a Conan profile, use the command line option `--settings:all` or `-s:a`, and the keys `arch`, `build_type`, `compiler`, `compiler.cppstd`, `compiler.libcxx`, `compiler.version`, `os`:
+Terraform will use a default key pair based on the keys in your home directory.
+If you don't have an SSH key pair, you can create it running
+`ssh-keygen -t rsa -m PEM`
 
-```bash
-rm -rf ./build/ && mkdir build && cd build
-conan install .. --build=missing -s:a build_type=Release -s:a compiler=gcc -of .
-cmake .. -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
-cmake --build .
+You can also use an existing key pair by following https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws
+
+To create the resources in your account, run:
+
+```
+terraform apply -var packer_ami=ami-0265dc4673f9d6a35 -var region=eu-central-1
 ```
 
-To apply Conan dependency as a CMake Dependency Provider, clone this Git repository and then run the next command:
+**Important**: make sure to run `terraform destroy` afterwards to clean all the
+resources created by Terraform. Also: log in to the AWS Web console and remove
+all the AMIs and snapshots:
+https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Images:sort=name
+Otherwise you will be billed by AWS based on your resource usage.
 
-```bash
-rm -rf ./build/cmake-conan
-git clone https://github.com/conan-io/cmake-conan.git build/cmake-conan
+```
+terraform destroy -var packer_ami=ami-0265dc4673f9d6a35 -var region=eu-central-1
 ```
 
-```bash
-cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan_provider.cmake -DCMAKE_BUILD_TYPE=Release
-cmake --build build
-```
+### BDD
 
-### Troubleshooting
-
-Windows Firewall can block connections to the IP address 0.0.0.0 therefore set 127.0.0.1 in customer/src/customer/config.json
-as a workaround or allow connections to that address
+The code in the `bdd` subdirectory is only meant for illustration and should not
+be built directly.

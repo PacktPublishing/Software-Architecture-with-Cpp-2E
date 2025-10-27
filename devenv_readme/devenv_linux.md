@@ -6,14 +6,13 @@ Software Architecture with C++: Designing Robust C++ Systems with Modern Archite
 
 To compile the examples, you need the recent versions of [CMake](https://cmake.org/), [Ninja](https://ninja-build.org/),
 either [Clang](https://clang.llvm.org/) or [GCC](https://gcc.gnu.org/), and [Conan 2.0](https://conan.io/).
-Of course for this purpose, you can use package repositories of your Linux distribution,
-[Snapcraft](https://snapcraft.io/), [Flathub](https://flathub.org/), [AppImageHub](https://www.appimagehub.com/browse)
-or an IDE with bundled tools.
+Of course for this purpose, you can use package repositories of your Linux distribution, [Snapcraft](https://snapcraft.io/),
+[Flathub](https://flathub.org/), [AppImageHub](https://www.appimagehub.com/browse) or an IDE with bundled tools.
 
 ## The package manager [Homebrew](https://brew.sh/) installation
 
-- [installation](https://docs.brew.sh/Homebrew-on-Linux)
-- [common issues](https://docs.brew.sh/Common-Issues)
+- [Installation](https://docs.brew.sh/Homebrew-on-Linux)
+- [Common issues](https://docs.brew.sh/Common-Issues)
 - [FAQ](https://docs.brew.sh/FAQ)
 
 ```bash
@@ -71,12 +70,13 @@ that support CMake-based projects.
 
 ## Local Kubernetes installation
 
-- [microk8s](https://microk8s.io/docs/getting-started)
+- [Microk8s](https://microk8s.io/docs/getting-started)
 - [minikube](https://minikube.sigs.k8s.io/docs/)
-- [kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
+- [k8s kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
 - [K3s](https://docs.k3s.io/installation)
 - [Rancher Desktop](https://docs.rancherdesktop.io/ui/preferences/kubernetes/)
 - [Docker Desktop](https://docs.docker.com/desktop/features/kubernetes/)
+- [Podman Desktop](https://podman-desktop.io/tutorial/running-a-kubernetes-cluster)
 
 Tools to manage Kubernetes clusters and deploy applications
 

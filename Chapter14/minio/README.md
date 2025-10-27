@@ -2,7 +2,7 @@
 
 Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
-## Chapter 13: Performance
+## Chapter 14: Architecture of Distributed Systems
 
 ### Prerequisites
 
@@ -26,13 +26,14 @@ Make sure that the profile section `[settings]` contains:
 ```text
 arch=x86_64
 compiler=gcc
-compiler.cppstd=gnu20
 compiler.libcxx=libstdc++11
 compiler.version=14
 os=Linux
 ```
 
 ### Building
+
+**Important**: MinIO's dependency requires Python 3
 
 To build the project, configure the Conan profile as described above, cd to its directory, and then run:
 
@@ -73,18 +74,11 @@ cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan
 cmake --build build
 ```
 
-### Tracy
+### MinIO Console
 
-`tracy-profiler` is a GUI application. You can download this app from [GitHub](https://github.com/wolfpld/tracy/releases) compiled for Windows
-or install with [Homebrew](https://formulae.brew.sh/formula/tracy) on Linux and macOS.
+The [MinIO Console](https://docs.min.io/community/minio-object-store/administration/minio-console.html) is
+a rich graphical user interface that supports browsing buckets and objects on your deployment.
+You can explore the console by opening https://play.min.io:9443 in a browser. Log in with the following credentials:
 
-The protocol may be incompatible with the required library in conanfile.py.
-This [application](https://github.com/wolfpld/tracy/tree/master/profiler) can also be compiled from source code or change the library version.
-
-### Troubleshooting
-
-If you see this error, edit `~/.conan2/profiles/default` and set `compiler.cppstd=gnu20` (or higher):
-
-```
-libcoro/*: Invalid: Current cppstd (gnu17) is lower than the required C++ standard (20).
-```
+- Username: Q3AM3UQ867SPQQA43P2F
+- Password: zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG

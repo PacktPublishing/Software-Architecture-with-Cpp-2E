@@ -98,9 +98,9 @@ If you feel this book is for you, get your copy at
 
 Follow these guides to configure the development environment:
 
-- [<img src="pics/linux-svgrepo-com.svg" height="14em;"/> Linux environment](devenv_readme/devenv_linux.md)
-- [<img src="pics/apple-svgrepo-com.svg" height="14em;"/> macOS environment](devenv_readme/devenv_macos.md)
-- [<img src="pics/microsoft-svgrepo-com.svg" height="12em;"/> Windows environment](devenv_readme/devenv_windows.md)
+- [<img src="pics/os/linux-svgrepo-com.svg" height="14em;"/> Linux environment](devenv_readme/devenv_linux.md)
+- [<img src="pics/os/apple-svgrepo-com.svg" height="14em;"/> macOS environment](devenv_readme/devenv_macos.md)
+- [<img src="pics/os/microsoft-svgrepo-com.svg" height="12em;"/> Windows environment](devenv_readme/devenv_windows.md)
 
 ### C++ compilers
 
@@ -148,5 +148,3 @@ has worked in different areas which allowed him to gain comprehension of the imp
 His interests include system, embedded and game programming, electronics. Being an enthusiast of retro gaming and vintage computing,
 he enjoys exploring how historical technologies inform modern system design. These hobbies complement his professional work,
 providing creative inspiration and perspective on the IT evolution.
-
-Vectors and icons by <a href="https://www.svgrepo.com" target="_blank">SVG Repo</a>

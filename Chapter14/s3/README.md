@@ -2,7 +2,7 @@
 
 Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
-## Chapter 13: Performance
+## Chapter 14: Architecture of Distributed Systems
 
 ### Prerequisites
 
@@ -26,13 +26,14 @@ Make sure that the profile section `[settings]` contains:
 ```text
 arch=x86_64
 compiler=gcc
-compiler.cppstd=gnu20
 compiler.libcxx=libstdc++11
 compiler.version=14
 os=Linux
 ```
 
 ### Building
+
+**Important**: AWS SDK for C++ requires development libraries out of Conan packages
 
 To build the project, configure the Conan profile as described above, cd to its directory, and then run:
 
@@ -73,18 +74,33 @@ cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan
 cmake --build build
 ```
 
-### Tracy
+### Running the example application
 
-`tracy-profiler` is a GUI application. You can download this app from [GitHub](https://github.com/wolfpld/tracy/releases) compiled for Windows
-or install with [Homebrew](https://formulae.brew.sh/formula/tracy) on Linux and macOS.
+You need valid AWS credentials for the program to run successfully.
 
-The protocol may be incompatible with the required library in conanfile.py.
-This [application](https://github.com/wolfpld/tracy/tree/master/profiler) can also be compiled from source code or change the library version.
+Get your credentials by following this document:
+https://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/credentials.html
+https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AdministratorAccess.html
+https://docs.aws.amazon.com/sdkref/latest/guide/feature-static-credentials.html
 
-### Troubleshooting
+If you are creating a new user just for testing, you can attach the
+`AdministratorAccess` policy to the created user. For production use, apply
+fine-grained permissions.
 
-If you see this error, edit `~/.conan2/profiles/default` and set `compiler.cppstd=gnu20` (or higher):
+Set the environment variables to the values you got from IAM using:
 
 ```
-libcoro/*: Invalid: Current cppstd (gnu17) is lower than the required C++ standard (20).
+export AWS_ACCESS_KEY_ID="anaccesskey"
+export AWS_SECRET_ACCESS_KEY="asecretkey"
 ```
+
+If you are using Direnv, you can also put these variables to your `.env` file in
+the current directory. Fill in your secret values in the `env.example` file and
+rename it to `.env`.
+
+The application creates an S3 bucket in AWS.
+
+**Important**: Make sure to delete it after
+testing or you may be billed by the AWS. You can check the S3 bucket at
+https://s3.console.aws.amazon.com/s3/home?region=eu-central-1# (switch the
+region accordingly with the one in the code).

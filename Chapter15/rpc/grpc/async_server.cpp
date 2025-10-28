@@ -16,7 +16,7 @@ class GreeterImpl : public Greeter::Service {
     if (name.empty()) {
       return Status(StatusCode::INVALID_ARGUMENT, "name is empty");
     }
-    reply->set_reply("Hello " + name);
+    reply->set_reply("Get over here! " + name);
     return Status::OK;
   }
 };

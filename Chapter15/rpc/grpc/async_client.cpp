@@ -14,7 +14,7 @@ int main() {
   auto stub = Greeter::NewStub(channel);
 
   GreetRequest request;
-  request.set_name("World");
+  request.set_name("Neosapien");
 
   GreetResponse reply;
   ClientContext context;

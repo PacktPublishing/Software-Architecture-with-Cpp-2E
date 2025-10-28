@@ -1,6 +1,6 @@
 [requires]
 librdkafka/2.12.1
-#modern-cpp-kafka/2024.07.03
+modern-cpp-kafka/2024.07.03
 
 [generators]
 CMakeDeps

@@ -7,3 +7,6 @@ CMakeToolchain
 
 [layout]
 cmake_layout
+
+[options]
+drogon/*:with_orm=False

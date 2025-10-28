@@ -11,7 +11,7 @@ int main() {
   int rc = zmq_bind(publisher, "tcp://127.0.0.1:5556");
   assert(rc == 0);
 
-  char msg[] = "Hello, ZeroMQ from C/C++!";
+  char msg[] = "Gravity cascades";
   size_t msg_size = strlen(msg);
 
   while (true) {

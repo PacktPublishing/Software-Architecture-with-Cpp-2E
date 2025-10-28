@@ -28,16 +28,14 @@ int main() {
     for (const auto &record : records) {
       if (!record.error()) {
         std::cout << "Got a new message..." << std::endl;
-        std::cout << "    Topic    : " << record.topic() << std::endl;
-        std::cout << "    Partition: " << record.partition() << std::endl;
-        std::cout << "    Offset   : " << record.offset() << std::endl;
-        std::cout << "    Timestamp: " << record.timestamp().toString()
+        std::cout << "\tTopic    : " << record.topic() << std::endl;
+        std::cout << "\tPartition: " << record.partition() << std::endl;
+        std::cout << "\tOffset   : " << record.offset() << std::endl;
+        std::cout << "\tTimestamp: " << record.timestamp().toString()
                   << std::endl;
-        std::cout << "    Headers  : " << toString(record.headers())
-                  << std::endl;
-        std::cout << "    Key   [" << record.key().toString() << "]"
-                  << std::endl;
-        std::cout << "    Value [" << record.value().toString() << "]"
+        std::cout << "\tHeaders  : " << toString(record.headers()) << std::endl;
+        std::cout << "\tKey   [" << record.key().toString() << "]" << std::endl;
+        std::cout << "\tValue [" << record.value().toString() << "]"
                   << std::endl;
       } else {
         std::cerr << record.toString() << std::endl;

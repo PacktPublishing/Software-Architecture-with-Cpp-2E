@@ -4,18 +4,18 @@
 #include <drogon/drogon.h>
 #include <graphqlservice/JSONResponse.h>
 
+// generated types
 #include "ServiceClient.h"
 
 using namespace drogon;
-
-using namespace graphql::client::query::GetName;
 
 int main() {
   auto client = HttpClient::newHttpClient("http://localhost:8080");
 
   Json::Value requestBody;
-  requestBody["query"] = GetRequestText();
-  requestBody["operationName"] = GetOperationName();
+  requestBody["query"] = graphql::client::query::GetName::GetRequestText();
+  requestBody["operationName"] =
+      graphql::client::query::GetName::GetOperationName();
 
   auto req = HttpRequest::newHttpJsonRequest(requestBody);
   req->setMethod(Post);
@@ -30,7 +30,8 @@ int main() {
       auto data = (*jsonResponse)["data"];
 
       auto parsedResponse = graphql::response::parseJSON(data.toStyledString());
-      auto response = parseResponse(std::move(parsedResponse));
+      auto response = graphql::client::query::GetName::parseResponse(
+          std::move(parsedResponse));
 
       std::cout << "Name: " << response.name << std::endl;
     } else {

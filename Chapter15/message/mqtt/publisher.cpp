@@ -23,15 +23,15 @@ int main() {
   callback cb;
   client.set_callback(cb);
 
-  mqtt::connect_options connOpts;
-  connOpts.set_keep_alive_interval(20);
-  connOpts.set_clean_session(true);
+  mqtt::connect_options conn_opts;
+  conn_opts.set_keep_alive_interval(20);
+  conn_opts.set_clean_session(true);
 
   try {
-    client.connect(connOpts)->wait();
+    client.connect(conn_opts)->wait();
     std::cout << "Connected to MQTT broker" << std::endl;
 
-    std::string payload = "Hello, MQTT from C++!";
+    std::string payload = "It's a UNIX system!";
     mqtt::message_ptr pub_msg = mqtt::make_message(TOPIC, payload, QOS, false);
     client.publish(pub_msg)->wait();
     std::cout << "Message published: " << payload << std::endl;

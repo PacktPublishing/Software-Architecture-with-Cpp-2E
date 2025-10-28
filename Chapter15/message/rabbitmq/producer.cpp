@@ -23,7 +23,8 @@ int main() {
   channel.confirmSelect()
       .onSuccess([&]() {
         auto routing_key = "greet-routing";
-        channel.publish(exchange_name, routing_key, "Hello RabbitMQ from C++");
+        channel.publish(exchange_name, routing_key,
+                        "Tommy, Chuckie, Phil and Lil");
       })
       .onAck([&](uint64_t delivery_tag, bool multiple) {
         event_base_loopbreak(evbase);

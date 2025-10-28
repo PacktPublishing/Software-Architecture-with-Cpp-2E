@@ -4,13 +4,14 @@
 #include <thrift/transport/TSocket.h>
 #include <thrift/transport/TTransportUtils.h>
 
+// generated types
 #include "Service.h"
 
-using namespace ::apache::thrift;
-using namespace ::apache::thrift::protocol;
-using namespace ::apache::thrift::transport;
+using namespace apache::thrift;
+using namespace apache::thrift::protocol;
+using namespace apache::thrift::transport;
 
-using namespace ::Service;
+using namespace Service;
 
 int main() {
   std::shared_ptr<TTransport> socket(new TSocket("localhost", 9090));
@@ -23,7 +24,7 @@ int main() {
     transport->open();
 
     std::string return_;
-    client.sayHello(return_, "World");
+    client.sayHello(return_, "I'm an engineer");
 
     transport->close();
 

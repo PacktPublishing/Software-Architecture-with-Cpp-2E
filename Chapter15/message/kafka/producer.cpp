@@ -8,8 +8,8 @@ int main() {
   using namespace kafka;
   using namespace kafka::clients::producer;
 
-  const char *tmp = std::getenv(
-      "KAFKA_BROKER_LIST"); // 192.168.0.1:9092,192.168.0.2:9092,192.168.0.3:9092
+  // 192.168.0.1:9092,192.168.0.2:9092,192.168.0.3:9092
+  const char *tmp = std::getenv("KAFKA_BROKER_LIST");
   std::string brokers{tmp != nullptr ? tmp : "127.0.0.1:9092"};
 
   tmp = std::getenv("TOPIC");
@@ -19,7 +19,7 @@ int main() {
                           {"auto.create.topics.enable", {"true"}}});
   KafkaProducer producer(props);
 
-  std::string line{"Hello Kafka from C++"};
+  std::string line{"Ready player three"};
   ProducerRecord record(topic, NullKey, Value(line.c_str(), line.size()));
 
   auto deliveryCb = [](const RecordMetadata &metadata, const Error &error) {

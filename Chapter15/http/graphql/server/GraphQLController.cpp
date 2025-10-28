@@ -2,12 +2,13 @@
 
 #include <graphqlservice/JSONResponse.h>
 
+// generated types
 #include "QueryObject.h"
 #include "ServiceSchema.h"
 
-class YourQueryPImpl {
+class QueryImpl {
 public:
-  static std::string getName() { return "Hello from GraphQL"; }
+  static std::string getName() { return "Jack Mower, Tina and Umagon"; }
 };
 
 void GraphQLController::handleGraphQL(
@@ -25,7 +26,7 @@ void GraphQLController::handleGraphQL(
   std::string query = (*jsonBody)["query"].asString();
   std::string operationName = jsonBody->get("operationName", "").asString();
 
-  auto queryImpl = std::make_shared<YourQueryPImpl>();
+  auto queryImpl = std::make_shared<QueryImpl>();
   graphql::greet::Operations operations(queryImpl);
 
   auto ast = graphql::peg::parseString(query);

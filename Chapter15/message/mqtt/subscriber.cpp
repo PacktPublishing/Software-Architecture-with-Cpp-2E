@@ -23,12 +23,12 @@ int main() {
   callback cb;
   client.set_callback(cb);
 
-  mqtt::connect_options connOpts;
-  connOpts.set_keep_alive_interval(20);
-  connOpts.set_clean_session(true);
+  mqtt::connect_options conn_opts;
+  conn_opts.set_keep_alive_interval(20);
+  conn_opts.set_clean_session(true);
 
   try {
-    client.connect(connOpts)->wait();
+    client.connect(conn_opts)->wait();
     std::cout << "Connected to MQTT broker" << std::endl;
 
     client.subscribe(TOPIC, QOS)->wait();

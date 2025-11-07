@@ -10,7 +10,7 @@ Install the following software:
 
 - CMake 3.28
 - Conan 2
-- GCC 14
+- GCC 14 or Clang 20
 
 The C++ compiler in your IDE and the Conan profile must be compatible if the examples are compiled from the IDE.
 
@@ -26,8 +26,21 @@ Make sure that the profile section `[settings]` contains:
 ```text
 arch=x86_64
 compiler=gcc
+compiler.cppstd=gnu20
 compiler.libcxx=libstdc++11
 compiler.version=14
+os=Linux
+```
+
+Or
+
+```text
+arch=x86_64
+build_type=Release
+compiler=clang
+compiler.cppstd=gnu20
+compiler.libcxx=libstdc++11
+compiler.version=20
 os=Linux
 ```
 
@@ -104,3 +117,8 @@ The application creates an S3 bucket in AWS.
 testing or you may be billed by the AWS. You can check the S3 bucket at
 https://s3.console.aws.amazon.com/s3/home?region=eu-central-1# (switch the
 region accordingly with the one in the code).
+
+### Troubleshooting
+
+The m4/1.4.19 library may be incompatible with GCC, so try Clang in Conan and IDE simultaneously.
+Conan can determine current C and C++ compilers from the CC and CXX environment variables.

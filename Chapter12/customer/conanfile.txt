@@ -1,6 +1,6 @@
 [requires]
 drogon/1.9.10
-inja/3.4.0
+inja/3.5.0
 
 [generators]
 CMakeDeps

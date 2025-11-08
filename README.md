@@ -108,9 +108,9 @@ You need at least one of the following compilers:
 
 | No. | Software required          | OS required                        |
 | --- | -------------------------- | ---------------------------------- |
-| 1   | GCC 14                     | Windows, Mac OS X, and Linux (Any) |
-| 2   | Clang 19                   | Windows, Mac OS X, and Linux (Any) |
-| 3   | Microsoft Visual C++ 19.40 | Windows                            |
+| 1   | GCC 15                     | Windows, Mac OS X, and Linux (Any) |
+| 2   | Clang 20                   | Windows, Mac OS X, and Linux (Any) |
+| 3   | Microsoft Visual C++ 19.44 | Windows                            |
 
 ### Instructions and navigations
 

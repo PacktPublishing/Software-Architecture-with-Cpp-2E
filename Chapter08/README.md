@@ -10,7 +10,7 @@ Install the following software:
 
 - CMake 3.28
 - Conan 2
-- GCC 14
+- GCC 15
 
 For optional packaging with CPack:
 
@@ -32,7 +32,7 @@ Make sure that the profile section `[settings]` contains:
 arch=x86_64
 compiler=gcc
 compiler.libcxx=libstdc++11
-compiler.version=14
+compiler.version=15
 os=Linux
 ```
 
@@ -46,11 +46,11 @@ cmake --preset conan-release
 cmake --build --preset conan-release
 ```
 
-If GCC 14 is not your default compiler, you can tell CMake to use it with the `CMAKE_CXX_COMPILER` flag:
+If GCC 15 is not your default compiler, you can tell CMake to use it with the `CMAKE_CXX_COMPILER` flag:
 
 ```bash
 conan install . --build=missing -s build_type=Release -pr:a=./build/conan_profile
-cmake --preset conan-release -DCMAKE_CXX_COMPILER=`which g++-14`
+cmake --preset conan-release -DCMAKE_CXX_COMPILER=`which g++-15`
 cmake --build --preset conan-release
 ```
 

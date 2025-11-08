@@ -42,11 +42,11 @@ cmake --preset conan-release
 cmake --build --preset conan-release
 ```
 
-If GCC 14 is not your default compiler, you can tell CMake to use it with the `CMAKE_CXX_COMPILER` flag:
+If GCC 15 is not your default compiler, you can tell CMake to use it with the `CMAKE_CXX_COMPILER` flag:
 
 ```bash
 conan install . --build=missing -s build_type=Release -pr:a=./build/conan_profile
-cmake --preset conan-release -DCMAKE_CXX_COMPILER=`which g++-14`
+cmake --preset conan-release -DCMAKE_CXX_COMPILER=`which g++-15`
 cmake --build --preset conan-release
 ```
 

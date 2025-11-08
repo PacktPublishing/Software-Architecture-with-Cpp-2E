@@ -10,7 +10,7 @@ Install the following software:
 
 - CMake 3.28
 - Conan 2
-- GCC 14
+- GCC 15
 
 The C++ compiler in your IDE and the Conan profile must be compatible if the examples are compiled from the IDE.
 
@@ -28,7 +28,7 @@ arch=x86_64
 compiler=gcc
 compiler.cppstd=gnu20
 compiler.libcxx=libstdc++11
-compiler.version=14
+compiler.version=15
 os=Linux
 ```
 
@@ -48,7 +48,7 @@ If GCC 14 is not your default compiler, you can tell CMake to use it with the `C
 ```bash
 cd build
 conan install .. --build=missing -s build_type=Release -pr:a=./conan_profile -of .
-cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=`which g++-14` # build type must match Conan's
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=`which g++-15` # build type must match Conan's
 cmake --build .
 ```
 

@@ -14,11 +14,9 @@ if(CCACHE_PROGRAM)
   set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
 endif()
 
+find_package(AWSSDK REQUIRED)
 find_package(spdlog REQUIRED)
 
-if(NOT MSVC)
-  find_package(AWSSDK REQUIRED)
-
-  add_executable(s3 s3.cpp)
-  target_link_libraries(s3 PRIVATE AWS::aws-sdk-cpp-s3 spdlog::spdlog)
-endif()
+add_executable(s3 s3.cpp)
+target_link_libraries(s3 PRIVATE AWS::aws-sdk-cpp-s3 spdlog::spdlog)
+target_compile_features(s3 PRIVATE cxx_std_17)

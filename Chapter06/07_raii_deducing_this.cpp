@@ -3,6 +3,7 @@
 #include <initializer_list>
 #include <iostream>
 #include <iterator>
+#include <numeric>
 
 template <typename T> class Array final {
 public:

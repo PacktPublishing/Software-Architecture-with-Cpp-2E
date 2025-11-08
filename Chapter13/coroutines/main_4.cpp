@@ -1,23 +1,14 @@
 #include <functional>
+#include <generator>
 #include <iostream>
 #include <ranges>
-
-#if !defined(_MSC_VER)
-#include <generator>
-#else
-#include <experimental/generator>
-#endif
 
 struct Node {
   int value{};
   Node *left{nullptr}, *right{nullptr};
 };
 
-#if !defined(_MSC_VER)
 std::generator<const Node *> in_order(const Node *node) {
-#else
-std::experimental::generator<const Node *> in_order(const Node *node) {
-#endif
   namespace ranges = std::ranges;
 
   if (node == nullptr)
@@ -30,11 +21,7 @@ std::experimental::generator<const Node *> in_order(const Node *node) {
     co_yield ranges::elements_of(in_order(node->right));
 }
 
-#if !defined(_MSC_VER)
 std::generator<const Node *> pre_order(const Node *node) {
-#else
-std::experimental::generator<const Node *> pre_order(const Node *node) {
-#endif
   namespace ranges = std::ranges;
 
   if (node == nullptr)
@@ -47,11 +34,7 @@ std::experimental::generator<const Node *> pre_order(const Node *node) {
     co_yield ranges::elements_of(pre_order(node->right));
 }
 
-#if !defined(_MSC_VER)
 std::generator<const Node *> post_order(const Node *node) {
-#else
-std::experimental::generator<const Node *> post_order(const Node *node) {
-#endif
   namespace ranges = std::ranges;
 
   if (node == nullptr)
@@ -64,15 +47,9 @@ std::experimental::generator<const Node *> post_order(const Node *node) {
   co_yield node;
 }
 
-#if !defined(_MSC_VER)
 void print_tree(
     const Node *node,
     const std::function<std::generator<const Node *>(const Node *node)> &walk) {
-#else
-void print_tree(const Node *node,
-                const std::function<std::experimental::generator<const Node *>(
-                    const Node *node)> &walk) {
-#endif
   for (const auto *n : walk(node)) {
     std::cout << n->value << ' ';
   }

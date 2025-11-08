@@ -43,7 +43,7 @@ add_executable(type_erasure 08_type_erasure.cpp)
 target_compile_features(type_erasure PRIVATE cxx_std_20)
 
 add_executable(factory_functions 09_factory_functions.cpp)
-target_compile_features(factory_functions PRIVATE cxx_std_11)
+target_compile_features(factory_functions PRIVATE cxx_std_17)
 
 add_executable(factory_class 10_factory_class.cpp)
 target_compile_features(factory_class PRIVATE cxx_std_20)

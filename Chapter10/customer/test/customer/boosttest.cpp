@@ -8,6 +8,8 @@
 #define BOOST_TEST_TREE_DECORATOR_IPP_091911GER
 #define BOOST_TEST_DEBUG_API_IPP_112006GER
 
+#define _WINSOCKAPI_
+
 #define BOOST_TEST_MODULE basic_responses
 #include <boost/test/included/unit_test.hpp>
 

@@ -20,5 +20,5 @@ class StoresTestConan(ConanFile):
 
     def test(self):
         if can_run(self):
-            cmd = os.path.join(self.build_folder, "example")
+            cmd = os.path.join(self.cpp.build.bindir, "example")
             self.run(cmd, env="conanrun")

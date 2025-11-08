@@ -120,5 +120,6 @@ region accordingly with the one in the code).
 
 ### Troubleshooting
 
-The m4/1.4.19 library may be incompatible with GCC, so try Clang in Conan and IDE simultaneously.
+The aws-sdk-cpp library transitively depends on m4/1.4.19 library, which may be incompatible with GCC,
+so try Clang in Conan and IDE simultaneously.
 Conan can determine current C and C++ compilers from the CC and CXX environment variables.

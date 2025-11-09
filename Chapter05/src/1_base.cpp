@@ -42,7 +42,8 @@ std::ostream &operator<<(std::ostream &os, const Item *item) {
     }
   };
 
-#if (!defined(_MSVC_LANG) && __cplusplus < 202002L) || _MSVC_LANG < 202002L
+#if (!defined(_MSVC_LANG) && __cplusplus < 202002L) ||                         \
+    (defined(_MSVC_LANG) && _MSVC_LANG < 202002L)
   auto date_added = system_clock::to_time_t(item->date_added);
 #endif
 

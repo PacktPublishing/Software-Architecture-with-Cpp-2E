@@ -15,6 +15,7 @@ repos:
       - id: no-commit-to-branch
         args: [--branch, main]
       - id: trailing-whitespace
+        exclude: \.patch$
   - repo: https://github.com/pre-commit/mirrors-clang-format
     rev: v20.1.6
     hooks:

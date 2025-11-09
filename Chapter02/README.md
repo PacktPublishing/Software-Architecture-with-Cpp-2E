@@ -11,6 +11,11 @@ Install the following software:
 - CMake 3.28
 - GCC 15
 
+The C++ compiler in your IDE and the Conan profile must be compatible to compile examples from the IDE.
+
+Assuming you're on Linux or using WSL. The examples are developed on Linux, but their compilation and
+functionality are also tested on macOS and Windows.
+
 ### Building
 
 To build the project using your default compiler run:

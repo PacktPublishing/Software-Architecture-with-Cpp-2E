@@ -23,6 +23,11 @@ Install the following software:
 - sphinx-mdinclude
 - Doxygen
 
+The C++ compiler in your IDE and the Conan profile must be compatible to compile examples from the IDE.
+
+Assuming you're on Linux or using WSL. The examples are developed on Linux, but their compilation and
+functionality are also tested on macOS and Windows.
+
 ### Python requirements files
 
 Sphinx is a Python application that can be installed in a Python virtual environment.

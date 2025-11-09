@@ -17,9 +17,12 @@ For optional packaging with CPack:
 - dpkg build tools: [dh_make](https://manpages.ubuntu.com/manpages/trusty/man8/dh_make.8.html) and [dpkg-buildpackage](https://manpages.ubuntu.com/manpages/trusty/man1/dpkg-buildpackage.1.html) to assemble DEB packages
 - rpm build tools: [rpmbuild](https://manpages.ubuntu.com/manpages/trusty/man8/rpmbuild.8.html) to assemble RPM packages
 
-The C++ compiler in your IDE and the Conan profile must be compatible if the examples are compiled from the IDE.
+The C++ compiler in your IDE and the Conan profile must be compatible to compile examples from the IDE.
 
-Assuming you're on Linux or using WSL, configure a local Conan profile and remotes by running:
+Assuming you're on Linux or using WSL. The examples are developed on Linux, but their compilation and
+functionality are also tested on macOS and Windows.
+
+Configure a local Conan profile and remotes by running:
 
 ```bash
 rm -rf ./build/

@@ -9,6 +9,10 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
 list(APPEND CMAKE_PREFIX_PATH "${CMAKE_BINARY_DIR}")
 
+if(NOT CMAKE_SYSTEM MATCHES Linux)
+  message(FATAL_ERROR "Target system is Linux")
+endif()
+
 find_package(amqpcpp REQUIRED)
 find_package(Libevent REQUIRED)
 

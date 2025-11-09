@@ -16,8 +16,8 @@ endif()
 find_package(amqpcpp REQUIRED)
 find_package(Libevent REQUIRED)
 
-add_executable(producer producer.cpp)
-target_link_libraries(producer amqpcpp libevent::libevent)
+add_executable(publisher publisher.cpp)
+target_link_libraries(publisher amqpcpp libevent::libevent)
 
 add_executable(consumer consumer.cpp)
 target_link_libraries(consumer amqpcpp libevent::libevent)

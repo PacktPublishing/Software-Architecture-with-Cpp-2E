@@ -14,19 +14,23 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
 find_package(Drogon REQUIRED)
 
-if(NOT DEFINED ENV{CPM_SOURCE_CACHE})
-  set(ENV{CPM_SOURCE_CACHE} ${CMAKE_CURRENT_SOURCE_DIR}/.cpm-cache)
+# TODO: remove when CPM.cmake does not apply patches twice
+if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+  if(NOT DEFINED ENV{CPM_SOURCE_CACHE})
+    set(ENV{CPM_SOURCE_CACHE} ${CMAKE_CURRENT_SOURCE_DIR}/.cpm-cache)
+  endif()
+  set(PATCHES fix-deprecated-literal-operator.patch)
 endif()
 
 include(CPM)
 
 # cmake-format: off
 CPMAddPackage(
-        NAME RapidJSON
-        GITHUB_REPOSITORY Tencent/rapidjson
-        GIT_TAG 24b5e7a8b27f42fa16b96fc70aade9106cf7102f
-        EXCLUDE_FROM_ALL
-        OPTIONS "RAPIDJSON_BUILD_DOC OFF" "RAPIDJSON_BUILD_EXAMPLES OFF" "RAPIDJSON_BUILD_TESTS OFF")
+  NAME RapidJSON
+  GITHUB_REPOSITORY Tencent/rapidjson
+  GIT_TAG 24b5e7a8b27f42fa16b96fc70aade9106cf7102f
+  EXCLUDE_FROM_ALL
+  OPTIONS "RAPIDJSON_BUILD_DOC OFF" "RAPIDJSON_BUILD_EXAMPLES OFF" "RAPIDJSON_BUILD_TESTS OFF")
 # cmake-format: on
 
 find_package(RapidJSON CONFIG REQUIRED)
@@ -42,7 +46,7 @@ CPMAddPackage(
   GIT_TAG v4.5.9
   VERSION 4.5.9
   EXCLUDE_FROM_ALL
-  PATCHES fix-deprecated-literal-operator.patch
+  PATCHES ${PATCHES}
   OPTIONS "GRAPHQL_BUILD_TESTS OFF" "GRAPHQL_UPDATE_SAMPLES OFF" "GRAPHQL_BUILD_HTTP_SAMPLE OFF")
 # cmake-format: on
 

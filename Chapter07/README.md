@@ -99,7 +99,7 @@ you'll get a .tar.gz file, a .zip file, a .deb and .rpm packages, and an AppImag
 ### Troubleshooting
 
 Windows Firewall can block connections to the IP address 0.0.0.0 therefore set 127.0.0.1 in customer/src/customer/main.cpp
-as a workaround or allow connections to that address
+as a workaround or allow connections to that address on the host.
 
 AppImages require [FUSE](https://github.com/AppImage/AppImageKit/wiki/FUSE). Package building may fail
 due to Linux application security systems such as AppArmor and SELinux.

@@ -1,0 +1,26 @@
+diff --git a/include/graphqlservice/GraphQLParse.h b/include/graphqlservice/GraphQLParse.h
+index e983b22..9a2c348 100644
+--- a/include/graphqlservice/GraphQLParse.h
++++ b/include/graphqlservice/GraphQLParse.h
+@@ -50,7 +50,7 @@ constexpr size_t c_defaultDepthLimit = 25;
+ 
+ } // namespace peg
+ 
+-[[nodiscard("unnecessary parse")]] GRAPHQLPEG_EXPORT peg::ast operator"" _graphql(
++[[nodiscard("unnecessary parse")]] GRAPHQLPEG_EXPORT peg::ast operator ""_graphql(
+ 	const char* text, size_t size);
+ 
+ } // namespace graphql
+diff --git a/src/SyntaxTree.cpp b/src/SyntaxTree.cpp
+index 6074353..d2476a3 100644
+--- a/src/SyntaxTree.cpp
++++ b/src/SyntaxTree.cpp
+@@ -1148,7 +1148,7 @@ ast parseFile(std::string_view filename, size_t depthLimit)
+ 
+ } // namespace peg
+ 
+-peg::ast operator"" _graphql(const char* text, size_t size)
++peg::ast operator ""_graphql(const char* text, size_t size)
+ {
+ 	peg::ast result { std::make_shared<peg::ast_input>(
+ 						  peg::ast_input { peg::ast_string_view { { text, size } } }),

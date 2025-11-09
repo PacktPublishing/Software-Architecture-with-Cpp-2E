@@ -14,6 +14,10 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
 find_package(Drogon REQUIRED)
 
+if(NOT DEFINED ENV{CPM_SOURCE_CACHE})
+  set(ENV{CPM_SOURCE_CACHE} ${CMAKE_CURRENT_SOURCE_DIR}/.cpm-cache)
+endif()
+
 include(CPM)
 
 # cmake-format: off
@@ -38,6 +42,7 @@ CPMAddPackage(
   GIT_TAG v4.5.9
   VERSION 4.5.9
   EXCLUDE_FROM_ALL
+  PATCHES fix-deprecated-literal-operator.patch
   OPTIONS "GRAPHQL_BUILD_TESTS OFF" "GRAPHQL_UPDATE_SAMPLES OFF" "GRAPHQL_BUILD_HTTP_SAMPLE OFF")
 # cmake-format: on
 

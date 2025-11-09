@@ -2,7 +2,7 @@
 
 Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
-## Chapter 14: Architecture of Distributed Systems
+## Chapter 15: Interservice communication
 
 ### Prerequisites
 
@@ -10,7 +10,7 @@ Install the following software:
 
 - CMake 3.28
 - Conan 2
-- GCC 15 or Clang 20
+- GCC 15
 
 The C++ compiler in your IDE and the Conan profile must be compatible to compile examples from the IDE.
 
@@ -29,27 +29,12 @@ Make sure that the profile section `[settings]` contains:
 ```text
 arch=x86_64
 compiler=gcc
-compiler.cppstd=gnu20
 compiler.libcxx=libstdc++11
 compiler.version=15
 os=Linux
 ```
 
-Or
-
-```text
-arch=x86_64
-build_type=Release
-compiler=clang
-compiler.cppstd=gnu20
-compiler.libcxx=libstdc++11
-compiler.version=20
-os=Linux
-```
-
 ### Building
-
-**Important**: AWS SDK for C++ requires development libraries out of Conan packages
 
 To build the project, configure the Conan profile as described above, cd to its directory, and then run:
 
@@ -90,37 +75,7 @@ cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan
 cmake --build build
 ```
 
-### Running the example application
-
-You need valid AWS credentials for the program to run successfully.
-
-Get your credentials by following this document:
-https://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/credentials.html
-https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AdministratorAccess.html
-https://docs.aws.amazon.com/sdkref/latest/guide/feature-static-credentials.html
-
-If you are creating a new user just for testing, you can attach the
-`AdministratorAccess` policy to the created user. For production use, apply
-fine-grained permissions.
-
-Set the environment variables to the values you got from IAM using:
-
-```
-export AWS_ACCESS_KEY_ID="anaccesskey"
-export AWS_SECRET_ACCESS_KEY="asecretkey"
-```
-
-If you are using Direnv, you can also put these variables to your `.env` file in
-the current directory. Fill in your secret values in the `env.example` file and
-rename it to `.env`.
-
-The application creates an S3 bucket in AWS.
-
-**Important**: Make sure to delete the bucket after testing, or you may be billed by the AWS. You can check the S3 bucket at
-https://s3.console.aws.amazon.com/s3/home?region=eu-central-1# (switch the region accordingly with the one in the code).
-
 ### Troubleshooting
 
-The aws-sdk-cpp library transitively depends on m4/1.4.19 library, which may be incompatible with GCC,
-so try Clang (chosen simultaneously in Conan and IDE).
+The cppgraphqlgen library may be incompatible with Clang, so try either GCC or MSVC (chosen simultaneously in Conan and IDE).
 Conan can determine current C and C++ compilers from the CC and CXX environment variables.

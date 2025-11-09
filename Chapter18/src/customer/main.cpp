@@ -31,7 +31,11 @@ int main() {
       .addListener("0.0.0.0", 8080)
       .setThreadNum(0) // the number is equal to the number of CPU cores
       .enableServerHeader(false)
+#if not defined(_MSC_VER)
       .setUploadPath(upload_path)
+#else
+      .setUploadPath(upload_path.string())
+#endif
       .registerHandler(
           "/customer/v1",
           [&](const HttpRequestPtr &request,

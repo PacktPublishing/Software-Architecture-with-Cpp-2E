@@ -9,7 +9,7 @@ target_link_libraries(
   libcustomer PUBLIC Drogon::Drogon opentelemetry-cpp::opentelemetry-cpp
                      grpc::grpc)
 set_target_properties(libcustomer PROPERTIES CXX_EXTENSIONS OFF)
-target_compile_options(libcustomer PRIVATE ${BASE_COMPILE_FLAGS})
+# target_compile_options(libcustomer PRIVATE ${BASE_COMPILE_FLAGS})
 
 add_executable(customer main.cpp)
 target_compile_features(customer PRIVATE cxx_std_20)

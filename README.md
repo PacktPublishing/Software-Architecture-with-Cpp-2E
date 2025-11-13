@@ -52,7 +52,7 @@ Chapter 18: [Cloud Native Design](Chapter18)
   <img src="pics/cover_image.jpg" height="200px" align="right"/>
 </a>
 
-This is the code repository for [Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016), published by Packt.
+This is the source code repository for [Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016), published by Packt.
 
 **Architect high-quality C++ applications using modern features and patterns, with expanded coverage of observability
 and cloud-native tooling, plus new content on monadic design techniques for modular C++ development.**
@@ -102,8 +102,8 @@ and familiar with basic design principles and patterns.
 </a>
 
 If you feel this book is for you, get your copy at
-[Amazon](https://www.amazon.com/Software-Architecture-Designing-Architectural-Practices-ebook/dp/B0FGPS463L/)
-,[Packt](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016) or
+[Amazon](https://www.amazon.com/Software-Architecture-Designing-Architectural-Practices-ebook/dp/B0FGPS463L/),
+[Packt](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016) or
 [Barnes & Noble](https://www.barnesandnoble.com/w/software-architecture-with-c-andrey-gavrilin/1147771333) today!
 
 ## Development environment

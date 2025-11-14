@@ -123,4 +123,9 @@ https://s3.console.aws.amazon.com/s3/home?region=eu-central-1# (switch the regio
 
 The aws-sdk-cpp library transitively depends on m4/1.4.19 library, which may be incompatible with GCC,
 so try Clang (chosen simultaneously in Conan and IDE).
-Conan can determine current C and C++ compilers from the CC and CXX environment variables.
+
+Conan can determine current C and C++ compilers from the CC and CXX environment variables. For instance, these command rewrites the default profile:
+
+```bash
+CC=/usr/bin/clang CXX=/usr/bin/clang++ conan profile detect --force
+```

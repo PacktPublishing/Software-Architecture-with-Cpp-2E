@@ -35,6 +35,18 @@ compiler.version=15
 os=Linux
 ```
 
+Or
+
+```text
+arch=x86_64
+build_type=Release
+compiler=clang
+compiler.cppstd=gnu23
+compiler.libcxx=libstdc++11
+compiler.version=20
+os=Linux
+```
+
 ### Building
 
 To build the project, configure the Conan profile as described above, cd to its directory, and then run:
@@ -107,3 +119,15 @@ conan create .
 Your environment may need some adjustment for GCC and Clang:
 
 - Clang: pass the flags -DCMAKE_CXX_FLAGS=-stdlib=libc++
+
+Conan can determine current C and C++ compilers from the CC and CXX environment variables. For instance, this command overwrites the default profile:
+
+```bash
+CC=/usr/bin/clang CXX=/usr/bin/clang++ conan profile detect --force
+```
+
+This command overrides the default profile settings:
+
+```bash
+conan create . -c='tools.cmake.cmaketoolchain:extra_variables*={"CMAKE_CXX_FLAGS":"-stdlib=libc++"}' -s:a compiler.cppstd=gnu23
+```

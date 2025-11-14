@@ -23,31 +23,31 @@ Stores get_favorite_stores_for(const CustomerId &customer_id) {
       {.owner = &merchants[0],
        .items =
            {
-               {.name = "Honey",
+               {.name = "MicroWasp",
                 .photo_url = {},
-                .description = "Straight outta Compton's apiary",
-                .price = 9.99f,
+                .description = "A mechanical skateboard keyboard",
+                .price = 575.0f,
                 .date_added = system_clock::now(),
                 .featured = false},
-               {.name = "Oscypek",
+               {.name = "Power glove",
                 .photo_url = {},
-                .description = "Tasty smoked cheese from the Tatra mountains",
-                .price = 1.23f,
+                .description = "The hacker secret tool",
+                .price = 122.50f,
                 .date_added = system_clock::now() - 1h,
                 .featured = true},
            },
-       .categories = {Category::Food}},
+       .categories = {Category::Handicraft}},
       {.owner = &merchants[1],
        .items = {{
-           .name = "Handmade painted ceramic bowls",
-           .photo_url = "http://example.com/beautiful_bowl.png",
-           .description =
-               "Hand-crafted and hand-decorated bowls made of fired clay",
+           .name = "The wizard",
+           .photo_url = "http://example.com/vhs.png",
+           .description = "A family film about a boy with a natural talent for "
+                          "video games",
            .price = {},
            .date_added = system_clock::now() - 12min,
            .featured = true,
        }},
-       .categories = {Category::Artist, Category::Handicraft}}};
+       .categories = {Category::Artist, Category::Video}}};
   static auto favorite_stores_by_customer =
       std::unordered_map<CustomerId, Stores>{{42, {&stores[0], &stores[1]}}};
   return favorite_stores_by_customer[customer_id];

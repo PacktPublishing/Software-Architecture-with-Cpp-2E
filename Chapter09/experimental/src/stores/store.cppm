@@ -9,6 +9,7 @@ export enum class Category {
   Food,
   Antiques,
   Books,
+  Video,
   Music,
   Photography,
   Handicraft,

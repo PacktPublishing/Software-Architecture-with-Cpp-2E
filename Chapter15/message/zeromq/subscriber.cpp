@@ -20,7 +20,7 @@ int main() {
   while (true) {
     rc = zmq_recv(subscriber, msg, MSG_SIZE, 0);
     assert(rc != -1);
-    msg[rc] = '\0';
+    msg[rc] = '\0'; // important
 
     printf("%s\n", msg);
   }

@@ -16,31 +16,73 @@ Stores get_favorite_stores_for(const CustomerId &customer_id) {
       {.owner = &merchants[0],
        .items =
            {
-               {.name = "Honey",
+               {.name = "Mamushka",
                 .photo_url = {},
-                .description = "Straight outta Compton's apiary",
-                .price = 9.99f,
+                .description = "A traditional acrobatic dance of brotherly "
+                               "love taught by the Cossacks",
+                .price = 27.82f,
                 .date_added = system_clock::now(),
                 .featured = false},
-               {.name = "Oscypek",
+               {.name = "Babushka",
                 .photo_url = {},
-                .description = "Tasty smoked cheese from the Tatra mountains",
-                .price = 1.23f,
+                .description = "Walk like a Russian, dance like their bear",
+                .price = 25.00f,
                 .date_added = system_clock::now() - 1h,
                 .featured = true},
            },
-       .categories = {Category::Food}},
+       .categories = {Category::Music, Category::Video}},
       {.owner = &merchants[1],
-       .items = {{
-           .name = "Handmade painted ceramic bowls",
-           .photo_url = "http://example.com/beautiful_bowl.png",
-           .description =
-               "Hand-crafted and hand-decorated bowls made of fired clay",
-           .price = {},
-           .date_added = system_clock::now() - 12min,
-           .featured = true,
-       }},
-       .categories = {Category::Artist, Category::Handicraft}}};
+       .items =
+           {
+               {
+                   .name = "Galya carries water",
+                   .photo_url = "http://example.com/ua_song.png",
+                   .description = "A Ukrainian folk song about a girl and a "
+                                  "guy who is unrequitedly in love",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "Stenka Razin",
+                   .photo_url = "http://example.com/ru_song.png",
+                   .description =
+                       "The throwing of the princess into the Volga symbolizes "
+                       "the renunciation of personal happiness for the sake of "
+                       "comrades and the ideals of the Cossack freemen",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "W moim ogródecku",
+                   .photo_url = "http://example.com/pl_song.png",
+                   .description = "A famous Polish folk love song about a "
+                                  "country girl who falls in love with a boy",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "The Volga River flows",
+                   .photo_url = "http://example.com/ru_song.png",
+                   .description = "The song symbolizes life flowing in its "
+                                  "picturesque places throughout generations",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "Comin' in on a Wing and a Prayer",
+                   .photo_url = "http://example.com/us_song.png",
+                   .description =
+                       "The bomber crew limps home in a damaged plane",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+           },
+       .categories = {Category::Artist, Category::Music}}};
   static auto favorite_stores_by_customer =
       std::unordered_map<CustomerId, Stores>{{42, {&stores[0], &stores[1]}}};
   return favorite_stores_by_customer[customer_id];

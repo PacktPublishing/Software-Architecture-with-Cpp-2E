@@ -15,7 +15,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 find_package(Drogon REQUIRED)
 
 # TODO: remove when CPM.cmake does not apply patches twice
-if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   if(NOT DEFINED ENV{CPM_SOURCE_CACHE})
     set(ENV{CPM_SOURCE_CACHE} ${CMAKE_CURRENT_SOURCE_DIR}/.cpm-cache)
   endif()

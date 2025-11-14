@@ -9,10 +9,10 @@
 
 std::optional<std::size_t> imperative_adjacent_distance() {
   constexpr auto temperatures = std::array{-3.0, 2.0, 0.0, 8.0, -10.0, -7.0};
-  for (std::size_t i = 0; i < temperatures.size() - 1; ++i) {
-    for (std::size_t j = i + 1; j < temperatures.size(); ++j) {
-      if (std::abs(temperatures[i] - temperatures[j]) > 5)
-        return j - i - 1;
+  constexpr std::size_t size = temperatures.size();
+  for (std::size_t i = 0; i < size - 1; ++i) {
+    if (std::abs(temperatures[i] - temperatures[i + 1]) > 5) {
+      return i;
     }
   }
   return std::nullopt;

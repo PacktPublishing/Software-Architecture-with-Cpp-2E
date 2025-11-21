@@ -25,5 +25,8 @@ class StoresTestConan(ConanFile):
 
     def test(self):
         if can_run(self):
-            cmd = os.path.join(self.build_folder, "example")
+            cmd = os.path.join(self.build_folder, "example_hdr")
+            self.run(cmd, env="conanrun")
+
+            cmd = os.path.join(self.build_folder, "example_mod")
             self.run(cmd, env="conanrun")

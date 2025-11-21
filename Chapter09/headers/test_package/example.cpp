@@ -2,4 +2,8 @@
 #include <stores/merchant.h>
 #include <stores/store.h>
 
-int main() {}
+int main() {
+  Merchant merchant;
+  CustomerId id = get_current_customer_id();
+  Store store;
+}

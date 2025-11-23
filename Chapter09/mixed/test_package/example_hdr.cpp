@@ -1,3 +1,7 @@
 #include <stores/customer.h>
 
-int main() { CustomerId id = get_current_customer_id(); }
+int main() {
+  using namespace trade_fair;
+
+  CustomerId id = get_current_customer_id();
+}

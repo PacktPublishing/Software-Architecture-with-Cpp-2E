@@ -7,7 +7,8 @@ export module store;
 export import merchant;
 export import :item;
 
-export enum class Category {
+export namespace trade_fair {
+enum class Category {
   Food,
   Antiques,
   Books,
@@ -18,8 +19,9 @@ export enum class Category {
   Artist,
 };
 
-export struct Store {
+struct Store {
   const Merchant *owner;
   std::vector<Item> items;
   std::vector<Category> categories;
 };
+} // namespace trade_fair

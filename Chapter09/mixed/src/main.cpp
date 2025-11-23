@@ -15,6 +15,8 @@ using namespace std::chrono;
 using namespace std::literals::chrono_literals;
 using namespace std::ranges;
 
+using namespace trade_fair;
+
 using Stores = std::vector<const Store *>;
 
 Stores get_favorite_stores_for(const CustomerId &customer_id) {

@@ -6,7 +6,7 @@ export module customer;
 
 // re-export
 export {
-  using ::CustomerId;
+  using trade_fair::CustomerId;
 
-  using ::get_current_customer_id;
+  using trade_fair::get_current_customer_id;
 }

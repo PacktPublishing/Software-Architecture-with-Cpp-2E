@@ -126,7 +126,7 @@ Conan can determine current C and C++ compilers from the CC and CXX environment 
 CC=/usr/bin/clang CXX=/usr/bin/clang++ conan profile detect --force
 ```
 
-This command overrides the default profile settings:
+This command overrides the default profile settings and requires Clang by default:
 
 ```bash
 conan create . -c='tools.cmake.cmaketoolchain:extra_variables*={"CMAKE_CXX_FLAGS":"-stdlib=libc++"}' -s:a compiler.cppstd=gnu23

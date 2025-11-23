@@ -2,6 +2,7 @@
 
 #include <iomanip>
 
+namespace trade_fair {
 std::ostream &operator<<(std::ostream &os, const Item &item) {
   auto stringify_optional = [](const auto &optional) {
     using optional_value_type =
@@ -21,3 +22,4 @@ std::ostream &operator<<(std::ostream &os, const Item &item) {
      << ", featured: " << item.featured;
   return os;
 }
+} // namespace trade_fair

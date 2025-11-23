@@ -4,7 +4,8 @@ import std;
 
 using namespace std::chrono;
 
-export struct Item {
+export namespace trade_fair {
+struct Item {
   std::string name;
   std::optional<std::string> photo_url;
   std::string description;
@@ -13,7 +14,7 @@ export struct Item {
   bool featured{};
 };
 
-export std::ostream &operator<<(std::ostream &os, const Item &item) {
+std::ostream &operator<<(std::ostream &os, const Item &item) {
   auto stringify_optional = []<typename T>(const T &optional) {
     using optional_value_type = typename std::remove_cvref_t<T>::value_type;
     if constexpr (std::is_same_v<optional_value_type, std::string>) {
@@ -31,3 +32,4 @@ export std::ostream &operator<<(std::ostream &os, const Item &item) {
      << ", featured: " << item.featured;
   return os;
 }
+} // namespace trade_fair

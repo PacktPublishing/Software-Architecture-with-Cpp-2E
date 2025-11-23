@@ -9,6 +9,7 @@
 
 using namespace std::chrono;
 
+namespace trade_fair {
 struct Item {
   std::string name;
   std::optional<std::string> photo_url;
@@ -36,3 +37,4 @@ struct Store {
 };
 
 std::ostream &operator<<(std::ostream &os, const Item &item);
+} // namespace trade_fair

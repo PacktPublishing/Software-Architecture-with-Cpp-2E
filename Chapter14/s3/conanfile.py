@@ -7,7 +7,7 @@ class Pkg(ConanFile):
 
     def requirements(self):
         self.requires("spdlog/1.16.0")
-        self.requires("aws-sdk-cpp/1.11.619")
+        self.requires("aws-sdk-cpp/1.11.692")
 
     def build_requirements(self):
         pass

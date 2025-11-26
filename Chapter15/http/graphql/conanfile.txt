@@ -1,5 +1,6 @@
 [requires]
-drogon/1.9.10
+drogon/1.9.11
+boost/1.89.0
 
 [generators]
 CMakeDeps
@@ -9,4 +10,5 @@ CMakeToolchain
 cmake_layout
 
 [options]
+drogon/*:with_boost=False
 drogon/*:with_orm=False

@@ -1,5 +1,5 @@
 [requires]
-drogon/1.9.10
+drogon/1.9.11
 spdlog/1.16.0
 
 [generators]

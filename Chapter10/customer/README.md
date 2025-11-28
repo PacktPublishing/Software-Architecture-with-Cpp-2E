@@ -10,7 +10,7 @@ Install the following software:
 
 - CMake 3.28
 - Conan 2
-- GCC 15
+- GCC 15, Clang 20, MSVC 19.44 (VS 2022) or 19.50 (VS 2026)
 
 The C++ compiler in your IDE and the Conan profile must be compatible to compile examples from the IDE.
 
@@ -92,3 +92,7 @@ boost-ext-ut/*: Invalid: Current cppstd (gnu17) is lower than the required C++ s
 
 Windows Firewall can block connections to the IP address 0.0.0.0 therefore set 127.0.0.1 in customer/src/customer/main.cpp
 as a workaround or allow connections to that address on the host.
+
+The Boost library depends on the Python interpreter installed on the system.
+So, this library may require installing additional Python modules such as numpy.
+The compiled library can be downloaded from the official [website](https://www.boost.org/releases/latest/).

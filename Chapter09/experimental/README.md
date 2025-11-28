@@ -10,7 +10,7 @@ Install the following software:
 
 - CMake 4.0
 - Conan 2
-- GCC 15
+- GCC 15, Clang 20, MSVC 19.44 (VS 2022) or 19.50 (VS 2026)
 
 The C++ compiler in your IDE and the Conan profile must be compatible to compile examples from the IDE.
 
@@ -120,7 +120,8 @@ Your environment may need some adjustment for GCC and Clang:
 
 - Clang: pass the flags -DCMAKE_CXX_FLAGS=-stdlib=libc++
 
-Conan can determine current C and C++ compilers from the CC and CXX environment variables. For instance, this command overwrites the default profile:
+Conan can determine current C and C++ compilers from the CC and CXX environment variables.
+For instance, this command overwrites the default profile:
 
 ```bash
 CC=/usr/bin/clang CXX=/usr/bin/clang++ conan profile detect --force

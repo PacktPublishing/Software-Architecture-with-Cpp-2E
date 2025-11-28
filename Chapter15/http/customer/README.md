@@ -10,17 +10,17 @@ Install the following software:
 
 - CMake 3.28
 - Conan 2
-- GCC 15
-
-For optional packaging with CPack:
-
-- dpkg build tools: [dh_make](https://manpages.ubuntu.com/manpages/trusty/man8/dh_make.8.html) and [dpkg-buildpackage](https://manpages.ubuntu.com/manpages/trusty/man1/dpkg-buildpackage.1.html) to assemble DEB packages
-- rpm build tools: [rpmbuild](https://manpages.ubuntu.com/manpages/trusty/man8/rpmbuild.8.html) to assemble RPM packages
+- GCC 15, Clang 20, MSVC 19.50
 
 The C++ compiler in your IDE and the Conan profile must be compatible to compile examples from the IDE.
 
 Assuming you're on Linux or using WSL. The examples are developed on Linux, but their compilation and
 functionality are also tested on macOS and Windows.
+
+For optional packaging with CPack:
+
+- dpkg build tools: [dh_make](https://manpages.ubuntu.com/manpages/trusty/man8/dh_make.8.html) and [dpkg-buildpackage](https://manpages.ubuntu.com/manpages/trusty/man1/dpkg-buildpackage.1.html) to assemble DEB packages
+- rpm build tools: [rpmbuild](https://manpages.ubuntu.com/manpages/trusty/man8/rpmbuild.8.html) to assemble RPM packages
 
 Configure a local Conan profile and remotes by running:
 

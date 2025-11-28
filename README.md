@@ -118,11 +118,11 @@ Follow these guides to configure the development environment:
 
 You need at least one of the following compilers:
 
-| No. | Software required          | OS required                        |
-| --- | -------------------------- | ---------------------------------- |
-| 1   | GCC 15                     | Windows, Mac OS X, and Linux (Any) |
-| 2   | Clang 20                   | Windows, Mac OS X, and Linux (Any) |
-| 3   | Microsoft Visual C++ 19.44 | Windows                            |
+| No. | Software required                | OS required                        |
+| --- | -------------------------------- | ---------------------------------- |
+| 1   | GCC 15                           | Windows, Mac OS X, and Linux (Any) |
+| 2   | Clang 20                         | Windows, Mac OS X, and Linux (Any) |
+| 3   | MSVC Build Tools 19.50 (VS 2026) | Windows                            |
 
 ### Instructions and navigations
 

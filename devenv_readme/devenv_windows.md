@@ -52,13 +52,12 @@ scoop install main/ninja
 scoop install main/llvm
 scoop install main/mingw
 scoop install main/conan
-
-scoop install main/mingw
 ```
 
 The fifth option is [MSYS2](https://www.msys2.org/), a software distribution and development platform for Windows,
 that provides a Unix-like environment ([introduction](https://www.msys2.org/wiki/MSYS2-introduction/),
-[environments](https://www.msys2.org/docs/environments/), [packages](https://packages.msys2.org/packages/):
+[environments](https://www.msys2.org/docs/environments/), [packages](https://packages.msys2.org/packages/).
+However, some Conan packages may not work on this software distro and building platform:
 
 Update MSYS2 with following command:
 
@@ -66,27 +65,28 @@ Update MSYS2 with following command:
 pacman -Syu
 ```
 
-Install the necessary tools (for instance `UCRT64`. The other environments are `CLANG64`, `CLANGARM64`, `MINGW64`, `MSYS`):
+Install the necessary tools (for instance `CLANG64`. The other environments are `CLANGARM64`, `MINGW64`, `MSYS`, `UCRT64`):
 
 ```
-pacman -S base-devel cmake ninja mingw-w64-ucrt-x86_64-python-conan git
-pacman -S mingw-w64-ucrt-x86_64-toolchain
-pacman -S mingw-w64-ucrt-x86_64-gdb
+pacman -S base-devel cmake ninja git
+pacman -S mingw-w64-clang-x86_64-toolchain
+pacman -S mingw-w64-clang-x86_64-gdb
+pacman -S mingw-w64-clang-x86_64-python-conan
 ```
 
 Optional: Add executables to your Windows PATH:
 
 ```
-C:\msys64\ucrt64\bin
+C:\msys64\clang64\bin
 C:\msys64\usr\bin
 ```
 
 Libraries and include files can be found in two places:
 
 ```
-C:\msys64\ucrt64\bin
-C:\msys64\ucrt64\lib
-C:\msys64\ucrt64\include
+C:\msys64\clang64\bin
+C:\msys64\clang64\lib
+C:\msys64\clang64\include
 C:\msys64\usr\bin
 C:\msys64\usr\lib
 C:\msys64\usr\include
@@ -183,4 +183,36 @@ Conan can use a compiler other than the [auto-detected](https://docs.conan.io/2/
 [conf]
 tools.cmake.cmaketoolchain:generator=Ninja
 tools.build:compiler_executables={"c":"/usr/bin/gcc","cpp":"/usr/bin/g++"}
+```
+
+Conan can also determine current C and C++ compilers from the CC and CXX environment variables.
+For instance, this command overwrites the default profile:
+
+```bash
+CC=/usr/bin/clang CXX=/usr/bin/clang++ conan profile detect --force
+```
+
+The package manager may not detect compilers correctly, so you need to specify the settings yourself in this case.
+
+For PowerShell and Visual Studio 2026:
+
+```shell
+$env:CXX="C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\bin\Hostx64\x64\cl.exe"
+conan profile detect --force
+```
+
+Conan profile for Visual Studio 2026 may look like this:
+
+```
+[settings]
+arch=x86_64
+os=Windows
+compiler=msvc
+compiler.version=195
+compiler.runtime=dynamic
+compiler.cppstd=20
+compiler.cstd=17
+[conf]
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.build:compiler_executables={"cpp":"C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/cl.exe","rc":"C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/rc.exe"}
 ```

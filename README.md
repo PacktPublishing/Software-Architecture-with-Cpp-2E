@@ -2,57 +2,9 @@
 
 Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
-## Table of contents
-
-Part 1: Concepts and Components of Software Architecture
-
-Chapter 1: [Importance of Software Architecture and Principles of Great Design](Chapter01)
-
-Chapter 2: [Architectural Styles](Chapter02)
-
-Chapter 3: [Functional and Nonfunctional Requirements](Chapter03)
-
-Part 2: The Design and Development of C++ Software
-
-Chapter 4: [Architectural and System Design Patterns](Chapter04)
-
-Chapter 5: [Leveraging C++ Language Features](Chapter05)
-
-Chapter 6: [Design Patterns and C++ Idioms](Chapter06)
-
-Chapter 7: [Building and Packaging](Chapter07)
-
-Chapter 8: [Package Management](Chapter08)
-
-Chapter 9: [The Future of C++ Code Reuse: Using Modules](Chapter09)
-
-Part 3: Developing Quality Software
-
-Chapter 10: [Writing Testable Code](Chapter10)
-
-Chapter 11: [Continuous Integration and Continuous Deployment](Chapter11)
-
-Chapter 12: [Security in Code and Deployment](Chapter12)
-
-Chapter 13: [Performance](Chapter13)
-
-Part 4: Cloud Native design and distributed systems
-
-Chapter 14: [Architecture of Distributed Systems](Chapter14)
-
-Chapter 15: [Interservice communication](Chapter15)
-
-Chapter 16: [Containers](Chapter16)
-
-Chapter 17: [Observability](Chapter17)
-
-Chapter 18: [Cloud Native Design](Chapter18)
-
 <a href="https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016">
-  <img src="pics/cover_image.jpg" height="200px" align="right"/>
+  <img src="pics/book_cover.jpg" height="200px" align="right" alt="book cover"/>
 </a>
-
-This is the source code repository for [Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016), published by Packt.
 
 **Architect high-quality C++ applications using modern features and patterns, with expanded coverage of observability
 and cloud-native tooling, plus new content on monadic design techniques for modular C++ development.**
@@ -101,12 +53,65 @@ and familiar with basic design principles and patterns.
   <img src="pics/packt-logo.png" height="50px" alt="https://www.packtpub.com/" border="5" align="right"/>
 </a>
 
-If you feel this book is for you, get your copy at
-[Amazon](https://www.amazon.com/Software-Architecture-Designing-Architectural-Practices-ebook/dp/B0FGPS463L/),
-[Packt](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016) or
-[Barnes & Noble](https://www.barnesandnoble.com/w/software-architecture-with-c-andrey-gavrilin/1147771333) today!
+If you feel this book is for you, get your copy today!
 
-## Development environment
+- [Packt](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016)
+- [Amazon](https://www.amazon.com/Software-Architecture-Designing-Architectural-Practices/dp/1803243015/)
+- [Waterstones](https://www.waterstones.com/book/software-architecture-with-c/andrey-gavrilin/adrian-ostrowski/9781803243016)
+- [Indigo](https://www.indigo.ca/en-ca/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices/4f642cc1-2e6c-3599-a59a-49667b0d7be4.html)
+- [Rakuten Kobo](https://www.kobo.com/us/en/ebook/software-architecture-with-c-1)
+- [Fnac](https://www.fnac.com/livre-numerique/a21817433/Andrey-Gavrilin-Software-Architecture-with-C)
+- [Bol](https://www.bol.com/nl/fr/p/software-architecture-with-c/9300000235129507/)
+- [Ebookpoint](https://ebookpoint.pl/ksiazki/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-s-andrey-gavrilin-adrian-ostrowski-piotr-gaczkowsk,e_4ikt.htm)
+- [Helion](https://helion.pl/ksiazki/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-s-andrey-gavrilin-adrian-ostrowski-piotr-gaczkowsk,e_4ikt.htm)
+
+### Table of contents
+
+**Part 1: Concepts and Components of Software Architecture**
+
+Chapter 1: [Importance of Software Architecture and Principles of Great Design](Chapter01)
+
+Chapter 2: [Architectural Styles](Chapter02)
+
+Chapter 3: [Functional and Nonfunctional Requirements](Chapter03)
+
+**Part 2: The Design and Development of C++ Software**
+
+Chapter 4: [Architectural and System Design Patterns](Chapter04)
+
+Chapter 5: [Leveraging C++ Language Features](Chapter05)
+
+Chapter 6: [Design Patterns and C++ Idioms](Chapter06)
+
+Chapter 7: [Building and Packaging](Chapter07)
+
+Chapter 8: [Package Management](Chapter08)
+
+Chapter 9: [The Future of C++ Code Reuse: Using Modules](Chapter09)
+
+**Part 3: Developing Quality Software**
+
+Chapter 10: [Writing Testable Code](Chapter10)
+
+Chapter 11: [Continuous Integration and Continuous Deployment](Chapter11)
+
+Chapter 12: [Security in Code and Deployment](Chapter12)
+
+Chapter 13: [Performance](Chapter13)
+
+**Part 4: Cloud Native design and distributed systems**
+
+Chapter 14: [Architecture of Distributed Systems](Chapter14)
+
+Chapter 15: [Interservice communication](Chapter15)
+
+Chapter 16: [Containers](Chapter16)
+
+Chapter 17: [Observability](Chapter17)
+
+Chapter 18: [Cloud Native Design](Chapter18)
+
+### Development environment
 
 Follow these guides to configure the development environment:
 
@@ -118,11 +123,13 @@ Follow these guides to configure the development environment:
 
 You need at least one of the following compilers:
 
-| No. | Software required          | OS required                        |
-| --- | -------------------------- | ---------------------------------- |
-| 1   | GCC 15                     | Windows, Mac OS X, and Linux (Any) |
-| 2   | Clang 20                   | Windows, Mac OS X, and Linux (Any) |
-| 3   | Microsoft Visual C++ 19.44 | Windows                            |
+| No. | Software required                | OS required                        |
+| --- | -------------------------------- | ---------------------------------- |
+| 1   | GCC 15                           | Windows, Mac OS X, and Linux (Any) |
+| 2   | Clang 20                         | Windows, Mac OS X, and Linux (Any) |
+| 3   | MSVC Build Tools 19.50 (VS 2026) | Windows                            |
+
+The examples are compatible with earlier versions of C++ compilers (GCC 14, Clang 19 and MSVC 19.44), but not all of them.
 
 ### Instructions and navigations
 
@@ -136,13 +143,6 @@ The code will look like the following:
     if (str[i] == '.') count++;
   }
 ```
-
-**Following is what you need for this book:**
-
-This software architecture C++ programming book is for experienced C++ developers who are looking to become software architects
-or are interested in developing enterprise-grade applications.
-
-With the following software and hardware list you can run all code files present in the book (Chapter 1-18).
 
 ### Get to know the authors
 
@@ -163,7 +163,7 @@ When not making his skills useful at work, you can find him building communities
 
 **Andrey Gavrilin**
 is a seasoned software engineer who started his journey into software development many years ago. His career began with an eagerness for computer games,
-which led to learning C++, Pascal and Assembly languages. He has an MSc degree in engineering (industrial automation) and
+which led to learning C++, Pascal and the assembly language. He has an MSc degree in engineering (industrial automation) and
 has worked in different areas which allowed him to gain comprehension of the importance of quality software architecture.
 His interests include system, embedded and game programming, electronics. Being an enthusiast of retro gaming and vintage computing,
 he enjoys exploring how historical technologies inform modern system design. These hobbies complement his professional work,

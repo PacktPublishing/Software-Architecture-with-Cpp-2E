@@ -63,7 +63,7 @@ that support CMake-based projects.
 
 ## Local Kubernetes installation
 
-- [Microk8s](https://microk8s.io/docs/install-macos)
+- [MicroK8s](https://microk8s.io/docs/install-macos)
 - [minikube](https://minikube.sigs.k8s.io/docs/)
 - [k8s kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
 - [Rancher Desktop](https://docs.rancherdesktop.io/ui/preferences/kubernetes/)
@@ -113,3 +113,12 @@ Conan can use a compiler other than the [auto-detected](https://docs.conan.io/2/
 tools.cmake.cmaketoolchain:generator=Ninja
 tools.build:compiler_executables={"c":"/usr/bin/gcc","cpp":"/usr/bin/g++"}
 ```
+
+Conan can also determine current C and C++ compilers from the CC and CXX environment variables.
+For instance, this command overwrites the default profile:
+
+```bash
+CC=/usr/bin/clang CXX=/usr/bin/clang++ conan profile detect --force
+```
+
+The package manager may not detect compilers correctly, so you need to specify the settings yourself in this case.

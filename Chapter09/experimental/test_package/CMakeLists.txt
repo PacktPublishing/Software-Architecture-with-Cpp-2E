@@ -9,7 +9,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # https://github.com/Kitware/CMake/blob/master/Help/dev/experimental.rst
 
 # cmake-format: off
-# set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "a9e1cf81-9932-4810-974b-6eccaf14e457")  # clang 20.1 and msvc 19.44
+# set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "a9e1cf81-9932-4810-974b-6eccaf14e457")  # clang 20.1 and msvc 19.44 (VS 2022)
 set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "d0edc3af-4c50-42ea-a356-e2862fe7a444")  # gcc 15.2
 # cmake-format: on
 

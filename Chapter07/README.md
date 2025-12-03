@@ -10,7 +10,7 @@ Install the following software:
 
 - CMake 3.28
 - Conan 2
-- GCC 15
+- GCC 15, Clang 20, MSVC 19.50
 
 For optional packaging with CPack:
 

@@ -13,7 +13,7 @@ services:
       dashboard:
         condition: service_started
   dashboard:
-    image: mcr.microsoft.com/dotnet/aspire-dashboard:9.4
+    image: mcr.microsoft.com/dotnet/aspire-dashboard:13.0.0
     hostname: dashboard
     ports:
       - "18888:18888"

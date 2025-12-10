@@ -22,7 +22,7 @@ void init_metrics() {
   auto exporter =
       otlp_exporter::OtlpGrpcMetricExporterFactory::Create(exporter_options);
 
-  constexpr metrics_sdk::PeriodicExportingMetricReaderOptions reader_options;
+  const metrics_sdk::PeriodicExportingMetricReaderOptions reader_options;
   std::unique_ptr<metrics_sdk::MetricReader> reader{
       new metrics_sdk::PeriodicExportingMetricReader(std::move(exporter),
                                                      reader_options)};

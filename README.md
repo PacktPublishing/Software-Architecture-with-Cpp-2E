@@ -55,16 +55,16 @@ and familiar with basic design principles and patterns.
 
 If you feel this book is for you, get your copy today!
 
-- [<img src="pics/store-svgrepo-com.svg" height="14em;"/> Packt](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016)
-- [<img src="pics/store-svgrepo-com.svg" height="14em;"/> Amazon](https://www.amazon.com/Software-Architecture-Designing-Architectural-Practices/dp/1803243015/)
-- [<img src="pics/store-svgrepo-com.svg" height="14em;"/> Waterstones](https://www.waterstones.com/book/software-architecture-with-c/andrey-gavrilin/adrian-ostrowski/9781803243016)
-- [<img src="pics/store-svgrepo-com.svg" height="14em;"/> Indigo](https://www.indigo.ca/en-ca/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices/4f642cc1-2e6c-3599-a59a-49667b0d7be4.html)
-- [<img src="pics/store-svgrepo-com.svg" height="14em;"/> Rakuten Kobo](https://www.kobo.com/us/en/ebook/software-architecture-with-c-1)
-- [<img src="pics/store-svgrepo-com.svg" height="14em;"/> Fnac](https://www.fnac.com/livre-numerique/a21817433/Andrey-Gavrilin-Software-Architecture-with-C)
-- [<img src="pics/store-svgrepo-com.svg" height="14em;"/> Bol](https://www.bol.com/nl/fr/p/software-architecture-with-c/9300000235129507/)
-- [<img src="pics/store-svgrepo-com.svg" height="14em;"/> Lehmanns Media](https://www.lehmanns.de/shop/naturwissenschaften/80646854-9781803243016-software-architecture-with-cplusplus)
-- [<img src="pics/store-svgrepo-com.svg" height="14em;"/> Ebookpoint](https://ebookpoint.pl/ksiazki/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-s-andrey-gavrilin-adrian-ostrowski-piotr-gaczkowsk,e_4ikt.htm)
-- [<img src="pics/store-svgrepo-com.svg" height="14em;"/> Helion](https://helion.pl/ksiazki/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-s-andrey-gavrilin-adrian-ostrowski-piotr-gaczkowsk,e_4ikt.htm)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Packt](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Amazon](https://www.amazon.com/Software-Architecture-Designing-Architectural-Practices/dp/1803243015/)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Waterstones](https://www.waterstones.com/book/software-architecture-with-c/andrey-gavrilin/adrian-ostrowski/9781803243016)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Indigo](https://www.indigo.ca/en-ca/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices/4f642cc1-2e6c-3599-a59a-49667b0d7be4.html)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Rakuten Kobo](https://www.kobo.com/us/en/ebook/software-architecture-with-c-1)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Fnac](https://www.fnac.com/livre-numerique/a21817433/Andrey-Gavrilin-Software-Architecture-with-C)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Bol](https://www.bol.com/nl/fr/p/software-architecture-with-c/9300000235129507/)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Lehmanns Media](https://www.lehmanns.de/shop/naturwissenschaften/80646854-9781803243016-software-architecture-with-cplusplus)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Ebookpoint](https://ebookpoint.pl/ksiazki/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-s-andrey-gavrilin-adrian-ostrowski-piotr-gaczkowsk,e_4ikt.htm)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Helion](https://helion.pl/ksiazki/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-s-andrey-gavrilin-adrian-ostrowski-piotr-gaczkowsk,e_4ikt.htm)
 
 ### Table of contents
 
@@ -116,19 +116,19 @@ Chapter 18: [Cloud Native Design](Chapter18)
 
 Follow these guides to configure the development environment:
 
-- [<img src="pics/os/linux-svgrepo-com.svg" height="14em;"/> Linux environment](devenv_readme/devenv_linux.md)
-- [<img src="pics/os/apple-svgrepo-com.svg" height="14em;"/> macOS environment](devenv_readme/devenv_macos.md)
-- [<img src="pics/os/microsoft-svgrepo-com.svg" height="12em;"/> Windows environment](devenv_readme/devenv_windows.md)
+- [<img src="pics/os/gnu-linux-svgrepo-com.svg" height="18em;"/> Linux environment](devenv_readme/devenv_linux.md)
+- [<img src="pics/os/apple-svgrepo-com.svg" height="18em;"/> macOS environment](devenv_readme/devenv_macos.md)
+- [<img src="pics/os/microsoft-svgrepo-com.svg" height="18em;"/> Windows environment](devenv_readme/devenv_windows.md)
 
 ### C++ compilers
 
 You need at least one of the following compilers:
 
-| No. | Software required | OS required |
-| --- | ------------------------------- | ---------------------------------- |
-| 1 | GCC 15 | Windows, Mac OS X, and Linux (Any) |
-| 2 | Clang 20 | Windows, Mac OS X, and Linux (Any) |
-| 3 | MSVC 19.50 (VS 2026) | Windows |
+| No. | Software required    | OS required                        |
+| --- | -------------------- | ---------------------------------- |
+| 1   | GCC 15               | Windows, Mac OS X, and Linux (Any) |
+| 2   | Clang 20             | Windows, Mac OS X, and Linux (Any) |
+| 3   | MSVC 19.50 (VS 2026) | Windows                            |
 
 The examples are compatible with earlier versions of C++ compilers (GCC 14, Clang 19 and MSVC 19.44), but not all of them.
 

@@ -201,7 +201,7 @@ $env:CXX="C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14
 conan profile detect --force
 ```
 
-The Conan profile for MSVC Build Tools 19.50 (Visual Studio 2026) may look like this one:
+The Conan profile for MSVC 19.50 (Visual Studio 2026) may look like this one:
 
 ```
 [settings]

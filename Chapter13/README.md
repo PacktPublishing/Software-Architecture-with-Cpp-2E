@@ -96,7 +96,7 @@ The Boost library depends on the Python interpreter installed on the system.
 So, this library may require installing additional Python modules such as numpy.
 The compiled library can be downloaded from the official [website](https://www.boost.org/releases/latest/).
 
-The Conan profile for MSVC Build Tools 19.50 (Visual Studio 2026) may look like this one:
+The Conan profile for MSVC 19.50 (Visual Studio 2026) may look like this one:
 
 ```
 [settings]
@@ -115,7 +115,7 @@ tools.microsoft.msbuild:vs_version=18
 
 However, if Conan packages are not built, it may make sense to try previous versions of MSVC Build Tools.
 The same C++ compiler must also be chosen in the IDE settings.
-Thus, The Conan profile for MSVC Build Tools 19.44 (Visual Studio 2026) may look like this one:
+Thus, The Conan profile for MSVC 19.44 (Visual Studio 2026) may look like this one:
 
 ```
 [settings]

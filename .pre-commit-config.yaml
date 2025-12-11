@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: fix-byte-order-marker
       - id: check-case-conflict
@@ -17,7 +17,7 @@ repos:
       - id: trailing-whitespace
         exclude: \.patch$
   - repo: https://github.com/pre-commit/mirrors-clang-format
-    rev: v20.1.6
+    rev: v21.1.7
     hooks:
       - id: clang-format
         args: [--style=llvm, -i]
@@ -26,7 +26,7 @@ repos:
     hooks:
       - id: cmake-format
   - repo: https://github.com/hukkin/mdformat
-    rev: 0.7.22
+    rev: 1.0.0
     hooks:
       - id: mdformat
         additional_dependencies:

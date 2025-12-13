@@ -31,13 +31,14 @@ There are several options:
 In addition, the container images can be independently built from the directory `.devcontainer`:
 
 ```bash
+cd .devcontainer
 docker build -t cheerp .
 ```
 
 And used to compile applications in running containers, which requires mounting the source code directory:
 
 ```bash
-docker run --rm -v $(pwd):/src -u $(id -u):$(id -g) cheerp clang++ main.cpp -o app.js
+docker run --rm -v $(pwd):/src -u $(id -u):$(id -g) cheerp clang++ app.cpp -o app.js
 ```
 
 ##### [Installing Cheerp on Windows](https://cheerp.io/docs/getting-started/installation#installing-cheerp-on-windows)
@@ -72,6 +73,8 @@ Or [Python](https://www.python.org/downloads/):
 ```bash
 python -m http.server 8000
 ```
+
+Run these commands from the directory containing app.html, built app.js and app.wasm.
 
 #### [Building a CMake project using Cheerp](https://cheerp.io/docs/guides/build-systems/cmake)
 

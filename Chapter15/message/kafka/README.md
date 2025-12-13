@@ -87,6 +87,6 @@ docker compose up -d
 Apache Kafka is written in Java, but the Java code is compiled into a native executable using GraalVM.
 This native executable includes only the code required at runtime, including application classes, standard library classes,
 the language runtime, and statically linked native code from the JDK. It has a smaller image size, faster startup time
-and lower memory usage. As a result, apache/kafka-native:4.1.0 (143MB) vs apache/kafka:4.1.0 (437MB).
+and lower memory usage. As a result, apache/kafka-native:4.1.1 (144MB) vs apache/kafka:4.1.1 (429MB).
 
 [Kafbat](https://kafbat.io/) is versatile, fast and lightweight web UI for managing Apache Kafka® clusters.

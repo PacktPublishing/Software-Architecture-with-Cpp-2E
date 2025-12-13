@@ -1,7 +1,7 @@
 name: artifactory
 services:
   postgres:
-    image: releases-docker.jfrog.io/postgres:16.8-alpine
+    image: releases-docker.jfrog.io/postgres:17.6-alpine
     container_name: postgresql
     environment:
       - POSTGRES_DB=artifactory
@@ -13,7 +13,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - /etc/localtime:/etc/localtime:ro
   artifactory-ce:
-    image: releases-docker.jfrog.io/jfrog/artifactory-cpp-ce:7.117.15
+    image: releases-docker.jfrog.io/jfrog/artifactory-cpp-ce:7.117.19
     container_name: artifactory-ce
     volumes:
       - artifactory_data:/var/opt/jfrog/artifactory

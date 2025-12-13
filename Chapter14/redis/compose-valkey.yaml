@@ -1,8 +1,6 @@
 services:
   valkey:
-    image: bitnami/valkey:8.1
+    image: valkey/valkey:9.0
     hostname: valkey
-    environment:
-      - ALLOW_EMPTY_PASSWORD=yes
     ports:
       - "6379:6379"

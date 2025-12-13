@@ -18,6 +18,7 @@ class CustomerConan(ConanFile):
 
     def requirements(self):
         self.requires("drogon/1.9.11")
+        self.requires("trantor/1.5.23")
 
     def build_requirements(self):
         self.test_requires("gtest/1.17.0")

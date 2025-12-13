@@ -1,5 +1,6 @@
 [requires]
 drogon/1.9.11
+trantor/1.5.23
 
 [generators]
 CMakeDeps

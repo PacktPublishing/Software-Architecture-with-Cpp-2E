@@ -1,5 +1,6 @@
 [requires]
 drogon/1.9.11
+trantor/1.5.23
 boost/1.89.0
 catch2/3.11.0
 doctest/2.4.12

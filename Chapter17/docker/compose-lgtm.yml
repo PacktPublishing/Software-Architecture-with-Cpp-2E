@@ -1,7 +1,7 @@
 name: observability
 services:
   loki:
-    image: grafana/loki:3.5
+    image: grafana/loki:3.6
     container_name: loki
     ports:
       - "3100:3100"
@@ -12,7 +12,7 @@ services:
       - lgtm
     restart: unless-stopped
   alloy:
-    image: grafana/alloy:v1.10.0
+    image: grafana/alloy:v1.12.0
     container_name: alloy
     volumes:
       - ./config/config.alloy:/etc/alloy/config.alloy
@@ -22,7 +22,7 @@ services:
       - lgtm
     restart: unless-stopped
   prometheus:
-    image: prom/prometheus:v3.4.1
+    image: prom/prometheus:v3.8.0
     container_name: prometheus
     ports:
       - "9090:9090"
@@ -32,7 +32,7 @@ services:
       - lgtm
     restart: unless-stopped
   node-exporter:
-    image: quay.io/prometheus/node-exporter:v1.9.1
+    image: prom/node-exporter:v1.10.2
     container_name: node-exporter
     ports:
       - "9100:9100"
@@ -40,7 +40,7 @@ services:
       - lgtm
     restart: unless-stopped
   grafana:
-    image: grafana/grafana:12.0.1
+    image: grafana/grafana:12.3
     container_name: grafana
     ports:
       - "3000:3000"

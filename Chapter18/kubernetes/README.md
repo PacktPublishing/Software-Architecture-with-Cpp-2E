@@ -12,8 +12,8 @@ MicroK8s is a production-grade conformant K8s tool. This manual describes differ
 
 ### MicroK8s
 
-The examples were tested with [MicroK8S](https://microk8s.io/docs/command-reference)
-([getting started](https://microk8s.io/docs/getting-started)) on Linux. Using this tool on macOS and Windows is similar.
+The examples were tested with [MicroK8S](https://canonical.com/microk8s/docs/command-reference)
+([getting started](https://canonical.com/microk8s/docs/getting-started)) on Linux. Using this tool on macOS and Windows is similar.
 
 Join the group `microk8s` not to apply `sudo microk8s` every time:
 
@@ -21,13 +21,13 @@ Join the group `microk8s` not to apply `sudo microk8s` every time:
 sudo usermod -a -G microk8s $USER
 ```
 
-MicroK8s [addons](https://microk8s.io/docs/addons) ([how to manage addons](https://microk8s.io/docs/how-to-manage-addons)):
+MicroK8s [addons](https://canonical.com/microk8s/docs/addons) ([how to manage addons](https://canonical.com/microk8s/docs/how-to-manage-addons)):
 
 Mandatory addons (for the examples):
 
-- [dns](https://microk8s.io/docs/addon-dns) - deploys CoreDNS
+- [dns](https://canonical.com/microk8s/docs/addon-dns) - deploys CoreDNS
 - [helm](https://helm.sh/docs/) - installs the Helm package manager
-- [ingress](https://microk8s.io/docs/addon-ingress) - a simple ingress controller for external access
+- [ingress](https://canonical.com/microk8s/docs/addon-ingress) - a simple ingress controller for external access
 
 ```bash
 microk8s enable dns
@@ -37,11 +37,11 @@ microk8s enable helm
 
 Optional addons:
 
-- [dashboard](https://microk8s.io/docs/addon-dashboard) - the standard Kubernetes dashboard
-- [host-access](https://microk8s.io/docs/addon-host-access) - provides a fixed IP for access to the host’s services
-- [registry](https://microk8s.io/docs/registry-built-in) - deploy a private image registry and expose it on localhost:32000
-- [metallb](https://microk8s.io/docs/addon-metallb) - deploys the [MetalLB LoadBalancer](https://metallb.io/)
-- [community](https://microk8s.io/docs/howto-addons#promote-your-work-in-the-microk8s-community-repo) - community maintained addons
+- [dashboard](https://canonical.com/microk8s/docs/addon-dashboard) - the standard Kubernetes dashboard
+- [host-access](https://canonical.com/microk8s/docs/addon-host-access) - provides a fixed IP for access to the host’s services
+- [registry](https://canonical.com/microk8s/docs/registry-built-in) - deploy a private image registry and expose it on localhost:32000
+- [metallb](https://canonical.com/microk8s/docs/addon-metallb) - deploys the [MetalLB LoadBalancer](https://metallb.io/)
+- [community](https://canonical.com/microk8s/docs/howto-addons#promote-your-work-in-the-microk8s-community-repo) - community maintained addons
 
 ```bash
 microk8s enable dashboard
@@ -66,13 +66,13 @@ microk8s kubectl get nodes -o wide
 microk8s enable metallb
 ```
 
-The alternative is to provide the address as the [IP address pool](https://microk8s.io/docs/addon-metallb) parameter:
+The alternative is to provide the address as the [IP address pool](https://canonical.com/microk8s/docs/addon-metallb) parameter:
 
 ```bash
 microk8s enable metallb <node-ip>-<node-ip>
 ```
 
-Or enable the addon [host-access](https://microk8s.io/docs/addon-host-access) instead of retrieving a node IP address.
+Or enable the addon [host-access](https://canonical.com/microk8s/docs/addon-host-access) instead of retrieving a node IP address.
 The default IP address is 10.0.1.1:
 
 ```bash
@@ -99,7 +99,7 @@ Kubernetes UI:
 - [Headlamp](https://headlamp.dev/)
 - [Portainer](https://docs.portainer.io/start/install-ce/server/kubernetes/baremetal)
 
-#### [Aspire Dashboard](https://aspiredashboard.com/)
+#### [Aspire Dashboard](https://aspire.dev/dashboard/overview/)
 
 Aspire Dashboard was chosen just as a simple 3-in-1 solution for local development: metrics, logs and traces.
 Deploy the dashboard on Kubernetes with [helm](https://helm.sh/docs/helm/)
@@ -133,7 +133,7 @@ Transfer the file `values.yaml` to the virtual machine (VM) if MicroK8S runs on 
 multipass transfer values.yaml microk8s-vm:
 ```
 
-To open the [shell](https://canonical.com/multipass/docs/shell-command) on the VM in Multipass:
+To open the [shell](https://documentation.ubuntu.com/multipass/stable/reference/command-line-interface/shell/) on the VM in Multipass:
 
 ```bash
 multipass shell microk8s-vm
@@ -160,8 +160,8 @@ Build [the Docker image](../README.md#docker)
 
 There are two options to load the image to Kubernetes in MicroK8s:
 
-- [built-in registry](https://microk8s.io/docs/registry-built-in) (the image name will differ from the local name)
-- [image side-loading](https://microk8s.io/docs/sideload)
+- [built-in registry](https://canonical.com/microk8s/docs/registry-built-in) (the image name will differ from the local name)
+- [image side-loading](https://canonical.com/microk8s/docs/sideload)
 
 ```bash
 mkdir -p build && cd build
@@ -176,7 +176,7 @@ Transfer the file `customer.tar` to the virtual machine (VM) if MicroK8S runs on
 multipass transfer customer.tar microk8s-vm:
 ```
 
-Deploy the app on Kubernetes with [kubectl](https://microk8s.io/docs/working-with-kubectl)
+Deploy the app on Kubernetes with [kubectl](https://canonical.com/microk8s/docs/working-with-kubectl)
 
 ```bash
 microk8s kubectl apply -f manifest.yaml
@@ -195,7 +195,7 @@ To delete the app:
 microk8s kubectl delete -f manifest.yaml
 ```
 
-`kubectl` can be executed [directly](https://microk8s.io/docs/working-with-kubectl).
+`kubectl` can be executed [directly](https://canonical.com/microk8s/docs/working-with-kubectl).
 Apply it again when the IP address in changed:
 
 ```bash
@@ -270,9 +270,10 @@ Network redirection is configuration sensitive. Using `127.0.0.1` also works loc
 
 Open [customer app](http://customer.local/customer/v1?name=anonymous) and [dashboard](http://dashboard.local) in a browser.
 
-[Tutorials](https://microk8s.io/tutorials) and [guides](https://microk8s.io/docs/how-to) for MicroK8S.
+[Tutorials](https://microk8s.io/tutorialshttps://canonical.com/microk8s/tutorials) and
+[guides](https://canonical.com/microk8s/docs/how-to) for MicroK8S.
 
-#### [Troubleshooting](https://microk8s.io/docs/troubleshooting)
+#### [Troubleshooting](https://canonical.com/microk8s/docs/troubleshooting)
 
 Refresh the certificates if `microk8s dashboard-proxy` fails to verify the certificate:<br>
 `error: error upgrading connection: error dialing backend: tls: failed to verify certificate: x509: certificate is valid for`<br>

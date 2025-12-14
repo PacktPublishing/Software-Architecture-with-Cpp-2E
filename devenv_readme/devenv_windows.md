@@ -134,7 +134,7 @@ Your configuration will be saved in [CMakeSettings.json](https://learn.microsoft
 
 ## Local Kubernetes installation
 
-- [MicroK8s](https://microk8s.io/docs/install-windows) or [WSL2](https://microk8s.io/docs/install-wsl2)
+- [MicroK8s](https://canonical.com/microk8s/docs/install-windows) or [WSL2](https://canonical.com/microk8s/docs/install-wsl2)
 - [minikube](https://minikube.sigs.k8s.io/docs/)
 - [k8s kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
 - [Rancher Desktop](https://docs.rancherdesktop.io/ui/preferences/kubernetes/)

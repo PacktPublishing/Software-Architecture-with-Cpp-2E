@@ -18,7 +18,7 @@ Build the Docker image and run one of these tools
 
 #### Aspire Dashboard
 
-A free & open-source OpenTelemetry [dashboard](https://aspiredashboard.com/) for deep insights into your apps on your local development machine.
+A free & open-source OpenTelemetry [dashboard](https://artifacthub.io/packages/helm/aspire-dashboard/aspire-dashboard) for deep insights into your apps on your local development machine.
 
 ```bash
 docker compose -f ./aspire/compose.yaml up

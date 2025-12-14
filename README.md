@@ -2,7 +2,7 @@
 
 Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
-<a href="https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016">
+<a href="https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803235059">
   <img src="pics/book_cover.jpg" height="200px" align="right" alt="book cover"/>
 </a>
 
@@ -55,8 +55,9 @@ and familiar with basic design principles and patterns.
 
 If you feel this book is for you, get your copy today!
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Packt](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Packt](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803235059)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Amazon](https://www.amazon.com/Software-Architecture-Designing-Architectural-Practices/dp/1803243015/)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Barnes & Noble](https://www.barnesandnoble.com/w/software-architecture-with-c-andrey-gavrilin/1147771333)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Waterstones](https://www.waterstones.com/book/software-architecture-with-c/andrey-gavrilin/adrian-ostrowski/9781803243016)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Indigo](https://www.indigo.ca/en-ca/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices/4f642cc1-2e6c-3599-a59a-49667b0d7be4.html)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Rakuten Kobo](https://www.kobo.com/us/en/ebook/software-architecture-with-c-1)

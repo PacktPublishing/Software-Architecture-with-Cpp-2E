@@ -83,7 +83,7 @@ Just run the Kafka server:
 docker compose up -d
 ```
 
-[The RabbitMQ management plugin ](https://www.rabbitmq.com/docs/management)provides an HTTP-based API for management and
+[The RabbitMQ management plugin ](https://www.rabbitmq.com/docs/management) provides an HTTP-based API for management and
 monitoring of RabbitMQ nodes and clusters, along with a browser-based UI and a command line tool, rabbitmqadmin.
 
 ### Troubleshooting

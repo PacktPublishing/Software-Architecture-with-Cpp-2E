@@ -70,7 +70,7 @@ that support CMake-based projects.
 
 ## Local Kubernetes installation
 
-- [MicroK8s](https://microk8s.io/docs/getting-started)
+- [MicroK8s](https://canonical.com/microk8s/docs/getting-started)
 - [minikube](https://minikube.sigs.k8s.io/docs/)
 - [k8s kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
 - [K3s](https://docs.k3s.io/installation)

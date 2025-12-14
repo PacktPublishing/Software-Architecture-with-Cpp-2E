@@ -1,4 +1,4 @@
-FROM ubuntu:questing
+FROM ubuntu:resolute
 ADD Customer-@PROJECT_VERSION@-Linux.deb .
 
 RUN apt update && \

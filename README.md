@@ -59,11 +59,21 @@ If you feel this book is for you, get your copy today!
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Amazon](https://www.amazon.com/Software-Architecture-Designing-Architectural-Practices/dp/1803243015/)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Barnes & Noble](https://www.barnesandnoble.com/w/software-architecture-with-c-andrey-gavrilin/1147771333)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Waterstones](https://www.waterstones.com/book/software-architecture-with-c/andrey-gavrilin/adrian-ostrowski/9781803243016)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Blackwell's](https://blackwells.co.uk/bookshop/product/Software-Architecture-With-C-by-Andrey-Gavrilin-Adrian-Ostrowski-Piotr-Gaczkowski/9781803243016)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Indigo](https://www.indigo.ca/en-ca/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices/4f642cc1-2e6c-3599-a59a-49667b0d7be4.html)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Rakuten Kobo](https://www.kobo.com/us/en/ebook/software-architecture-with-c-1)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Fnac](https://www.fnac.com/livre-numerique/a21817433/Andrey-Gavrilin-Software-Architecture-with-C)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Bol](https://www.bol.com/nl/fr/p/software-architecture-with-c/9300000235129507/)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Lehmanns Media](https://www.lehmanns.de/shop/naturwissenschaften/80646854-9781803243016-software-architecture-with-cplusplus)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Mofibo](https://mofibo.com/dk/books/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-13244520)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Adlibris](https://www.adlibris.com/sv/bok/software-architecture-with-c-9781803243016)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Booktopia](https://www.booktopia.com.au/software-architecture-with-c-second-edition-andrey-gavrilin/book/9781803243016.html)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Storytel](https://www.storytel.com/books/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-13244520)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Books Kinokuniya](https://united-states.kinokuniya.com/bw/9781803243016)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> eBooks.com](https://www.ebooks.com/book/346725460/software-architecture-with-c/andrey-gavrilin/)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Google Books](https://play.google.com/store/books/details/Andrey_Gavrilin_Software_Architecture_with_C?id=DkihEQAAQBAJ)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> O'Reilly](https://www.oreilly.com/library/view/software-architecture-with/9781803243016/)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Browns Books](https://www.brownsbfs.co.uk/Product/Gavrilin-Andrey/Software-Architecture-with-C/9781803243016)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Ebookpoint](https://ebookpoint.pl/ksiazki/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-s-andrey-gavrilin-adrian-ostrowski-piotr-gaczkowsk,e_4ikt.htm)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Helion](https://helion.pl/ksiazki/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-s-andrey-gavrilin-adrian-ostrowski-piotr-gaczkowsk,e_4ikt.htm)
 
@@ -132,6 +142,8 @@ You need at least one of the following compilers:
 | 3   | MSVC 19.50 (VS 2026) | Windows                            |
 
 The examples are compatible with earlier versions of C++ compilers (GCC 14, Clang 19 and MSVC 19.44), but not all of them.
+
+We also provide a [PDF file](https://packt.link/gbp/9781803243016) that has color images of the screenshots/diagrams used in this book.
 
 ### Instructions and navigations
 

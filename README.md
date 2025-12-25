@@ -2,7 +2,7 @@
 
 Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
-<a href="https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803235059">
+<a href="https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016">
   <img src="pics/book_cover.jpg" height="200px" align="right" alt="book cover"/>
 </a>
 
@@ -101,20 +101,29 @@ Chapter 18: [Cloud Native Design](Chapter18)
 
 If you feel this book is for you, get your copy today!
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Packt](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803235059)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Packt](https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Amazon](https://www.amazon.com/Software-Architecture-Designing-Architectural-Practices/dp/1803243015/)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Barnes & Noble](https://www.barnesandnoble.com/w/software-architecture-with-c-andrey-gavrilin/1147771333)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Waterstones](https://www.waterstones.com/book/software-architecture-with-c/andrey-gavrilin/adrian-ostrowski/9781803243016)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Blackwell's](https://blackwells.co.uk/bookshop/product/Software-Architecture-With-C-by-Andrey-Gavrilin-Adrian-Ostrowski-Piotr-Gaczkowski/9781803243016)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Indigo](https://www.indigo.ca/en-ca/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices/4f642cc1-2e6c-3599-a59a-49667b0d7be4.html)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Rakuten Kobo](https://www.kobo.com/us/en/ebook/software-architecture-with-c-1)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> VitalSource](https://www.vitalsource.com/en-uk/products/software-architecture-with-c-andrey-gavrilin-v9781803235059)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> World of Books](https://www.worldofbooks.com/en-gb/products/software-architecture-with-c-book-andrey-gavrilin-9781803243016)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Accuris](https://store.accuristech.com/standards/software-architecture-with-c-second-edition?product_id=3043703)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Fnac](https://www.fnac.com/livre-numerique/a21817433/Andrey-Gavrilin-Software-Architecture-with-C)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Bol](https://www.bol.com/nl/fr/p/software-architecture-with-c/9300000235129507/)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Lehmanns Media](https://www.lehmanns.de/shop/naturwissenschaften/80646854-9781803243016-software-architecture-with-cplusplus)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Mofibo](https://mofibo.com/dk/books/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-13244520)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Adlibris](https://www.adlibris.com/sv/bok/software-architecture-with-c-9781803243016)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Booktopia](https://www.booktopia.com.au/software-architecture-with-c-second-edition-andrey-gavrilin/book/9781803243016.html)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> AbeBooks](https://www.abebooks.com/servlet/BookDetailsPL?bi=32363909671)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Better World Books](https://www.betterworldbooks.com/product/detail/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-9781803243016)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Storytel](https://www.storytel.com/books/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-13244520)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Foyles](https://www.foyles.co.uk/book/software-architecture-with-c/andrey-gavrilin/9781803243016)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Bücher.de](https://www.buecher.de/artikel/ebook/software-architecture-with-c-ebook-epub/76236833)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Orell Füssli](https://www.orellfuessli.ch/shop/home/artikeldetails/A1077802198)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Ex Libris](https://www.exlibris.ch/de/buecher-buch/englische-ebooks/andrey-gavrilin/software-architecture-with-c/id/9781803235059)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Books Kinokuniya](https://united-states.kinokuniya.com/bw/9781803243016)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> eBooks.com](https://www.ebooks.com/book/346725460/software-architecture-with-c/andrey-gavrilin/)
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> Google Books](https://play.google.com/store/books/details/Andrey_Gavrilin_Software_Architecture_with_C?id=DkihEQAAQBAJ)

@@ -273,6 +273,8 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **CampusBooks.com (com)**](https://www.campusbooks.com/search/9781803243016)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Ceneo**](https://www.ceneo.pl/192562627)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Cellar Door Bookstore (com)**](https://cellardoorbookstore.com/book/9781803243016)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Chasse aux Livres (fr)**](https://www.chasse-aux-livres.fr/prix/1803243015/software-architecture-with-c-andrey-gavrilin)

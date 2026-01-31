@@ -211,7 +211,7 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Akademibokhandeln (se)**](https://www.akademibokhandeln.se/bok/software-architecture-with-c/9781803243016)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Aladin Communication (co.kr)**](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=382759946)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Aladin (co.kr)**](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=382759946)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Alibris (com)**](https://www.alibris.com/Software-Architecture-with-C-Designing-Robust-C-Systems-with-Modern-Architectural-Practices-Andrey-Gavrilin/book/56621941)
 
@@ -239,13 +239,15 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Bokus (com)**](https://www.bokus.com/bok/9781803243016/software-architecture-with-c/)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **BooksRun (com)**](https://booksrun.com/9781803243016-software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-2nd-edition)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Bol (com)**](https://www.bol.com/nl/fr/p/software-architecture-with-c/9300000235129507/)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **BookFinder.com (com)**](https://www.bookfinder.com/isbn/9781803243016/)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Bookhype (com)**](https://bookhype.com/index.php/book/show/9f4f448c-db11-415c-81fc-5a012a2ca38a/software-architecture-with-c)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Bookmall (co.za)**](https://www.bookmall.co.za/Software-Architecture-with-C-Designing-robust-C-systems-with-modern-architectural-practices-ap-1803243015.html)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **BookMall (co.za)**](https://www.bookmall.co.za/Software-Architecture-with-C-Designing-robust-C-systems-with-modern-architectural-practices-ap-1803243015.html)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Books etc. (co.uk)**](https://www.booksetc.co.uk/books/view/-9781803243016)
 
@@ -272,6 +274,8 @@ In book stores:
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Bücher.de (de)**](https://www.buecher.de/artikel/buch/software-architecture-with-c-second-edition/76242185/)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **CampusBooks.com (com)**](https://www.campusbooks.com/search/9781803243016)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Ceneo**](https://www.ceneo.pl/192562627)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Cellar Door Bookstore (com)**](https://cellardoorbookstore.com/book/9781803243016)
 
@@ -361,9 +365,13 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Libristo (ro)**](https://www.libristo.ro/ro/carte/software-architecture-with-c-second-edition_50252706)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Logobook (ru)**](https://www.logobook.ru/prod_show.php?object_uid=16677426)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Magazyn (pl)**](https://helion.magazyn.pl/Software-Architecture-with-C-Designing-Robust-C-Systems-with-Modern-Architectura/e_4ikt_ebook/ksiazka.html)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Manz Webshop (at)**](https://shop.manz.at/shop/products/9781803243016)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **MBA Bookstore (com)**](https://mbabookstore.com/product/software-architecture-with-c-2d-edition-by-andrey-gavrilin/)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Medimops (de)**](https://www.medimops.de/andrey-gavrilin-software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-paperback-M01803243015.html)
 
@@ -377,11 +385,15 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Morgenweb eBooks (com)**](https://morgenweb.ciando-shop.com/ebook/bid-4304687-software-architecture-with-c--designing-robust-c-systems-with-modern-architectural-practices/)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Nejlevnější knihy (cz)**](https://www.nejlevnejsi-knihy.cz/kniha/software-architecture-with-c-second-edition_50252706.html)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Nextory (com)**](https://nextory.com/es/book/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-5211839)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Northtown Books (com)**](https://www.northtownbooks.com/book/9781803243016)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Oblong Books (com)**](https://oblongbooks.com/book/9781803243016)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **OpenTrolley (co.id)**](https://opentrolley.co.id/book/9781803243016/software-architecture-w-c-)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Orell Füssli (ch)**](https://www.orellfuessli.ch/shop/home/artikeldetails/A1077805650)
 
@@ -409,6 +421,8 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Sandman Books (com)**](https://sandmanbooks.com/book/9781803243016)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Sanmin (com.tw)**](https://www.sanmin.com.tw/product/index/015133563)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Saxo (com)**](https://www.saxo.com/dk/software-architecture-with-c-second-edition_bog_9781803243016)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Schweitzer Fachinformationen (de)**](https://www.schweitzer-online.de/buch/Gavrilin/Software-Architecture-Cplusplus/9781803243016/A74541283/)
@@ -429,7 +443,15 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **TextbookX (com)**](https://www.textbookx.com/book/Software-Architecture-with-C/9781803243016/)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Thriftbooks (com)**](https://www.thriftbooks.com/w/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices_piotr-gaczkowski_adrian-ostrowski/57748300/#edition=74880207&idiq=87713972)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **The Nile (co.nz)**](https://www.thenile.co.nz/books/andrey-gavrilin/software-architecture-with-c/9781803243016)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **ThriftBooks (com)**](https://www.thriftbooks.com/w/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices_piotr-gaczkowski_adrian-ostrowski/57748300/#edition=74880207&idiq=87713972)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Tiendamia (cr)**](https://www.tiendamia.cr/p/amz/1803243015/software-architecture-with-c-designing-robust-c-systems-with-modern)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Tokopedia**](https://www.tokopedia.com/rejekibookstore-1/software-architecture-with-c-second-edition-1733941915957364183)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Torob**](https://torob.com/p/013fd8e9-4890-4f92-bca4-5acd602238c5/software-architecture-with-c%2B%2B/)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Valore (com)**](https://www.valore.com/products/software-architecture-with-c/9781803235059)
 
@@ -450,6 +472,8 @@ In libraries of engineering schools:
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **IEEE Xplore (org)**](https://ieeexplore.ieee.org/book/11321119)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **WorldCat (org)**](https://search.worldcat.org/title/1564840307)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **BUKU (io)**](https://buku.io/book/261381/software-architecture-with-c-13)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Business-Vox (com)**](https://www.business-vox.com/catalog/book/docid/88977053)
 
@@ -476,3 +500,15 @@ In libraries of engineering schools:
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**Queen Mary University of London (org)**](https://search.library.qmul.ac.uk/iii/encore/search/C__S9781803235059__Orightresult__U?lang=eng)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**University of East Anglia (org)**](https://uea.on.worldcat.org/search?queryString=9781803235059)
+
+And in other various resources:
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**Bookshare (org)**](https://www.bookshare.org/browse/book/6924480)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**iProgrammer (info)**](https://www.i-programmer.info/book-watch-archive/18609-software-architecture-with-c-2nd-ed-packt.html)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**Meeting C++ (com)**](https://meetingcpp.com/mcpp/books/book.php?hash=76eab09472533d610f2bf930716181978d0c761e)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**Pueblo City-County Library (com)**](https://catalog.pueblolibrary.org/GroupedWork/8bf5a25a-ea04-7185-095a-a6556fd9ac94-eng)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**Surrey Libraries (com)**](https://surrey.bibliocommons.com/v2/record/S71C1110729)

@@ -275,11 +275,13 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **CampusBooks.com (com)**](https://www.campusbooks.com/search/9781803243016)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Ceneo**](https://www.ceneo.pl/192562627)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Ceneo (pl)**](https://www.ceneo.pl/192562627)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Cellar Door Bookstore (com)**](https://cellardoorbookstore.com/book/9781803243016)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Chasse aux Livres (fr)**](https://www.chasse-aux-livres.fr/prix/1803243015/software-architecture-with-c-andrey-gavrilin)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Coupang (com)**](https://www.tw.coupang.com/products/%28%E8%8B%B1%E6%96%87%E5%9C%96%E6%9B%B8%29Software-Architecture-with-C%2B%2B---Second-Edition%3A-Designing-robust-C%2B%2B-systems-wi...-%E5%B9%B3%E8%A3%9D%E7%89%88-21009332503728)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Dick Smith (com.au)**](https://www.dicksmith.com.au/da/buy/the-nile-software-architecture-with-c-9781803243016/)
 
@@ -289,7 +291,7 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Easy Learning (in)**](https://easylearningdvds.in/product/software-architecture-principles-and-best-practices-using-c/)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **eBay**](https://www.ebay.com/sch/i.html?_nkw=9781803243016)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **eBay (com)**](https://www.ebay.com/sch/i.html?_nkw=9781803243016)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **eBook.de (de)**](https://www.ebook.de/de/product/52343878/andrey_gavrilin_adrian_ostrowski_piotr_gaczkowski_software_architecture_with_c_second_edition.html)
 
@@ -304,6 +306,8 @@ In book stores:
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Enbook (cz)**](https://www.enbook.cz/cs/kniha/software-architecture-with-c-second-edition_50252706)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Enbook (pl)**](https://www.enbook.pl/pl/ksiazka/software-architecture-with-c-second-edition_50252706)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Eslite (com)**](https://www.eslite.com/product/1001294889062307)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Eurobooks (sk)**](https://www.eurobooks.sk/en/software-architecture-with-c-second-edition)
 
@@ -356,6 +360,8 @@ In book stores:
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Legimi (de)**](https://www.legimi.de/e-book-software-architecture-with-c-andrey-gavrilin,b5127329.html)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Lehmanns Media (de)**](https://www.lehmanns.de/shop/naturwissenschaften/80646854-9781803243016-software-architecture-with-cplusplus)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Lehmanns Media (ch)**](https://www.lehmanns.ch/shop/mathematik-informatik/86437275-9781803235059-software-architecture-with-cplusplus)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Libreria IBS (it)**](https://www.ibs.it/software-architecture-with-c-designing-libro-inglese-vari/e/9781803243016)
 
@@ -411,6 +417,8 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Printrado (com)**](https://printrado.com/product/software-architecture-with-c/)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Prisjakt (nu)**](https://www.prisjakt.nu/search?query=9781803243016)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Rakuten (co.jp)**](https://books.rakuten.co.jp/rk/4f642cc12e6c3599a59a49667b0d7be4/)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Rakuten Kobo (com)**](https://www.kobo.com/us/en/ebook/software-architecture-with-c-1)
@@ -427,6 +435,10 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Schweitzer Fachinformationen (de)**](https://www.schweitzer-online.de/buch/Gavrilin/Software-Architecture-Cplusplus/9781803243016/A74541283/)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Sendle (ru)**](https://sendle.ru/1105-obucheniya-vzroslyh-universiteta/397461094219-software-architecture-with-c-designing-robust-c-systems-with-modern-archite.html)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Shopozz (ru)**](https://shopozz.ru/items/397461094219-software-architecture-with-c-designing-robust-c-systems-with-modern-archite)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Skybook (ir)**](https://skybooks.ir/products/Software-Architecture-with-Cpp)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Storytel (com)**](https://www.storytel.com/books/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-13244520)
@@ -434,6 +446,8 @@ In book stores:
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Sundog Books (com)**](https://sundogbooks.com/book/9781803243016)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Taniomania (pl)**](https://www.taniomania.pl/p/192562627/software-architecture-with-c-designing-robust-c-systems-with-modern)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Target (com)**](https://www.target.com/p/software-architecture-with-c-second-edition-2nd-edition-by-andrey-gavrilin-adrian-ostrowski-piotr-gaczkowski-paperback/-/A-1009426991)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Tenlong (com.tw)**](https://www.tenlong.com.tw/products/9781803243016)
 
@@ -449,9 +463,11 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Tiendamia (cr)**](https://www.tiendamia.cr/p/amz/1803243015/software-architecture-with-c-designing-robust-c-systems-with-modern)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Tokopedia**](https://www.tokopedia.com/rejekibookstore-1/software-architecture-with-c-second-edition-1733941915957364183)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Tokopedia (com)**](https://www.tokopedia.com/rejekibookstore-1/software-architecture-with-c-second-edition-1733941915957364183)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Torob**](https://torob.com/p/013fd8e9-4890-4f92-bca4-5acd602238c5/software-architecture-with-c%2B%2B/)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Torob (com)**](https://torob.com/p/013fd8e9-4890-4f92-bca4-5acd602238c5/software-architecture-with-c%2B%2B/)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Ubuy (com)**](https://www.global.ubuy.com/product/TAK7GA0FE-software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Valore (com)**](https://www.valore.com/products/software-architecture-with-c/9781803235059)
 
@@ -471,15 +487,17 @@ In libraries of engineering schools:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **IEEE Xplore (org)**](https://ieeexplore.ieee.org/book/11321119)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **WorldCat (org)**](https://search.worldcat.org/title/1564840307)
-
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **BUKU (io)**](https://buku.io/book/261381/software-architecture-with-c-13)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Business-Vox (com)**](https://www.business-vox.com/catalog/book/docid/88977053)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Eindhoven University of Technology (org)**](https://tue.on.worldcat.org/search?queryString=9781803235059)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Erasmus University Rotterdam (org)**](https://eur.on.worldcat.org/search?queryString=9781803235059)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Georgia State University (com)**](https://galileo-gsu.primo.exlibrisgroup.com/discovery/fulldisplay/alma9935099577802952/01GALI_GSU:GSU_V1)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Hogeschool Rotterdam (org)**](https://hogeschoolrotterdam.on.worldcat.org/search?queryString=9781803235059)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Max-Planck-Institut (de)**](https://lbsvz2.gbv.de/DB=64/SET=20/TTL=1/CMD?ACT=SRCHA&IKT=1016&SRT=YOP&TRM=978-1-80324-301-6)
 
@@ -487,28 +505,30 @@ In libraries of engineering schools:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Princeton (edu)**](https://catalog.princeton.edu/catalog/99131714553706421)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Queen Mary University of London (org)**](https://search.library.qmul.ac.uk/iii/encore/search/C__S9781803235059__Orightresult__U?lang=eng)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **ScholarVox (com)**](https://scholarvox.library.omneseducation.com/catalog/book/docid/88977053)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Skagit Valley College (com)**](https://sbctc-skagit.primo.exlibrisgroup.com/permalink/01STATEWA_SKAGIT/1k7g980/alma991000858304102822)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Stanford (edu)**](https://searchworks.stanford.edu/view/in00000926586)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **University of East Anglia (org)**](https://uea.on.worldcat.org/search?queryString=9781803235059)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **University of Groningen (org)**](https://rug.on.worldcat.org/search/detail/1564840307?queryString=no%3A1564840307)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**Erasmus University Rotterdam (org)**](https://eur.on.worldcat.org/search?queryString=9781803235059)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **University of Pennsylvania (edu)**](https://find.library.upenn.edu/catalog/9979802561103681?hld_id=53899591220003681)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**Hogeschool Rotterdam (org)**](https://hogeschoolrotterdam.on.worldcat.org/search?queryString=9781803235059)
-
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**Queen Mary University of London (org)**](https://search.library.qmul.ac.uk/iii/encore/search/C__S9781803235059__Orightresult__U?lang=eng)
-
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**University of East Anglia (org)**](https://uea.on.worldcat.org/search?queryString=9781803235059)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **WorldCat (org)**](https://search.worldcat.org/title/1564840307)
 
 And in other various resources:
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**Bookshare (org)**](https://www.bookshare.org/browse/book/6924480)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Bookshare (org)**](https://www.bookshare.org/browse/book/6924480)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**iProgrammer (info)**](https://www.i-programmer.info/book-watch-archive/18609-software-architecture-with-c-2nd-ed-packt.html)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **iProgrammer (info)**](https://www.i-programmer.info/book-watch-archive/18609-software-architecture-with-c-2nd-ed-packt.html)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**Meeting C++ (com)**](https://meetingcpp.com/mcpp/books/book.php?hash=76eab09472533d610f2bf930716181978d0c761e)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Meeting C++ (com)**](https://meetingcpp.com/mcpp/books/book.php?hash=76eab09472533d610f2bf930716181978d0c761e)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**Pueblo City-County Library (com)**](https://catalog.pueblolibrary.org/GroupedWork/8bf5a25a-ea04-7185-095a-a6556fd9ac94-eng)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Pueblo City-County Library (com)**](https://catalog.pueblolibrary.org/GroupedWork/8bf5a25a-ea04-7185-095a-a6556fd9ac94-eng)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/>**Surrey Libraries (com)**](https://surrey.bibliocommons.com/v2/record/S71C1110729)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Surrey Libraries (com)**](https://surrey.bibliocommons.com/v2/record/S71C1110729)

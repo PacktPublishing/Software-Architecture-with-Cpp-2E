@@ -1,5 +1,5 @@
 [requires]
-catch2/3.11.0
+catch2/3.12.0
 trompeloeil/49
 cpputest/4.0
 gtest/1.17.0

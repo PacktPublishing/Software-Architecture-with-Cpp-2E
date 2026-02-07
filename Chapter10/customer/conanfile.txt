@@ -1,8 +1,8 @@
 [requires]
-drogon/1.9.11
-trantor/1.5.23
+drogon/1.9.12
+trantor/1.5.26
 boost/1.89.0
-catch2/3.11.0
+catch2/3.12.0
 doctest/2.4.12
 cpputest/4.0
 boost-ext-ut/2.3.1

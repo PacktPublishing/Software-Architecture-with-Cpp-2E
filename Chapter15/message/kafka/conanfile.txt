@@ -1,5 +1,5 @@
 [requires]
-librdkafka/2.12.1
+librdkafka/2.13.0
 modern-cpp-kafka/2024.07.03
 
 [generators]

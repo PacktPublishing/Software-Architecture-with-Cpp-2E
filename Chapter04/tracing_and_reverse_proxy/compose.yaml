@@ -16,7 +16,7 @@ services:
     command: -text "It works!"
 
   opentelemetry-collector:
-    image: otel/opentelemetry-collector-contrib:0.141.0
+    image: otel/opentelemetry-collector-contrib:0.145.0
     networks:
       - example_network
     ports:

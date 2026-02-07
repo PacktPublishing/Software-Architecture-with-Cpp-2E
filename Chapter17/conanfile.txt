@@ -1,7 +1,7 @@
 [requires]
-drogon/1.9.11
-trantor/1.5.23
-spdlog/1.16.0
+drogon/1.9.12
+trantor/1.5.26
+spdlog/1.17.0
 
 [generators]
 CMakeDeps

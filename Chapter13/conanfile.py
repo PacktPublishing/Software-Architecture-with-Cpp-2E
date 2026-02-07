@@ -9,7 +9,7 @@ class Pkg(ConanFile):
         self.requires("benchmark/1.9.4")
         self.requires("nanobench/4.3.11")
         self.requires("doctest/2.4.12")
-        self.requires("catch2/3.11.0")
+        self.requires("catch2/3.12.0")
         self.requires("tracy/0.13.1")
         # requires Linux for networking
         self.requires("libcoro/0.15.0")

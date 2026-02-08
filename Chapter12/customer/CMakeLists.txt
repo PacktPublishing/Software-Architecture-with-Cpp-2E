@@ -19,7 +19,9 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
 find_package(Drogon REQUIRED)
 
-# TODO: provide Drogon_BIN_DIR
+# TODO: provide Drogon_BIN_DIR the library has the function
+# drogon_create_views() provided with DrogonUtilities.cmake, but this script is
+# not exported (in the Conan recipe)
 find_program(DROGON_EXECUTABLE drogon_ctl ${Drogon_INCLUDE_DIR}/../bin/)
 
 find_package(inja REQUIRED)

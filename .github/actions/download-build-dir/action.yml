@@ -1,11 +1,16 @@
 name: download-build-dir
 description: downloads the archive and unpacks build directory with the tar command to preserve file permissions
+inputs:
+  artifact-name:
+    description: Name of the build artifact
+    required: false
+    default: build-dir
 runs:
   using: "composite"
   steps:
     - uses: actions/download-artifact@v8
       with:
-        name: build-dir
+        name: ${{ inputs.artifact-name }}
 
     - name: create build directory
       run: mkdir -p ${{github.workspace}}/build

@@ -21,23 +21,12 @@ set_target_properties(customer PROPERTIES CXX_EXTENSIONS OFF)
 target_compile_definitions(customer PRIVATE NOMINMAX)
 # target_compile_options(customer PRIVATE ${BASE_COMPILE_FLAGS})
 
-file(GLOB SCP_LIST ${CMAKE_CURRENT_SOURCE_DIR}/views/*.csp)
-foreach(cspFile ${SCP_LIST})
-  message(STATUS "CSP file:" ${cspFile})
-  get_filename_component(classname ${cspFile} NAME_WE)
-  message(STATUS "View classname:" ${classname})
-
-  add_custom_command(
-    OUTPUT ${classname}.h ${classname}.cc
-    COMMAND ${DROGON_EXECUTABLE} ARGS create view ${cspFile} -o
-            ${CMAKE_CURRENT_BINARY_DIR}
-    DEPENDS ${cspFile}
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    VERBATIM)
-  set(VIEW_SRC ${VIEWSRC} ${classname}.cc)
-endforeach()
-
-target_sources(customer PRIVATE ${VIEW_SRC})
+# The Conan package recipe for Drogon provides the drogon_create_views()
+# function by including DrogonUtilities.cmake automatically. This function
+# creates views by converting csp (C++ server pages) template files into header
+# (.h) and source (.cpp) files.
+drogon_create_views(customer ${CMAKE_CURRENT_SOURCE_DIR}/views/
+                    ${CMAKE_CURRENT_BINARY_DIR})
 
 # Installing
 

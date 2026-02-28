@@ -12,7 +12,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     steps:
       - uses: actions/checkout@v4
@@ -50,7 +50,7 @@ jobs:
         uses: ./.github/actions/upload-build-dir
 
   test:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: build
 
     steps:
@@ -67,7 +67,7 @@ jobs:
         run: ctest -C ${{env.BUILD_TYPE}}
 
   pack:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: test
 
     steps:

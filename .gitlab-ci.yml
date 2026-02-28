@@ -2,7 +2,7 @@ workflow:
   name: 'Pipeline for branch: $CI_COMMIT_BRANCH'
 
 default:
-  image: ubuntu:25.04
+  image: ubuntu:26.04
 
 variables:
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"

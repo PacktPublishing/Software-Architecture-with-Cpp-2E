@@ -1,4 +1,4 @@
-FROM ubuntu:questing
+FROM ubuntu:resolute
 
 COPY customer /bin/customer
 

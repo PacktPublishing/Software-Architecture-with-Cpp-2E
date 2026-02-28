@@ -1,4 +1,4 @@
-FROM ubuntu:questing
+FROM ubuntu:resolute
 
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y build-essential gcc cmake ninja-build git python3-pip python3-venv && \
     python3 -mvenv /opt/venv && . /opt/venv/bin/activate && pip3 install conan==2.* && conan profile detect

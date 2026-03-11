@@ -58,17 +58,17 @@ that support CMake-based projects.
 - [Colima](https://github.com/abiosoft/colima)
 - [OrbStack](https://orbstack.dev/)
 - [Lima](https://github.com/lima-vm/lima)
-- [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation/)
 - [Docker Desktop](https://docs.docker.com/desktop/setup/install/mac-install/)
+- [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation/)
 
 ## Local Kubernetes installation
 
 - [MicroK8s](https://canonical.com/microk8s/docs/install-macos)
 - [minikube](https://minikube.sigs.k8s.io/docs/)
 - [k8s kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
-- [Rancher Desktop](https://docs.rancherdesktop.io/ui/preferences/kubernetes/)
 - [Docker Desktop](https://docs.docker.com/desktop/features/kubernetes/)
 - [Podman Desktop](https://podman-desktop.io/tutorial/running-a-kubernetes-cluster)
+- [Rancher Desktop](https://docs.rancherdesktop.io/ui/preferences/kubernetes/)
 
 Tools to manage Kubernetes clusters and deploy applications
 

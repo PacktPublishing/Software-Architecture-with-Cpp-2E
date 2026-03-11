@@ -1,4 +1,4 @@
-FROM ubuntu:questing
+FROM ubuntu:noble
 
 RUN apt update && apt install -y build-essential gcc
 

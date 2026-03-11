@@ -60,13 +60,13 @@ that support CMake-based projects.
 
 ## Docker installation
 
-- [Ubuntu](https://docs.docker.com/desktop/setup/install/linux/ubuntu/)
+- [Arch](https://docs.docker.com/desktop/setup/install/linux/archlinux/)
 - [Debian](https://docs.docker.com/desktop/setup/install/linux/debian/)
 - [Fedora](https://docs.docker.com/desktop/setup/install/linux/fedora/)
-- [Arch](https://docs.docker.com/desktop/setup/install/linux/archlinux/)
 - [RHEL](https://docs.docker.com/desktop/setup/install/linux/rhel/)
-- [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation/)
+- [Ubuntu](https://docs.docker.com/desktop/setup/install/linux/ubuntu/)
 - [Docker Desktop](https://docs.docker.com/desktop/setup/install/linux/)
+- [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation/)
 
 ## Local Kubernetes installation
 
@@ -74,9 +74,9 @@ that support CMake-based projects.
 - [minikube](https://minikube.sigs.k8s.io/docs/)
 - [k8s kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
 - [K3s](https://docs.k3s.io/installation)
-- [Rancher Desktop](https://docs.rancherdesktop.io/ui/preferences/kubernetes/)
 - [Docker Desktop](https://docs.docker.com/desktop/features/kubernetes/)
 - [Podman Desktop](https://podman-desktop.io/tutorial/running-a-kubernetes-cluster)
+- [Rancher Desktop](https://docs.rancherdesktop.io/ui/preferences/kubernetes/)
 
 Tools to manage Kubernetes clusters and deploy applications
 

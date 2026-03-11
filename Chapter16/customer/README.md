@@ -19,8 +19,8 @@ functionality are also tested on macOS and Windows.
 
 For optional packaging with CPack:
 
-- dpkg build tools: [dh_make](https://manpages.ubuntu.com/manpages/trusty/man8/dh_make.8.html) and [dpkg-buildpackage](https://manpages.ubuntu.com/manpages/trusty/man1/dpkg-buildpackage.1.html) to assemble DEB packages
-- rpm build tools: [rpmbuild](https://manpages.ubuntu.com/manpages/trusty/man8/rpmbuild.8.html) to assemble RPM packages
+- dpkg build tools: [dh_make](https://manpages.debian.org/testing/dh-make/dh_make.1.en.html) and [dpkg-buildpackage](https://manpages.debian.org/testing/dpkg-dev/dpkg-buildpackage.1.en.html) to assemble DEB packages
+- rpm build tools: [rpmbuild](https://manpages.debian.org/testing/rpm/rpmbuild.1.en.html) to assemble RPM packages
 
 Configure a local Conan profile and remotes by running:
 

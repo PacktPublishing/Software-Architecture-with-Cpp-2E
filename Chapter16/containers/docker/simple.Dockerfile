@@ -1,4 +1,4 @@
-FROM ubuntu:questing
+FROM ubuntu:noble
 
 COPY customer /bin/customer
 

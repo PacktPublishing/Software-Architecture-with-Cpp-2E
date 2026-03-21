@@ -331,6 +331,8 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Enbook (pl)**](https://www.enbook.pl/pl/ksiazka/software-architecture-with-c-second-edition_50252706)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Enbook (ro)**](https://www.enbook.ro/ro/carte/software-architecture-with-c-second-edition_50252706)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Eslite (com)**](https://www.eslite.com/product/1001294889062307)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Eurobooks (sk)**](https://www.eurobooks.sk/en/software-architecture-with-c-second-edition)
@@ -370,6 +372,8 @@ In book stores:
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Hong Kong Book City (com)**](https://www.hkbookcity.com/showbook2.php?serial_no=31842961)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Hugendubel (de)**](https://www.hugendubel.de/de/taschenbuch/andrey_gavrilin_adrian_ostrowski_piotr_gaczkowski-software_architecture_with_c_second_edition-52343878-produkt-details.html)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Humble Bundle (com)**](https://www.humblebundle.com/books/systemsminded-software-engineer-packt-books)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **IberLibro.com (com)**](https://www.iberlibro.com/9781803243016/Software-Architecture-Designing-Robust-Systems-1803243015/plp)
 
@@ -467,6 +471,8 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Readings (com.au)**](https://www.readings.com.au/product/9781803243016/software-architecture-with-c--andrey-gavrilin-adrian-ostrowski-piotr-gaczkowski--2025--9781803243016)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Readino (com)**](https://readino.com/catalogue/book/software-architecture-with-c-ea430aaf3d42505a0e80bfc9f22ef770--eng-9781803235059/)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **ReadShop (nl)**](https://www.readshop.nl/engelse-boeken/software-architecture-with-c-second-edition-9781803243016)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Saanjhi.com (com)**](https://www.saanjhi.com/products/p_1803243015)
@@ -522,6 +528,8 @@ In book stores:
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Valore (com)**](https://www.valore.com/products/software-architecture-with-c/9781803235059)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **VitalSource (com)**](https://www.vitalsource.com/en-uk/products/software-architecture-with-c-andrey-gavrilin-v9781803235059)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **VYSN (com)**](https://www.vysn.com/products/software-architecture-with-c-second-edition-designing-robust-c-systems-with-modern-architectural-practices-paperback)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Walmart (com)**](https://www.walmart.com/ip/Software-Architecture-with-C-Second-Edition-Designing-robust-C-systems-with-modern-architectural-practices-Paperback/19019502370)
 

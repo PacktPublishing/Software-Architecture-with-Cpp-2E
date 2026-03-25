@@ -8,10 +8,10 @@ runs:
         name: build-dir
 
     - name: create build directory
-      run: mkdir -p ${{github.workspace}}/build
+      run: mkdir -p ${GITHUB_WORKSPACE}/build
       shell: bash
 
     - name: unpack build directory
       run: |
-        tar -xf build-dir.tar -C ${{github.workspace}}/build
+        tar -xf build-dir.tar -C ${GITHUB_WORKSPACE}/build
       shell: bash

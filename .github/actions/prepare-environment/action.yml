@@ -5,6 +5,6 @@ runs:
   steps:
     - name: prepare environment
       run: |
-        mkdir -p ${{github.workspace}}/build
-        sudo apt-get install -y ninja-build
+        mkdir -p ${GITHUB_WORKSPACE}/build
+        pacman -Syy --noconfirm cmake ninja
       shell: bash

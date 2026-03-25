@@ -2,7 +2,7 @@ workflow:
   name: 'Pipeline for branch: $CI_COMMIT_BRANCH'
 
 default:
-  image: ubuntu:24.04
+  image: artixlinux/artixlinux:base-devel
 
 variables:
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
@@ -21,12 +21,12 @@ stages:
   - package
 
 before_script:
-  - apt update && DEBIAN_FRONTEND=noninteractive apt install -y cmake ninja-build rpm file
+  - pacman -Syy --noconfirm cmake ninja
 
 build:
   stage: build
   script:
-    - DEBIAN_FRONTEND=noninteractive apt install -y build-essential git python3-venv python3-pip
+    - pacman -Syy --noconfirm git python python-pip
     - python3 -m venv venv && source ./venv/bin/activate
     - pip install conan
     - conan profile detect -f
@@ -48,5 +48,5 @@ package:
     - cpack .
   artifacts:
     paths:
-      - build/Customer*.deb
-      - build/Customer*.rpm
+      - build/Customer*.tag.gz
+      - build/Customer*.zip

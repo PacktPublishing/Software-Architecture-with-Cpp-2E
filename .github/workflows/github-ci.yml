@@ -3,9 +3,11 @@ run-name: pipeline for branch ${{ github.ref_name }}
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - '**'
   pull_request:
-    branches: [ main ]
+    branches:
+      - '**'
 
 env:
   BUILD_TYPE: Release
@@ -13,44 +15,57 @@ env:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    container:
+      image: artixlinux/artixlinux:base-devel
 
     steps:
+      - run: pacman -Syy --noconfirm python python-pip
       - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
+      - uses: actions/cache@v5
         with:
-          python-version: '3.14'
-          cache: 'pip'
-      - run: pip install conan
+          path: /tmp/pip-cache
+          key: ${{ runner.os }}-pip-conan
+      - run: |
+          python3 -m venv venv
+          . venv/bin/activate
+          pip install --cache-dir /tmp/pip-cache conan
 
       - uses: actions/cache@v5
         with:
-          path: |
-            ~/.conan2
+          path: ~/.conan2
           key: ${{ runner.os }}-${{ hashFiles('./Chapter10/customer/conanfile.txt') }}
 
       - name: create default profile
-        run: conan profile detect -f
+        run: |
+          . venv/bin/activate
+          conan profile detect -f
 
       - name: prepare environment
         uses: ./.github/actions/prepare-environment
 
       - name: install dependencies
-        working-directory: ${{github.workspace}}/build
-        run: "conan install ${{github.workspace}}/Chapter10/customer --build=missing -s:a build_type=${{env.BUILD_TYPE}}
-        -s:a compiler=gcc -s:a compiler.version=14 -s:a compiler.cppstd=gnu20 -of ."
+        run: |
+          . venv/bin/activate
+          cd ${GITHUB_WORKSPACE}/build
+          conan install ${GITHUB_WORKSPACE}/Chapter10/customer --build=missing \
+          -s:a build_type=${{env.BUILD_TYPE}} -s:a compiler.cppstd=gnu20 -of .
+        shell: bash
 
       - name: configure
-        run: "cmake -GNinja -B ${{github.workspace}}/build -DCMAKE_CXX_COMPILER=`which g++-14` -DBUILD_TESTING=ON
-        -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} ${{github.workspace}}/Chapter10/customer"
+        run: |
+          cmake -GNinja -B ${GITHUB_WORKSPACE}/build -DBUILD_TESTING=ON \
+          -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} ${GITHUB_WORKSPACE}/Chapter10/customer
 
       - name: build
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        run: cmake --build ${GITHUB_WORKSPACE}/build --config ${{env.BUILD_TYPE}}
 
       - name: upload build directory
         uses: ./.github/actions/upload-build-dir
 
   test:
     runs-on: ubuntu-24.04
+    container:
+      image: artixlinux/artixlinux:base-devel
     needs: build
 
     steps:
@@ -63,11 +78,14 @@ jobs:
         uses: ./.github/actions/download-build-dir
 
       - name: test
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C ${{env.BUILD_TYPE}}
+        run: |
+          cd ${GITHUB_WORKSPACE}/build
+          ctest -C ${{env.BUILD_TYPE}}
 
   pack:
     runs-on: ubuntu-24.04
+    container:
+      image: artixlinux/artixlinux:base-devel
     needs: test
 
     steps:
@@ -80,12 +98,13 @@ jobs:
         uses: ./.github/actions/download-build-dir
 
       - name: pack
-        working-directory: ${{github.workspace}}/build
-        run: cpack .
+        run: |
+          cd ${GITHUB_WORKSPACE}/build
+          cpack .
 
       - uses: actions/upload-artifact@v7
         with:
           name: customer packages
           path: |
-            build/Customer*.deb
-            build/Customer*.rpm
+            build/Customer*.tag.gz
+            build/Customer*.zip

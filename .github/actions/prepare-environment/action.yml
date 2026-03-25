@@ -5,6 +5,6 @@ runs:
   steps:
     - name: prepare environment
       run: |
-        mkdir -p ${{github.workspace}}/build
-        sudo apt-get install -y ninja-build
+        mkdir -p ${GITHUB_WORKSPACE}/build
+        apt update && DEBIAN_FRONTEND=noninteractive apt install -y cmake ninja-build rpm file
       shell: bash

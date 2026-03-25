@@ -2,7 +2,7 @@ workflow:
   name: 'Pipeline for branch: $CI_COMMIT_BRANCH'
 
 default:
-  image: ubuntu:24.04
+  image: linuxdeepin/deepin:crimson
 
 variables:
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"

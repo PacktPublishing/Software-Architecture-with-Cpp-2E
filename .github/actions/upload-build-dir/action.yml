@@ -4,7 +4,7 @@ runs:
   using: "composite"
   steps:
     - name: tar build directory
-      run: tar -C ${{github.workspace}}/build -cvf build-dir.tar .
+      run: tar -C ${GITHUB_WORKSPACE}/build -cvf build-dir.tar .
       shell: bash
 
     - uses: actions/upload-artifact@v7

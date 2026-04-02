@@ -29,6 +29,8 @@ Make sure that the profile section `[settings]` contains:
 ```text
 arch=x86_64
 compiler=gcc
+compiler.cppstd=gnu17
+compiler.cstd=gnu17
 compiler.libcxx=libstdc++11
 compiler.version=15
 os=Linux
@@ -39,28 +41,26 @@ os=Linux
 To build the project, configure the Conan profile as described above, cd to its directory, and then run:
 
 ```bash
-cd build
-conan install .. --build=missing -s build_type=Release -pr:a=./conan_profile -of .
-cmake .. -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
-cmake --build .
+conan install . --build=missing -s build_type=Release -pr:a=./build/conan_profile
+cmake --preset conan-release
+cmake --build --preset conan-release
 ```
 
 If GCC 15 is not your default compiler, you can tell CMake to use it with the `CMAKE_CXX_COMPILER` flag:
 
 ```bash
-cd build
-conan install .. --build=missing -s build_type=Release -pr:a=./conan_profile -of .
-cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=`which g++-15` # build type must match Conan's
-cmake --build .
+conan install . --build=missing -s build_type=Release -pr:a=./build/conan_profile
+cmake --preset conan-release -DCMAKE_CXX_COMPILER=`which g++-15`
+cmake --build --preset conan-release
 ```
 
 To pass the settings directly without a Conan profile, use the command line option `--settings:all` or `-s:a`, and the keys `arch`, `build_type`, `compiler`, `compiler.cppstd`, `compiler.libcxx`, `compiler.version`, `os`:
 
 ```bash
-rm -rf ./build/ && mkdir build && cd build
-conan install .. --build=missing -s:a build_type=Release -s:a compiler=gcc -of .
-cmake .. -DCMAKE_BUILD_TYPE=Release # build type must match Conan's
-cmake --build .
+rm -rf ./build/
+conan install . --build=missing -s:a build_type=Release -s:a compiler=gcc
+cmake --preset conan-release
+cmake --build --preset conan-release
 ```
 
 To apply Conan dependency as a CMake Dependency Provider, clone this Git repository and then run the next command:
@@ -71,13 +71,23 @@ git clone https://github.com/conan-io/cmake-conan.git build/cmake-conan
 ```
 
 ```bash
-cmake -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan_provider.cmake -DCMAKE_BUILD_TYPE=Release
-cmake --build build
+cmake -G Ninja -S . -B build -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=./build/cmake-conan/conan_provider.cmake -DCMAKE_BUILD_TYPE=Release
+cmake --preset conan-release
+cmake --build --preset conan-release
 ```
-
-The alternative implementation is in the `ch12-drogon-ctl` git branch.
 
 ### Troubleshooting
 
 Windows Firewall can block connections to the IP address 0.0.0.0 therefore set 127.0.0.1 in customer/src/customer/main.cpp
 as a workaround or allow connections to that address on the host.
+
+The value of the PATH environment variable from the preset can be ignored when building from the CLion IDE and the `drogon-ctl` utility is not detected.
+In this case, you need to reload the CMake project after configuring the project, load new presets and enable these profiles in the IDE.
+Then, **explicitly** select the build profile with a name such as `conan-release - conan-release` and `conan-debug - conan-debug`.
+It passes the preset option to CMake and injects the PATH value.
+
+```bash
+conan install -r conancenter --update . --build=missing
+cmake --preset conan-release -DCMAKE_VERBOSE_MAKEFILE=ON
+cmake --build --preset conan-release
+```

@@ -247,6 +247,8 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Blackwell's (co.uk)**](https://blackwells.co.uk/bookshop/product/Software-Architecture-With-C-by-Andrey-Gavrilin-Adrian-Ostrowski-Piotr-Gaczkowski/9781803243016)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Boekenportaal Suriname (sr)**](https://www.boekenportaal.sr/boek/?authortitle=andrey-gavrilin-adrian-ostrowski-piotr-gaczkowski/software-architecture-with-c-second-edition--9781803243016)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Boekwinkeltjes (nl)**](https://www.boekwinkeltjes.nl/b/241196946/Software-Architecture-with-C-Second-Edition-Designing-robust-C-systems-with-modern-architectural-practices/)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Bokkilden (no)**](https://www.bokkilden.no/systemanalyse-og-design/software-architecture-with-c-andrey-gavrilin/produkt.do?produktId=214321826)

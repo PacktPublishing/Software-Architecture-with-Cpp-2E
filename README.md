@@ -247,6 +247,8 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Blackwell's (co.uk)**](https://blackwells.co.uk/bookshop/product/Software-Architecture-With-C-by-Andrey-Gavrilin-Adrian-Ostrowski-Piotr-Gaczkowski/9781803243016)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Boekenportaal Suriname (sr)**](https://www.boekenportaal.sr/boek/?authortitle=andrey-gavrilin-adrian-ostrowski-piotr-gaczkowski/software-architecture-with-c-second-edition--9781803243016)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Boekwinkeltjes (nl)**](https://www.boekwinkeltjes.nl/b/241196946/Software-Architecture-with-C-Second-Edition-Designing-robust-C-systems-with-modern-architectural-practices/)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Bokkilden (no)**](https://www.bokkilden.no/systemanalyse-og-design/software-architecture-with-c-andrey-gavrilin/produkt.do?produktId=214321826)
@@ -361,6 +363,8 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **FindBook (com.tw)**](https://findbook.com.tw/9781803243016)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Find-More-Books (com)**](https://www.find-more-books.com/book/isbn/9781803243016.html)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Fishpond (com)**](https://www.fishpond.com/Books/Software-Architecture-with-C-Second-Edition-Andrey-Gavrilin-Adrian-Ostrowski/9781803243016)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Fnac (com)**](https://www.fnac.com/livre-numerique/a21817433/Andrey-Gavrilin-Software-Architecture-with-C)
@@ -413,6 +417,8 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Linnaeus Boekhandel (nl)**](https://www.linnaeusboekhandel.nl/software-architecture-with-c-second-edition-9781803243016)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Logobook (kz)**](https://www.logobook.kz/prod_show.php?object_uid=16677426)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Logobook (ru)**](https://www.logobook.ru/prod_show.php?object_uid=16677426)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Lubimyczytać (pl)**](https://lubimyczytac.pl/ksiazka/5232876/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices)
@@ -426,6 +432,8 @@ In book stores:
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Medimops (de)**](https://www.medimops.de/andrey-gavrilin-software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-paperback-M01803243015.html)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Megabooks (sk)**](https://www.megabooks.sk/p/33629320/5661179/software-architecture-with-c-)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Mercado Libre (com.ar)**](https://listado.mercadolibre.com.ar/9781803243016)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Michaelsbund (de)**](https://www.michaelsbund.de/product/9781803243016-software-architecture-with-c---second-edition.html)
 
@@ -507,7 +515,11 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **SlugBooks (com)**](https://www.slugbooks.com/9781803243016-software-architecture-with-c-designing.html)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **SplitShops (com)**](https://booksby.splitshops.com/products/software-architecture-with-c-second-edition-designing-robust-c-systems-with-modern-architectural-practices-paperback)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Storytel (com)**](https://www.storytel.com/books/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-13244520)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Studiewinkel (nl)**](https://studiewinkel.nl/product/9781803235059/Software-Architecture-with-C)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Sundog Books (com)**](https://sundogbooks.com/book/9781803243016)
 

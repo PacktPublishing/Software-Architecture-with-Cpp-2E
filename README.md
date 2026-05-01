@@ -411,6 +411,8 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Librerías Gandhi (com.mx)**](https://www.gandhi.com.mx/software-architecture-with-c-9781803235059/p)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Libris (ro)**](https://www.libris.ro/carte-engleza/software-architecture-with-c-second-edition-designing-robust-c-systems-with/45340281)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Libristo (pl)**](https://www.libristo.pl/pl/ksiazka/software-architecture-with-c-second-edition_50252706)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Libristo (ro)**](https://www.libristo.ro/ro/carte/software-architecture-with-c-second-edition_50252706)
@@ -562,6 +564,8 @@ In book stores:
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Wantitall (co.za)**](https://www.wantitall.co.za/Software-Architecture-with-C-Designing-robust-C-systems-with-modern-architectural-practices-ap-1803243015.html)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Waterstones (com)**](https://www.waterstones.com/book/software-architecture-with-c/andrey-gavrilin/adrian-ostrowski/9781803243016)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **White Rain Book House (com)**](https://www.whiterainbookhouse.com/products/software-architecture-with-c-andrey-gavrilin-9781803243016)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **World of Books (com)**](https://www.worldofbooks.com/en-gb/products/software-architecture-with-c-book-andrey-gavrilin-9781803243016)
 

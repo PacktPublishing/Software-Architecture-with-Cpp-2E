@@ -4,8 +4,8 @@
 #include <sole.hpp>
 #include <string>
 
-std::string access_key = "Q3AM3UQ867SPQQA43P2F";
-std::string secret_key = "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG";
+std::string access_key = "minioadmin";
+std::string secret_key = "minioadmin";
 
 bool create_user_bucket(const std::string &username) {
   minio::s3::BaseUrl base_url("play.min.io");

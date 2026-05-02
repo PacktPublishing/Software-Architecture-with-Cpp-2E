@@ -3,13 +3,18 @@ name: pre-commit
 on:
   pull_request:
   push:
-    branches: [main]
+    branches:
+      - '**'
 
 jobs:
   pre-commit:
     runs-on: ubuntu-24.04
+    container:
+      image: devuan/devuan:freia
     steps:
+    - run: apt update && apt install -y git
     - uses: actions/checkout@v6
+    - run: git config --global --add safe.directory '*'
     - uses: actions/setup-python@v6
       with:
         python-version: '3.14'
@@ -17,5 +22,8 @@ jobs:
       with:
         path: ~/.cache/pre-commit
         key: pre-commit|${{ hashFiles('.pre-commit-config.yaml') }}
-    - run: pip install pre-commit
-    - run: SKIP=no-commit-to-branch pre-commit run --all-files
+    - run: |
+        python3 -m venv venv
+        . venv/bin/activate
+        pip install pre-commit
+        SKIP=no-commit-to-branch pre-commit run --all-files

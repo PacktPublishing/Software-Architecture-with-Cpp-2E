@@ -403,6 +403,8 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **IberLibro.com (com)**](https://www.iberlibro.com/9781803243016/Software-Architecture-Designing-Robust-Systems-1803243015/plp)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **iMusic (cn)**](https://imusic.com.cn/books/9781803243016/andrey-gavrilin-2025-software-architecture-with-c-book)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Indigo (ca)**](https://www.indigo.ca/en-ca/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices/4f642cc1-2e6c-3599-a59a-49667b0d7be4.html)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Kinokuniya (com)**](https://united-states.kinokuniya.com/bw/9781803243016)
@@ -482,6 +484,10 @@ In book stores:
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Osiander (de)**](https://www.osiander.de/shop/home/artikeldetails/A1077805650)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **OverDrive (com)**](https://www.overdrive.com/media/12071203/software-architecture-with-c)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Ozon (by)**](https://ozon.by/product/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-4592186946)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Ozon (kz)**](https://ozon.kz/product/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-4592186946)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Ozon (ru)**](https://www.ozon.ru/product/software-architecture-with-c-designing-robust-c-systems-with-modern-architectural-practices-4592186946)
 
@@ -601,6 +607,8 @@ In libraries of engineering schools:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Business-Vox (com)**](https://www.business-vox.com/catalog/book/docid/88977053)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Central Michigan University (com)**](https://cmich.primo.exlibrisgroup.com/nde/fulldisplay?vid=01CMICH_INST:CMICH&query=9781803243016&docid=cdi_proquest_ebookcentral_EBC32463280)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Georgia State University (com)**](https://galileo-gsu.primo.exlibrisgroup.com/discovery/fulldisplay/alma9935099577802952/01GALI_GSU:GSU_V1)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **MPG Books (de)**](https://ebooks.mpdl.mpg.de/ebooks/Record/EB002373639)
@@ -625,12 +633,30 @@ And in other various resources:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Bookshare (org)**](https://www.bookshare.org/browse/book/6924480)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Boston Public Library (com)**](https://bpl.bibliocommons.com/v2/record/S75C9647859)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Christchurch City Council Libraries (com)**](https://christchurch.bibliocommons.com/v2/record/S37C1760346)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **City of Menlo Park (com)**](https://menlopark.bibliocommons.com/v2/record/S76C3789522)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Daily City Public Library (com)**](https://dalycity.bibliocommons.com/v2/record/S76C3789522)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **iProgrammer (info)**](https://www.i-programmer.info/book-watch-archive/18609-software-architecture-with-c-2nd-ed-packt.html)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **King County Library System (com)**](https://kcls.bibliocommons.com/v2/record/S82C2640054)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Meeting C++ (com)**](https://meetingcpp.com/mcpp/books/book.php?hash=76eab09472533d610f2bf930716181978d0c761e)
 
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Naperville Public Library (com)**](https://naperlib.bibliocommons.com/v2/record/S213C3354159)
+
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Pueblo City-County Library (com)**](https://catalog.pueblolibrary.org/GroupedWork/8bf5a25a-ea04-7185-095a-a6556fd9ac94-eng)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **San Bruno Public Library (com)**](https://sbl.bibliocommons.com/v2/record/S76C3789522)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **San Francisco Public Library (com)**](https://sfpl.bibliocommons.com/v2/record/S93C7392970)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Sno-Isle Libraries (com)**](https://sno-isle.bibliocommons.com/v2/record/S121C2200879)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Surrey Libraries (com)**](https://surrey.bibliocommons.com/v2/record/S71C1110729)
+
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Vancouver Public Library(com)**](https://vpl.bibliocommons.com/v2/record/S38C10811736)

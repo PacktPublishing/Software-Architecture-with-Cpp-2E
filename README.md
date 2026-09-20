@@ -14,7 +14,7 @@ Software Architecture with C++: Designing Robust C++ Systems with Modern Archite
   <img src="pics/book_cover.jpg" height="200px" align="right" alt="book cover"/>
 </a>
 
-**Architect high-quality C++ applications using modern features and patterns, with expanded coverage of observability
+**Architect high-quality software systems using modern C++ and architectural practices, with expanded coverage of observability
 and cloud-native tooling, plus new content on monadic design techniques for modular C++ development.**
 
 ### Key features
@@ -25,14 +25,14 @@ and cloud-native tooling, plus new content on monadic design techniques for modu
 
 ### Book description
 
-Designing scalable and maintainable software with C++ requires more than language expertise—it demands architectural thinking
-and an ability to deliver systems in dynamic environments. This practical guide equips you with the architectural skills
-needed to design and build robust, distributed software systems using modern C++.
+Designing scalable and maintainable software requires more than language expertise—it demands architectural thinking
+and an ability to deliver systems in dynamic environments. This practical guide explores software architecture through the lens of modern C++,
+equipping you with the architectural skills needed to design and build robust, distributed software systems.
 
 Starting with fundamental architectural principles and design philosophies, the book walks readers through practical approaches
 to designing and deploying reliable systems. This edition includes significant updates and new content: chapters on observability,
 package management, and C++ modules address real-world software challenges. Readers will explore software decomposition strategies,
-design and system patterns, fault tolerance, API management, and testability—all applied with C++.
+design and system patterns, fault tolerance, API management, and testability, with practical examples in modern C++.
 
 Additionally, the book covers modern CI/CD pipelines, cloud-native design, microservices, and modular development,
 helping developers navigate today's fast-evolving software landscape. With updated examples and a renewed emphasis
@@ -47,7 +47,7 @@ modern C++ and proven architectural techniques.
 - Implement architectural and system design patterns
 - Design testable code and automate quality checks via CI/CD pipelines
 - Manage dependencies and build systems using CMake and Conan
-- Explore microservices, containers, and cloud-native practices in C++
+- Explore microservices, containers, and cloud-native practices with C++
 - Improve observability with logging, tracing, and monitoring tools
 - Build secure, fault-tolerant, and high-performance production-grade software
 

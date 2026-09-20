@@ -7,6 +7,14 @@
 #include <drogon/HttpSimpleController.h>
 #include <drogon/drogon.h>
 
+// Idempotency keys guarantee that state-changing business logic (like payments
+// or bookings) executes exactly once, regardless of retries. Subsequent
+// requests with the same key bypass execution and return the saved result,
+// preventing duplicate side effects. However, they add storage
+// overhead and latency, so systems skip them when operations are
+// naturally idempotent (like GET/PUT), enforced by database constraints, or
+// tolerant of occasional duplicates.
+
 using namespace drogon;
 
 class ItemsController final : public HttpController<ItemsController> {

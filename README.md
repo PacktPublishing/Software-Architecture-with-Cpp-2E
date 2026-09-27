@@ -399,7 +399,7 @@ In book stores:
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Hugendubel (de)**](https://www.hugendubel.de/de/taschenbuch/andrey_gavrilin_adrian_ostrowski_piotr_gaczkowski-software_architecture_with_c_second_edition-52343878-produkt-details.html)
 
-- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Humble Bundle (com)**](https://www.humblebundle.com/books/systemsminded-software-engineer-packt-books)
+- [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **Humble Bundle (com)**](https://www.humblebundle.com/books/c-programming-masterclass-code-faster-build-smarter-master-c-books)
 
 - [<img src="pics/cardboard-box-svgrepo-com.svg" height="14em;"/> **IberLibro.com (com)**](https://www.iberlibro.com/9781803243016/Software-Architecture-Designing-Robust-Systems-1803243015/plp)
 

@@ -8,6 +8,8 @@
 
 **It really helps the authors and means a lot to them!**
 
+**This repository contains manually written and tested code samples for the book.**
+
 Software Architecture with C++: Designing Robust C++ Systems with Modern Architectural Practices, Second Edition, published by Packt
 
 <a href="https://www.packtpub.com/en-us/product/software-architecture-with-c-9781803243016">

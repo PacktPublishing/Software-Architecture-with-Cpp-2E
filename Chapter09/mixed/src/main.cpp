@@ -40,16 +40,66 @@ Stores get_favorite_stores_for(const CustomerId &customer_id) {
            },
        .categories = {Category::Handicraft}},
       {.owner = &merchants[1],
-       .items = {{
-           .name = "The wizard",
-           .photo_url = "http://example.com/vhs.png",
-           .description = "A family film about a boy with a natural talent for "
-                          "video games",
-           .price = {},
-           .date_added = system_clock::now() - 12min,
-           .featured = true,
-       }},
-       .categories = {Category::Artist, Category::Video}}};
+       .items =
+           {
+               {
+                   .name = "The wizard",
+                   .photo_url = "http://example.com/vhs.png",
+                   .description =
+                       "A family film about a boy with a natural talent for "
+                       "video games",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "Tsuki Kage Mai Ka - Wagakki Band",
+                   .photo_url = "http://example.com/jrock_song.png",
+                   .description = "A high-energy blend of traditional Japanese "
+                                  "instruments like the koto and shamisen with "
+                                  "modern rock",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "Goodbye to You - Scandal",
+                   .photo_url = "http://example.com/rock_song.png",
+                   .description = "An energetic breakup anthem about cutting "
+                                  "ties with a bad ex",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "You Don't Know - Berlin",
+                   .photo_url = "http://example.com/new_wave_song.png",
+                   .description = "A bittersweet suffering in silence while "
+                                  "loving someone who doesn't even notice",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "8.15 To Nowhere - Vicious Pink",
+                   .photo_url = "http://example.com/new_wave_song.png",
+                   .description = "Getting lost in the pulsing rhythm of a "
+                                  "never-ending train ride",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "Angel Of The Morning - Juice Newton",
+                   .photo_url = "http://example.com/folk_rock_song.png",
+                   .description = "Embracing a temporary romance with zero "
+                                  "regrets and no matter what tomorrow brings",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+           },
+       .categories = {Category::Artist, Category::Video, Category::Music}}};
   static auto favorite_stores_by_customer =
       std::unordered_map<CustomerId, Stores>{{42, {&stores[0], &stores[1]}}};
   return favorite_stores_by_customer[customer_id];

@@ -1,11 +1,27 @@
-cmake_minimum_required(VERSION 4.0)
+cmake_minimum_required(VERSION 3.30..4.4)
 
 # https://gitlab.kitware.com/cmake/cmake/-/blob/master/Help/dev/experimental.rst
 # https://github.com/Kitware/CMake/blob/master/Help/dev/experimental.rst
+# https://github.com/KhronosGroup/Vulkan-Hpp/blob/main/docs/Usage.md#c20-named-module
 
 # cmake-format: off
+if( NOT CMAKE_EXPERIMENTAL_CXX_IMPORT_STD )
+    if( ${CMAKE_VERSION} VERSION_GREATER_EQUAL 4.4 )
+        set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD f35a9ac6-8463-4d38-8eec-5d6008153e7d)
+    elseif( ${CMAKE_VERSION} VERSION_GREATER_EQUAL 4.3 )
+        set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD 451f2fe2-a8a2-47c3-bc32-94786d8fc91b)
+    elseif( ${CMAKE_VERSION} VERSION_GREATER_EQUAL 4.2 )
+        set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD d0edc3af-4c50-42ea-a356-e2862fe7a444)
+    elseif( ${CMAKE_VERSION} VERSION_GREATER_EQUAL 4.0.2 )
+        set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD a9e1cf81-9932-4810-974b-6eccaf14e457)
+    elseif( ${CMAKE_VERSION} VERSION_GREATER_EQUAL 4.0 )
+        set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD 1942b4fa-b2c5-4546-9385-83f254070067)
+    elseif( ${CMAKE_VERSION} VERSION_GREATER_EQUAL 3.30 )
+        set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD 0e5b6991-d74f-4b3d-a41c-cf096e0b2508)
+    endif()
+endif()
 # set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "a9e1cf81-9932-4810-974b-6eccaf14e457")  # clang 20.1 and msvc 19.44 (VS 2022)
-set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "d0edc3af-4c50-42ea-a356-e2862fe7a444")  # gcc 15.2
+# set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "d0edc3af-4c50-42ea-a356-e2862fe7a444")  # gcc 15.2
 # cmake-format: on
 
 set(CMAKE_CXX_MODULE_STD 1)

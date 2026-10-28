@@ -83,6 +83,44 @@ Stores get_favorite_stores_for(const CustomerId &customer_id) {
                    .date_added = system_clock::now() - 12min,
                    .featured = true,
                },
+               {
+                   .name = "Shadows of the Night - Pat Benatar",
+                   .photo_url = "http://example.com/rock_song.png",
+                   .description = "Daydreams about hijacking a bomber plane to "
+                                  "personally blow up Nazis",
+                   .price = 50.00f,
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "Robert De Niro’s Waiting - Bananarama",
+                   .photo_url = "http://example.com/new_wave_song.png",
+                   .description = "A traumatized girl uses a Robert De Niro "
+                                  "obsession to hide from real-world men",
+                   .price = 33.00f,
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "Friends - Rebecca [cover by Garnidelia]",
+                   .photo_url = "http://example.com/pop_rock_song.png",
+                   .description =
+                       "Two best friends who ruined their relationship with "
+                       "one secret kiss and became total strangers",
+                   .price = 40.00f,
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "Going down to Liverpool - The Bangles",
+                   .photo_url = "http://example.com/jangle_rock_song.png",
+                   .description = "Being broke, unpaid sabbatical, and sulking "
+                                  "in the backseat while Spock drives you to "
+                                  "Liverpool to look at the rain",
+                   .price = 35.00f,
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
            },
        .categories = {Category::Artist, Category::Music}}};
   static auto favorite_stores_by_customer =

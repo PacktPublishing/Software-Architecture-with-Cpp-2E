@@ -22,32 +22,72 @@ Stores get_favorite_stores_for(const CustomerId &customer_id) {
   static const auto merchants = std::vector<Merchant>{{17}, {29}};
   static const auto stores = std::vector<Store>{
       {.owner = &merchants[0],
+       .items = {{.name = "BattleTech",
+                  .photo_url = {},
+                  .description =
+                      "Giant mech combat robots in interstellar wars",
+                  .price = 35.00f,
+                  .date_added = system_clock::now(),
+                  .featured = false},
+                 {.name = "RoboTech",
+                  .photo_url = {},
+                  .description = "Intergalactic battles and love stories",
+                  .price = 34.90f,
+                  .date_added = system_clock::now() - 1h,
+                  .featured = true},
+                 {
+                     .name = "Timber Wolf (Mad Cat)",
+                     .photo_url = "http://example.com/mech_robot.png",
+                     .description = "An action figure",
+                     .price = {},
+                     .date_added = system_clock::now() - 12min,
+                     .featured = true,
+                 }},
+       .categories = {Category::Books, Category::Handicraft}},
+      {.owner = &merchants[1],
        .items =
            {
-               {.name = "BattleTech",
-                .photo_url = {},
-                .description = "Giant mech combat robots in interstellar wars",
-                .price = 35.00f,
-                .date_added = system_clock::now(),
-                .featured = false},
-               {.name = "RoboTech",
-                .photo_url = {},
-                .description = "Intergalactic battles and love stories",
-                .price = 34.90f,
-                .date_added = system_clock::now() - 1h,
-                .featured = true},
+               {
+                   .name =
+                       "If You Were A Woman (And I Was A Man) - Bonnie Tyler",
+                   .photo_url = "http://example.com/pop_rock_song.png",
+                   .description =
+                       "An anthem about flipping the script on a lover to show "
+                       "them how much their mind games actually hurt",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "Find me - Jam & Spoon",
+                   .photo_url = "http://example.com/trance_song.png",
+                   .description = "Hypnotizing, seductive vocals soar over a "
+                                  "relentless peak-hour rave beat",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "Find Another Way - Captain Hollywood Project",
+                   .photo_url = "http://example.com/eurodance_song.png",
+                   .description =
+                       "Alluring, silky vocals meet lightning-fast rap to push "
+                       "you straight onto the dance floor",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
+               {
+                   .name = "I like the way you kiss me - Artemas",
+                   .photo_url = "http://example.com/darkwave_song.png",
+                   .description = "Knowing a relationship is completely "
+                                  "doomed, but consenting to the chaos",
+                   .price = {},
+                   .date_added = system_clock::now() - 12min,
+                   .featured = true,
+               },
            },
-       .categories = {Category::Books}},
-      {.owner = &merchants[1],
-       .items = {{
-           .name = "Timber Wolf (Mad Cat)",
-           .photo_url = "http://example.com/mech_robot.png",
-           .description = "An action figure",
-           .price = {},
-           .date_added = system_clock::now() - 12min,
-           .featured = true,
-       }},
-       .categories = {Category::Artist, Category::Handicraft}}};
+       .categories = {Category::Artist, Category::Music}}};
   static auto favorite_stores_by_customer =
       std::unordered_map<CustomerId, Stores>{{42, {&stores[0], &stores[1]}}};
   return favorite_stores_by_customer[customer_id];

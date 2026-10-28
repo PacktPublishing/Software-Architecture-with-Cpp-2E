@@ -40,15 +40,34 @@ Stores get_favorite_stores_for(const CustomerId &customer_id) {
            },
        .categories = {Category::Music}},
       {.owner = &merchants[1],
-       .items = {{
-           .name = "The Valley of the Wind",
-           .photo_url = "http://example.com/epic_girl.png",
-           .description =
-               "A legendary manga about a post-nuclear futuristic world",
-           .price = {},
-           .date_added = system_clock::now() - 12min,
-           .featured = true,
-       }},
+       .items =
+           {{
+                .name = "The Valley of the Wind",
+                .photo_url = "http://example.com/epic_girl.png",
+                .description =
+                    "A legendary manga about a post-nuclear futuristic world",
+                .price = {},
+                .date_added = system_clock::now() - 12min,
+                .featured = true,
+            },
+            {
+                .name = "Armitage III",
+                .photo_url = "http://example.com/warrior_girl.png",
+                .description = "An android girl in leather hot pants and a "
+                               "grizzled cop solve robot murders on Mars",
+                .price = {},
+                .date_added = system_clock::now() - 12min,
+                .featured = true,
+            },
+            {
+                .name = "Battle Angel Alita (also known as Gunnm)",
+                .photo_url = "http://example.com/audacious_girl.png",
+                .description = "A cybernetic girl with massive eyes and a "
+                               "lethal martial art beats up cyborg hunters",
+                .price = {},
+                .date_added = system_clock::now() - 12min,
+                .featured = true,
+            }},
        .categories = {Category::Artist, Category::Books}}};
   static auto favorite_stores_by_customer =
       std::unordered_map<CustomerId, Stores>{{42, {&stores[0], &stores[1]}}};

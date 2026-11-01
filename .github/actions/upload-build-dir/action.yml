@@ -1,5 +1,10 @@
 name: upload-build-dir
 description: packs build directory with the tar command to preserve file permissions and uploads the archive
+inputs:
+  artifact-name:
+    description: Name of the build artifact
+    required: false
+    default: build-dir
 runs:
   using: "composite"
   steps:
@@ -9,6 +14,6 @@ runs:
 
     - uses: actions/upload-artifact@v7
       with:
-        name: build-dir
+        name: ${{ inputs.artifact-name }}
         path: build-dir.tar
         retention-days: 1
